@@ -1,0 +1,31 @@
+
+@font-face {
+  font-family:'fontastic';
+    src: url('font/fontastic.ttf');
+  }
+
+
+@font-face {
+  font-family:'byom-light';
+    src: url('font/byom/Byom-Light-Trial.ttf');
+  }
+
+ @font-face {
+  font-family:'byom-bold';
+    src: url('font/byom/Byom-Bold-Trial.ttf');
+  }
+ @font-face {
+  font-family:'byom-regular';
+    src: url('font/byom/Byom-Regular-Trial.ttf');
+  }
+
+.geodatup-logo{
+  font-family: 'byom-bold';
+  padding-top: 10px;
+}
+
+
+
+.post-it-fixe{
+	height: 350px;
+}

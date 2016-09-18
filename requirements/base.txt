@@ -1,0 +1,6 @@
+Django<1.9
+django-frontend
+django-frontend-skeleton
+django-classy-tags>=0.3.4.1
+django-sekizai>=0.7
+

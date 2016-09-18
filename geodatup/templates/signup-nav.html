@@ -1,0 +1,74 @@
+
+
+<style type="text/css">
+#signup-nav {
+position:fixed; top:0; left:0;z-index: 10000;width: 100%;background-color: rgba(255, 255, 255, 0.96);
+  transform: translateY(0px);
+  transition: all .3s ease-in;
+}
+#signup-nav.hide-nav {
+  transform: translateY(-80px);
+  transition: all .2s ease-in;
+}
+
+#signup-nav .mapbox-logo svg {
+    width: 100px;
+    fill: #39adcc;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 100%;
+    max-height: 50%;
+    position: absolute;
+    left: 0;
+    display: block;
+    margin-top: -5px;
+    width: 100px;
+}
+
+#signup-nav .mapbox-logo-container {
+  height: 0;
+    padding-bottom: 5%;
+    width: 100px;
+}
+
+#signup-nav a.mapbox-logo {
+    width: 100px;
+    height: 50px;
+}
+
+#signup-nav .round-big {
+  border-radius: 35px;
+}
+
+@media only screen and (max-width: 900px) {
+  #signup-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+</style>
+
+
+
+
+<div id="signup-nav"  class="fill-white pad2y keyline-bottom z100 row2 hide-mobile hide-nav">
+  <div class="limiter contain clearfix">
+    <div class="mapbox-logo-container" style="height:50px;">
+      <a class='block mapbox-logo geodatup-logo-big' href='/'><h1>geoDatup</h1></a>
+      </a>
+
+      
+    </div>
+    
+    <div class="pin-right clearfix">
+      <h3><a href='/services/' class='rcon next'>Nos services</a></h3>
+      <a class='pad0y block strong quiet col6' href='/contact/'>Contact</a>
+    </div>
+  </div>
+</div>
+
+
