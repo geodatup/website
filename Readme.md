@@ -4,21 +4,21 @@ Create a user for your app, named geodatup and assigned to a system group called
 
 ~~~
 sudo groupadd --system webapps
-sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webaps/website geodatup
-~~
-
+sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webapps/website geodatup
+~~~
+~~~
 cd /var/www
 
-mkdir webaps
-cd webaps
+mkdir webapps
+cd webapps
 
-git clone https://github.com/geodatup/website.git
-
+sudo git clone https://github.com/geodatup/website.git
+~~~
 
 ## Gérer l'application avec l'utilisateur geodatup
 
 ~~~
-sudo chown geodatup -R /var/www/webaps/website
+sudo chown geodatup -R /var/www/webapps/website
 
 sudo su - geodatup
 ~~~
@@ -29,7 +29,7 @@ sudo su - geodatup
 ## Créer l'environnement 
 
 ~~~
-cd /var/www/webaps/website/
+cd /var/www/webapps/website/
 
 virtualenv .
 
@@ -43,6 +43,7 @@ pip install -r requirements/prod.txt
 ~~~
 
 Charger le path des paramettres de l'environnement dans les variable du système
+
 ~~~
 export DJANGO_SETTINGS_MODULE=geodatup.settings.production
 ~~~
@@ -60,7 +61,7 @@ Dans le cas ou de multiple applications sont sur le serveur
 copier le modèle de fichier gunicorn dans votre dossier
 
 ~~~
-cp /bin/gunicorn_start /var/www/webaps/website/
+nano /var/www/webapps/website/gunicorn_start
 ~~~
 
 modifier le fichier comme celui ci 
@@ -69,8 +70,8 @@ modifier le fichier comme celui ci
 #!/bin/bash
 
 NAME="geodatup"                                  # Name of the application
-DJANGODIR=/var/www/webaps/website             # Django project directory
-SOCKFILE=/var/www/webaps/website/run/gunicorn.sock  # we will communicte using this unix socket
+DJANGODIR=/var/www/webapps/website             # Django project directory
+SOCKFILE=/var/www/webapps/website/run/gunicorn.sock  # we will communicte using this unix socket
 USER=geodatup                                        # the user to run as
 GROUP=webapps                                     # the group to run as
 NUM_WORKERS=3                                     # how many worker processes should Gunicorn spawn
@@ -165,8 +166,8 @@ export DJANGO_SETTINGS_MODULE=geodatup.settings.production
 Autoriser les autres utilisateurs à accéder à l'application
 
 ~~~
-sudo chown -R geodatup:users /var/www/webaps/website
-sudo chmod -R g+w /var/www/webaps/website
+sudo chown -R geodatup:users /var/www/webapps/website
+sudo chmod -R g+w /var/www/webapps/website
 ~~~
 
 
@@ -186,13 +187,33 @@ nano /etc/supervisor/conf.d/geodatup.conf
 
 ~~~
 [program:geodatup]
-command = /var/www/webapps/website/geodatup/bin/gunicorn_start                    ; Command to start app
+command = /var/www/webapps/website/bin/gunicorn_start                    ; Command to start app
 user = geodatup                                                          ; User to run as
-stdout_logfile = /webapps/hello_django/logs/gunicorn_supervisor.log   ; Where to write log messages
+stdout_logfile = /var/www/webapps/website/logs/gunicorn_supervisor.log   ; Where to write log messages
 redirect_stderr = true                                                ; Save stderr in the same log
 environment=LANG=en_US.UTF-8,LC_ALL=en_US.UTF-8                       ; Set UTF-8 as default encoding
 ~~~
 
+
+sudo mkdir -p /var/www/webapps/website/logs/
+
+sudo touch /var/www/webapps/website/logs/gunicorn_supervisor.log 
+
+
+
+~~~
+[program:raspctl]
+user=raspctl
+directory=/usr/share/raspctl/
+command=/usr/share/raspctl/core.py
+autostart=true
+autorestart=true
+redirect_stderr=True
+~~
+
+
+sudo supervisord -c /etc/supervisor/supervisord.conf
+sudo supervisorctl -c /etc/supervisor/supervisord.conf
 
 
 ## Créer un vitual env
