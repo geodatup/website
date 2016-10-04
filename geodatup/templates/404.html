@@ -27,7 +27,26 @@
 {% include "signup-nav.html" %}
 {% endblock nav %}
 
-<p>Veuillez nous excuser cette page et en cours de création</p>
+{% block sections %}
+
+    {% block section-top %}
+        {% include "section-top.html" %}
+    {% endblock section-top %}
+    {% block section-showcase %}
+        {% include "section-showcase.html" %}
+    {% endblock section-showcase %}
+    {% block nav-vertical %}
+        {% include "nav-vertical.html" %}
+    {% endblock nav-vertical %}
+
+    {% block section-2 %}
+       <p>Veuillez nous excuser cette page et en cours de création</p>
+    {% endblock section-2 %}
+
+
+
+{% endblock sections %}
+
 </div>
 
 
