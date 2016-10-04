@@ -19,15 +19,21 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
 from . import views
 
 
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name='index'),
     url(r'^terms/$', views.terms, name='terms'),
     url(r'^privacy/$', views.privacy, name='privacy'),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 
