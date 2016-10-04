@@ -1,27 +1,101 @@
-{% block html %}
-<!doctype html>
-{% endblock html %}
-<head>
-    {% block meta %}
-    <meta charset="utf-8">
-    <title>{% block title %}{% endblock title %}</title>
-    
-    <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
-    {% endblock meta %}
-    {% block head_css %}
-    {% endblock head_css %}
-    {% block head_js %}
-    {% endblock head_js %}
+{% extends "base_one.html" %}
+{% load staticfiles sekizai_tags %}
+
+{% block title %}GeoDatup{% endblock title %}
+
+{% block head_css %}
+{{ block.super }}
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" href="{% static "css/site.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" href="{% static "css/developers.css" %}">
+    <link rel="stylesheet" href="{% static "css/products.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "font-awesome-4.5.0/css/font-awesome.css" %}">
+{% endblock head_css %}  
 </head>
-<body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
-    {% block body_content %}
-    <!--[if lte IE 8]>
-        <div class="alert alert-warning ie-warning">
-            <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        </div>
-    <![endif]-->
-    {% endblock body_content %}
-    {% block body_js %}
-    {% endblock body_js %}
-</body>
-</html>
+
+{% block body_class %} full bleed{% endblock %}
+{% block body_content %}
+
+<div class='page-content'>
+
+
+{% block nav %}
+
+{% include "nav.html" %}
+{% include "signup-nav.html" %}
+{% endblock nav %}
+
+<p>Veuillez nous excuser cette page et en cours de création</p>
+</div>
+
+
+
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock footer %}
+
+{% endblock body_content %}
+
+
+{% block body_js %}
+{{ block.super }}
+<script src="{% static "js/base.js"%}"></script>
+
+<script type="text/javascript">
+var $dropdownTriggers = $('.dropdown');
+var $dropdownArea = $('.main-subnav');
+var $dropdownZone = $('.hover-area');
+
+$dropdownTriggers.each(function() {
+  var $this = $(this);
+  window.hoverintent(this, function() {
+    $dropdownTriggers.removeClass('show');
+    $('.subnav-group').removeClass('show');
+    $dropdownArea.addClass('show');
+    $('.subnav-' + $this.data('category')).addClass('show');
+    $this.addClass('show');
+  }, function() {
+    if (!$dropdownZone.hasClass('hovered') && $('.dropdown:hover').length === 0) {
+      $dropdownArea.removeClass('show');
+      $dropdownTriggers.removeClass('show');
+    }
+  });
+});
+
+$dropdownZone.mouseover(function() {
+  $(this).addClass('hovered');
+  return false;
+}).mouseleave(function() {
+  $(this).removeClass('hovered');
+  window.setTimeout(function() {
+    if ($('.dropdown:hover').length === 0) {
+      $dropdownArea.removeClass('show');
+      $dropdownTriggers.removeClass('show');
+    }
+  }, 300);
+});
+</script>
+
+
+<script type="text/javascript">
+
+   $(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 400) {
+        $('div#signup-nav').removeClass('hide-nav');
+      } else {
+        $('div#signup-nav').addClass('hide-nav');
+      }
+  });
+
+  
+</script>
+
+
+{% endblock body_js %}
+
+
+
+
