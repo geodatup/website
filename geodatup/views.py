@@ -7,8 +7,10 @@ from django.utils import timezone
 
 # Create your views here.
 def index(request):
-   
-    return render(request, 'base.html')
+	categories_list = Categories.objects.all()
+	services_list = Services.objects.all()
+    context = {'categories_list': categories_list; 'services_list': services_list;}
+	return render(request, 'base.html', context)
 
 def terms(request):
    
