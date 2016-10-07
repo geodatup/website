@@ -25,6 +25,10 @@
 }
 
 
+.header-image {
+  background-image:url(/media/image/Pano-reduce-1920-530.jpg);
+  background-repeat:no-repeat;
+  }
 
 .post-it-fixe{
 	height: 350px;
