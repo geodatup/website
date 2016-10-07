@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'djfrontend.skeleton',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'website',
 
 )
 

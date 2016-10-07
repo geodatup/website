@@ -1,0 +1,25 @@
+{
+    "fields": {
+      "nom_categorie": "test categories"
+    },
+    "model": "website.categorie",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "categorie_service": 1,
+      "nom_icon": "map",
+      "nom_service": "sevice3"
+    },
+    "model": "website.service",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "categorie_service": 1,
+      "nom_icon": "studio",
+      "nom_service": "services 4"
+    },
+    "model": "website.service",
+    "pk": 4
+},

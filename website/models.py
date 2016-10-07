@@ -6,9 +6,33 @@ from django.db import models
 #from filer.fields.image import FilerImageField
 
 
+
+
+
 # Create your models here.
-class Categories(models.Model):
+
+class Secteur(models.Model):
+    nom_secteur = models.CharField(max_length=15)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+    def __str__(self):
+    	return self.nom_secteur
+
+
+
+class Section(models.Model):
+    nom_section = models.CharField(max_length=15)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+    def __str__(self):
+    	return self.nom_section
+
+
+
+class Categorie(models.Model):
     nom_categorie = models.CharField(max_length=15)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+    def __str__(self):
+    	return self.nom_categorie
+
 #    icon = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
 #    slug = models.SlugField(
 #        u'slug',
@@ -21,16 +45,20 @@ class Categories(models.Model):
 #    def get_absolute_url(self):
 #        return reverse('geodatup:categorieDetail', kwargs={'slug': self.slug, })
 #        
-     def __str__(self):
-         return self.nom_categorie
 
-
-class Services(models.Model):
+class Service(models.Model):
     nom_service = models.CharField(max_length=15)
-    categorie_service = models.ForeignKey(Categories)
-   
-     def __str__(self):
-         return self.nom_service
+    categorie_service = models.ForeignKey(Categorie, null=True, blank=True)
+    nom_icon = models.CharField(max_length=15, null=True, blank=True)
+    short_description = models.CharField(max_length=30, null=True, blank=True)
+    big_description = models.CharField(max_length=100, null=True, blank=True)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+
+    #secteur =  models.ManyToManyField(Secteur)
+
+
+    def __str__(self):
+    	return self.nom_service
 
 
 #class Rubrique(models.Model):

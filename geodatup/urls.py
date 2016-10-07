@@ -30,7 +30,8 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.index, name='index'),
+    url(r'^', include('website.urls')),
+    #url(r'^$', views.index, name='index'),
     url(r'^terms/$', views.terms, name='terms'),
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
