@@ -1,3 +1,9 @@
+#!/usr/bin/python
+# -*- coding: UTF8 -*-
+
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "geodatup.settings.local")
+
 
 from website.models import Service, Categorie, Secteur, Section
 
