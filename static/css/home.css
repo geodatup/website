@@ -62,7 +62,7 @@ h2.denim, h1.denim {
 
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width:1025px) {
 .design-section {
     position: relative;
     margin-bottom: -200px;
@@ -91,7 +91,7 @@ h2.denim, h1.denim {
   }
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width:1025px) {
   .slideshow-container {
     min-height: 600px;
   }
