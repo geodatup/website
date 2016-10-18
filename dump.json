@@ -1,0 +1,324 @@
+[
+{
+  "pk": 1,
+  "fields": {
+    "css_class": null,
+    "actif": true,
+    "nom_secteur": "Foresterie"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 2,
+  "fields": {
+    "css_class": null,
+    "actif": true,
+    "nom_secteur": "Agriculture"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 3,
+  "fields": {
+    "css_class": null,
+    "actif": true,
+    "nom_secteur": "Environnement"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 4,
+  "fields": {
+    "css_class": null,
+    "actif": true,
+    "nom_secteur": "Arch\u00e9ologie"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 5,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "nom_secteur": "Collectivit\u00e9"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 6,
+  "fields": {
+    "css_class": "",
+    "actif": false,
+    "nom_secteur": "Tourisme"
+  },
+  "model": "website.secteur"
+},
+{
+  "pk": 1,
+  "fields": {
+    "css_ahref_class": "",
+    "css_div_class": "dropdown inline fl contain",
+    "actif": true,
+    "level": "navbar-top",
+    "css_datacategory": "products",
+    "nom_section": "Services",
+    "css_icon": ""
+  },
+  "model": "website.section"
+},
+{
+  "pk": 2,
+  "fields": {
+    "css_ahref_class": "",
+    "css_div_class": "dropdown inline fl contain",
+    "actif": true,
+    "level": "navbar-top",
+    "css_datacategory": "use-cases",
+    "nom_section": "Secteurs",
+    "css_icon": ""
+  },
+  "model": "website.section"
+},
+{
+  "pk": 3,
+  "fields": {
+    "css_ahref_class": "",
+    "css_div_class": "dropdown inline fl contain",
+    "actif": true,
+    "level": "navbar-top",
+    "css_datacategory": "help",
+    "nom_section": "Assistance & support",
+    "css_icon": ""
+  },
+  "model": "website.section"
+},
+{
+  "pk": 4,
+  "fields": {
+    "css_ahref_class": "quiet",
+    "css_div_class": "inline fl",
+    "actif": true,
+    "level": "navbar-top",
+    "css_datacategory": "aucun",
+    "nom_section": "Blog",
+    "css_icon": ""
+  },
+  "model": "website.section"
+},
+{
+  "pk": 1,
+  "fields": {
+    "level": 1,
+    "nom_categorie": "Accompagnement",
+    "css_class": "",
+    "actif": true
+  },
+  "model": "website.categorie"
+},
+{
+  "pk": 2,
+  "fields": {
+    "level": 2,
+    "nom_categorie": "M\u00e9thodes et outils",
+    "css_class": "",
+    "actif": true
+  },
+  "model": "website.categorie"
+},
+{
+  "pk": 3,
+  "fields": {
+    "level": 3,
+    "nom_categorie": "Donn\u00e9es",
+    "css_class": "",
+    "actif": true
+  },
+  "model": "website.categorie"
+},
+{
+  "pk": 1,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 1,
+    "pitch": "",
+    "nom_service": "Formation",
+    "description": "",
+    "css_icon": "plus-document"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 2,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 1,
+    "pitch": "",
+    "nom_service": "Conseil",
+    "description": "",
+    "css_icon": "compass"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 3,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 1,
+    "pitch": "",
+    "nom_service": "Maintenance",
+    "description": "",
+    "css_icon": "bug"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 4,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "Cartographie sp\u00e9cialis\u00e9e",
+    "description": "",
+    "css_icon": "map"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 5,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "S.I.G.",
+    "description": "",
+    "css_icon": "layers"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 6,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "T\u00e9l\u00e9d\u00e9tection",
+    "description": "",
+    "css_icon": "grid"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 7,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "Programmation",
+    "description": "",
+    "css_icon": "coding"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 8,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "Analyse spatiale",
+    "description": "",
+    "css_icon": "analytics"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 9,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 3,
+    "pitch": "",
+    "nom_service": "Orthophoto",
+    "description": "",
+    "css_icon": "tileset"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 11,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 3,
+    "pitch": "",
+    "nom_service": "DataPack",
+    "description": "",
+    "css_icon": "data"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 12,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 2,
+    "pitch": "",
+    "nom_service": "Catalogue",
+    "description": "",
+    "css_icon": "globe"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 13,
+  "fields": {
+    "css_class": "",
+    "actif": true,
+    "categorie_service": 3,
+    "pitch": "",
+    "nom_service": "Lev\u00e9 terrain",
+    "description": "",
+    "css_icon": "marker"
+  },
+  "model": "website.service"
+},
+{
+  "pk": 1,
+  "fields": {
+    "image": 2,
+    "css_class": "",
+    "nom_soft": "Qgis",
+    "pitch": "",
+    "description": "",
+    "css_icon": ""
+  },
+  "model": "website.software"
+},
+{
+  "pk": 1,
+  "fields": {
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$20000$7bbtRAwkXQDo$GGA9bp/N1HGrs4UuBkubHas6KqMCpAwkPZ87GI+3YGM=",
+    "groups": [],
+    "is_active": true,
+    "last_name": "",
+    "date_joined": "2016-10-05T15:54:46.603Z",
+    "username": "yogis",
+    "is_superuser": true,
+    "is_staff": true,
+    "last_login": "2016-10-05T16:00:16.783Z",
+    "email": "",
+    "first_name": ""
+  },
+  "model": "auth.user"
+}
+]
