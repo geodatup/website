@@ -5,8 +5,8 @@
     "actif": true,
     "css_class": null
   },
-  "pk": 1,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 1
 },
 {
   "fields": {
@@ -14,8 +14,8 @@
     "actif": true,
     "css_class": null
   },
-  "pk": 2,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 2
 },
 {
   "fields": {
@@ -23,8 +23,8 @@
     "actif": true,
     "css_class": null
   },
-  "pk": 3,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 3
 },
 {
   "fields": {
@@ -32,8 +32,8 @@
     "actif": true,
     "css_class": null
   },
-  "pk": 4,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 4
 },
 {
   "fields": {
@@ -41,8 +41,8 @@
     "actif": true,
     "css_class": ""
   },
-  "pk": 5,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 5
 },
 {
   "fields": {
@@ -50,306 +50,276 @@
     "actif": false,
     "css_class": ""
   },
-  "pk": 6,
-  "model": "website.secteur"
+  "model": "website.secteur",
+  "pk": 6
 },
 {
   "fields": {
-    "actif": true,
-    "nom_section": "Services",
-    "css_icon": "",
-    "css_ahref_class": "",
+    "css_div_class": "dropdown inline fl contain",
     "css_datacategory": "products",
-    "css_div_class": "dropdown inline fl contain",
+    "css_ahref_class": "",
+    "nom_section": "Services",
+    "actif": true,
+    "css_icon": "",
     "level": "navbar-top"
   },
-  "pk": 1,
-  "model": "website.section"
+  "model": "website.section",
+  "pk": 1
 },
 {
   "fields": {
-    "actif": true,
-    "nom_section": "Secteurs",
-    "css_icon": "",
-    "css_ahref_class": "",
+    "css_div_class": "dropdown inline fl contain",
     "css_datacategory": "use-cases",
-    "css_div_class": "dropdown inline fl contain",
-    "level": "navbar-top"
-  },
-  "pk": 2,
-  "model": "website.section"
-},
-{
-  "fields": {
-    "actif": true,
-    "nom_section": "Assistance & support",
-    "css_icon": "",
     "css_ahref_class": "",
-    "css_datacategory": "help",
-    "css_div_class": "dropdown inline fl contain",
-    "level": "navbar-top"
-  },
-  "pk": 3,
-  "model": "website.section"
-},
-{
-  "fields": {
+    "nom_section": "Secteurs",
     "actif": true,
-    "nom_section": "Blog",
     "css_icon": "",
-    "css_ahref_class": "quiet",
-    "css_datacategory": "aucun",
-    "css_div_class": "inline fl",
     "level": "navbar-top"
   },
-  "pk": 4,
-  "model": "website.section"
+  "model": "website.section",
+  "pk": 2
+},
+{
+  "fields": {
+    "css_div_class": "dropdown inline fl contain",
+    "css_datacategory": "help",
+    "css_ahref_class": "",
+    "nom_section": "Assistance & support",
+    "actif": true,
+    "css_icon": "",
+    "level": "navbar-top"
+  },
+  "model": "website.section",
+  "pk": 3
+},
+{
+  "fields": {
+    "css_div_class": "inline fl",
+    "css_datacategory": "aucun",
+    "css_ahref_class": "quiet",
+    "nom_section": "Blog",
+    "actif": true,
+    "css_icon": "",
+    "level": "navbar-top"
+  },
+  "model": "website.section",
+  "pk": 4
 },
 {
   "fields": {
     "actif": true,
-    "css_class": "",
     "nom_categorie": "Accompagnement",
+    "css_class": "",
     "level": 1
   },
-  "pk": 1,
-  "model": "website.categorie"
+  "model": "website.categorie",
+  "pk": 1
 },
 {
   "fields": {
     "actif": true,
-    "css_class": "",
     "nom_categorie": "M\u00e9thodes et outils",
+    "css_class": "",
     "level": 2
   },
-  "pk": 2,
-  "model": "website.categorie"
+  "model": "website.categorie",
+  "pk": 2
 },
 {
   "fields": {
     "actif": true,
-    "css_class": "",
     "nom_categorie": "Donn\u00e9es",
+    "css_class": "",
     "level": 3
   },
-  "pk": 3,
-  "model": "website.categorie"
+  "model": "website.categorie",
+  "pk": 3
 },
 {
   "fields": {
     "categorie_service": 1,
-    "pitch": "",
-    "css_icon": "plus-document",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Formation",
     "css_class": "",
-    "description": ""
+    "css_icon": "plus-document"
   },
-  "pk": 1,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 1
 },
 {
   "fields": {
     "categorie_service": 1,
-    "pitch": "",
-    "css_icon": "compass",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Conseil",
     "css_class": "",
-    "description": ""
+    "css_icon": "compass"
   },
-  "pk": 2,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 2
 },
 {
   "fields": {
     "categorie_service": 1,
-    "pitch": "",
-    "css_icon": "bug",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Maintenance",
     "css_class": "",
-    "description": ""
+    "css_icon": "bug"
   },
-  "pk": 3,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 3
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "map",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Cartographie sp\u00e9cialis\u00e9e",
     "css_class": "",
-    "description": ""
+    "css_icon": "map"
   },
-  "pk": 4,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 4
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "layers",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "S.I.G.",
     "css_class": "",
-    "description": ""
+    "css_icon": "layers"
   },
-  "pk": 5,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 5
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "grid",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "T\u00e9l\u00e9d\u00e9tection",
     "css_class": "",
-    "description": ""
+    "css_icon": "grid"
   },
-  "pk": 6,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 6
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "coding",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Programmation",
     "css_class": "",
-    "description": ""
+    "css_icon": "coding"
   },
-  "pk": 7,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 7
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "analytics",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Analyse spatiale",
     "css_class": "",
-    "description": ""
+    "css_icon": "analytics"
   },
-  "pk": 8,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 8
 },
 {
   "fields": {
     "categorie_service": 3,
-    "pitch": "",
-    "css_icon": "tileset",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Orthophoto",
     "css_class": "",
-    "description": ""
+    "css_icon": "tileset"
   },
-  "pk": 9,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 9
 },
 {
   "fields": {
     "categorie_service": 3,
-    "pitch": "",
-    "css_icon": "data",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "DataPack",
     "css_class": "",
-    "description": ""
+    "css_icon": "data"
   },
-  "pk": 11,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 11
 },
 {
   "fields": {
     "categorie_service": 2,
-    "pitch": "",
-    "css_icon": "globe",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Catalogue",
     "css_class": "",
-    "description": ""
+    "css_icon": "globe"
   },
-  "pk": 12,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 12
 },
 {
   "fields": {
     "categorie_service": 3,
-    "pitch": "",
-    "css_icon": "marker",
+    "description": "",
     "actif": true,
+    "pitch": "",
     "nom_service": "Lev\u00e9 terrain",
     "css_class": "",
-    "description": ""
+    "css_icon": "marker"
   },
-  "pk": 13,
-  "model": "website.service"
+  "model": "website.service",
+  "pk": 13
 },
 {
   "fields": {
-    "image": 2,
-    "pitch": "",
-    "css_icon": "",
     "nom_soft": "Qgis",
     "css_class": "",
-    "description": ""
+    "pitch": "",
+    "image": 2,
+    "description": "",
+    "css_icon": ""
   },
-  "pk": 1,
-  "model": "website.software"
+  "model": "website.software",
+  "pk": 1
 },
 {
   "fields": {
-    "last_name": "",
-    "first_name": "",
-    "is_superuser": true,
-    "password": "pbkdf2_sha256$20000$7bbtRAwkXQDo$GGA9bp/N1HGrs4UuBkubHas6KqMCpAwkPZ87GI+3YGM=",
-    "email": "",
-    "groups": [],
-    "is_staff": true,
-    "date_joined": "2016-10-05T15:54:46.603Z",
-    "last_login": "2016-10-05T16:00:16.783Z",
     "is_active": true,
+    "groups": [],
+    "is_superuser": true,
+    "first_name": "",
+    "is_staff": true,
     "user_permissions": [],
-    "username": "yogis"
+    "last_name": "",
+    "password": "pbkdf2_sha256$20000$7bbtRAwkXQDo$GGA9bp/N1HGrs4UuBkubHas6KqMCpAwkPZ87GI+3YGM=",
+    "username": "yogis",
+    "date_joined": "2016-10-05T15:54:46.603Z",
+    "email": "",
+    "last_login": "2016-10-05T16:00:16.783Z"
   },
-  "pk": 1,
-  "model": "auth.user"
-},
-{
-  "fields": {
-    "default_alt_text": null,
-    "_width": 512,
-    "must_always_publish_copyright": false,
-    "date_taken": "2016-10-13T10:31:04.978Z",
-    "subject_location": null,
-    "author": null,
-    "default_caption": null,
-    "must_always_publish_author_credit": false,
-    "_height": 512
-  },
-  "pk": 1,
-  "model": "filer.image"
-},
-{
-  "fields": {
-    "default_alt_text": null,
-    "_width": 452,
-    "must_always_publish_copyright": false,
-    "date_taken": "2016-10-13T10:33:50.378Z",
-    "subject_location": null,
-    "author": null,
-    "default_caption": null,
-    "must_always_publish_author_credit": false,
-    "_height": 452
-  },
-  "pk": 2,
-  "model": "filer.image"
+  "model": "auth.user",
+  "pk": 1
 },
 {
   "fields": {
@@ -357,73 +327,73 @@
       "yogis"
     ]
   },
-  "pk": 1,
-  "model": "filer.clipboard"
+  "model": "filer.clipboard",
+  "pk": 1
 },
 {
   "fields": {
-    "folder": 1,
-    "uploaded_at": "2016-10-13T10:31:05.341Z",
-    "modified_at": "2016-10-13T10:31:05.341Z",
-    "has_all_mandatory_data": false,
-    "description": null,
     "owner": [
       "yogis"
     ],
     "is_public": true,
     "_file_size": 187910,
-    "name": "",
-    "original_filename": "OpenStreetMap_Icon.png",
-    "file": "filer_public/d5/46/d546e358-061b-4d6b-8511-d47850fd8cbb/openstreetmap_icon.png",
+    "folder": 1,
     "sha1": "a3193c8bb265f825a09e175d2cf19ce6ed188825",
+    "description": null,
     "polymorphic_ctype": [
       "filer",
       "image"
-    ]
+    ],
+    "file": "filer_public/d5/46/d546e358-061b-4d6b-8511-d47850fd8cbb/openstreetmap_icon.png",
+    "uploaded_at": "2016-10-13T10:31:05.341Z",
+    "name": "",
+    "has_all_mandatory_data": false,
+    "modified_at": "2016-10-13T10:31:05.341Z",
+    "original_filename": "OpenStreetMap_Icon.png"
   },
-  "pk": 1,
-  "model": "filer.file"
+  "model": "filer.file",
+  "pk": 1
 },
 {
   "fields": {
-    "folder": 1,
-    "uploaded_at": "2016-10-13T10:33:50.408Z",
-    "modified_at": "2016-10-13T10:33:50.408Z",
-    "has_all_mandatory_data": false,
-    "description": null,
     "owner": [
       "yogis"
     ],
     "is_public": true,
     "_file_size": 177444,
-    "name": "",
-    "original_filename": "qgis.png",
-    "file": "filer_public/cc/93/cc930a9f-e7f3-4ed4-a9d7-37659ac806ba/qgis.png",
+    "folder": 1,
     "sha1": "2b2b36c36483574483a8f22ceaa14793fb512512",
+    "description": null,
     "polymorphic_ctype": [
       "filer",
       "image"
-    ]
+    ],
+    "file": "filer_public/cc/93/cc930a9f-e7f3-4ed4-a9d7-37659ac806ba/qgis.png",
+    "uploaded_at": "2016-10-13T10:33:50.408Z",
+    "name": "",
+    "has_all_mandatory_data": false,
+    "modified_at": "2016-10-13T10:33:50.408Z",
+    "original_filename": "qgis.png"
   },
-  "pk": 2,
-  "model": "filer.file"
+  "model": "filer.file",
+  "pk": 2
 },
 {
   "fields": {
-    "uploaded_at": "2016-10-13T10:30:16.763Z",
-    "modified_at": "2016-10-13T10:30:16.763Z",
-    "rght": 2,
-    "name": "software",
-    "parent": null,
-    "created_at": "2016-10-13T10:30:16.763Z",
     "owner": [
       "yogis"
     ],
-    "level": 0,
+    "created_at": "2016-10-13T10:30:16.763Z",
+    "uploaded_at": "2016-10-13T10:30:16.763Z",
+    "name": "software",
     "lft": 1,
-    "tree_id": 1
+    "parent": null,
+    "tree_id": 1,
+    "rght": 2,
+    "modified_at": "2016-10-13T10:30:16.763Z",
+    "level": 0
   },
-  "pk": 1,
-  "model": "filer.folder"
+  "model": "filer.folder",
+  "pk": 1
 }
 ]
