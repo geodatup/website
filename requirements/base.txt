@@ -4,4 +4,4 @@ django-frontend-skeleton
 django-classy-tags>=0.3.4.1
 django-sekizai>=0.7
 django-tables2
-
+django-filer

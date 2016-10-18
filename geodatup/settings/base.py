@@ -37,9 +37,17 @@ INSTALLED_APPS = (
     'djfrontend.skeleton',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
     'website',
 
 )
+
+###CONF APPS###
+THUMBNAIL_HIGH_RESOLUTION = True
+
+### END CONF APPS###
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
