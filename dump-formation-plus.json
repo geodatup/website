@@ -1,0 +1,40 @@
+[
+{
+  "pk": 2,
+  "fields": {
+    "pitch": "",
+    "logiciels": [
+      1
+    ],
+    "duree": "2 jours",
+    "tarif": "800",
+    "contenu": "",
+    "prerequis": "Qgis - D\u00e9butant",
+    "niveau": "2",
+    "nom_formation": "Qgis - Avanc\u00e9",
+    "css_class": "",
+    "actif": true,
+    "css_icon": ""
+  },
+  "model": "website.formation"
+},
+{
+  "pk": 3,
+  "fields": {
+    "pitch": "",
+    "logiciels": [
+      1
+    ],
+    "duree": "4 heures",
+    "tarif": "250",
+    "contenu": "",
+    "prerequis": "aucun",
+    "niveau": "1",
+    "nom_formation": "Atelier - Atlas",
+    "css_class": "",
+    "actif": true,
+    "css_icon": ""
+  },
+  "model": "website.formation"
+}
+]

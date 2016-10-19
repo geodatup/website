@@ -1,4 +1,4 @@
-Django<1.9
+Django==1.9
 django-frontend
 django-frontend-skeleton
 django-classy-tags>=0.3.4.1
