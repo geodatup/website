@@ -7,3 +7,7 @@ python manage.py dumpdata --natural-foreign --indent=2 website filer auth.User -
 ~~~
 python manage.py dumpdata --natural-foreign --indent=2 website.formation > dump-formation.json
 ~~~
+
+~~~
+python manage.py dumpdata --natural-foreign --indent=2 website.formation website.catformation website.software website.contenuformation website.catformation > dump-formation.json
+~~~

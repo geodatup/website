@@ -9,7 +9,7 @@
               {% for formation in catFormation.formations.all %}
               <div class="space-bottom2 pad2y keyline-bottom">
 
-                <h2 id="{{ formation.nom_formation }}" class="pad2y dark category-block" title="Link to this section">
+                <h2 id="{{ formation.nom_formation }}" class="pad2y dark category-block" title="">
               {% if formation.css_color and formation.css_icon %}
                 <div class="inline icon dot 
                 {{formation.css_icon }} dark 
@@ -57,7 +57,7 @@
                         <!-- loop general howto docs -->
                           
                         {% for contenu in formation.contenu.all %}
-                            <a class="block small keyline-bottom pad0y" href="">{{ contenu.nom_contenu }}</a>
+                            <a class="block small keyline-bottom pad0y" href="#">{{ contenu.nom_contenu }}</a>
                         {% endfor %}
                         </div>
                       
@@ -67,24 +67,32 @@
                       <div class="col4 link-column space-bottom2">
                         
                         <div class="strong small space-top2 icon icon-left-align bookmark space-bottom1 quiet">Prérequis</div>
-                          <a class="block small keyline-bottom pad0y" href="">{{formation.prerequis}}</a>
-                      
+                       
+                        {% for prerequis in formation.prerequis.all %}
+                          {% if prerequis.nom_formation %}
+                              <a class="block small keyline-bottom pad0y" href="#{{ prerequis.nom_formation }}">{{ prerequis.nom_formation }}</a>
+                          {% endif %}                          
+                        {% endfor %}
+
+                        {% if formation.prerequis.all.count < 1 %}
+                        <p>aucun</p> 
+                        {% endif %} 
                         <div class="strong small space-top2 icon icon-left-align info space-bottom1 quiet space-top2">Logiciels</div>
 
                         {% for soft in formation.logiciels.all %}
-                            <a class="block small keyline-bottom pad0y" href="">{{ soft.nom_soft }}</a>
+                            <a class="block small keyline-bottom pad0y" href="#">{{ soft.nom_soft }}</a>
                         {% endfor %}
                       </div>    
                       <!-- loop through docs + glossary -->
                       <div class="col4 space-bottom2">
                         <div class="strong small space-top2 icon  icon-left-align brackets space-bottom1 quiet">Tarifs</div>
-                        <a class="block small keyline-bottom pad0y keyline-bottom" href="">{{formation.tarif}}</a>
+                        <a class="block small keyline-bottom pad0y keyline-bottom" href="#">{{formation.tarif}}</a>
 
                         <div class="strong small space-top2 icon icon-left-align link space-bottom1 quiet">Acquis</div>
                         
                         {% for contenu in formation.contenu.all %}
                            {% if contenu.acquis %}
-                           <a class="block small keyline-bottom pad0y keyline-bottom" href="">{{ contenu.acquis}}</a>
+                           <a class="block small keyline-bottom pad0y keyline-bottom" href="#">{{ contenu.acquis}}</a>
                            {% endif %}
                         {% endfor %}
                        
