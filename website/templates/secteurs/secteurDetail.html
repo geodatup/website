@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block sections %}
+        {% block section-top %}
+                {% include "secteurs/section-top-secteur.html" %}
+        {% endblock section-top %}
+        <!-- nav vertical après car sinon on les menus ne s'affichent pas sur l'image de fond-->
+        {% block nav-vertical %}
+                {% include "secteurs/nav-vertical-secteur.html" %}
+        {% endblock nav-vertical %}
+
+        {% block section-contact %}
+                {% include "section-contact.html" %}
+        {% endblock section-contact %}
+{% endblock sections %}

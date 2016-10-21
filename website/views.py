@@ -22,6 +22,8 @@ def index(request):
 	secteur_list_tab3 = secteur_list[6:9]
 	secteur_list_tab4 = secteur_list[9:12]
 
+	catFormation_list = CatFormation.objects.all().filter(actif=1)
+
 
 	context = {
 	'categorie_list': categorie_list,
@@ -35,14 +37,73 @@ def index(request):
 	'service_cat1':service_cat1,
 	'service_cat2':service_cat2,
 	'service_cat3':service_cat3,
+	'catFormation_list':catFormation_list,
 
 
 	}
 	return render(request, 'base.html', context)
 
+
+class ServiceDetailView(generic.DetailView):
+    model = Service
+    context_object_name = 'service'
+    template_name = 'services/serviceDetail.html'
+
+
+class ServiceListView(generic.ListView):
+    model = Service
+    template_name = 'services/serviceIndexList.html'
+
+class SecteurDetailView(generic.DetailView):
+    model = Secteur
+    context_object_name = 'secteur'
+    template_name = 'secteurs/secteurDetail.html'
+
+class SecteurListView(generic.ListView):
+    model = Secteur
+    template_name = 'secteurs/secteurIndexList.html'
+
+class SectionDetailView(generic.DetailView):
+    model = Section
+    context_object_name = 'section'
+    template_name = 'sections/sectionDetail.html'
+
+class SectionListView(generic.ListView):
+    model = Section
+    template_name = 'sections/sectionIndexList.html'
+
+class CatFormationDetailView(generic.DetailView):
+    model = CatFormation
+    context_object_name = 'catFormation'
+    template_name = 'formation/catFormationDetail.html'
+
+class CatFormationListView(generic.ListView):
+    model = CatFormation
+    template_name = 'formation/catFormationIndexList.html'
+
+
+
+def support(request):
+   
+    return render(request, 'support/support.html')
+
 def terms(request):
    
     return render(request, 'terms.html')
+
+
+def galerie(request):
+   
+    return render(request, 'galerie.html')
+
+def showcase(request):
+   
+    return render(request, 'showcase.html')
+
+
+def blog(request):
+   
+    return render(request, 'blog.html')
 
 def privacy(request):
    

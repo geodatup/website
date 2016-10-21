@@ -19,16 +19,45 @@
     src: url('font/byom/Byom-Regular-Trial.ttf');
   }
 
+.geodatup-logo {
+  /*background:#fff;*/
+  position:relative;
+  z-index:10;
+  }
+
+.geodatup-logo {
+  /* background:transparent url(base@2x.png) no-repeat 0 0; */
+  display:inline-block;
+  vertical-align:top;
+  height:40px;
+  width:150px;
+  overflow:hidden;
+  -webkit-background-size:100px 350px;
+          background-size:100px 350px;
+  }
+  .dark .geodatup-logo,
+  .geodatup-logo.white { background-position:0px -60px; }
+  .geodatup-logo.quiet { background-position:0px -120px; }
+  .geodatup-logo.small {
+    width:65px;
+    height:20px;
+    background-position:0 -180px;
+    }
+  .geodatup-logo.small.white { background-position:0 -240px;}
+  .geodatup-logo.small.quiet { background-position:0 -300px;}
+
 .geodatup-logo{
   font-family: 'byom-bold';
   padding-top: 10px;
 }
 
 
-.header-image {
+.landing-header-image {
   background-image:url(/media/image/Pano-reduce-1920-530.jpg);
   background-repeat:no-repeat;
   }
+
+
 
 .post-it-fixe{
 	height: 350px;

@@ -11,7 +11,14 @@ from filer.fields.image import FilerImageField
 class Secteur(models.Model):
     nom_secteur = models.CharField(max_length=15)
     css_class = models.CharField(max_length=100, null=True, blank=True)
+    css_icon = models.CharField(max_length=30, null=True, blank=True)
+    css_color = models.CharField(max_length=30, null=True, blank=True)
     actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+    #@permalink
+    def get_absolute_url(self):
+        return reverse('website:secteurDetail', kwargs={'slug': self.slug, })
     
     def __str__(self):
     	return self.nom_secteur
@@ -42,8 +49,12 @@ class Section(models.Model):
         choices=datacategory_choix,
         default=''
         )
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
     actif = models.BooleanField(default=True)
-
+     #@permalink
+    def get_absolute_url(self):
+        return reverse('website:sectionDetail', kwargs={'slug': self.slug, })
+    
     def __str__(self):
     	return self.nom_section
 
@@ -79,6 +90,12 @@ class Service(models.Model):
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
     #secteur =  models.ManyToManyField(Secteur)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+    #@permalink
+    def get_absolute_url(self):
+        return reverse('website:serviceDetail', kwargs={'slug': self.slug, })
+
 
     def __str__(self):
     	return self.nom_service
@@ -91,33 +108,76 @@ class Software(models.Model):
     image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+    actif = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.nom_soft
 
+class ContenuFormation(models.Model):
+    nom_contenu = models.CharField(max_length=100)   
+    acquis = models.CharField(max_length=100, null=True, blank=True)
+    actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+    def get_absolute_url(self):
+        return reverse('website:contenuFormationDetail', kwargs={'slug': self.slug, })
+
+    def __str__(self):
+        return self.nom_contenu
 
 class Formation(models.Model):
     nom_formation = models.CharField(max_length=15)   
-    pitch = models.CharField(max_length=30, null=True, blank=True)
-    contenu = models.CharField(max_length=100, null=True, blank=True)
+    pitch = models.CharField(max_length=300, null=True, blank=True)    
     niveau = models.CharField(max_length=15)
     prerequis = models.CharField(max_length=15)
-    duree = models.CharField(max_length=15)
+    contenu = models.ManyToManyField(ContenuFormation, blank=True)
+    duree_choix =  (
+    ('une demi journée','1/2/j'),
+    ('une journée','1j'),    
+    ('2 jours','2j'),
+    ('3 jours','3j')
+    )
+    duree = models.CharField(max_length=50,
+        choices=duree_choix,
+        default=''
+        )
     tarif = models.CharField(max_length=15)
     logiciels =  models.ManyToManyField(Software, blank=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
+    css_color = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+ 
+    def get_absolute_url(self):
+        return reverse('website:formationDetail', kwargs={'slug': self.slug, })
+
 
     def __str__(self):
         return self.nom_formation
 
 class CatFormation(models.Model):
-    nom_categorie = models.CharField(max_length=15)
-    pitch = models.CharField(max_length=30, null=True, blank=True)
+    nom_catformation = models.CharField(max_length=30)
+    pitch = models.CharField(max_length=300, null=True, blank=True)
     formations =  models.ManyToManyField(Formation, blank=True)
-    css_icon = models.CharField(max_length=15, null=True, blank=True)
-    css_class = models.CharField(max_length=100, null=True, blank=True)
+    css_icon = models.CharField(max_length=100, null=True, blank=True)
+    css_class = models.CharField(max_length=200, null=True, blank=True)
+    css_color = models.CharField(max_length=30, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+
+    def __str__(self):
+        return self.nom_catformation
+
+    #@permalink
+    def get_absolute_url(self):
+        return reverse('website:catformationDetail', kwargs={'slug': self.slug, })
+
 
 
 class Reference(models.Model):
@@ -127,8 +187,12 @@ class Reference(models.Model):
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+    
+    def __str__(self):
+        return self.nom_reference
 
-
+    
 #class MyContact(models.Model):
 #    nom_contact = models.CharField(max_length=15)
 #    type_contact = models.CharField(max_length=15)

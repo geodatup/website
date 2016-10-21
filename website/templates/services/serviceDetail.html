@@ -1,0 +1,21 @@
+{% extends "base_one.html" %}
+
+{% block body_content %}
+
+<div class="">
+        <h1>{{ service.nom_service }}</h1>
+        
+        {% if service.categorie_service %}
+        <p>{{ service.categorie_service }}</p>
+        {% endif %}
+        {% if service.pitch %}
+        <p>{{ service.pitch }}</p>
+        {% endif %}
+        {% if service.description %}
+        <p>{{ service.description }}</p>
+        {% endif %}  
+
+
+</div>
+{% endblock body_content %}
+

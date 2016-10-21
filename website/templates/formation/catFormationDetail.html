@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load cat_formation_index %}
+
+{% block body_content %}
+<div class='page-content'>
+        
+
+        {% block section-top %}
+            {% include "formation/formation-section-top.html" %}
+        {% endblock section-top %}
+
+        {% block sections %}
+
+        {% block list %}
+        {% include "formation/section-inCatFormationList.html" %}
+        {% endblock list %}
+
+        {% block detail %}
+        {% include "formation/section-inCatFormationDetail.html" %}
+        {% endblock detail %}
+
+        <!-- les autres catégories de formation -->
+        {% show_index catFormation %}
+
+
+        {% endblock sections %}
+
+</div>
+{% endblock body_content %}

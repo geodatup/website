@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_content %}
+<div class="">
+	    {% if service_list %}
+	    <ul>
+	    {% for Service in service_list %}
+	    <li><a href="{{ Service.get_absolute_url }}">{{ Service.nom_service }}</a></li>
+	    {% endfor %}
+	    </ul>
+		{% else %}
+	    <p>Aucun secteur n'est disponbile.</p>
+		{% endif %}
+</div>
+
+
+{% endblock body_content %}

@@ -29,8 +29,66 @@ $(function() {
         '\n       Curieux? http://geodatup.fr/jobs',
         'color:#D0E3F1','color:#D0E3F1','color:#C0DAEC','color:#C0DAEC','color:#B0D1E8','color:#B0D1E8','color:#A1C7E3','color:#A1C7E3','color:#91BEDE','color:#91BEDE','color:#81B5D9','color:#81B5D9','color:#72ABD5','color:#72ABD5','color:#62A2D0','color:#62A2D0','color:#5299CB','color:#5299CB','color:#4390C7','color:#4390C7', 'color:#4390C7', 'color: #000000');
     }
-    
+
+    $('form#newsletter').submit(function(ev) {
+        var form = App.form(ev.currentTarget);
+
+        if (!form.email || !App.validateEmail(form.email)) {
+            Views.modal.show('err', new Error('Please provide a valid email address'));
+            return false;
+        }
+
+        if (!App.user) {
+            analytics.identify( {
+                email: form.email
+            }, track);
+            _cio.identify({
+               id: form.email,
+               email: form.email
+            }, ciotrack);
+
+
+        } else {
+            track();
+        }
+
+        function track() {
+            analytics.track('Subscribed to Newsletter');
+            Views.modal.show('confirm', 'Thanks! We\'ll send you occasional email updates.');
+        }
+        function ciotrack() {
+            _cio.track('Subscribed to Newsletter')
+          }
+
+        return false;
+    });
+
 });
+
+ZeroClipboard.config({ swfPath: '/js/ZeroClipboard.swf', forceHandCursor: true });
+
+Raven.config('https://581913e6cd0845d785f5b551a4986b61@app.getsentry.com/11290', {
+    whitelistUrls: ['mapbox.com'],
+    ignoreErrors: [
+        /parentNode/
+    ]
+}).install();
+
+function personalize() {
+    var mapid = App.storage('map.id'),
+        exampleid = 'mapbox.streets';
+
+    if (mapid && App.user && (mapid || '').indexOf(App.user.id) === 0) {
+        exampleid = mapid;
+    }
+
+    // Replace username.mapid with the current one.
+    $('pre').each(function() {
+        $(this).html($(this).html().replace(/username.mapid/g, exampleid));
+    });
+}
+
+App.onUserLoad(personalize);
 
 },{"./src/lib.app":3,"./src/view.modal":4,"./src/view.nav":5}],2:[function(require,module,exports){
 function corslite(url, callback, cors) {
@@ -132,8 +190,12 @@ if (typeof module !== 'undefined') module.exports = corslite;
 var corslite = require('corslite');
 
 if (typeof App === 'undefined') window.App = {};
+var analytics = window.analytics || undefined;
 
-
+App.api = window.mapbox_api;
+App.tileApi = window.mapbox_tileApi;
+App.accessToken = window.mapbox_accessToken;
+App.tmpkey = (+new Date()).toString(26).substr(-8);
 App.cache = {};
 App.templates = {
     survey: _("<div class='small space-bottom2'>\n  <h3 class='space-bottom'>What is the main reason for <% if (obj.op === 'destroy') { %>deleting your account?<% } else { %>downgrading your subscription?<% }%></h3>\n  <div>\n    <input type='radio' name='answer' id='answer0' value='Missing a crucial feature' />\n    <label for='answer0'>Missing a crucial feature</label>\n  </div>\n  <div>\n    <input type='radio' name='answer' id='answer1' value='Not using it' />\n    <label for='answer1'>Not using it</label>\n  </div>\n  <% if (obj.op !== 'destroy') { %>\n  <div>\n    <input type='radio' name='answer' id='answer2' value='Smaller plan is enough for my needs' />\n    <label for='answer2'>Smaller plan is enough for my needs</label>\n  </div>\n  <% } %>\n  <div>\n    <input type='radio' name='answer' id='answer3' value='Needs better documentation' />\n    <label for='answer3'>Needs better documentation</label>\n  </div>\n  <div>\n    <input type='radio' name='answer' id='answer4' value='Not satisfied with support' />\n    <label for='answer4'>Not satisfied with support</label>\n  </div>\n  <div>\n    <input type='radio' name='answer' id='answer5' value='Went with a different tool' />\n    <label for='answer5'>Went with a different tool</label>\n  </div>\n  <div>\n    <input type='radio' name='answer' id='answer6' value='Other' />\n    <label for='answer6'>Other</label>\n  </div>\n</div>\n").template(),
@@ -217,6 +279,69 @@ App.sessionStorage = function(k, v) {
     }
 };
 
+// Determine if the current active user can access a given id.
+App.access = function(id) {
+    if (!id) return true;
+    if (App.user && id.split('.')[0] === App.user.id) return true;
+    if (App.user && App.user.plan && App.user.plan.id === 'staff') return true;
+    return false;
+};
+
+// For a given object type return its appropriate Backbone Model or Collection.
+// Currently uses generic Backbone.Model and Backbone.Collection handlers, may
+// become more sophisticated in the future.
+App.objtype = function(url) {
+    // Search
+    if ((/^\/api\/User\/search\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Collection;
+    }
+    // Admin
+    if ((/^\/api\/User\/(created|stats)\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Collection;
+    }
+    if ((/^\/api\/users\/[a-z0-9-_]+\/authorizations/i).test(url)) {
+        var user = url.match(/^\/api\/users\/([a-z0-9-_]+)\/authorizations/i)[1];
+        var C = Backbone.Collection.extend({});
+        C.prototype.model = Backbone.Model.extend({});
+        C.prototype.url = function() {
+            return App.api + '/api/users/' + user + '/authorizations';
+        };
+        return C;
+    }
+    if ((/^\/api\/customers\/[a-z0-9-_]+\/invoices$/i).test(url)) {
+        return Backbone.Collection;
+    }
+    // url matches pattern for models.
+    if ((/^\/api\/(customers|Map|orders|Markers|User|users|Statistics|Subscription)\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Model;
+    }
+    // url matches pattern for models -- dataset endpoint
+    if ((/datasets\/v1\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Model;
+    }
+    // url matches pattern for models -- dataset endpoint
+    if ((/statistics\/v1\/[a-z0-9-_]+\/[a-z0-9-_]+\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Model;
+    }
+
+    // url matches pattern for collections.
+    if ((/^\/api\/Map[^\/]/i).test(url)) {
+        var C = Backbone.Collection.extend({});
+        C.prototype.model = Backbone.Model.extend({});
+        C.prototype.model.prototype.url = function() {
+            return App.api + '/api/Map/' + this.id;
+        };
+        return C;
+    }
+    // Feed
+    if ((/^\/api\/feed\/[a-z0-9-_]+/i).test(url)) {
+        return Backbone.Collection;
+    }
+    if ((/^\/api\/(Plans)[^\/]*/i).test(url)) {
+        return Backbone.Collection;
+    }
+    throw new Error('Could not determine objtype of url ' + url);
+};
 
 // Retrieve a model/collection for a given api URL endpoint.
 // Implements a singleton/locking model to prevent multiple requests/model
@@ -279,8 +404,62 @@ App.fetchall = function(urls, refresh, callback) {
     });
 };
 
+// Fetch tilejson from the Maps API for the mapid or
+// composited layers of a project.
+App.tilejson = function(mapid, callback) {
+    corslite(App.tileApi + '/v4/' + mapid + '.json?secure=1&access_token=' + App.temporaryToken, function(err, xhr) {
+        if (err) return callback(err);
+        callback(null, JSON.parse(xhr.responseText));
+    });
+};
 
+// Wrapper around model.save().
+// Handles temporary ID replacement and attempts an auth challenge on 40x
+// responses before returning an error to the caller.
+App.save = function(obj, callback) {
+    if (!(obj instanceof Backbone.Model)) throw new Error('Object is not a model');
 
+    // Replace tmp scoped IDs if authenticated user is present.
+    // @TODO would be great if the API could handle this.
+    if (obj.id && (/^api\./).test(obj.id) && App.user) {
+        obj.set({id: App.user.id + '.' + App.tmpkey });
+        obj.url = obj.url.replace(/api\.[a-z0-9-]+/i, obj.id);
+    }
+
+    obj.save({}, {
+        success: function(obj, res) { callback(null, obj) },
+        error: function(obj, err) {
+            if (err && !Views.modal.modals.auth) {
+                var modal = App._handleError(err, function(e, r) {
+                    if (e) return callback(e);
+                    // Login increments the _rev on the user document. If we
+                    // are saving a user, reload it and nuke the lastLogin
+                    // property.
+                    var id = obj.get('_id');
+                    if (id && id.indexOf('api/User') !== -1) {
+                        App.fetch('/api/User/' + obj.id, true, function(err, user) {
+                            if (err) return callback(err);
+                            obj.set('_rev', user.get('_rev'));
+                            App.save(obj, callback);
+                        });
+                    } else {
+                        App.save(obj, callback);
+                    }
+                });
+                if (window.welcomeFlow) Views.modal.slide('active3');
+                return modal;
+            }
+            // Payment required.
+            if (App.user && err.status === 422 && err.responseJSON && err.responseJSON.code === 'upgrade') {
+                App._handleError(err, function(e, r) {
+                    if (e) return callback(e);
+                    App.save(obj, callback);
+                });
+            }
+            return callback(err);
+        }
+    });
+};
 
 // Wrapper around model.destroy().
 // Clears singleton cache when a model is destroyed.
@@ -418,7 +597,65 @@ App._handleError = function(error, callback) {
                 return callback(error);
             }
         break;
-        
+        // Unprocessable Entity
+        case 422:
+            // Upgrade is required.
+            if (error.responseJSON && error.responseJSON.code === 'upgrade') {
+                App.fetchall([
+                    '/api/Plans',
+                    '/api/User/' + App.user.id
+                ], function(err, results) {
+                    if (err) return Views.modal.show('err', err);
+                    var plans = results.shift();
+                    var plan = plans.get(error.responseJSON.plan);
+                    var user = results.shift();
+                    Views.modal.show('plan', {
+                        plan: plan,
+                        user: user,
+                        op: App.isUpgrade(user.get('plan'), plan) ? 'upgrade' : 'downgrade',
+                        message: error.responseJSON.message
+                    }, function(err) {
+                        if (err) return callback(err);
+                        App.refreshUser(user.id, function(e) {
+                            if (e) return callback(e);
+                            return callback(null);
+                        });
+                    });
+                });
+            } else {
+                return callback(error);
+            }
+        break;
+        // Payment is required.
+        case 402:
+            if (!Views.modal.modals.payment) {
+                Views.modal.show('payment', {
+                    close: true
+                }, function(e, response) {
+                    if (e && e.code === 'closed') return callback(error);
+                    if (e) return callback(e);
+                    var model = new Backbone.Model({
+                        id: App.user.customerID,
+                        card: response.token,
+                        coupon: response.coupon,
+                        user: App.user.id
+                    });
+                    model.urlRoot = App.api + '/api/customers';
+                    App.save(model, function(err) {
+                        if (err) return Views.modal.show('err', err, callback);
+                        if (response.coupon) {
+                            analytics.track('Redeemed a Coupon', {
+                                name: model.get('coupon')
+                            });
+                        }
+                        analytics.track('Updated Payment Information');
+                        return callback(null);
+                    });
+                });
+            } else {
+                return callback(error);
+            }
+        break;
         default:
             if (error.status >= 500) {
                 return callback(new Error('An unexpected error occurred. Please try again, or contact support.'));
@@ -468,9 +705,188 @@ App.tabs = function(ev) {
 
 App._userLoadCallbacks = [];
 
+App.onUserLoad = function(callback) {
+    if ('user' in App) {
+        callback(App.user);
+    } else {
+        App._userLoadCallbacks.push(callback);
+    }
+};
 
 
+App.refreshUser = function(id, callback) {
+    callback = callback || function() {};
+    var impersonate = App.impersonate(App.param('impersonate'));
+    $.ajax({
+        url: App.api + '/api/session',
+        success: function(user) {
+            App.actor = user;
+            if (impersonate) {
+                $.ajax({
+                    url: App.api + '/api/User/'+ impersonate,
+                    success: success,
+                    error: error
+                });
 
+                App.onUserLoad(function() {
+                    $('body').append(App.template('alert')());
+                    $('body').on('click', '#alert', function() {
+                        var msg = _('You are impersonating <code><%-a%></code> as the user <code><%-b%></code>. <a href="?impersonate=0">Stop impersonating</a>.').template({
+                            a: impersonate,
+                            b: App.actor.id
+                        });
+                        Views.modal.show('confirm', msg);
+                        return false;
+                    });
+                });
+            } else {
+                success(user);
+            }
+        },
+        error: error
+    });
+
+
+    function success(user) {
+        App.user = user;
+
+        App.user.accessToken = _(user.authorizations).find(function(auth) {
+            return auth.client === 'api' && auth.usage === 'pk' && auth['default'];
+        }).token;
+
+        analytics.identify(user.id, {
+            name: user.name || user.id,
+            email: user.email,
+            plan: user.plan ? user.plan.id : null
+        }, { 'Salesforce': true });
+
+        // Clear out localStorage properties that are not scoped to the
+        // current or anon users. Skips `editor.help` which is not sensitive
+        // information.
+        for (var k in App._storage) {
+            if (/getItem|setItem|removeItem/.test(k)) continue;
+            if (k.indexOf('_anon.') === 0) continue;
+            if (App.user && App.user.id && k.indexOf(App.user.id) === 0) continue;
+            if ((/editor\.help$/).test(k)) continue;
+            if ((/debug/).test(k)) continue;
+            if ((/dismiss-help/).test(k)) continue;
+            App._storage.removeItem(k);
+        }
+
+        $('#nav').empty().html(App.nav());
+        $('#mobile-nav').empty().html(App.mobileNav());
+
+        $.ajax({
+            url: App.api + '/tokens/v1' + (impersonate ? '/' + impersonate : ''),
+            error: error,
+            success: function(resp) {
+                App.temporaryToken = resp.token;
+                _(App._userLoadCallbacks).each(function (callback) { callback(); });
+                App._userLoadCallbacks = [];
+                callback(null, id);
+            }
+        });
+    }
+
+    function error(err) {
+        App.actor = null;
+        App.user = null;
+        $('#nav').empty().html(App.nav());
+        $('#mobile-nav').empty().html(App.mobileNav());
+        _(App._userLoadCallbacks).each(function(callback) { callback(); });
+        App._userLoadCallbacks = [];
+        callback(err);
+    }
+};
+
+App.impersonate = function(value) {
+    // impersonate value is provided in querystring.
+    if (typeof value !== 'undefined') {
+        // Stop impersonating if value is 0.
+        if (parseInt(value, 10) === 0) {
+            App.sessionStorage('impersonate', null);
+            return null;
+        }
+        // Save impersonation value for next time.
+        App.sessionStorage('impersonate', [value, +new Date()].join(':'));
+        return value;
+    } else if (App.sessionStorage('impersonate')) {
+        var parsed = App.sessionStorage('impersonate').split(':');
+        // Impersonation expires after 10 minutes of inactivity.
+        if (+new Date() - parsed[1] > 6e5) {
+            App.sessionStorage('impersonate', null);
+            return null;
+        }
+        // Write a fresh timestamp into session storage.
+        App.sessionStorage('impersonate', [parsed[0], +new Date()].join(':'));
+        return parsed[0];
+    } else {
+        return null;
+    }
+};
+
+App.signin = function(ev, callback) {
+    callback = callback || function() {};
+    var options = App.form(ev.currentTarget);
+    options.username = options.username.toLowerCase();
+    App.post('/api/login?_=' + (+new Date()), options, function(err, resp) {
+        if (err && err.status === 401) {
+            if (Views.modal.modals.twostep) {
+                return callback(err);
+            } else {
+                return Views.modal.show('twostep', {
+                    username: options.username,
+                    password: options.password
+                }, function(e) {
+                    if (e) return callback(err);
+                    return callback(null);
+                });
+            }
+        }
+        if (err) return callback(err);
+        App.refreshUser(resp.id, function(err) {
+            if (err) return callback(err);
+            analytics.track('Logged In');
+            callback();
+        });
+    });
+    return false;
+};
+
+App.signout = function(callback) {
+    callback = callback || function() {};
+    App.del('/api/logout?_=' + new Date(), callback);
+    return false;
+};
+
+App.signup = function(ev, callback) {
+    callback = callback || function() {};
+    var model = new Backbone.Model(App.form(ev.currentTarget));
+    model.url = App.api + '/api/User';
+    model.set('username', model.get('username').toLowerCase());
+    App.save(model, function(err, model) {
+        if (err) return callback(err);
+        model.unset('password');
+        analytics.identify(model.id, {
+            firstName: model.get('firstname'),
+            lastName: model.get('lastname'),
+            company: model.get('company')
+        }, { 'Salesforce': true });
+        App.refreshUser(model.id, function(err) {
+            if (err) return callback(err);
+            callback();
+            analytics.track('Created an Account (Browser)');
+        });
+    });
+    return false;
+};
+
+App.reset = function(el, callback) {
+    callback = callback || function() {};
+    var data = App.form(el);
+    App.post('/api/reset-password?_=' + (+new Date()), data, callback);
+    return false;
+};
 
 App.nav = function() {
     var user = App.user || {};
@@ -497,7 +913,20 @@ App.param = function(arg, source) {
     if (matches) return decodeURIComponent(matches[1].replace(/\+/g, ' '));
 };
 
-
+// Fetch upload params from API.
+App.uploadparams = function(account, callback) {
+    callback = callback || function() {};
+    $.ajax({
+        url: App.api + '/api/upload/' + account,
+        type: 'GET',
+        contentType: 'application/json',
+        processData: false,
+        dataType: 'json',
+        success: function(resp) { callback(null, resp); },
+        error: function(err) { callback(err); }
+    });
+    return false;
+};
 
 // Determine whether two objects are equal disregarding the _rev key.
 App.revless = function (obj) {
@@ -519,8 +948,47 @@ App.keyup = function(ev) {
     if (Views.editor) return Views.editor.keyup && Views.editor.keyup(ev);
 };
 
+App.canedit = (function() {
+    return ('ontouchend' in document) ?
+        (navigator.userAgent.match(/iPad/i) !== null) ? true : false :
+        true;
+})();
 
+// Retrieve local center.
+App.local = function(callback) {
+    var center;
+    if (App.sessionStorage('app.local')) {
+        try { center = JSON.parse(App.sessionStorage('app.local')); }
+        catch(err) {
+            App.sessionStorage('app.local', null);
+            return App.local(callback);
+        }
+        return callback(null, center);
+    }
+    $.ajax({
+        url: App.api + '/api/Location',
+        type: 'GET',
+        contentType: 'application/json',
+        processData: false,
+        dataType: 'json',
+        success: function(resp) {
+            var local = [resp.lon, resp.lat, resp.zoom || 5];
+            App.sessionStorage('app.local', JSON.stringify(local));
+            callback(null, local);
+        },
+        error: function(err) { callback(err); }
+    });
+};
 
+App.isUpgrade = function(old_plan, new_plan) {
+    return !old_plan || ((old_plan.get ? old_plan.get('price') : old_plan.price) <=
+        (new_plan.get ? new_plan.get('price') : new_plan.price));
+};
+
+App.validateEmail = function(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
 
 // AJAX defaults for CORS.
 $.ajaxSetup({
@@ -534,22 +1002,94 @@ $(function() {
     // initial transition animations based on hash.
     setTimeout(function() { $('body').addClass('animate'); },0);
 
-    
+    App.refreshUser();
 
     // Global event handlers.
     $('body').on('keydown', App.keydown);
     $('body').on('keyup', App.keyup);
 });
 
+App.onUserLoad(function() {
+    // Redirects pages with params that a user cannot access.
+    if (!App.access(App.param('id'))) window.location.search = '';
 
+    // Load last edited map from localStorage. Checks for ownership.
+    if (App.user && App.user.id === (App.storage('map.id')||'').split('.')[0]) {
+        App.currentmap = App.storage('map.id');
+    }
+
+    // Fancy header for enterprise users
+    if (App.user && App.user.plan && App.user.plan.id === 'enterprise') {
+        $('body').addClass('enterprise-account');
+    }
+
+    function replaceToken(node, token) {
+        if (node.nodeType === 3) {
+            if (node.textContent.indexOf('<your access token here>') !== -1) {
+                node.textContent = node.textContent.replace('<your access token here>', token);
+            }
+        } else if (node.nodeName === 'INPUT') {
+            node.value = node.value.replace('<your access token here>', token);
+        } else {
+            for (var i = 0; i < node.childNodes.length; ++i) {
+                replaceToken(node.childNodes[i], token);
+            }
+        }
+
+        var $clipboard = $(node).next('.js-access-token-clipboard');
+
+        if ($clipboard) {
+            $clipboard.attr('data-clipboard-text', token);
+        }
+
+    }
+
+    if (App.user) {
+        $('.js-replace-token').each(function() {
+            var usage = $(this).data('replace-token-usage') || 'pk';
+            var token = _.find(App.user.authorizations, function(auth) {
+                return auth.client === 'api' && auth.usage === usage && auth['default'];
+            }).token;
+
+            replaceToken(this, token);
+        });
+    }
+
+    $('.js-api-link').each(function() {
+        if (!this.href) {
+            this.href = $(this).text();
+        }
+
+        var html = $(this).clone()[0];
+
+        if (this.search) {
+            this.search += '&';
+            html.search += '&';
+        }
+
+        this.search += 'access_token=';
+        html.search += 'access_token=';
+
+        this.search += App.user ? App.user.accessToken : App.accessToken;
+        html.search += App.user ? App.user.accessToken : '&lt;your access token&gt;';
+
+        $(this).text(html.href);
+    });
+
+    $('body').addClass('user-loaded');
+});
 
 module.exports = App;
 
 },{"corslite":2}],4:[function(require,module,exports){
 
 var templates = {
+    auth: _("<div class='modal-popup modal-auth'>\n  <div class='clip sliding h active2'>\n\n    <form id='auth-reset' class='animate' method='post'><div class='limiter'>\n      <% if (obj.username) { %>\n        <div class='col6 fill-white modal-body round-top contain'>\n          <div class='mobile-cols'>\n            <% if (obj.redirect) { %>\n              <a href='<%= obj.redirect %>' class='pad1 icon quiet pin-topright close escape'></a>\n            <% } else { %>\n              <a href='#close' class='pad1 icon pin-topright quiet close'></a>\n            <% } %>\n            <div class='pad2y pad4x center'>\n              <h2>Recover password</h2>\n            </div>\n            <div class='space-bottom2 pad4x'>\n              <fieldset>\n                <label>Email</label>\n                <input type='text' name='email' class='stretch' />\n              </fieldset>\n            </div>\n          </div>\n          <div class='mobile-cols modal-actions round-bottom fill-gray round-bottom pad2 clearfix'>\n            <div class='col6 pad2x'>\n              <input class='col12 button' type='submit' value='Send reset instructions' />\n            </div>\n            <small class='col6 pad1y center pad2x'>\n              <a class='rcon next slide quiet' href='#active2'>Confirm password</a>\n            </small>\n          </div>\n        </div>\n      <% } else { %>\n      <div class='col6 fill-blue modal-body round-top contain'>\n        <div class='mobile-cols dark'>\n          <% if (obj.redirect) { %>\n            <a href='<%= obj.redirect %>' class='pad1 icon pin-topright close escape'></a>\n          <% } else { %>\n            <a href='#close' class='pad1 icon pin-topright close'></a>\n          <% } %>\n          <div class='pad2y pad4x center dark'>\n            <h3 class='fancy'>Recover password</h3>\n          </div>\n          <div class='space-bottom2 pad4x dark'>\n            <fieldset>\n              <label>Email</label>\n              <input type='text' name='email' class='round clean stretch' />\n            </fieldset>\n          </div>\n        </div>\n        <div class='mobile-cols modal-actions round-bottom fill-gray round-bottom pad2 clearfix'>\n          <div class='col8 pad2x'>\n            <input class='col12 button' type='submit' value='Send reset instructions' />\n          </div>\n          <small class='col4 pad1y center pad2x'>\n            <a class='rcon next slide quiet' href='#active2'>Sign in</a>\n          </small>\n        </div>\n      </div>\n      <% } %>\n    </div></form>\n\n    <form id='auth-signin' class='animate' method='post'><div class='limiter'>\n      <% if (obj.username) { %>\n      <div class='col6 fill-white modal-body round-top contain'>\n        <% if (obj.redirect) { %>\n          <a href='<%= obj.redirect %>' class='pad1 icon quiet pin-topright close escape'></a>\n        <% } else { %>\n          <a href='#close' class='pad1 icon quiet pin-topright close'></a>\n        <% } %>\n        <div class='pad2y pad4x center'>\n          <h2>Confirm your password</h2>\n        </div>\n        <div class='space-bottom2 pad4x'>\n          <fieldset>\n            <input type='hidden' name='username' value='<%= obj.username %>' />\n            <label>Password <small class='inline'><a href='#active1' class='slide forgot' tabindex='3'>Forgot it?</a></small></label>\n            <input type='password' name='password' class='stretch' tabindex='2' />\n          </fieldset>\n        </div>\n        <div class='mobile-cols modal-actions round-bottom fill-gray round-bottom pad2y pad4x clearfix'>\n          <div class='col6 margin6'>\n            <input class='col12 button' type='submit' value='Confirm' />\n          </div>\n        </div>\n      </div>\n      <% } else { %>\n      <div class='col6 fill-blue modal-body round-top contain'>\n        <div class='mobile-cols dark'>\n          <% if (obj.redirect) { %>\n            <a href='<%= obj.redirect %>' class='pad1 icon pin-topright close escape'></a>\n          <% } else { %>\n            <a href='#close' class='pad1 icon pin-topright close'></a>\n          <% } %>\n          <div class='pad2y pad4x center dark'>\n            <h3 class='fancy center'>Sign in to Mapbox</h3>\n          </div>\n          <div class='space-bottom2 pad4x dark'>\n            <fieldset>\n              <label>Username or email</label>\n              <input type='text' name='username' autocapitalize='off' class='round clean stretch' tabindex='1' />\n            </fieldset>\n            <fieldset>\n              <label>Password <small class='inline'><a href='#active1' class='slide forgot' tabindex='3'>Forgot it?</a></small></label>\n              <input type='password' name='password' class='round clean stretch' tabindex='2' />\n            </fieldset>\n          </div>\n        </div>\n        <div class='mobile-cols modal-actions round-bottom fill-gray round-bottom pad2y pad4x clearfix'>\n          <div class='col6'>\n            <input class='col12 button' type='submit' value='Sign in' />\n          </div>\n          <small class='col6 pad1y center'>\n            <a class='rcon next quiet' href='/signup'>Need an account?</a>\n          </small>\n        </div>\n      </div>\n      <% } %>\n    </div></form>\n\n  </div>\n</div>\n").template(),
+    twostep: _("<form id='twostep-signin' class='modal-popup limiter' method='post'>\n  <div class='col6 modal-body fill-white contain'>\n    <% if (obj.redirect) { %>\n      <a href='<%= obj.redirect %>' class='pad1 icon quiet pin-topright close escape'></a>\n    <% } else { %>\n      <a href='#close' class='pad1 icon quiet pin-topright close'></a>\n    <% } %>\n    <div class='pad2y pad4x center'>\n      <h2 class='icon lock big'>Two-step verification</h2>\n    </div>\n    <div class='space-bottom2 pad4x'>\n      <fieldset>\n        <label>Six-digit security code <a target='_blank' href='https://mapbox.com/help/two-step-verification'>What's this?</a></label>\n        <input type='hidden' name='username' value='<%= obj.username %>' />\n        <input type='hidden' name='password' value='<%= obj.password %>' />\n        <input type='text' name='code' class='stretch' placeholder='123456' value='' />\n        <a href='https://mapbox.com/help/two-step-verification/#What.if.I.lose.my.mobile.device.' class='block small center quiet pad0y'>Lost your mobile device?</a>\n      </fieldset>\n    </div>\n    <div class='fill-gray pad2y pad4x clearfix'>\n      <input type='submit' class='button fr col6' value='Sign in' />\n    </div>\n  </div>\n</form>\n").template(),
     err: _("<% if (!(obj instanceof Error)) {\n  if ('responseText' in obj) {\n    try {\n      obj = new Error(JSON.parse(obj.responseText).message);\n    } catch (err) {\n      obj = new Error(obj.responseText);\n    }\n  } else if ('message' in obj) {\n    obj = new Error(obj.message);\n  } else if ('status' in obj && typeof obj.status === 'number') {\n    obj = new Error('HTTP ' + obj.status);\n  } else {\n    obj = new Error('Unknown error occurred');\n  }\n} %>\n<div id='modal-err' class='modal-popup'><div class='limiter'>\n  <div class='col6 modal-body fill-white'>\n    <div class='pad2y pad4x center'>\n      <%- obj %>\n    </div>\n    <div class='fill-gray pad2y pad4x center modal-actions'>\n      <a href='#close' class='button col12 quiet close'>Close</a>\n    </div>\n  </div>\n</div></div>\n").template(),
     confirm: _("<div id='modal-confirm' class='modal-popup'><div class='limiter'>\n  <div class='col6 modal-body fill-white'>\n    <% if (obj.html) { %>\n    <div class='pad2y pad4x'><%= obj.html %></div>\n    <% } else { %>\n    <div class='pad2y pad4x center'><%= obj.text || obj %></div>\n    <% } %>\n    <div class='fill-gray pad2y pad4x clearfix center modal-actions mobile-cols'><!--\n    --><% if (obj.callback && obj.cancel !== false) { %><a href='#cancel' class='pad1y small col6 quiet icon strong close cancel'>Cancel</a><% } %><!--\n    --><a href='#ok' class='button <% if (obj.callback && obj.cancel !== false) { %>col6<% } else { %>col12<% } %> icon check ok'><%= obj.confirm || 'Okay' %></a><!--\n  --></div>\n  </div>\n</div></div>").template(),
+    payment: _("<div class='modal-popup modal-payment'><div class='limiter'>\n    <form id='payment' class='round animate' method='post'>\n      <div class='col6 modal-body fill-white contain'>\n        <% if (obj.close) { %><a href='#close' class='quiet pad1 icon fr close'></a><% } %>\n        <div class='pad2y pad4x center'>\n          <h2>Payment information</h2>\n        </div>\n        <div class='space-bottom2 pad2x clearfix'>\n          <fieldset class='pad2x col12'>\n            <div class='space-bottom1'>\n              <label class='truncate'>Card number</label>\n              <input type='text' name='number' class='stretch' />\n            </div>\n            <div class='credit-cards pad0y round'>\n              <span class='credit-card visa'></span>\n              <span class='credit-card mastercard'></span>\n              <span class='credit-card american-express'></span>\n              <span class='credit-card jcb'></span>\n              <span class='credit-card discover'></span>\n              <span class='credit-card diners-club'></span>\n            </div>\n          </fieldset>\n          <div class='pad1x clearfix'>\n            <fieldset class='pad1x col4'>\n              <label class='truncate'>Expiry <span class='quiet'>MM/YYYY</span></label>\n              <input type='text' name='exp' class='stretch' />\n            </fieldset>\n            <fieldset class='pad1x col4'>\n              <label class='truncate'>CVC</label>\n              <input type='text' name='cvc' class='stretch' />\n            </fieldset>\n            <fieldset class='pad1x col4'>\n              <label class='truncate'>ZIP or Postal code</label>\n              <input type='text' name='address_zip' class='stretch' />\n            </fieldset>\n          </div>\n          <a href='#coupon-code' class='pad2x space-top2 js-toggle js-once col12 icon small strong plus'>Add coupon code?</a>\n          <fieldset id='coupon-code' class='hidden space-top2 pad2x col12'>\n            <label class='truncate'>Coupon code</label>\n            <input type='text' name='coupon' class='stretch' />\n          </fieldset>\n        </div>\n        <div class='fill-gray pad2y pad4x clearfix modal-actions'>\n          <input class='fr col6 button' type='submit' value='Done' />\n        </div>\n      </div>\n    </form>\n</div></div>\n").template(),
+    plan: _("<% var button; %>\n\n<div class='modal-popup'><div class='limiter'>\n  <form id='plan' method='post'>\n    <input type='hidden' name='plan' value='<%= obj.plan.id %>' />\n    <input type='hidden' name='user' value='<%= obj.user.id %>' />\n    <% if (obj.user.get('customerID')) { %>\n    <input type='hidden' name='customer' value='<%= obj.user.get('customerID') %>' />\n    <% } %>\n    <input type='hidden' name='op' value='<%= obj.op %>' />\n    <div class='col6 modal-body fill-white'>\n      <div class='pad2y pad4x'>\n        <% if (obj.op === 'upgrade') { %>\n        <% button = 'Upgrade'; %>\n        <h2 class='center'><%= plan.get('name') %> for $<%= plan.get('price') %>/<%= plan.get('period') %></h2>\n        <% if (obj.message) { %>\n        <p class='center'><%= obj.message %></p>\n        <% } else { %>\n        <p class='center prose'>You're about to upgrade to the <strong><%= plan.get('name') %></strong> plan.<% if (App.user) { %> Add/edit payment details or add a coupon? <a href='#' class='js-update-payment'>Update your payment information</a>.<% } %></p>\n        <% } %>\n        <% } else if (obj.op === 'downgrade') { %>\n        <% button = 'Downgrade'; %>\n        <h2 class='center title'>Downgrade to <%= plan.get('name') %></h2>\n        <p class='prose'>Before you downgrade, can we help you get the most out of Mapbox?<a href='mailto:help@mapbox.com'> Ask our support team for help</a>.</p>\n        <%= App.template('survey')(obj) %>\n        <% } %>\n        <div class='center small'>\n          <a href='https://mapbox.com/help/changing-plans/' class='quiet' target='_blank'>What happens when I change plans?</a>\n        </div>\n      </div>\n      <div class='fill-gray pad2y pad4x clearfix center modal-actions mobile-cols'>\n      <a href='#cancel' class='pad1y small col6 quiet icon strong close cancel'>Cancel</a><!--\n      --><input class='col6 icon button' type='submit' value='<%= button %>' /><!--\n    --></div>\n    </div>\n  </form>\n</div></div>\n").template(),
     confirmTweet: _("<div id='modal-confirm-tweet' class='modal-popup'><div class='limiter'>\n  <div class='col6 modal-body fill-white contain'>\n    <a href='#close' class='pad1 icon pin-topright quiet close'></a>\n    <% if (obj.title) { %>\n    <div class='pad2y pad4x center'><%= obj.title %></div>\n    <% } else { %>\n    <div class='pad2y pad4x center'><h3 class=\"quiet\">Thanks!</h3></div>\n    <% } %>\n    <% if (obj.twitter) { %>\n     <div class='fill-cyan pad2y pad4x clearfix center modal-actions mobile-cols'>\n       <a href=\"http://twitter.com/intent/tweet?status=<%= obj.twitter %>\"  class=\" pad2x dark icon twitter strong\">Share on Twitter</a>\n     </div>\n     <% } %>\n  </div>\n</div></div>").template()
 };
 
@@ -561,10 +1101,16 @@ Modal.prototype.modals = {};
 
 Modal.prototype.events = (function() {
     var events = {};
-    
+    events['submit #auth-signin'] = 'signin';
+    events['submit #twostep-signin'] = 'signinTwoStep';
+    events['keyup input[name=password]'] = 'passwordRules';
+    events['submit #auth-reset'] = 'reset';
+    events['submit #payment'] = 'payment';
+    events['submit #plan'] = 'plan';
     events['click a.slide'] = 'slide';
     events['click a.close'] = 'close';
-    events['click a.escape'] = 'escape';    
+    events['click a.escape'] = 'escape';
+    events['click a.js-update-payment'] = 'updatePayment';
     events['click #modal-confirm a.ok'] = 'ok';
     events['keyup input[name=number]'] = 'card';
     events['click .js-toggle'] = 'toggle';
@@ -616,6 +1162,194 @@ Modal.prototype.escape = function(ev) {
     }
     return null;
 };
+
+Modal.prototype.passwordRules = function(ev) {
+    var val = $(ev.currentTarget).val();
+    var $feedback = $(ev.currentTarget).parent().find('.password-rules');
+    var output = passwordRules(val, {
+        minimumLength: 8,
+        requireCapital: false,
+        requireLower: false,
+        requireNumber: false
+    });
+    if (!output) $feedback.text('');
+    else $feedback.text(output.sentence);
+};
+
+Modal.prototype.signin = function(e, modal) {
+    var modal = this.modals.auth;
+    if (!modal) return false;
+    modal.el.addClass('loading');
+    return App.signin(e, function(err) {
+        modal.el.removeClass('loading');
+        if (err) return this.show('err', err);
+        this.done('auth');
+    }.bind(this));
+};
+
+Modal.prototype.signinTwoStep = function(e, modal) {
+    var modal = this.modals.twostep;
+    if (!modal) return false;
+    modal.el.addClass('loading');
+    return App.signin(e, function(err) {
+        modal.el.removeClass('loading');
+        if (err) return this.show('err', err);
+        this.done('twostep');
+    }.bind(this));
+};
+
+
+Modal.prototype.reset = function(ev) {
+    var modal = this.modals.auth;
+    var view = this;
+
+    if (!modal) return false;
+    modal.el.addClass('loading');
+    return App.reset(ev.currentTarget, function(err) {
+        modal.el.removeClass('loading');
+        if (err) {
+            view.show('err', err);
+        } else {
+            Views.modal.show('confirm', 'Password instructions sent');
+        }
+    });
+};
+
+Modal.prototype.updatePayment = function(ev) {
+    Views.modal.show('payment', {close: true}, function(err, response) {
+        if (err) {
+            if (err.code !== 'closed') return Views.modal.show('err', err);
+        } else {
+            var model = new Backbone.Model({
+                id: App.user.customerID,
+                card: response.token,
+                coupon: response.coupon,
+                user: App.user.id
+            });
+            model.urlRoot = App.api + '/api/customers';
+            App.save(model, function(err) {
+                if (err) return Views.modal.show('err', err);
+                if (response.coupon) {
+                    analytics.track('Redeemed a Coupon', {
+                        name: model.get('coupon')
+                    });
+                }
+                analytics.track('Updated Payment Information');
+                App.refreshUser(App.user.id, function(err) {
+                    if (err) return Views.modal.show('err', err);
+                    callback(null, model);
+                });
+            });
+        }
+    });
+
+    return false;
+};
+
+Modal.prototype.payment = function(ev) {
+    var modal = this.modals.payment;
+    var view = this;
+
+    var options = _($(ev.currentTarget).serializeArray()).reduce(function(memo, obj) {
+        memo[obj.name] = obj.value;
+        return memo;
+    }, {});
+
+    var coupon = options.coupon && !!options.coupon.length;
+    var card = _(options).chain().pick(['number', 'exp', 'cvc', 'address_zip']).any(function(val) {
+        return !!val.length;
+    }).value();
+
+    // Normalize exp by stripping any non numericals
+    var exp = options.exp.replace(/[^0-9]/g, '');
+
+    options.exp_month = exp.slice(0, 2) || '';
+    options.exp_year = exp.slice(2) || '';
+
+    // Validation
+    var err = (function() {
+        if (card || !coupon) {
+            if (!Stripe.card.validateCardNumber(options.number))
+                return new Error('Invalid card number');
+            if (!Stripe.card.validateExpiry(options.exp_month, options.exp_year))
+                return new Error('Invalid expiration date');
+            if (!Stripe.card.validateCVC(options.cvc))
+                return new Error('Invalid CVC');
+        } else if (!options.coupon.length) {
+            return new Error('Invalid coupon code');
+        }
+    }());
+    if (err) {
+        view.show('err', err);
+        return false;
+    }
+
+    if (card) {
+        modal.el.addClass('loading');
+        Stripe.card.createToken(_(options).omit('coupon'), function(status, response) {
+            modal.el.removeClass('loading');
+            if (status != 200) return view.show('err', response.error);
+            var attr = {token: response.id};
+            if (coupon) attr.coupon = options.coupon;
+            view.done('payment', null, attr);
+        });
+    } else {
+        view.done('payment', null, {coupon: options.coupon});
+    }
+    return false;
+};
+
+Modal.prototype.plan = function(ev) {
+    var view = this;
+    var modal = this.modals.plan;
+    var form = App.form(ev.currentTarget);
+
+    if (!form.customer) {
+        App.post('/api/customers', {
+            user: form.user
+        }, function(err, resp) {
+            if (err) return view.show('err', err);
+            form.customer = resp.id;
+            App.user.customerID = resp.id;
+            switchplan();
+        });
+    } else {
+        switchplan();
+    }
+
+    function switchplan() {
+
+        var body = {
+            plan: form.plan
+        };
+
+        modal.el.addClass('loading');
+        App.put('/api/customers/' + form.customer + '/subscription', body, function(err, subscription) {
+            modal.el.removeClass('loading');
+            if (err) return view.show('err', err);
+            analytics.track((form.op === 'upgrade' ? 'Upgraded' : 'Downgraded') + ' a Subscription', {
+                plan: form.plan,
+                label: form.plan,
+                reason: form.answer || null
+            });
+            view.done('plan', null, subscription);
+        });
+    }
+
+    return false;
+};
+
+Modal.prototype.card = function(ev) {
+    var target = $(ev.currentTarget);
+    var type = Stripe.card.cardType(target.val()).toLowerCase().replace(' ', '-');
+    if (type != 'unknown') {
+        $('.credit-cards span').addClass('disabled');
+        $('.credit-cards span.' + type).removeClass('disabled');
+    } else {
+        $('.credit-cards span').removeClass('disabled');
+    }
+};
+
 Modal.prototype.slide = function(ev) {
     /* @TODO will prob apply to more than auth modal */
     var modal = this.modals.auth;
@@ -733,7 +1467,20 @@ Nav.prototype.dropdown = function(ev) {
     return false;
 };
 
+Nav.prototype.signin = function(ev) {
+    Views.modal.show('auth', {close: true}, function(err) {
+        if (err && err.code !== 'closed') Views.modal.show('err', err);
+        if (document.location.pathname === '/plans/') document.location.reload();
+    });
+    return false;
+};
 
+Nav.prototype.signout = function(ev) {
+    return App.signout(function(err) {
+        if (err) return Views.modal.show('err', err);
+        window.location.reload();
+    });
+};
 
 
 module.exports = Nav;

@@ -1,0 +1,107 @@
+<div class="fill-light pad4y">
+    <div class="limiter limiter-big">
+      <div class="col12 space-bottom2 clearfix contain clip overview">
+        <div class="col12 pad2y">
+          <div class="pad1 col12 prose doc clearfix">
+
+            <!-- category listing -->
+            <div class="">
+              {% for formation in catFormation.formations.all %}
+              <div class="space-bottom2 pad2y keyline-bottom">
+
+                <h2 id="{{ formation.nom_formation }}" class="pad2y dark category-block" title="Link to this section">
+              {% if formation.css_color and formation.css_icon %}
+                <div class="inline icon dot 
+                {{formation.css_icon }} dark 
+                fill-{{formation.css_color}} 
+                pad1 space-right2"></div> 
+                
+              {% elif not formation.css_color and not formation.css_icon %}
+                <div class="inline icon dot 
+                {{ catFormation.css_icon }} dark 
+                fill-{{ catFormation.css_color }} 
+                pad1 space-right2"></div> 
+                
+              {% elif formation.css_icon and not formation.css_color %}
+                <div class="inline icon dot 
+                {{ formation.css_icon }} dark 
+                fill-{{ catFormation.css_color }} 
+                pad1 space-right2"></div> 
+                
+              {% elif not formation.css_icon and formation.css_color %}
+                <div class="inline icon dot 
+                {{ catFormation.css_icon }} dark 
+                fill-{{ formation.css_color }} 
+                pad1 space-right2"></div>
+              {% endif %}
+
+               {{ formation.nom_formation }}
+                </h2>
+
+                <div class="category-container contain line-{{ catFormation.css_color }}">
+                  <!--<p class="small quiet">{{formation.pitch}}</p>-->
+                  <!-- sub category listing -->
+                  
+                  <div class="space-bottom4 contain subcategory-container" id="guides-to-getting-started">
+                    <div class="round-top fill-darken0 pad1y pad4x subcategory-block">
+                      <h3 class="subcategory-title">{{formation.pitch}}
+                      <span class="label fr round dark fill-blue pad1 ">{{formation.duree}}</span>
+                      </h3>
+                    </div>
+
+                    <div class="clearfix fill-white round-bottom pad4x subcategory-block-inner">
+                      
+
+                      <div class="col4 link-column space-bottom2">
+                        <div class="strong small space-top2 icon icon-left-align book space-bottom1 quiet">Contenu</div>
+                        <!-- loop general howto docs -->
+                          
+                        {% for contenu in formation.contenu.all %}
+                            <a class="block small keyline-bottom pad0y" href="">{{ contenu.nom_contenu }}</a>
+                        {% endfor %}
+                        </div>
+                      
+                      <!-- loop through info + troubleshooting -->
+ 
+                                          
+                      <div class="col4 link-column space-bottom2">
+                        
+                        <div class="strong small space-top2 icon icon-left-align bookmark space-bottom1 quiet">Prérequis</div>
+                          <a class="block small keyline-bottom pad0y" href="">{{formation.prerequis}}</a>
+                      
+                        <div class="strong small space-top2 icon icon-left-align info space-bottom1 quiet space-top2">Logiciels</div>
+
+                        {% for soft in formation.logiciels.all %}
+                            <a class="block small keyline-bottom pad0y" href="">{{ soft.nom_soft }}</a>
+                        {% endfor %}
+                      </div>    
+                      <!-- loop through docs + glossary -->
+                      <div class="col4 space-bottom2">
+                        <div class="strong small space-top2 icon  icon-left-align brackets space-bottom1 quiet">Tarifs</div>
+                        <a class="block small keyline-bottom pad0y keyline-bottom" href="">{{formation.tarif}}</a>
+
+                        <div class="strong small space-top2 icon icon-left-align link space-bottom1 quiet">Acquis</div>
+                        
+                        {% for contenu in formation.contenu.all %}
+                           {% if contenu.acquis %}
+                           <a class="block small keyline-bottom pad0y keyline-bottom" href="">{{ contenu.acquis}}</a>
+                           {% endif %}
+                        {% endfor %}
+                       
+                      </div>
+
+
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <a href="#help-page" class="block small back-to-top">Back to top</a>
+              </div>          
+              {% endfor %}               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

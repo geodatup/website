@@ -5,6 +5,8 @@ from django.views import generic
 from django_tables2   import RequestConfig
 from django.utils import timezone
 
+
+
 # Create your views here.
 def index(request):
 	return render(request, 'base.html')
@@ -16,3 +18,6 @@ def terms(request):
 def privacy(request):
    
     return render(request, 'privacy.html')
+def cdg(request):
+   
+    return render(request, 'cdg.html')
