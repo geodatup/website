@@ -128,13 +128,21 @@ class ContenuFormation(models.Model):
         return self.nom_contenu
 
 class Formation(models.Model):
-    nom_formation = models.CharField(max_length=15)   
+    nom_formation = models.CharField(max_length=50)   
     pitch = models.CharField(max_length=300, null=True, blank=True)    
-    niveau = models.CharField(max_length=15)
-    prerequis = models.CharField(max_length=15)
+    niveau_choix =  (
+    ('Débutant','0'),
+    ('Avancé','1'),    
+    ('Expert','2')
+    )
+    niveau = models.CharField(max_length=50,
+        choices=niveau_choix,
+        default=''
+        )
+    prerequis = models.ManyToManyField('self', blank=True)
     contenu = models.ManyToManyField(ContenuFormation, blank=True)
     duree_choix =  (
-    ('une demi journée','1/2/j'),
+    ('une demi journée','1/2j'),
     ('une journée','1j'),    
     ('2 jours','2j'),
     ('3 jours','3j')
@@ -154,7 +162,6 @@ class Formation(models.Model):
  
     def get_absolute_url(self):
         return reverse('website:formationDetail', kwargs={'slug': self.slug, })
-
 
     def __str__(self):
         return self.nom_formation

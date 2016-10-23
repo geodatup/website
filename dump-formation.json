@@ -1,0 +1,381 @@
+[
+{
+  "model": "website.formation",
+  "pk": 1,
+  "fields": {
+    "nom_formation": "QGis D\u00e9butant",
+    "pitch": "",
+    "niveau": "1",
+    "duree": "2 jours",
+    "tarif": "800",
+    "css_icon": "",
+    "css_class": "",
+    "css_color": "blue",
+    "actif": true,
+    "slug": "qgis-debutant",
+    "prerequis": [
+      5
+    ],
+    "contenu": [
+      11
+    ],
+    "logiciels": [
+      1
+    ]
+  }
+},
+{
+  "model": "website.formation",
+  "pk": 2,
+  "fields": {
+    "nom_formation": "Open Street Map",
+    "pitch": "",
+    "niveau": "D\u00e9butant",
+    "duree": "une demi journ\u00e9e",
+    "tarif": "250",
+    "css_icon": "",
+    "css_class": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "josm",
+    "prerequis": [],
+    "contenu": [],
+    "logiciels": [
+      2
+    ]
+  }
+},
+{
+  "model": "website.formation",
+  "pk": 3,
+  "fields": {
+    "nom_formation": "Carto Stat",
+    "pitch": "",
+    "niveau": "1",
+    "duree": "2 jours",
+    "tarif": "800",
+    "css_icon": "",
+    "css_class": "",
+    "css_color": null,
+    "actif": true,
+    "slug": "carto-stat",
+    "prerequis": [],
+    "contenu": [],
+    "logiciels": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "website.formation",
+  "pk": 4,
+  "fields": {
+    "nom_formation": "Atlas",
+    "pitch": "Cr\u00e9er un atlas avec Qgis",
+    "niveau": "1",
+    "duree": "1/2 journ\u00e9e",
+    "tarif": "250",
+    "css_icon": "",
+    "css_class": "",
+    "css_color": null,
+    "actif": true,
+    "slug": "atlas",
+    "prerequis": [],
+    "contenu": [],
+    "logiciels": [
+      1
+    ]
+  }
+},
+{
+  "model": "website.formation",
+  "pk": 5,
+  "fields": {
+    "nom_formation": "QGis Avanc\u00e9",
+    "pitch": "Formation destin\u00e9e aux techniciens et ing\u00e9nieur qui souhaitent aller plus loin dans l'utiisation de l'outil.",
+    "niveau": "Avanc\u00e9",
+    "duree": "2 jours",
+    "tarif": "800",
+    "css_icon": "osm",
+    "css_class": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "qgis-avance",
+    "prerequis": [
+      1
+    ],
+    "contenu": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "logiciels": [
+      1
+    ]
+  }
+},
+{
+  "model": "website.formation",
+  "pk": 6,
+  "fields": {
+    "nom_formation": "Introduction aux SIG",
+    "pitch": "",
+    "niveau": "D\u00e9butant",
+    "duree": "une demi journ\u00e9e",
+    "tarif": "250",
+    "css_icon": "",
+    "css_class": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "introduction-aux-sig",
+    "prerequis": [],
+    "contenu": [],
+    "logiciels": []
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 1,
+  "fields": {
+    "nom_catformation": "QGIS",
+    "pitch": "Apprendre \u00e0 manipuler l'information g\u00e9ographique sous toutes ses formes. R\u00e9aliser des analyses th\u00e9matiques, effectuer des g\u00e9otraitements, partager les r\u00e9sultats sous forme de carte, publier sur le web. Plusieurs niveaux de comp\u00e9tence sont transmis sur ce logiciel libre.",
+    "css_icon": "studio",
+    "css_class": "mobile-margin-4r margin3r",
+    "css_color": "blue",
+    "image": null,
+    "actif": true,
+    "slug": "qgis",
+    "formations": [
+      1,
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 2,
+  "fields": {
+    "nom_catformation": "Open Street Map",
+    "pitch": "Visite guid\u00e9e de la communaut\u00e9 Open Street Map. Utilisation des outils de mise \u00e0 jour, assimilation des r\u00e8gles de mise \u00e0 jours, interrogation de la base, export des donn\u00e9es et repr\u00e9sentation cartographique.",
+    "css_icon": "osm",
+    "css_class": "margin3r",
+    "css_color": "orange",
+    "image": null,
+    "actif": true,
+    "slug": "open-street-map",
+    "formations": [
+      2
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 3,
+  "fields": {
+    "nom_catformation": "S\u00e9miologie graphique",
+    "pitch": "Les r\u00e8gles \u00e0 respecter pour r\u00e9aliser de belles cartes, bien compr\u00e9hensibles. Nous transmettons les bases de la s\u00e9miologie graphique telles qu'elles sont d\u00e9finies par les cartographes professionnels.",
+    "css_icon": "palette",
+    "css_class": "mobile-margin-4r margin3r",
+    "css_color": "denim",
+    "image": null,
+    "actif": true,
+    "slug": "semiologie",
+    "formations": [
+      3
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 4,
+  "fields": {
+    "nom_catformation": "Ateliers",
+    "pitch": "Nombreux ateliers pour maitriser des aspects pr\u00e9cis sur les outils ou les m\u00e9thodes g\u00e9omatiques dans votre m\u00e9tiers.",
+    "css_icon": "layers",
+    "css_class": "",
+    "css_color": "green",
+    "image": null,
+    "actif": true,
+    "slug": "ateliers",
+    "formations": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "website.software",
+  "pk": 1,
+  "fields": {
+    "nom_soft": "Qgis",
+    "pitch": "",
+    "description": "",
+    "image": 2,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 2,
+  "fields": {
+    "nom_soft": "JOSM",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "JOSM",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 3,
+  "fields": {
+    "nom_soft": "PhilCarto",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "philcarto",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 4,
+  "fields": {
+    "nom_soft": "R Cartographie",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "r-cartographie",
+    "actif": true
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 1,
+  "fields": {
+    "nom_contenu": "Qgis, c'est qui et ont fait quoi avec ?",
+    "acquis": "",
+    "actif": true,
+    "slug": "qgis-cest-qui-et-ont-fait-quoi-avec"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 2,
+  "fields": {
+    "nom_contenu": "L'interface",
+    "acquis": "",
+    "actif": true,
+    "slug": "linterface"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 3,
+  "fields": {
+    "nom_contenu": "Navigation, outils de base et s\u00e9l\u00e9ction",
+    "acquis": "",
+    "actif": true,
+    "slug": "navigation-outils-de-base-et-selection"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 4,
+  "fields": {
+    "nom_contenu": "Utilisation des projections",
+    "acquis": "",
+    "actif": true,
+    "slug": "utilisation-des-projections"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 5,
+  "fields": {
+    "nom_contenu": "Manipuler les donn\u00e9es vectorielles",
+    "acquis": "",
+    "actif": true,
+    "slug": "manipuler-les-donnees-vectorielles"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 6,
+  "fields": {
+    "nom_contenu": "Manipuler les donn\u00e9es raster",
+    "acquis": "",
+    "actif": true,
+    "slug": "manipuler-les-donnees-raster"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 7,
+  "fields": {
+    "nom_contenu": "Manipuler les webservices (WMS, WFS, WMTS ...)",
+    "acquis": "",
+    "actif": true,
+    "slug": "manipuler-les-webservices-wms-wfs-wmts"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 8,
+  "fields": {
+    "nom_contenu": "Manipuler les donn\u00e9es GPS",
+    "acquis": "",
+    "actif": true,
+    "slug": "manipuler-les-donnees-gps"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 9,
+  "fields": {
+    "nom_contenu": "Premiers g\u00e9otraitements",
+    "acquis": "",
+    "actif": true,
+    "slug": "premiers-geotraitements"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 10,
+  "fields": {
+    "nom_contenu": "Mettre en page les cartes",
+    "acquis": "",
+    "actif": true,
+    "slug": "mettre-en-page-les-cartes"
+  }
+},
+{
+  "model": "website.contenuformation",
+  "pk": 11,
+  "fields": {
+    "nom_contenu": "Les extentions utiles",
+    "acquis": "Familiarit\u00e9 avec les extentions",
+    "actif": true,
+    "slug": "les-extentions-utiles"
+  }
+}
+]
