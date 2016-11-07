@@ -8,7 +8,7 @@
     "css_icon": "iconmoon icon-QGIS_logo",
     "css_class": "mobile-margin-4r margin3r",
     "css_color": "blue",
-    "image": null,
+    "urlimage": "https://upload.wikimedia.org/wikipedia/commons/2/29/QGIS_logo.svg",
     "actif": true,
     "slug": "qgis",
     "formations": [
@@ -27,7 +27,7 @@
     "css_icon": "icon osm",
     "css_class": "margin3r",
     "css_color": "orange",
-    "image": null,
+    "urlimage": "https://wiki.openstreetmap.org/w/images/7/79/Public-images-osm_logo.svg",
     "actif": false,
     "slug": "open-street-map",
     "formations": [
@@ -44,7 +44,7 @@
     "css_icon": "icon palette",
     "css_class": "mobile-margin-4r margin3r",
     "css_color": "denim",
-    "image": null,
+    "urlimage": "",
     "actif": false,
     "slug": "semiologie",
     "formations": [
@@ -61,7 +61,7 @@
     "css_icon": "icon layers",
     "css_class": "",
     "css_color": "green",
-    "image": null,
+    "urlimage": null,
     "actif": false,
     "slug": "ateliers",
     "formations": [

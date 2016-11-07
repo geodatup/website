@@ -3,10 +3,10 @@
   "model": "website.moduleformation",
   "pk": 1,
   "fields": {
-    "nom_module": "Qgis, c'est quoi ?",
-    "objectif": "Distinguer QGIS des autres solutions SIG.",
+    "nom_module": "Qgis : le libre c'est quoi ?",
+    "objectif": "Distinguer QGIS des autres solutions SIG propri\u00e9taire. Connaitre les droits et obligations des licences des logiciels libres. Comprendre la distinction entre les Logiciels Libres et Donn\u00e9es Libres.",
     "order": 1,
-    "slug": "qgis-cest-quoi"
+    "slug": "qgis-le-libre-cest-quoi"
   }
 },
 {
