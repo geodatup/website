@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django_tables2   import RequestConfig
-from .models import Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference
+from .models import Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference, ChapitreFormation
 from django.utils import timezone
 
 # Create your views here.
@@ -13,14 +13,17 @@ def index(request):
 	section_list = Section.objects.all().filter(actif=1)
 	secteur_list = Secteur.objects.all().filter(actif=1)
 
-	service_cat1 = service_list.filter(categorie_service__pk=1)
-	service_cat2 = service_list.filter(categorie_service__pk=2)	
-	service_cat3 = service_list.filter(categorie_service__pk=3)
+	service_cat1 = service_list.filter(categorie_service__pk=4)
+	service_cat2 = service_list.filter(categorie_service__pk=5)	
+	service_cat3 = service_list.filter(categorie_service__pk=6)
 
 	secteur_list_tab1 = secteur_list[0:3]
 	secteur_list_tab2 = secteur_list[3:6]
 	secteur_list_tab3 = secteur_list[6:9]
 	secteur_list_tab4 = secteur_list[9:12]
+
+	catFormation_List_actif = CatFormation.objects.all().filter(actif=1)
+	catFormation_List = CatFormation.objects.all()
 
 
 	context = {
@@ -35,14 +38,72 @@ def index(request):
 	'service_cat1':service_cat1,
 	'service_cat2':service_cat2,
 	'service_cat3':service_cat3,
-
-
+	'catFormation_List':catFormation_List,
 	}
 	return render(request, 'base.html', context)
+
+
+class ServiceDetailView(generic.DetailView):
+    model = Service
+    context_object_name = 'service'
+    template_name = 'services/serviceDetail.html'
+
+
+class ServiceListView(generic.ListView):
+    model = Service
+    template_name = 'services/serviceIndexList.html'
+
+class SecteurDetailView(generic.DetailView):
+    model = Secteur
+    context_object_name = 'secteur'
+    template_name = 'secteurs/secteurDetail.html'
+
+class SecteurListView(generic.ListView):
+    model = Secteur
+    template_name = 'secteurs/secteurIndexList.html'
+
+class SectionDetailView(generic.DetailView):
+    model = Section
+    context_object_name = 'section'
+    template_name = 'sections/sectionDetail.html'
+
+class SectionListView(generic.ListView):
+    model = Section
+    template_name = 'sections/sectionIndexList.html'
+
+class CatFormationDetailView(generic.DetailView):
+    model = CatFormation
+    context_object_name = 'catFormation'
+    template_name = 'formation/catFormationDetail.html'
+
+
+class CatFormationListView(generic.ListView):
+    model = CatFormation
+    template_name = 'formation/catFormationIndexList.html'
+
+
+
+def support(request):
+   
+    return render(request, 'support/support.html')
 
 def terms(request):
    
     return render(request, 'terms.html')
+
+
+def galerie(request):
+   
+    return render(request, 'galerie.html')
+
+def showcase(request):
+   
+    return render(request, 'showcase.html')
+
+
+def blog(request):
+   
+    return render(request, 'blog.html')
 
 def privacy(request):
    

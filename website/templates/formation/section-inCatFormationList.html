@@ -1,0 +1,42 @@
+<div class="limiter limiter-big pad5y">
+    <!-- category links -->
+    <div class="space-bottom2 space-top2 clearfix prose">
+      <h2 class="center">Je veux être formé à ...</h2>
+      <div class="clearfix space-top2">
+        {% for formation in catFormation.get_formation_ordered %}
+              
+        <div class="col4 fl pad0 contain help-grid-item">
+          <a href="#{{ formation.nom_formation }}" class="help-action block center round pad4y pad2x keyline-all">
+            <div class="col4 margin4r margin4 space-bottom2">
+              {% if formation.css_color and formation.css_icon %}
+                <div class="inline  dot 
+                {{formation.css_icon }} dark 
+                fill-{{formation.css_color}} 
+                pad1"></div> 
+                
+              {% elif not formation.css_color and not formation.css_icon %}
+                <div class="inline  dot 
+                {{ catFormation.css_icon }} dark 
+                fill-{{ catFormation.css_color }} 
+                pad1"></div> 
+                
+              {% elif formation.css_icon and not formation.css_color %}
+                <div class="inline  dot 
+                {{ formation.css_icon }} dark 
+                fill-{{ catFormation.css_color }} 
+                pad1"></div> 
+                
+              {% elif not formation.css_icon and formation.css_color %}
+                <div class="inline  dot 
+                {{ catFormation.css_icon }} dark 
+                fill-{{ formation.css_color }} 
+                pad1"></div>
+              {% endif %}
+            </div>
+            <h3>{{ formation.nom_formation }}</h3>
+          </a>
+        </div> 
+        {% endfor %}              
+      </div>
+    </div>    
+</div>

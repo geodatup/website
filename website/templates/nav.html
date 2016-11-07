@@ -1,5 +1,3 @@
-{% load sekizai_tags staticfiles %}
-
 <!--élement présent dans les sub nav -->
 <div class='main-subnav fill-midnight splash pin-top dark clearfix'>
   <div class='prose dark keyline-top pad4y hover-area clearfix'>
@@ -8,19 +6,19 @@
             <div class='col6 clearfix'>
 
 
-              <h3><a href='/{{ section_list.0.nom_section }}' class='rcon next'>{{ section_list.0.nom_section }}</a></h3>
+              <h3><a href="{% url 'website:serviceIndex' %}"  class='rcon next'>{{ section_list.0.nom_section }}</a></h3>
               
               
-              <div class='col5'>
+              <div class='col5'> 
                 <h4>{{ categorie_list.0.nom_categorie }}</h4>
                 {% for service in service_cat1 %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "/services/{{ service.id }}">{{ service.nom_service }}</a>
+                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
                 {% endfor %}
               </div>
               <div class='col5'>  
                 <h4>{{ categorie_list.1.nom_categorie }}</h4>   
                 {% for service in service_cat2 %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "/services/{{ service.id }}">{{ service.nom_service }}</a>
+                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
                 {% endfor %}           
               <!--  <a class='block pad1y icon satellite' href='/industries/drones'>Drones</a>
                 <a class='block pad1y icon satellite' href='/satellite/'>Image Satellite</a>
@@ -35,7 +33,7 @@
             <div class='col5 margin1r'>
               <h3>{{ categorie_list.2.nom_categorie }}</h3>
               {% for service in service_cat3 %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "/services/{{ service.id }}">{{ service.nom_service }}</a>
+                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
               {% endfor %}
              <!-- <a class='block pad1y icon data' href='/data-platform/'>Consultant</a>
               <a class='block pad1y icon mt' href='/enterprise/'>Audit &amp; solutions</a>
@@ -46,41 +44,41 @@
 
           <div class='subnav-group subnav-use-cases clearfix'>
             <div class='col7 clearfix'>
-              <h3><a href='/{{ section_list.1.nom_section }}' class='rcon next'>{{ section_list.1.nom_section }}</a></h3>
+              <h3><a href="{% url 'website:secteurIndex' %}" class='rcon next'>{{ section_list.1.nom_section }}</a></h3>
               
               <div class='col4'>
               {% for secteur in secteur_list_tab1 %}               
-                <a class='block pad0y' href='/{{ secteur.nom_secteur }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
 
               <div class='col4'>
                 {% for secteur in secteur_list_tab2 %}               
-                <a class='block pad0y' href='/{{ secteur.nom_secteur }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
               <div class='col4'>
                {% for secteur in secteur_list_tab3 %}               
-                <a class='block pad0y' href='/{{ secteur.nom_secteur }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
               <div class='col4'>
                 {% for secteur in secteur_list_tab4 %}               
-                <a class='block pad0y' href='/{{ secteur.nom_secteur }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
             </div>
             <div class='col4 margin1'>
               <h3>Nos réussites</h3>
-                <a class='block pad0y' href='/galerie/'>Cartothèque</a>
-                <a class='block pad0y' href='/showcase/'>Vitrine web</a>
+                <a class='block pad0y' href="{% url 'website:galerie' %}">Cartothèque</a>
+                <a class='block pad0y' href="{% url 'website:showcase' %}">Vitrine web</a>
             </div>
           </div>
 
           <div class='subnav-group subnav-help clearfix'>
             <div class='col3'>
 
-              <h3><a href='/{{ section_list.2.nom_section }}' class='rcon next'>{{ section_list.2.nom_section }}</a></h3>
+              <h3><a href="{% url 'website:support' %}" class='rcon next'>{{ section_list.2.nom_section }}</a></h3>
               <a class='block pad1y icon compass' href='/amo/'>Gestion de projet</a>
               <a class='block pad1y icon search' href='/suivi/'>Suivi des taches</a>              
             </div>
@@ -99,32 +97,6 @@
             </div>
 
           </div>
-          <!--
-          <div class='subnav-group subnav-documentation clearfix'>
-            <div class='col8 clearfix subnavcol'>
-              <h3><a href='/technologies/' class='rcon next'>Technologies</a></h3>
-              <div class='col4'>
-                <a class='block pad1y icon gl' href='/sig-desktop/'>SIG bureautique</a>
-                <a class='block pad1y icon gl' href='/sig-desktop/'>Base de données spatiales</a>
-                <a class='block pad1y icon gl' href='/sig-desktop/'>Geoprocesseur</a>
-              </div>
-              <div class='col4'>
-                <a class='block pad1y icon marker' href='/'>Serveur de carte</a>
-                <a class='block pad1y icon marker' href='/'>Catalogue de carte</a>
-              </div>
-              <div class='col4'>
-                <a class='block pad1y icon compass' href='/'>API web</a>
-                <a class='block pad1y icon gl' href='/'>Framework web</a>
-              </div>
-            </div>
-            <div class='col3 margin1r subnavcol'>
-            <h3>Méthodologie</h3>
-              <a class='block pad1y' href='/'>Vie des données</a>
-              <a class='block pad1y' href='/'>Développement Agile/Scrum</a>
-              <a class='block pad1y' href='/'>Intégration dans les SI</a>
-            </div>
-          </div>
-          -->
     </div>
   </div>
 </div>
@@ -132,14 +104,14 @@
     <div class='masthead col12 clearfix dark home-nav'>
       <div class='limiter clearfix'>
         <nav class='col12 text-right navigation-padding-top contain animate clearfix noprint'>
-          <a class='fl mb-logo geodatup-logo' href='/'>geoDatup</a>
+          <a class='fl geodatup-logo' href='/'>geoDatup</a>
           <!-- Desktop nav -->
           <div class='text-right z10 strong small primary hide-mobile space-top0'>
             <div class='inline align-top'>
 
               {% for section in section_list %}
               <div class='{{ section.css_div_class }}' data-category='{{ section.css_datacategory }}'>
-                <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "/{{ section.nom_section }}">{{ section.nom_section }}</a>
+                <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "{{ section.slug }}">{{ section.nom_section }}</a>
               </div>
               {% endfor %}   
             </div>   
@@ -147,12 +119,12 @@
 
           <!-- Mobile nav -->
           <div class='show-mobile contain dropdown-container pin-topright'>
-            <a href='#menu' class='dark contain z1 big inline icon menu round quiet dropdown-button js-dropdown-button pin-right'></a>
+            <a href='#menu' class='dark contain z100 big inline icon menu round quiet dropdown-button js-dropdown-button pin-right'></a>
             <div id='menu' class='js-dropdown-menu scroll-v dropdown-menu offcanvas-top fill-midnight clip col12 pin-top animate'>
               <div class='keyline-bottom clearfix'>
                 <div class='mobile-cols pad4y keyline-bottom clearfix'>
-                  {% for section in section_list %}            
-                    <a class='pad1 block strong col6' href='/{{ section.nom_section }}'>{{ section.nom_section }}</a>
+                  {% for section in section_list %} 
+                    <a class='pad1 block strong col6' href='{{ section.slug }}'>{{ section.nom_section }}</a>
                   {% endfor %}
             
                 </div>
@@ -162,18 +134,19 @@
                   <h3 class='pad0y pad1x strong space-bottom1'>{{ section_list.0.nom_section }}</h3>
                   <div class='col12 pad1x clearfix  mobile-cols '>
                   {% for service in service_list %}
-                   <a class='pad0y block quiet col6' href= "/services/{{ service.id }}">{{ service.nom_service }}</a>
+                   <a class='pad0y block quiet col6' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
                   {% endfor %}
                   </div>
                 </div>
                 <div class='col12 pad1x clearfix  mobile-cols pad4y '>
-                  <a class='pad0y block strong quiet col6' href='/about/'>A propos</a>
-                  <a class='pad0y block strong quiet col6' href='/about/equipe/'>Equipe</a>
-                  <a class='pad0y block strong quiet col6' href='/about/jobs/'>Emplois et stages</a>
-                  <a class='pad0y block strong quiet col6' href='/about/presse/'>Presse</a>
-                  <a class='pad0y block strong quiet col6' href='/terms/'>Termes</a>
-                  <a class='pad0y block strong quiet col6' href='/privacy/'>Mentions légales</a>
-                  <a class='pad0y block strong quiet col6' href='#contact'>Contact</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#top'>A propos</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#equipe'>Equipe</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#jobs'>Emplois et stages</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#presse'>Presse</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'terms' %}'>Mentions légales</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'privacy' %}'>Politique de confidentialité</a>                  
+                  <a class='pad0y block strong quiet col6' href='{% url 'cdg' %}'>Conditions générales de vente</a>
+                  <a class='pad0y block strong quiet col6' href='#section-contact'>Contact</a>
                 </div>
               </div>
             </div>

@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block body_content %}
+
+<div class='page-content'>
+
+
+{% block nav %}
+{% include "nav.html" %}
+{% include "signup-nav.html" %}
+{% endblock nav %}
+
+{% block section-top %}
+  {% include "cdg/cdg-section-top.html" %}
+{% endblock section-top %}
+
+{% block sections %}
+  <!-- nav vertical après car sinon on les menus ne s'affichent pas sur l'image de fond-->
+
+  {% block section-cdg %}
+    {% include "cdg/section-cdg.html" %}
+  {% endblock section-cdg %}
+
+  {% block section-contact %}
+    {% include "section-contact.html" %}
+  {% endblock section-contact %}
+
+{% endblock sections %}
+
+</div>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %}
+
+{% endblock body_content %}
+
+
+
+
+
+

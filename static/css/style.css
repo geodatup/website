@@ -19,17 +19,127 @@
     src: url('font/byom/Byom-Regular-Trial.ttf');
   }
 
+.geodatup-logo {
+  /*background:#fff;*/
+  position:relative;
+  z-index:10;
+  }
+
+.geodatup-logo {
+  /* background:transparent url(base@2x.png) no-repeat 0 0; */
+  display:inline-block;
+  vertical-align:top;
+  height:40px;
+  width:150px;
+  overflow:hidden;
+  -webkit-background-size:100px 350px;
+          background-size:100px 350px;
+  }
+  .dark .geodatup-logo,
+  .geodatup-logo.white { background-position:0px -60px; }
+  .geodatup-logo.quiet { background-position:0px -120px; }
+  .geodatup-logo.small {
+    width:65px;
+    height:20px;
+    background-position:0 -180px;
+    }
+  .geodatup-logo.small.white { background-position:0 -240px;}
+  .geodatup-logo.small.quiet { background-position:0 -300px;}
+
 .geodatup-logo{
   font-family: 'byom-bold';
   padding-top: 10px;
 }
 
 
-.header-image {
+.landing-header-image {
   background-image:url(/media/image/Pano-reduce-1920-530.jpg);
   background-repeat:no-repeat;
   }
 
 .post-it-fixe{
-	height: 350px;
+  height: 350px;
+}
+
+.icon-ign_data:before {
+  content: "\e900";
+}
+
+.cursor {
+  cursor: pointer;
+}
+.service-block-unactive {
+  width: 23%;
+  min-height: 140px;
+}
+
+.becontinue
+{
+  display:inline-block;
+  z-index:1;
+  opacity:0.3;
+  filter:alpha(opacity=50); 
+}
+.becontinue:hover
+{
+  opacity:1;
+}
+
+.becontinuetext{
+  z-index:10;
+  position: absolute;  
+}
+
+.rotate {
+  text-align: center;
+  -webkit-transform: rotate(328deg);
+  -moz-transform: rotate(328deg);
+  -o-transform: rotate(328deg);
+  writing-mode: lr-tb;
+  color: #828181;
+}
+
+.becontinuetext:hover {
+  opacity:0.2;
+}
+
+.imagecouverture{
+    height:  700px;
+    max-height: 900px;
+}
+
+
+@media only screen and (max-width: 1080px) {
+.service-block-unactive  {
+  width: 24%;
+  min-height: 165px;
+ }
+}
+
+@media only screen and (max-width:1040px) {
+  .imagecouverture {
+      margin-bottom: -200px;
+      left: -30px;
+  }
+
+}
+
+@media only screen and (max-width:1025px) {
+.imagecouverture {
+    height:  100%;
+    position: relative;
+    margin-bottom: -200px;
+    left: 0;
+    right: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+@media only screen and (max-width: 750px) {
+ .service-block-unactive  {
+  width: 48%;
+  min-height: 135px;
+  margin-right: 0%;
+ }
 }

@@ -1,0 +1,222 @@
+[
+{
+  "model": "website.moduleformation",
+  "pk": 1,
+  "fields": {
+    "nom_module": "Qgis, c'est quoi ?",
+    "objectif": "Distinguer QGIS des autres solutions SIG.",
+    "order": 1,
+    "slug": "qgis-cest-quoi"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 2,
+  "fields": {
+    "nom_module": "L'interface de Qgis",
+    "objectif": "Discerner les diff\u00e9rents modules de l'interface, connaitre leur nom et y comprendre leur fonctionnement.",
+    "order": 2,
+    "slug": "interface"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 5,
+  "fields": {
+    "nom_module": "Cr\u00e9er des donn\u00e9es vectorielles",
+    "objectif": "Maitriser la cr\u00e9ation et la modification des donn\u00e9es vectorielles et conjuguer avec les param\u00e8tres adapt\u00e9s \u00e0 des situations r\u00e9elles. Maitriser le concept de topologie. Evaluer la n\u00e9cessit\u00e9 d'implementer des formulaires ou des actions dans vos projets.",
+    "order": 6,
+    "slug": "manipuler-les-donnees"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 7,
+  "fields": {
+    "nom_module": "Les ressources en lignes (WMS, WFS)",
+    "objectif": "Comprendre l'int\u00e9r\u00eat et les limites de utilisation de cette nouvelle source de donn\u00e9e.",
+    "order": 11,
+    "slug": "manipuler-les-webservices-wms-wfs-wmts"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 11,
+  "fields": {
+    "nom_module": "Les extentions",
+    "objectif": "Comprendre que QGIS est extensible. Savoir distinguer les extensions officiels et experimentales.",
+    "order": 10,
+    "slug": "les-extentions-utiles"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 12,
+  "fields": {
+    "nom_module": "L'information G\u00e9ographique",
+    "objectif": "",
+    "order": 1,
+    "slug": "linformation-geographique"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 13,
+  "fields": {
+    "nom_module": "Le r\u00f4le des SIG",
+    "objectif": "Connaitre les diff\u00e9rents facettes des SIG",
+    "order": 2,
+    "slug": "le-role-des-sig"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 14,
+  "fields": {
+    "nom_module": "Les \u00e9tapes de mise en place d'un SIG",
+    "objectif": "Evaluer la sp\u00e9cificit\u00e9 d'un SIG",
+    "order": 3,
+    "slug": "la-mise-en-place-des-sig"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 16,
+  "fields": {
+    "nom_module": "Cr\u00e9ation d'une carte de base",
+    "objectif": "Apprendre \u00e0 reconna\u00eetre la structure des donn\u00e9es vectorielles, et la fa\u00e7on de charger des jeux de donn\u00e9es vectorielles sur une carte. \u00catre capable de cr\u00e9er n\u2019importe quelle symbologie souhait\u00e9e pour n\u2019importe quelle couche vectorielle.",
+    "order": 3,
+    "slug": "creation-dune-carte-de-base"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 17,
+  "fields": {
+    "nom_module": "Classer les donn\u00e9es vectorielles",
+    "objectif": "Explorer les donn\u00e9es attributaires d\u2019un objet et comprendre qu'elles influencent les repr\u00e9sentations. Montrer qu'une g\u00e9om\u00e9trie est li\u00e9e \u00e0 d'autres informations. Savoir ordonner et repr\u00e9senter les informations  selon diff\u00e9rents crit\u00e8res.",
+    "order": 4,
+    "slug": "classer-les-donnees-vectorielles"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 18,
+  "fields": {
+    "nom_module": "Edition de carte",
+    "objectif": "\u00catre \u00e0 m\u00eame de produire des cartes respectant une charte graphique.",
+    "order": 5,
+    "slug": "edition-de-carte"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 19,
+  "fields": {
+    "nom_module": "Analyse vectorielle",
+    "objectif": "Comprendre le principe de projection et reconnaitre les erreurs possibles. Connaitre les diff\u00e9rentes m\u00e9thodes d'interrogation des donn\u00e9es. R\u00e9soudre des questions d'analyses spatiales. Reproduire l'approche de r\u00e9solution des probl\u00e8mes SIG. R\u00e9soudre des probl\u00e9matiques spatiales.",
+    "order": 7,
+    "slug": "analyse-vectorielle"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 20,
+  "fields": {
+    "nom_module": "Les Rasters",
+    "objectif": "Distinguer les donn\u00e9es raster des donn\u00e9es vectorielles. Connaitre les diff\u00e9rents rasters et leur usage. Adapter l'usage du logiciel avec les diff\u00e9rents types de donn\u00e9es.",
+    "order": 8,
+    "slug": "les-rasters"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 21,
+  "fields": {
+    "nom_module": "Entre Raster et Vecteur",
+    "objectif": "Comprendre l'inter\u00eat d'un format et de l'autre. Evaluer l'int\u00e9r\u00eat de traduire un format vers l'autre.  D\u00e9montrer qu'une traduction peut permettre de r\u00e9soudre des probl\u00e8mes.",
+    "order": 9,
+    "slug": "entre-raster-et-vecteur"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 22,
+  "fields": {
+    "nom_module": "Analyses th\u00e9matiques avanc\u00e9es",
+    "objectif": "Anticiper les actions pr\u00e9requises pour r\u00e9aliser une analyse th\u00e9matique sur les donn\u00e9es. Savoir appliquer diff\u00e9rentes analyses th\u00e9matiques \u00e0 travers l'outil de style.",
+    "order": 1,
+    "slug": "analyses-thematiques-avancees"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 23,
+  "fields": {
+    "nom_module": "Analyses spatiales avanc\u00e9es",
+    "objectif": "Savoir quels g\u00e9otraitements et quelles donn\u00e9es permettront de construire une information qui r\u00e9pondra \u00e0 une probl\u00e9matique g\u00e9ographique complexe.",
+    "order": 2,
+    "slug": "analyses-spatiales-avancees"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 25,
+  "fields": {
+    "nom_module": "La 3D et Qgis",
+    "objectif": "Manipuler, repr\u00e9senter et exploiter les donn\u00e9es 3D.",
+    "order": 3,
+    "slug": "la-3d-et-qgis"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 26,
+  "fields": {
+    "nom_module": "Automatiser des g\u00e9otraitements",
+    "objectif": "Connaitre les diff\u00e9rents automatismes. Savoir choisir l'approche la plus adapt\u00e9 au besoin. Comprendre les principes algorithmique, les variables locales et globales.",
+    "order": 5,
+    "slug": "automatiser-des-geotraitements"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 27,
+  "fields": {
+    "nom_module": "Travailler en \u00e9quipe",
+    "objectif": "Appr\u00e9hender les probl\u00e9matiques du travail en \u00e9quipe. Maitriser les proc\u00e9dures de mise \u00e0 jour de donn\u00e9e, de publication de r\u00e9sultat et de partage de projet sur un r\u00e9seau.",
+    "order": 6,
+    "slug": "travailler-en-equipe"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 28,
+  "fields": {
+    "nom_module": "Publier des cartes QGIS sur le web",
+    "objectif": "Connaitre les solutions de partage sur internet et maitriser leur exploitation.",
+    "order": 7,
+    "slug": "publier-des-cartes-qgis-sur-le-web"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 29,
+  "fields": {
+    "nom_module": "Les filtres et s\u00e9lections de donn\u00e9es",
+    "objectif": "Maitriser les diff\u00e9rentes approche de s\u00e9lections dans un SIG.",
+    "order": 3,
+    "slug": "les-filtres-et-selections-de-donnees"
+  }
+},
+{
+  "model": "website.moduleformation",
+  "pk": 30,
+  "fields": {
+    "nom_module": "Mise en page de cartes avanc\u00e9es (Dataviz)",
+    "objectif": "Maitriser la repr\u00e9sentation des r\u00e9sultats d'analyses complexes grace aux m\u00e9thodes de Dataviz.",
+    "order": 3,
+    "slug": "mise-en-page-de-cartes-avancees-dataviz"
+  }
+}
+]

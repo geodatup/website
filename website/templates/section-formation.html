@@ -1,0 +1,56 @@
+<section id="section-formation" class="fill-light pad8y block-section" >
+
+
+<div class="fill-light pad4y">
+
+<div class="limiter contain clearfix space-bottom4">
+    <div class="col12 title-block">
+      {% if titre %}
+      <p class="prose-big strong">{{titre}} </p>
+      {% else %}
+      <p class="prose-big strong">Se former </p>
+      {% endif%}
+    </div>
+    <div class="clearfix col12 space-top2">
+     
+    {% for catformation in catFormation_List %}
+    
+      {% if not catformation.actif %}
+       
+      <a href="{{ catformation.get_absolute_url }}" class="keyline-top center keyline-stroke {{ catformation.css_class }} keyline-{{ catformation.css_color }} round dark-link contain service-block-unactive fl fill-white mobile-margin-bottom1 post-it-fixe ">
+
+      <div class="mobile-margin-bottom1 post-it-fixe becontinuetext" onmouseover="toggle_opacity('{{catformation.id}}');" onmouseout="toggle_opacity('{{catformation.id}}');">
+        <h2 class="rotate pad8y">Disponible prochainement</h2>
+      </div> 
+      <div id={{catformation.id}} class="becontinue mobile-margin-bottom1 post-it-fixe ">
+
+        <div class="pad1y space-bottom1">
+        <span class="inline space-top2 dark pad1 dot {{ catformation.css_icon }} fill-{{ catformation.css_color }}"></span>
+         
+        </div>
+        <h3>{{ catformation.nom_catformation }}</h3>
+        <p class="quiet small margin0 margin0r space-top0">{{ catformation.pitch }}</p>
+      </div>
+      </a>
+ 
+      {% else %}
+      <a href="{{ catformation.get_absolute_url }}" class="keyline-top center keyline-stroke {{ catformation.css_class }} keyline-{{ catformation.css_color }} round dark-link contain service-block fl fill-white mobile-margin-bottom1 post-it-fixe" > 
+
+        <div class="pad1y space-bottom1">
+        <span class="inline space-top2 dark pad1 dot {{ catformation.css_icon }} fill-{{ catformation.css_color }}"></span>
+         
+        </div>
+        <h3>{{ catformation.nom_catformation }}</h3>
+        <p class="quiet small margin0 margin0r space-top0">{{ catformation.pitch }}</p>
+      </a>
+
+      {% endif %}
+
+
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+</section>

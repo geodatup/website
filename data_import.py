@@ -99,7 +99,7 @@ categorie.save()
 service = Service(
    nom_service = "Cartographie spécialisée",
    categorie_service = categorie,
-   nom_icon = "map",
+   css_icon = "map",
    )
 service.save()
 
@@ -119,14 +119,14 @@ service.save()
 service = Service(
    nom_service = "Programmation",
    categorie_service = categorie,
-   nom_icon = "",
+   css_icon = "",
    )
 service.save()
 
 service = Service(
    nom_service = "Analyse spatiale",
    categorie_service = categorie,
-   nom_icon ="" ,
+   css_icon ="" ,
    )
 service.save()
 #================================================
@@ -140,20 +140,20 @@ categorie.save()
 service = Service(
    nom_service = "Photogrammetrie",
    categorie_service = categorie,
-   nom_icon = "",
+   css_icon = "",
    )
 service.save()
 
 service = Service(
    nom_service = "DataPack Open data",
    categorie_service = categorie,
-   nom_icon = "",
+   css_icon = "",
    )
 service.save()
 
 service = Service(
    nom_service = "DataPack IGN",
    categorie_service = categorie,
-   nom_icon ="" ,
+   css_icon ="" ,
    )
 service.save()

@@ -1,144 +1,75 @@
 {% extends "base_one.html" %}
 {% load staticfiles sekizai_tags %}
 
+
 {% block title %}GeoDatup{% endblock title %}
 
 {% block head_css %}
 {{ block.super }}
-    <link rel="stylesheet" href="{% static "css/base.css" %}">
-    <link rel="stylesheet" href="{% static "css/site.css" %}">
-	<link rel="stylesheet" href="{% static "css/home.css" %}">
-	<link rel="stylesheet" href="{% static "css/developers.css" %}">
-	<link rel="stylesheet" href="{% static "css/products.css" %}">
-	<link rel="stylesheet" href="{% static "css/style.css" %}">
-	<link rel="stylesheet" href="{% static "font-awesome-4.5.0/css/font-awesome.css" %}">
 {% endblock head_css %}  
-</head>
 
-{% block body_class %} full bleed{% endblock %}
+{% block body_class %}full bleed{% endblock %}
 {% block body_content %}
 
 <div class='page-content'>
 
 
 {% block nav %}
-
 {% include "nav.html" %}
 {% include "signup-nav.html" %}
 {% endblock nav %}
 
-{% block sections %}
+{% block section-top %}
+  {% include "section-top.html" %}
+{% endblock section-top %}
 
-	{% block section-top %}
-		{% include "section-top.html" %}
-	{% endblock section-top %}
+{% block sections %}
+	<!-- nav vertical après car sinon on les menus ne s'affichent pas sur l'image de fond-->
+	{% block nav-vertical %}
+		{% include "nav-vertical.html" %}
+  {% endblock nav-vertical %}
+
 	{% block section-showcase %}
 		{% include "section-showcase.html" %}
 	{% endblock section-showcase %}
-	{% block nav-vertical %}
-		{% include "nav-vertical.html" %}
-	{% endblock nav-vertical %}
-
+	
 	{% block section-2 %}
 		{% include "section-2.html" %}
 	{% endblock section-2 %}
 
-
-	{% block data-create %}
-		{% include "data-create.html" %}
-	{% endblock data-create %}
+	{% block section-data-create %}
+		{% include "section-data-create.html" %}
+	{% endblock section-data-create %}
 	
-<!--	{% block section-5 %}
-		{% include "section-5.html" %}
-	{% endblock section-5 %}
--->
 
-	{% block data-life %}
-		{% include "data-life.html" %}
-	{% endblock data-life %}
-
-<!--
-	{% block data-access %}
-		{% include "data-access.html" %}
-	{% endblock data-access %}
--->
+	{% block section-data-life %}
+		{% include "section-data-life.html" %}
+	{% endblock section-data-life %}
 
 
-	{% block formation %}
-		{% include "formation.html" %}
-	{% endblock formation %}
+	{% block section-formation %}
+		{% include "section-formation.html" %}
+	{% endblock section-formation %}
 
 	{% block section-contact %}
 		{% include "section-contact.html" %}
 	{% endblock section-contact %}
 
 {% endblock sections %}
+
 </div>
-
-
-
-	{% block footer %}
+{% block footer %}
 		{% include "footer.html" %}
-	{% endblock footer %}
+{% endblock footer %}
 
 {% endblock body_content %}
+
 
 
 {% block body_js %}
 {{ block.super }}
 <script src="{% static "js/base.js"%}"></script>
-
-<script type="text/javascript">
-var $dropdownTriggers = $('.dropdown');
-var $dropdownArea = $('.main-subnav');
-var $dropdownZone = $('.hover-area');
-
-$dropdownTriggers.each(function() {
-  var $this = $(this);
-  window.hoverintent(this, function() {
-    $dropdownTriggers.removeClass('show');
-    $('.subnav-group').removeClass('show');
-    $dropdownArea.addClass('show');
-    $('.subnav-' + $this.data('category')).addClass('show');
-    $this.addClass('show');
-  }, function() {
-    if (!$dropdownZone.hasClass('hovered') && $('.dropdown:hover').length === 0) {
-      $dropdownArea.removeClass('show');
-      $dropdownTriggers.removeClass('show');
-    }
-  });
-});
-
-$dropdownZone.mouseover(function() {
-  $(this).addClass('hovered');
-  return false;
-}).mouseleave(function() {
-  $(this).removeClass('hovered');
-  window.setTimeout(function() {
-    if ($('.dropdown:hover').length === 0) {
-      $dropdownArea.removeClass('show');
-      $dropdownTriggers.removeClass('show');
-    }
-  }, 300);
-});
-</script>
-
-
-<script type="text/javascript">
-
-   $(document).scroll(function() {
-    var y = $(this).scrollTop();
-    if (y > 400) {
-        $('div#signup-nav').removeClass('hide-nav');
-      } else {
-        $('div#signup-nav').addClass('hide-nav');
-      }
-  });
-
-  
-</script>
-
-
+<script src="{% static "js/site.js"%}"></script>
 {% endblock body_js %}
 
 
