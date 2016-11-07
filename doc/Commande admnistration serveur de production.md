@@ -13,6 +13,8 @@ voir le blog nginx + gunicon + django + supervisor
 relancer le serveur web django 
 
 ~~~
+cd /var/webapps/website
+bin/activate
 sudo supervisorctl reload
 ~~~
 
@@ -22,6 +24,17 @@ collectstatic
 sudo su - geodatup
 python manage.py collectstatic
 ~~~
+
+Installer tous les package python de base 
+
+~~~
+sudo su - geodatup
+pip3 install -r requierements/base.tx
+~~~
+puis relancer supervisorctl en dehors de la session geodatup
+
+
+
 
 # troubleshooting
 

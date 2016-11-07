@@ -13,9 +13,9 @@ def index(request):
 	section_list = Section.objects.all().filter(actif=1)
 	secteur_list = Secteur.objects.all().filter(actif=1)
 
-	service_cat1 = service_list.filter(categorie_service__pk=4)
-	service_cat2 = service_list.filter(categorie_service__pk=5)	
-	service_cat3 = service_list.filter(categorie_service__pk=6)
+	service_cat1 = service_list.filter(categorie_service__pk=1)
+	service_cat2 = service_list.filter(categorie_service__pk=2)	
+	service_cat3 = service_list.filter(categorie_service__pk=3)
 
 	secteur_list_tab1 = secteur_list[0:3]
 	secteur_list_tab2 = secteur_list[3:6]
