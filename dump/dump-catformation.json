@@ -1,0 +1,72 @@
+[
+{
+  "model": "website.catformation",
+  "pk": 1,
+  "fields": {
+    "nom_catformation": "QGIS",
+    "pitch": "Apprendre \u00e0 manipuler l'information g\u00e9ographique sous toutes ses formes. R\u00e9aliser des analyses th\u00e9matiques, effectuer des g\u00e9otraitements, partager les r\u00e9sultats sous forme de carte, publier sur le web. Plusieurs niveaux de comp\u00e9tence sont transmis sur ce logiciel libre.",
+    "css_icon": "iconmoon icon-QGIS_logo",
+    "css_class": "mobile-margin-4r margin3r",
+    "css_color": "blue",
+    "image": null,
+    "actif": true,
+    "slug": "qgis",
+    "formations": [
+      1,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 2,
+  "fields": {
+    "nom_catformation": "Open Street Map",
+    "pitch": "Visite guid\u00e9e de la communaut\u00e9 Open Street Map. Utilisation des outils de mise \u00e0 jour, assimilation des r\u00e8gles de mise \u00e0 jours, interrogation de la base, export des donn\u00e9es et repr\u00e9sentation cartographique.",
+    "css_icon": "icon osm",
+    "css_class": "margin3r",
+    "css_color": "orange",
+    "image": null,
+    "actif": false,
+    "slug": "open-street-map",
+    "formations": [
+      2
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 3,
+  "fields": {
+    "nom_catformation": "S\u00e9miologie graphique",
+    "pitch": "Les r\u00e8gles \u00e0 respecter pour r\u00e9aliser de belles cartes, bien compr\u00e9hensibles. Nous transmettons les bases de la s\u00e9miologie graphique telles qu'elles sont d\u00e9finies par les cartographes professionnels.",
+    "css_icon": "icon palette",
+    "css_class": "mobile-margin-4r margin3r",
+    "css_color": "denim",
+    "image": null,
+    "actif": false,
+    "slug": "semiologie",
+    "formations": [
+      3
+    ]
+  }
+},
+{
+  "model": "website.catformation",
+  "pk": 4,
+  "fields": {
+    "nom_catformation": "Ateliers m\u00e9tiers",
+    "pitch": "Nombreux ateliers pour maitriser des aspects pr\u00e9cis sur les outils ou les m\u00e9thodes g\u00e9omatiques dans votre m\u00e9tiers.",
+    "css_icon": "icon layers",
+    "css_class": "",
+    "css_color": "green",
+    "image": null,
+    "actif": false,
+    "slug": "ateliers",
+    "formations": [
+      4
+    ]
+  }
+}
+]

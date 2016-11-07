@@ -18,6 +18,14 @@ def terms(request):
 def privacy(request):
    
     return render(request, 'privacy.html')
+
 def cdg(request):
    
     return render(request, 'cdg.html')
+def about(request):
+   
+    return render(request, 'about.html')
+  
+def icon(request):
+   
+    return render(request, 'icon_css_mapbox.html')

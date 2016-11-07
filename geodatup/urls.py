@@ -35,6 +35,8 @@ urlpatterns = [
     url(r'^terms/$', views.terms, name='terms'),
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^cdg/$', views.cdg, name='cdg'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^icon/$', views.icon, name='icon'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 

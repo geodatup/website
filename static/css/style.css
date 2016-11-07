@@ -57,8 +57,89 @@
   background-repeat:no-repeat;
   }
 
-
-
 .post-it-fixe{
-	height: 350px;
+  height: 350px;
+}
+
+.icon-ign_data:before {
+  content: "\e900";
+}
+
+.cursor {
+  cursor: pointer;
+}
+.service-block-unactive {
+  width: 23%;
+  min-height: 140px;
+}
+
+.becontinue
+{
+  display:inline-block;
+  z-index:1;
+  opacity:0.3;
+  filter:alpha(opacity=50); 
+}
+.becontinue:hover
+{
+  opacity:1;
+}
+
+.becontinuetext{
+  z-index:10;
+  position: absolute;  
+}
+
+.rotate {
+  text-align: center;
+  -webkit-transform: rotate(328deg);
+  -moz-transform: rotate(328deg);
+  -o-transform: rotate(328deg);
+  writing-mode: lr-tb;
+  color: #828181;
+}
+
+.becontinuetext:hover {
+  opacity:0.2;
+}
+
+.imagecouverture{
+    height:  700px;
+    max-height: 900px;
+}
+
+
+@media only screen and (max-width: 1080px) {
+.service-block-unactive  {
+  width: 24%;
+  min-height: 165px;
+ }
+}
+
+@media only screen and (max-width:1040px) {
+  .imagecouverture {
+      margin-bottom: -200px;
+      left: -30px;
+  }
+
+}
+
+@media only screen and (max-width:1025px) {
+.imagecouverture {
+    height:  100%;
+    position: relative;
+    margin-bottom: -200px;
+    left: 0;
+    right: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+@media only screen and (max-width: 750px) {
+ .service-block-unactive  {
+  width: 48%;
+  min-height: 135px;
+  margin-right: 0%;
+ }
 }

@@ -1,0 +1,652 @@
+[
+{
+  "model": "website.chapitreformation",
+  "pk": 2,
+  "fields": {
+    "nom_chapitre": "Les donn\u00e9es g\u00e9ographiques",
+    "module": 12,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 3,
+  "fields": {
+    "nom_chapitre": "Les \u00ab mod\u00e8les \u00bb des SIG",
+    "module": 12,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 4,
+  "fields": {
+    "nom_chapitre": "Les m\u00e9tadonn\u00e9es",
+    "module": 12,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 12,
+  "fields": {
+    "nom_chapitre": "Ajouter une couche",
+    "module": 2,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 13,
+  "fields": {
+    "nom_chapitre": "Pr\u00e9parer une carte",
+    "module": 2,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 14,
+  "fields": {
+    "nom_chapitre": "Aper\u00e7u de l'interface",
+    "module": 2,
+    "order": 3,
+    "documentation_url": "http://docs.qgis.org/2.14/fr/docs/training_manual/introduction/overview.html"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 15,
+  "fields": {
+    "nom_chapitre": "Travailler avec des donn\u00e9es vectorielles",
+    "module": 16,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 16,
+  "fields": {
+    "nom_chapitre": "Symbologie",
+    "module": 16,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 17,
+  "fields": {
+    "nom_chapitre": "Les donn\u00e9es attributaires",
+    "module": 17,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 18,
+  "fields": {
+    "nom_chapitre": "L'outil \u00e9tiquette",
+    "module": 17,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 19,
+  "fields": {
+    "nom_chapitre": "Classification des donn\u00e9es",
+    "module": 17,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 20,
+  "fields": {
+    "nom_chapitre": "Le composeur d'impression",
+    "module": 18,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 21,
+  "fields": {
+    "nom_chapitre": "Personnaliser ses cartes",
+    "module": 18,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 22,
+  "fields": {
+    "nom_chapitre": "La boite de dialogue de cr\u00e9ation d'une couche",
+    "module": 5,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 23,
+  "fields": {
+    "nom_chapitre": "Les sources de donn\u00e9es de r\u00e9f\u00e9rence",
+    "module": 5,
+    "order": 2,
+    "documentation_url": "http://docs.qgis.org/2.14/fr/docs/training_manual/create_vector_data/create_new_vector.html#basic-fa-data-sources"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 24,
+  "fields": {
+    "nom_chapitre": "Topologie des donn\u00e9es",
+    "module": 5,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 25,
+  "fields": {
+    "nom_chapitre": "Formulaires d'\u00e9dition",
+    "module": 5,
+    "order": 4,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 26,
+  "fields": {
+    "nom_chapitre": "Les actions",
+    "module": 5,
+    "order": 5,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 27,
+  "fields": {
+    "nom_chapitre": "Les syst\u00e8mes de projections",
+    "module": 19,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 28,
+  "fields": {
+    "nom_chapitre": "Requ\u00eate \u00e0 multiple crit\u00e8re",
+    "module": 19,
+    "order": 2,
+    "documentation_url": "http://docs.qgis.org/2.14/fr/docs/training_manual/vector_analysis/basic_analysis.html"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 29,
+  "fields": {
+    "nom_chapitre": "Analyse de r\u00e9seau",
+    "module": 19,
+    "order": 3,
+    "documentation_url": "http://docs.qgis.org/2.14/fr/docs/training_manual/vector_analysis/network_analysis.html"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 30,
+  "fields": {
+    "nom_chapitre": "Les statistiques spatiales",
+    "module": 19,
+    "order": 4,
+    "documentation_url": "http://docs.qgis.org/2.14/fr/docs/training_manual/vector_analysis/spatial_statistics.html"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 31,
+  "fields": {
+    "nom_chapitre": "Charger des donn\u00e9es Rasters",
+    "module": 20,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 32,
+  "fields": {
+    "nom_chapitre": "La symbologie des Rasters",
+    "module": 20,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 33,
+  "fields": {
+    "nom_chapitre": "Analyse de mod\u00e8le num\u00e9rique de terrain",
+    "module": 20,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 34,
+  "fields": {
+    "nom_chapitre": "Conversion Raster vers Vecteur",
+    "module": 21,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 35,
+  "fields": {
+    "nom_chapitre": "Combiner les analyses",
+    "module": 21,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 36,
+  "fields": {
+    "nom_chapitre": "Gestionnaire d'extention",
+    "module": 11,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 37,
+  "fields": {
+    "nom_chapitre": "Les extensions experimentales",
+    "module": 11,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 38,
+  "fields": {
+    "nom_chapitre": "Ajouter quelques extensions utiles",
+    "module": 11,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 39,
+  "fields": {
+    "nom_chapitre": "Web Mapping Services (WMS)",
+    "module": 7,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 40,
+  "fields": {
+    "nom_chapitre": "Web Feature Services (WFS)",
+    "module": 7,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 41,
+  "fields": {
+    "nom_chapitre": "Initialisation du projet SIG",
+    "module": 14,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 42,
+  "fields": {
+    "nom_chapitre": "R\u00e9alisation du projet SIG",
+    "module": 14,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 43,
+  "fields": {
+    "nom_chapitre": "Abstraction",
+    "module": 13,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 44,
+  "fields": {
+    "nom_chapitre": "Acquisition",
+    "module": 13,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 45,
+  "fields": {
+    "nom_chapitre": "Archivage",
+    "module": 13,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 46,
+  "fields": {
+    "nom_chapitre": "Analyse",
+    "module": 13,
+    "order": 4,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 48,
+  "fields": {
+    "nom_chapitre": "Affichage",
+    "module": 13,
+    "order": 5,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 49,
+  "fields": {
+    "nom_chapitre": "Logiciel Libre et Open Data",
+    "module": 1,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 50,
+  "fields": {
+    "nom_chapitre": "La communaut\u00e9 QGIS",
+    "module": 1,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 51,
+  "fields": {
+    "nom_chapitre": "Les param\u00e8tres avanc\u00e9es des styles",
+    "module": 22,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 52,
+  "fields": {
+    "nom_chapitre": "Les modes de discr\u00e9tisations",
+    "module": 22,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 53,
+  "fields": {
+    "nom_chapitre": "R\u00e8gles personnalis\u00e9es",
+    "module": 22,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 54,
+  "fields": {
+    "nom_chapitre": "Jointures spatiales dynamiques",
+    "module": 23,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 55,
+  "fields": {
+    "nom_chapitre": "Les jointures attributaires et spatiales",
+    "module": 19,
+    "order": 6,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 56,
+  "fields": {
+    "nom_chapitre": "Echantillonnages et interpolations",
+    "module": 23,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 57,
+  "fields": {
+    "nom_chapitre": "Les filtres par attribut",
+    "module": 29,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 58,
+  "fields": {
+    "nom_chapitre": "Les s\u00e9lections graphiques",
+    "module": 29,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 59,
+  "fields": {
+    "nom_chapitre": "Requ\u00eate attributaire",
+    "module": 29,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 60,
+  "fields": {
+    "nom_chapitre": "Requ\u00eate spatiale",
+    "module": 29,
+    "order": 4,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 61,
+  "fields": {
+    "nom_chapitre": "Grass : NVIZ",
+    "module": 25,
+    "order": 1,
+    "documentation_url": "https://makina-corpus.com/blog/metier/2014/visualiser-en-3d-un-modele-numerique-de-terrain-avec-nviz-sous-qgis"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 62,
+  "fields": {
+    "nom_chapitre": "Matplotlib ou Visvis",
+    "module": 25,
+    "order": 2,
+    "documentation_url": "http://www.portailsig.org/content/qgis-representation-3d-des-couches-vectorielles-shapefiles-dits-3d-ou-shapefiles-avec-attrib"
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 63,
+  "fields": {
+    "nom_chapitre": "Traitements de base",
+    "module": 26,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 64,
+  "fields": {
+    "nom_chapitre": "Ex\u00e9cution d'un outil par lot",
+    "module": 26,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 65,
+  "fields": {
+    "nom_chapitre": "Enchainer les traitements avec le modeleur Graphique",
+    "module": 26,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 66,
+  "fields": {
+    "nom_chapitre": "Comprendre et lancer un script Python",
+    "module": 26,
+    "order": 4,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 67,
+  "fields": {
+    "nom_chapitre": "Partager et organiser ses projets, ses donn\u00e9es",
+    "module": 27,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 68,
+  "fields": {
+    "nom_chapitre": "Utiliser un base de donn\u00e9es PostGis",
+    "module": 27,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 69,
+  "fields": {
+    "nom_chapitre": "Lizmap",
+    "module": 28,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 70,
+  "fields": {
+    "nom_chapitre": "Qgis2threejs",
+    "module": 28,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 71,
+  "fields": {
+    "nom_chapitre": "Utiliser les variables",
+    "module": 30,
+    "order": 1,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 72,
+  "fields": {
+    "nom_chapitre": "Afficher et repr\u00e9senter des tableaux et graphiques",
+    "module": 30,
+    "order": 2,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 73,
+  "fields": {
+    "nom_chapitre": "Faire un Atlas",
+    "module": 30,
+    "order": 3,
+    "documentation_url": ""
+  }
+},
+{
+  "model": "website.chapitreformation",
+  "pk": 74,
+  "fields": {
+    "nom_chapitre": "LecoS - statistiques environnementales",
+    "module": null,
+    "order": null,
+    "documentation_url": "http://plugins.qgis.org/plugins/LecoS/"
+  }
+}
+]

@@ -18,7 +18,7 @@ $(function() {
     Views.modal = Views.modal || new Modal({ el: $('#modal-content') });
     Views.nav = Views.nav || new Nav({ el: $('.masthead') });
     $('.doc h1[id], .doc h2[id], .doc h3[id], .doc h4[id]')
-        .attr('title', 'Link to this section')
+        .attr('title', 'Aller à cette section')
         .click(function(ev) {
             window.location.hash = $(ev.currentTarget).attr('id');
         });

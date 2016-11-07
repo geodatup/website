@@ -5,27 +5,43 @@
 
 {% block body_content %}
 <div class='page-content'>
-        
+
+
+{% block nav %}
+{% include "nav.html" %}
+{% endblock nav %}
+
 
         {% block section-top %}
             {% include "formation/formation-section-top.html" %}
         {% endblock section-top %}
 
         {% block sections %}
+            {% block nav-vertical %}
+                
+            {% endblock nav-vertical %}
+            {% block list %}
+            {% include "formation/section-inCatFormationList.html" %}
+            {% endblock list %}
 
-        {% block list %}
-        {% include "formation/section-inCatFormationList.html" %}
-        {% endblock list %}
+            {% block detail %}
+            {% include "formation/section-inCatFormationDetail.html" %}
+            {% endblock detail %}
 
-        {% block detail %}
-        {% include "formation/section-inCatFormationDetail.html" %}
-        {% endblock detail %}
+            <!-- les autres catégories de formation -->
 
-        <!-- les autres catégories de formation -->
-        {% show_index catFormation %}
+            {% show_index catFormation catFormation.slug %}
 
+                {% block section-contact %}
+        {% include "section-contact.html" %}
+    {% endblock section-contact %}
 
         {% endblock sections %}
-
 </div>
+
+{% block footer %}
+        {% include "footer.html" %}
+{% endblock footer %}
+
 {% endblock body_content %}
+

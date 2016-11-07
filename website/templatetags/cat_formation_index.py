@@ -7,13 +7,10 @@ register = template.Library()
 
 
 
-@register.inclusion_tag('formation/liste_catformation.html',takes_context=True)
-def show_index(context, catFormation):
+@register.inclusion_tag('section-formation.html',takes_context=True)
+def show_index(context, catFormation,slug):
     request = context['request']
-    catFormationList = CatFormation.objects.all()
+    catFormation_List = CatFormation.objects.exclude(slug=slug)
+    titre = 'Les autres formations'
     
-    #urlMatching = catFormation.objects.filter(slug=slugCatFormation)[0].get_absolute_url()
-
-    
-    #return {'catFormationList': catFormationList, 'request':request, 'urlMatching':urlMatching}
-    return {'catFormationList': catFormationList, 'request':request}
+    return {'catFormation_List': catFormation_List, 'titre' : titre, 'request':request}

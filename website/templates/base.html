@@ -6,10 +6,9 @@
 
 {% block head_css %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static "css/help.css" %}">
 {% endblock head_css %}  
 
-{% block body_class %} full bleed{% endblock %}
+{% block body_class %}full bleed{% endblock %}
 {% block body_content %}
 
 <div class='page-content'>
@@ -59,70 +58,18 @@
 {% endblock sections %}
 
 </div>
-
-
-	{% block footer %}
+{% block footer %}
 		{% include "footer.html" %}
-	{% endblock footer %}
+{% endblock footer %}
 
 {% endblock body_content %}
+
 
 
 {% block body_js %}
 {{ block.super }}
 <script src="{% static "js/base.js"%}"></script>
-
-<script type="text/javascript">
-var $dropdownTriggers = $('.dropdown');
-var $dropdownArea = $('.main-subnav');
-var $dropdownZone = $('.hover-area');
-
-$dropdownTriggers.each(function() {
-  var $this = $(this);
-  window.hoverintent(this, function() {
-    $dropdownTriggers.removeClass('show');
-    $('.subnav-group').removeClass('show');
-    $dropdownArea.addClass('show');
-    $('.subnav-' + $this.data('category')).addClass('show');
-    $this.addClass('show');
-  }, function() {
-    if (!$dropdownZone.hasClass('hovered') && $('.dropdown:hover').length === 0) {
-      $dropdownArea.removeClass('show');
-      $dropdownTriggers.removeClass('show');
-    }
-  });
-});
-
-$dropdownZone.mouseover(function() {
-  $(this).addClass('hovered');
-  return false;
-}).mouseleave(function() {
-  $(this).removeClass('hovered');
-  window.setTimeout(function() {
-    if ($('.dropdown:hover').length === 0) {
-      $dropdownArea.removeClass('show');
-      $dropdownTriggers.removeClass('show');
-    }
-  }, 300);
-});
-</script>
-
-
-<script type="text/javascript">
-
-   $(document).scroll(function() {
-    var y = $(this).scrollTop();
-    if (y > 400) {
-        $('div#signup-nav').removeClass('hide-nav');
-      } else {
-        $('div#signup-nav').addClass('hide-nav');
-      }
-  });
-
-  
-</script>
-
-
+<script src="{% static "js/site.js"%}"></script>
 {% endblock body_js %}
 
 

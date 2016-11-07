@@ -1,4 +1,28 @@
 
+// faire apparaitre disparaitre et apparaitre des elements par ID en ajoutant 
+// onclick="toggle_visibility('id');"
+// dans la définition de le l'objet html
+
+function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+
+
+function toggle_opacity(id) {
+       var e = document.getElementById(id);
+       if(e.style.opacity < 1)
+          e.style.opacity = 1;
+       else
+          e.style.opacity = 0.3;
+    }
+
+
+// fonction pour le menu principal
+
 var $dropdownTriggers = $('.dropdown');
 var $dropdownArea = $('.main-subnav');
 var $dropdownZone = $('.hover-area');
@@ -32,6 +56,7 @@ $dropdownZone.mouseover(function() {
   }, 300);
 });
 
+// fonction pour le menu vertical
 
 $(document).scroll(function() {
     var y = $(this).scrollTop();
@@ -42,4 +67,5 @@ $(document).scroll(function() {
       }
 });
 
-  
+
+

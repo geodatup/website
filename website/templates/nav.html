@@ -9,7 +9,7 @@
               <h3><a href="{% url 'website:serviceIndex' %}"  class='rcon next'>{{ section_list.0.nom_section }}</a></h3>
               
               
-              <div class='col5'>
+              <div class='col5'> 
                 <h4>{{ categorie_list.0.nom_categorie }}</h4>
                 {% for service in service_cat1 %}
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
@@ -119,7 +119,7 @@
 
           <!-- Mobile nav -->
           <div class='show-mobile contain dropdown-container pin-topright'>
-            <a href='#menu' class='dark contain z1 big inline icon menu round quiet dropdown-button js-dropdown-button pin-right'></a>
+            <a href='#menu' class='dark contain z100 big inline icon menu round quiet dropdown-button js-dropdown-button pin-right'></a>
             <div id='menu' class='js-dropdown-menu scroll-v dropdown-menu offcanvas-top fill-midnight clip col12 pin-top animate'>
               <div class='keyline-bottom clearfix'>
                 <div class='mobile-cols pad4y keyline-bottom clearfix'>
@@ -139,14 +139,14 @@
                   </div>
                 </div>
                 <div class='col12 pad1x clearfix  mobile-cols pad4y '>
-                  <a class='pad0y block strong quiet col6' href='/about/'>A propos</a>
-                  <a class='pad0y block strong quiet col6' href='/about/equipe/'>Equipe</a>
-                  <a class='pad0y block strong quiet col6' href='/about/jobs/'>Emplois et stages</a>
-                  <a class='pad0y block strong quiet col6' href='/about/presse/'>Presse</a>
-                  <a class='pad0y block strong quiet col6' href='/terms/'>Mentions légales</a>
-                  <a class='pad0y block strong quiet col6' href='/privacy/'>Politique de confidentialité</a>                  
-                  <a class='pad0y block strong quiet col6' href='/cdg/'>Conditions générales de vente</a>
-                  <a class='pad0y block strong quiet col6' href='#contact'>Contact</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#top'>A propos</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#equipe'>Equipe</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#jobs'>Emplois et stages</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#presse'>Presse</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'terms' %}'>Mentions légales</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'privacy' %}'>Politique de confidentialité</a>                  
+                  <a class='pad0y block strong quiet col6' href='{% url 'cdg' %}'>Conditions générales de vente</a>
+                  <a class='pad0y block strong quiet col6' href='#section-contact'>Contact</a>
                 </div>
               </div>
             </div>

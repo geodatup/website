@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'filer',
     'mptt',
     'website',
+    'import_export',
 
 )
 
