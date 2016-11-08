@@ -103,7 +103,7 @@ def showcase(request):
 
 def blog(request):
    
-    return HttpResponseRedirect("blog.geodatup.fr")
+    return HttpResponseRedirect("/blog/")
 
 def privacy(request):
    
