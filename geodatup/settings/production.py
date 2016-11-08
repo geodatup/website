@@ -6,7 +6,7 @@ SECRET_KEY = 'd*i=4eppnc7((&7ym*i)(!ecxz433-$b07@%!8xp(8lw5)iw=d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.geodatup.fr']
+ALLOWED_HOSTS = ['.geodatup.fr']
 
 INSTALLED_APPS += (
     'gunicorn', # other apps for production site
