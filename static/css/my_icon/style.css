@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?l5vua3');
+  src:  url('fonts/icomoon.eot?l5vua3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?l5vua3') format('truetype'),
+    url('fonts/icomoon.woff?l5vua3') format('woff'),
+    url('fonts/icomoon.svg?l5vua3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="iconmoon"], [class*=" iconmoon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+
+.rconmoon.big:after,
+.iconmoon.big:before {
+  font-size: 40px;
+  width:40px;
+  height:40px;
+  }
+
+.prose-big .iconmoon,
+.prose-big .rconmoon,
+.prose .iconmoon,
+.prose .rconmoon {
+  line-height: 20px;
+}
+
+.iconmoon.big                     { line-height:40px; }
+.iconmoon:not(.big):before        { margin-right:5px; }
+.iconmoon:empty:before            { margin:0; }
+
+/*
+:not(input) exists on this rule to allow inputs with a value to take a width, because
+otherwise these are considered empty
+*/
+.button.iconmoon:empty:not(input) { width:40px; padding:10px; }
+.button.short.iconmoon:empty      { width:30px; padding:5px; }
+
+.big.button.iconmoon {
+  line-height: 40px;
+  padding-left: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  }
+
+/* Generated with icomoon.com
+Note: :after rules and alternative names need to be added manually.*/
+
+
+.rconmoon:after,
+.iconmoon:before {
+  font-family: 'icomoon';
+  content:'';
+  display:inline-block;
+  width:20px;
+  height:20px;
+  font-size: 20px;
+  color: inherit;
+  vertical-align:top;
+  -webkit-background-size:4320px 60px;
+          background-size:4320px 60px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  }
+
+.iconmoon.icon-QGIS_logo:before {
+  content: "\e900";
+}
+.iconmoon.icon-ign_data:before {
+  content: "\e901";
+}
+
