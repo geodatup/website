@@ -20,13 +20,7 @@
                 {% for service in service_cat2 %}
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
                 {% endfor %}           
-              <!--  <a class='block pad1y icon satellite' href='/industries/drones'>Drones</a>
-                <a class='block pad1y icon satellite' href='/satellite/'>Image Satellite</a>
-                <a class='block pad1y icon globe' href='/atlas/'>Acquisition</a>                
-                <a class='block pad1y icon marker' href='/geocoding/'>Geocodage</a>
-                <a class='block pad1y icon mobile' href='/programmation/'>Traitement de données</a>
-                <a class='block pad1y icon mobile' href='/programmation/'>BigData</a>
-                -->
+              
               </div>
 
             </div>
@@ -35,10 +29,7 @@
               {% for service in service_cat3 %}
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
               {% endfor %}
-             <!-- <a class='block pad1y icon data' href='/data-platform/'>Consultant</a>
-              <a class='block pad1y icon mt' href='/enterprise/'>Audit &amp; solutions</a>
-              <a class='block pad1y icon lock' href='/platform/security/'>Formations</a>
-             -->
+
             </div>
           </div>
 
@@ -140,7 +131,7 @@
                 </div>
                 <div class='col12 pad1x clearfix  mobile-cols pad4y '>
                   <a class='pad0y block strong quiet col6' href='{% url 'about' %}#top'>A propos</a>
-                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#equipe'>Equipe</a>
+                  <a class='pad0y block strong quiet col6' href='{% url 'about' %}#team'>Équipe</a>
                   <a class='pad0y block strong quiet col6' href='{% url 'about' %}#jobs'>Emplois et stages</a>
                   <a class='pad0y block strong quiet col6' href='{% url 'about' %}#presse'>Presse</a>
                   <a class='pad0y block strong quiet col6' href='{% url 'terms' %}'>Mentions légales</a>

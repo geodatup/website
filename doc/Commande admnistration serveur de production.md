@@ -29,7 +29,7 @@ Installer tous les package python de base
 
 ~~~
 sudo su - geodatup
-pip3 install -r requierements/base.tx
+pip3 install -r requierements/base.txt
 ~~~
 puis relancer supervisorctl en dehors de la session geodatup
 
@@ -45,3 +45,15 @@ sudo chown geodatup:webapps -R .
 
 Collectstatic provoque une erreur de permission. changer les droits du dossier static
 s'assurer d'etre connecter avec l'utilisateur geodatup
+
+
+Gunicorn ne se lance pas. 
+~~~
+EACESS
+supervisor: child process was not spawned
+~~~
+le fichier gunicorn_start n'est pas executable. Appliquer les droits de l'utilisateur
+~~~
+cd webapps/website/bin/
+sudo chown geodatup:webapps -R .
+~~~

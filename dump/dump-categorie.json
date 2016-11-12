@@ -1,0 +1,32 @@
+[
+{
+  "model": "website.categorie",
+  "pk": 4,
+  "fields": {
+    "nom_categorie": "Accompagnement",
+    "level": 1,
+    "css_class": "",
+    "actif": true
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 5,
+  "fields": {
+    "nom_categorie": "M\u00e9thodes et outils",
+    "level": 2,
+    "css_class": "",
+    "actif": true
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 6,
+  "fields": {
+    "nom_categorie": "Donn\u00e9es",
+    "level": 3,
+    "css_class": "",
+    "actif": true
+  }
+}
+]

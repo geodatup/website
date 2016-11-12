@@ -1,0 +1,58 @@
+[
+{
+  "model": "website.section",
+  "pk": 1,
+  "fields": {
+    "nom_section": "Services",
+    "level": "navbar-top",
+    "css_icon": "",
+    "css_div_class": "dropdown inline fl contain",
+    "css_ahref_class": "",
+    "css_datacategory": "products",
+    "slug": "service",
+    "actif": true
+  }
+},
+{
+  "model": "website.section",
+  "pk": 2,
+  "fields": {
+    "nom_section": "Secteurs",
+    "level": "navbar-top",
+    "css_icon": "",
+    "css_div_class": "dropdown inline fl contain",
+    "css_ahref_class": "",
+    "css_datacategory": "use-cases",
+    "slug": "secteur",
+    "actif": true
+  }
+},
+{
+  "model": "website.section",
+  "pk": 3,
+  "fields": {
+    "nom_section": "Assistances & Support",
+    "level": "navbar-top",
+    "css_icon": "",
+    "css_div_class": "dropdown inline fl contain",
+    "css_ahref_class": "",
+    "css_datacategory": "help",
+    "slug": "assistances-support",
+    "actif": true
+  }
+},
+{
+  "model": "website.section",
+  "pk": 4,
+  "fields": {
+    "nom_section": "Blog",
+    "level": "navbar-top",
+    "css_icon": "",
+    "css_div_class": "inline fl",
+    "css_ahref_class": "quiet",
+    "css_datacategory": "products",
+    "slug": "blog",
+    "actif": true
+  }
+}
+]

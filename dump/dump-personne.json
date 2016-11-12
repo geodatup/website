@@ -1,0 +1,92 @@
+[
+{
+  "model": "website.personne",
+  "pk": 1,
+  "fields": {
+    "nom_personne": "Hugo Roussaffa",
+    "type_personne": "Equipe",
+    "position": "Associ\u00e9",
+    "fonction": "Fondateur - G\u00e9omaticien - Formateur - Pilote de drone",
+    "description": "",
+    "photo": 2,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "hugo-roussaffa"
+  }
+},
+{
+  "model": "website.personne",
+  "pk": 2,
+  "fields": {
+    "nom_personne": "Benjamin Bernard",
+    "type_personne": "Equipe",
+    "position": "Prestataire",
+    "fonction": "Ing\u00e9nieur G\u00e9omaticien",
+    "description": "",
+    "photo": 3,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "benjamin-bernard"
+  }
+},
+{
+  "model": "website.personne",
+  "pk": 3,
+  "fields": {
+    "nom_personne": "Samuel Bonneau",
+    "type_personne": "Equipe",
+    "position": "Prestataire",
+    "fonction": "Chef de projet",
+    "description": "",
+    "photo": 4,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "samuel-bonneau"
+  }
+},
+{
+  "model": "website.personne",
+  "pk": 4,
+  "fields": {
+    "nom_personne": "Zoe Boularan",
+    "type_personne": "Equipe",
+    "position": "Prestataire",
+    "fonction": "Analyste spatiale",
+    "description": "",
+    "photo": 5,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "zoe-boularan"
+  }
+},
+{
+  "model": "website.personne",
+  "pk": 5,
+  "fields": {
+    "nom_personne": "Claire Cousergue",
+    "type_personne": "Equipe",
+    "position": "Associ\u00e9",
+    "fonction": "Assistante de direction - Pilote de drone - Camerawoman",
+    "description": "",
+    "photo": 6,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "claire-cousergue"
+  }
+},
+{
+  "model": "website.personne",
+  "pk": 6,
+  "fields": {
+    "nom_personne": "Flavien Serein",
+    "type_personne": "Equipe",
+    "position": "Prestataire",
+    "fonction": "Web developper",
+    "description": "",
+    "photo": 7,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "flavien-serein"
+  }
+}
+]

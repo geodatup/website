@@ -17,6 +17,7 @@ urlpatterns = patterns('',
 	url(r'^support/$', views.support, name='support'),
 	url(r'^galerie/$', views.galerie, name='galerie'),	
 	url(r'^showcase/$', views.showcase, name='showcase'),
+	url(r'^about/$', views.about, name='about'),
 	url(r'^blog/$', views.blog, name='blog'),
 	)
 

@@ -1,0 +1,170 @@
+[
+{
+  "model": "website.service",
+  "pk": 6,
+  "fields": {
+    "nom_service": "Formation",
+    "categorie_service": 4,
+    "pitch": "",
+    "description": "",
+    "css_icon": "plus-document",
+    "css_class": "",
+    "actif": true,
+    "slug": "formation"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 7,
+  "fields": {
+    "nom_service": "Conseil",
+    "categorie_service": 4,
+    "pitch": "",
+    "description": "",
+    "css_icon": "compass",
+    "css_class": "",
+    "actif": true,
+    "slug": "conseil"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 8,
+  "fields": {
+    "nom_service": "Maintenance",
+    "categorie_service": 4,
+    "pitch": "",
+    "description": "",
+    "css_icon": "bug",
+    "css_class": "",
+    "actif": true,
+    "slug": "maintenace"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 9,
+  "fields": {
+    "nom_service": "Cartographie sp\u00e9cialis\u00e9e",
+    "categorie_service": 5,
+    "pitch": "",
+    "description": "",
+    "css_icon": "map",
+    "css_class": "",
+    "actif": true,
+    "slug": "cartographie-specialisee"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 10,
+  "fields": {
+    "nom_service": "S.I.G.",
+    "categorie_service": 5,
+    "pitch": "",
+    "description": "",
+    "css_icon": "layers",
+    "css_class": "",
+    "actif": true,
+    "slug": "sig"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 11,
+  "fields": {
+    "nom_service": "T\u00e9l\u00e9d\u00e9tection",
+    "categorie_service": 5,
+    "pitch": "",
+    "description": "",
+    "css_icon": "grid",
+    "css_class": "",
+    "actif": true,
+    "slug": "teledetection"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 12,
+  "fields": {
+    "nom_service": "Programmation",
+    "categorie_service": 5,
+    "pitch": "",
+    "description": "",
+    "css_icon": "coding",
+    "css_class": "",
+    "actif": true,
+    "slug": "programmation"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 13,
+  "fields": {
+    "nom_service": "Analyse spatiale",
+    "categorie_service": 5,
+    "pitch": "",
+    "description": "",
+    "css_icon": "analytics",
+    "css_class": "",
+    "actif": true,
+    "slug": "analyse-spatiale"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 14,
+  "fields": {
+    "nom_service": "Orthophotographie",
+    "categorie_service": 6,
+    "pitch": "",
+    "description": "",
+    "css_icon": "tileset",
+    "css_class": "",
+    "actif": true,
+    "slug": "photogrammetrie"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 15,
+  "fields": {
+    "nom_service": "DataPack Open data",
+    "categorie_service": 6,
+    "pitch": "",
+    "description": "",
+    "css_icon": "data",
+    "css_class": "",
+    "actif": true,
+    "slug": "datapack-open-data"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 16,
+  "fields": {
+    "nom_service": "DataPack IGN",
+    "categorie_service": 6,
+    "pitch": "",
+    "description": "",
+    "css_icon": "data",
+    "css_class": "",
+    "actif": true,
+    "slug": "datapack-ign"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 17,
+  "fields": {
+    "nom_service": "Lev\u00e9 terrain",
+    "categorie_service": 6,
+    "pitch": "",
+    "description": "",
+    "css_icon": "marker",
+    "css_class": "",
+    "actif": true,
+    "slug": "leve-terrain"
+  }
+}
+]

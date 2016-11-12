@@ -61,7 +61,7 @@ class Section(models.Model):
 
 class Categorie(models.Model):
     nom_categorie = models.CharField(max_length=30)
-    level = models.PositiveSmallIntegerField(blank=True, null=True)
+    level = models.PositiveSmallIntegerField(blank=False, null=False, unique=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif =  models.BooleanField(default=True)
     
@@ -215,10 +215,33 @@ class Reference(models.Model):
         return self.nom_reference
 
     
-#class MyContact(models.Model):
-#    nom_contact = models.CharField(max_length=15)
-#    type_contact = models.CharField(max_length=15)
-#    valeur = models.CharField(max_length=30)
-#    css_icon = models.CharField(max_length=15, null=True, blank=True)
-#   css_class = models.CharField(max_length=100, null=True, blank=True)
+class Personne(models.Model):
+     nom_personne = models.CharField(max_length=30)
+     personne_choix =  (
+         ('Equipe','equipe'),
+         ('client','client'),
+         ('fournisseur','fournisseur'),
+         ('aucun','aucun'),
+         )
+     type_personne = models.CharField(max_length=50,
+        choices=personne_choix,
+        default='equipe'
+        )
+     position_choix =   (
+         ('Associé','associé'),
+         ('Prestataire','prestataire'),
+         ('Salarié','salarié'),
+         ('aucun','aucun'),
+         )
+     position = models.CharField(max_length=50,
+        choices=position_choix,
+        default='associé'
+        )
+     fonction = models.CharField(max_length=60, null=True, blank=True)
+     description = models.CharField(max_length=100, null=True, blank=True)
 
+     photo = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+     css_icon = models.CharField(max_length=15, null=True, blank=True)
+     css_class = models.CharField(max_length=100, null=True, blank=True)
+     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+    

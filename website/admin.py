@@ -4,8 +4,15 @@ from django import forms
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation
+from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne
  
+
+
+
+class PersonneAdmin(admin.ModelAdmin):
+	list_display = ('nom_personne','fonction')
+	prepopulated_fields = {'slug': ('nom_personne',) }
+
 
 
 class ChapitreFormationRessource(resources.ModelResource):
@@ -126,3 +133,5 @@ admin.site.register(CatFormation, CatFormationAdmin)
 admin.site.register(Reference)
 admin.site.register(ModuleFormation, ModuleFormationAdmin)
 admin.site.register(ChapitreFormation, ChapitreFormationAdmin)
+
+admin.site.register(Personne, PersonneAdmin)

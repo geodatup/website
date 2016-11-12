@@ -13,9 +13,9 @@ def index(request):
 	section_list = Section.objects.all().filter(actif=1)
 	secteur_list = Secteur.objects.all().filter(actif=1)
 
-	service_cat1 = service_list.filter(categorie_service__pk=1)
-	service_cat2 = service_list.filter(categorie_service__pk=2)	
-	service_cat3 = service_list.filter(categorie_service__pk=3)
+	service_cat1 = service_list.filter(categorie_service__level=1)
+	service_cat2 = service_list.filter(categorie_service__level=2)	 
+	service_cat3 = service_list.filter(categorie_service__level=3)
 
 	secteur_list_tab1 = secteur_list[0:3]
 	secteur_list_tab2 = secteur_list[3:6]
@@ -82,6 +82,16 @@ class CatFormationListView(generic.ListView):
     template_name = 'formation/catFormationIndexList.html'
 
 
+class PersonneDetailView(generic.DetailView):
+    model = CatFormation
+    context_object_name = 'catFormation'
+    template_name = 'formation/catFormationDetail.html'
+
+
+class PersonneListView(generic.ListView):
+    model = CatFormation
+    template_name = 'formation/catFormationIndexList.html'
+
 
 def support(request):
    
@@ -108,3 +118,7 @@ def blog(request):
 def privacy(request):
    
     return render(request, 'privacy.html')
+
+def about(request):
+   
+    return render(request, 'about.html')

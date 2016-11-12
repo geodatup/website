@@ -1,0 +1,30 @@
+{% load thumbnail %}
+<section id="team">
+<div class="pad8y block-section" id="team"  >
+		<h3 >L'équipe</h3>
+
+
+		<section  class="grid" >
+
+			<!-- Grid items -->
+			{% for personne in team_list %}      
+			<a href="" class="grid__item" >
+			
+    	    {% thumbnail personne.photo '580x700' crop subject_location=personne.photo.subject_location as photo %}
+			<div class="profile-img clip"><img 
+	          class="round" src="{{ photo.url }}" 	         
+	          alt="{{ personne.nom_personne }}">
+	          </div>
+				<div class="meta center">
+					<h3 class="meta__title" style="color:blue">{{ personne.nom_personne }}</h3>
+					<span class="quiet small">{{ personne.fonction }}</span>
+				</div>
+			</a>
+			
+
+
+			{% endfor %}
+			</section>
+</div>
+
+</section>

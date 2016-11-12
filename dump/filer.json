@@ -1,0 +1,281 @@
+[
+{
+  "model": "filer.folder",
+  "pk": 1,
+  "fields": {
+    "parent": null,
+    "name": "qgis",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-10-28T14:47:34.390Z",
+    "created_at": "2016-10-28T14:47:34.390Z",
+    "modified_at": "2016-10-28T14:47:34.390Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 1,
+    "level": 0
+  }
+},
+{
+  "model": "filer.folder",
+  "pk": 2,
+  "fields": {
+    "parent": null,
+    "name": "personne",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-11T12:16:54.446Z",
+    "created_at": "2016-11-11T12:16:54.446Z",
+    "modified_at": "2016-11-11T12:16:54.446Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 2,
+    "level": 0
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 2,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/b7/9d/b79dcb56-078c-49e8-97b6-98a19ff6e3ed/20161102_150914.jpg",
+    "_file_size": 998530,
+    "sha1": "a3ff5bd5b6d2403b74d2ea4b9b2e3048ca0c2318",
+    "has_all_mandatory_data": true,
+    "original_filename": "20161102_150914.jpg",
+    "name": "baby",
+    "description": "",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-11T12:17:12.926Z",
+    "modified_at": "2016-11-11T12:17:31.022Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 3,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/9b/9c/9b9ca656-8984-430f-811a-d671e1f4c2de/20161101_112247.jpg",
+    "_file_size": 893136,
+    "sha1": "3b077c711b1f874beaa0dda5f98e4e58ae3e863a",
+    "has_all_mandatory_data": false,
+    "original_filename": "20161101_112247.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-12T08:34:50.487Z",
+    "modified_at": "2016-11-12T08:34:50.488Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 4,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/60/95/6095c473-0a88-4c04-8b49-765978d3ff10/20161102_150914.jpg",
+    "_file_size": 998530,
+    "sha1": "a3ff5bd5b6d2403b74d2ea4b9b2e3048ca0c2318",
+    "has_all_mandatory_data": false,
+    "original_filename": "20161102_150914.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-12T08:35:35.796Z",
+    "modified_at": "2016-11-12T08:35:35.796Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 5,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/db/5e/db5eba9c-3fb1-4c42-9133-0e7be5e63a09/20161101_145139.jpg",
+    "_file_size": 1256824,
+    "sha1": "482aac8e51db3d2f8f90e5755662dcdb2d231a6a",
+    "has_all_mandatory_data": false,
+    "original_filename": "20161101_145139.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-12T08:36:25.947Z",
+    "modified_at": "2016-11-12T08:36:25.947Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 6,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/a4/28/a428510b-6783-49c1-8868-edc5fcb85ecd/20161105_232317.jpg",
+    "_file_size": 146061,
+    "sha1": "83d3f41c7ef22f1bdeb2a22cdc199b202ea5dcfa",
+    "has_all_mandatory_data": false,
+    "original_filename": "20161105_232317.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-12T08:37:05.580Z",
+    "modified_at": "2016-11-12T08:37:05.580Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 7,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/94/ee/94ee04ff-ce72-46cc-bb5c-d01a26ed5a70/20161101_112546.jpg",
+    "_file_size": 1102773,
+    "sha1": "792dead5523352789ac6b1e813f79a41a19bd8b3",
+    "has_all_mandatory_data": false,
+    "original_filename": "20161101_112546.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-12T08:43:01.452Z",
+    "modified_at": "2016-11-12T08:43:01.452Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.clipboard",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "yogis"
+    ]
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 2,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": "",
+    "default_caption": "",
+    "subject_location": "1024,427",
+    "date_taken": "2016-11-11T12:17:12.778Z",
+    "author": "",
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 3,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-12T08:34:50.408Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 4,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-12T08:35:35.788Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 5,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-12T08:36:25.937Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 6,
+  "fields": {
+    "_height": 720,
+    "_width": 1280,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-12T08:37:05.576Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 7,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-12T08:43:01.442Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+}
+]

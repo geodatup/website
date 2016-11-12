@@ -1,0 +1,50 @@
+[
+{
+  "model": "website.secteur",
+  "pk": 3,
+  "fields": {
+    "nom_secteur": "Foresterie",
+    "css_class": "",
+    "css_icon": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "foresterie"
+  }
+},
+{
+  "model": "website.secteur",
+  "pk": 4,
+  "fields": {
+    "nom_secteur": "Agriculture",
+    "css_class": "",
+    "css_icon": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "agriculture"
+  }
+},
+{
+  "model": "website.secteur",
+  "pk": 5,
+  "fields": {
+    "nom_secteur": "Environnement",
+    "css_class": "",
+    "css_icon": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "environnement"
+  }
+},
+{
+  "model": "website.secteur",
+  "pk": 6,
+  "fields": {
+    "nom_secteur": "Arch\u00e9ologie",
+    "css_class": "",
+    "css_icon": "",
+    "css_color": "",
+    "actif": true,
+    "slug": "archeologie"
+  }
+}
+]
