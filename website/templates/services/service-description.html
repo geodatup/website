@@ -1,3 +1,5 @@
+{% load sekizai_tags cat_formation_index %}
+
 <div class="limiter clearfix pad4y space-top4 prose">
 <div class="clearfix">
 <div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
@@ -10,4 +12,12 @@
 </div>
 </div>
 
+{% if service.nom_service == "Formation" %}
+
+{% show_cat_formation_index %}
+
+
+{% else %}
+
 {{ service.html_page |safe }}
+{% endif %}
