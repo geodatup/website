@@ -1,0 +1,59 @@
+{% if service.nom_service %}
+<section class="splash dark contain clearfix clip fill-orange scroll-section js-fullheight" id="section-0" style="height: 1067px;">
+
+  <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
+
+    <img src="maps.png" class="col10 pin-right maps-header space-top4 hide-mobile">
+    <div class="intro contain">
+      <div class="pad2y clearfix contain">
+
+        <h2 class="fancy space-bottom2">{{service.nom_service}}</h2>
+        <div class="quiet z1 subnav space-bottom2">
+        <a class="secondary-nav-button small inline round strong truncate pad0y " href="/maps/streets/">Streets</a>
+        <a class="secondary-nav-button small inline round strong truncate pad1x pad0y " href="/maps/outdoors">Outdoors</a>
+        <a class="secondary-nav-button small inline round strong truncate pad1x pad0y " href="/maps/light-dark">Light &amp; Dark</a>
+        <a class="secondary-nav-button small inline round strong truncate pad1x pad0y " href="/maps/satellite">Satellite &amp; Satellite Streets</a>
+      </div>
+        <p class="col6 margin6r  prose prose-big">{{ service.pitch }}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      
+
+        <h2 class='fancy space-bottom1'></h2>
+        <p class="prose prose-big"></p>
+
+
+      {% else %}
+<section id="top" class='slideshow splash js-fullheight fill-blue contain animate clip active1' >
+ 
+  <div class='carousel-fill col12 pin-left'>
+    
+  </div>
+
+    <div class='z1 pin-top pin-bottom slideshow-container limiter clearfix pad8y row11'>
+
+      <div class='z1 slideshow-text pad4y col4 margin8 prose prose-big dark'>
+      	<h2 class='fancy space-bottom1'>Nos services</h2>
+        <p class="prose prose-big"></p>
+    
+
+
+
+          <div class="design-section contain col8 pin-top row11">
+
+            <div class="space-bottom4">
+            
+            </div>
+
+          </div>
+      </div> 
+
+    </div>
+     
+</section>
+  {% endif %}

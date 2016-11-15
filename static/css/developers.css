@@ -1,3 +1,4 @@
+.text-red { color: #e55e5e; }
 .text-green { color: #56b881; }
 .text-yellow { color: #f1f075; }
 .text-blue { color:#3887be; }
@@ -9,6 +10,7 @@
 .text-pink { color: #e95591;}
 
 
+.keyline-red { border-color: #e55e5e; }
 .keyline-purple { border-color: #8a8acb; }
 .keyline-green { border-color: #56b881; }
 .keyline-yellow {border-color: #f1f075; }
@@ -27,7 +29,7 @@
 .keyline-stroke { border-width: 4px ; }
 
 .service-block {
-  width: 23%;
+  width: 22%;
   min-height: 140px;
 }
 

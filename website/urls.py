@@ -13,6 +13,8 @@ urlpatterns = patterns('',
 	url(r'^section/$', views.SectionListView.as_view(), name='sectionIndex'),
 	url(r'^catformation/(?P<slug>[^/]+)', views.CatFormationDetailView.as_view(), name='catformationDetail'),
 	url(r'^catformation/$', views.CatFormationListView.as_view(), name='catformationIndex'),
+	url(r'^personne/$', views.PersonneListView.as_view(), name='personneIndex'),
+	url(r'^personne/(?P<slug>[^/]+)', views.PersonneDetailView.as_view(), name='personneDetail'),
 	
 	url(r'^support/$', views.support, name='support'),
 	url(r'^galerie/$', views.galerie, name='galerie'),	

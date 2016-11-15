@@ -1,17 +1,38 @@
 {% extends "base.html" %}
-
+{% load staticfiles sekizai_tags show_service %}
 {% block body_content %}
-<div class="">
-	    {% if service_list %}
-	    <ul>
-	    {% for Service in service_list %}
-	    <li><a href="{{ Service.get_absolute_url }}">{{ Service.nom_service }}</a></li>
-	    {% endfor %}
-	    </ul>
-		{% else %}
-	    <p>Aucun secteur n'est disponbile.</p>
-		{% endif %}
-</div>
 
+<div class='page-content'>
+
+
+{% block nav %}
+{% include "nav.html" %}
+{% include "signup-nav.html" %}
+{% endblock nav %}
+
+{% block section-top %}
+  {% include "services/service-section-top.html" %}
+{% endblock section-top %}
+
+{% block sections %}
+  <!-- nav vertical après car sinon on les menus ne s'affichent pas sur l'image de fond-->
+
+  {% block section-service %}
+   {% show_service_by_categorie %}
+
+  {% endblock section-service %}
+
+  {% block section-contact %}
+    {% include "section-contact.html" %}
+  {% endblock section-contact %}
+
+{% endblock sections %}
+
+</div>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %}
 
 {% endblock body_content %}
+
+

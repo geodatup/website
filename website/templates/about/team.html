@@ -8,9 +8,9 @@
 
 			<!-- Grid items -->
 			{% for personne in team_list %}      
-			<a href="" class="grid__item" >
+			<a href="{{ personne.get_absolute_url }}" class="grid__item" >
 			
-    	    {% thumbnail personne.photo '580x700' crop subject_location=personne.photo.subject_location as photo %}
+    	    {% thumbnail personne.photo '580x700' crop upscale subject_location=personne.photo.subject_location as photo %}
 			<div class="profile-img clip"><img 
 	          class="round" src="{{ photo.url }}" 	         
 	          alt="{{ personne.nom_personne }}">

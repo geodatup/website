@@ -61,6 +61,10 @@
   height: 350px;
 }
 
+.post-it-fixe-small{
+  height: 200px;
+}
+
 .icon-ign_data:before {
   content: "\e900";
 }

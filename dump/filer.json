@@ -180,6 +180,54 @@
   }
 },
 {
+  "model": "filer.file",
+  "pk": 8,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/5d/97/5d970fdf-736d-4ce1-9d86-928d841eb0c0/avatar_sb2.jpg",
+    "_file_size": 12314,
+    "sha1": "0db5b49d1d7720c1f71e9139cd955ff0723ef115",
+    "has_all_mandatory_data": false,
+    "original_filename": "avatar SB2.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-13T14:09:15.041Z",
+    "modified_at": "2016-11-13T14:09:15.041Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 12,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/1d/a7/1da726d8-f7cd-4b01-afc5-ca3029d7c103/ben.png",
+    "_file_size": 71293,
+    "sha1": "2930cba056721c67b3e2e4070766be4c68db1c81",
+    "has_all_mandatory_data": false,
+    "original_filename": "ben.png",
+    "name": "",
+    "description": "",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-13T14:25:45.038Z",
+    "modified_at": "2016-11-13T14:26:12.457Z",
+    "is_public": true
+  }
+},
+{
   "model": "filer.clipboard",
   "pk": 1,
   "fields": {
@@ -274,6 +322,36 @@
     "subject_location": "",
     "date_taken": "2016-11-12T08:43:01.442Z",
     "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 8,
+  "fields": {
+    "_height": 390,
+    "_width": 344,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-13T14:09:14.796Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 12,
+  "fields": {
+    "_height": 153,
+    "_width": 252,
+    "default_alt_text": "",
+    "default_caption": "",
+    "subject_location": "142,65",
+    "date_taken": "2016-11-13T14:25:45.026Z",
+    "author": "",
     "must_always_publish_author_credit": false,
     "must_always_publish_copyright": false
   }

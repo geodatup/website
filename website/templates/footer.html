@@ -1,140 +1,42 @@
-
-
+{% load show_section show_service %} 
 
 <div class='footer footer-in-docs clearfix contain hide-mobile noprint fill-light' data-swiftype-index='false'>
    <div class='limiter clearfix'>
     <div class='footer-in-docs footer-cols-in-docs clearfix col12 pad8y small'>
-      <div class='hide-in-docs col2'>
-        <!--
-        <h3 class='space-bottom1'>Overview</h3>
-        
-        <a id='footer-products' class='space-bottom0 quiet col12 strong' href='/products/'>Products</a>
-        
-        <a id='footer-data' class='space-bottom0 quiet col12 strong' href='/data-platform/'>Data</a>
-        
-        <a id='footer-pricing' class='space-bottom0 quiet col12 strong' href='/pricing/'>Pricing</a>
-        
-        <a id='footer-blog' class='space-bottom0 quiet col12 strong' href='/blog/'>Blog</a>
-        
-        <a id='footer-showcase' class='space-bottom0 quiet col12 strong' href='/showcase/'>Showcase</a>
-        
-        <a id='footer-platform' class='space-bottom0 quiet col12 strong' href='/platform/'>Platform</a>
-        
-        <a id='footer-telemetry' class='space-bottom0 quiet col12 strong' href='/telemetry/'>Telemetry</a>
-        -->
-      </div>
-      <div class='col2 footer-col-in-docs'>
-      <!--
-        <h3 class='space-bottom1'>About us</h3>
-        
-        <a id='footer-our-story' class='space-bottom0 col12 quiet strong' href='/about/'>Our story</a>
-        
-        <a id='footer-team' class='space-bottom0 col12 quiet strong' href='/about/team/'>Team</a>
-        
-        <a id='footer-jobs' class='space-bottom0 col12 quiet strong' href='/jobs/'>Jobs</a>
-        
-        <a id='footer-press' class='space-bottom0 col12 quiet strong' href='/about/press/'>Press</a>
-        
-        <a id='footer-green' class='space-bottom0 col12 quiet strong' href='/about/green/'>Green</a>
-        
-        <a id='footer-open-source' class='space-bottom0 col12 quiet strong' href='/about/open/'>Open source</a>
-        
-        <a id='footer-board-and-investors' class='space-bottom0 col12 quiet strong' href='/about/board/'>Board and investors</a>
-        -->
-      </div>
-      <div class='col2 footer-col-in-docs'>
-      <!--
-        <h3 class='space-bottom1'>Help</h3>
-        
-        <a id='footer-help/faq' class='space-bottom0 col12 quiet strong' href='/help/'>Help/FAQ</a>
-        
-        <a id='footer-status' class='space-bottom0 col12 quiet strong' href='/status/'>Status</a>
-        
-        <a id='footer-map-feedback' class='space-bottom0 col12 quiet strong' href='/map-feedback/'>Map feedback</a>
-        
-        <a id='footer-contact-us' class='space-bottom0 col12 quiet strong' href='/contact/'>Contact us</a>
-        
-        <a id='footer-education' class='space-bottom0 col12 quiet strong' href='/education/'>Education</a>
-        
-        <a id='footer-security' class='space-bottom0 col12 quiet strong' href='/security/'>Security</a>
-        -->
-      </div>
-       <div class='col2 footer-col-in-docs'>
-       <!--
-        <h3 class='space-bottom1'>Map design</h3>
-        
-        <a id='footer-maps' class='space-bottom0 col12 quiet strong' href='/maps/'>Maps</a>
-        
-        <a id='footer-mapbox-studio' class='space-bottom0 col12 quiet strong' href='/mapbox-studio/'>Mapbox Studio</a>
-        
-        <a id='footer-map-gallery' class='space-bottom0 col12 quiet strong' href='/gallery/'>Map Gallery</a>
-        
-        <a id='footer-vector-tiles' class='space-bottom0 col12 quiet strong' href='/developers/vector-tiles/'>Vector tiles</a>
-        
-        <a id='footer-maki-icons' class='space-bottom0 col12 quiet strong' href='/maki/'>Maki icons</a>
-        -->
-      </div>
       
       <div class='col2 footer-col-in-docs'>
-      <!--
-        <h3 class='space-bottom1'>Developers</h3>
-        
-        <a id='footer-mapbox-api' class='space-bottom0 col12 quiet strong' href='/developers/api/'>Mapbox API</a>
-        
-        <a id='footer-mapbox.js' class='space-bottom0 col12 quiet strong' href='/mapbox.js/'>Mapbox.js</a>
-        
-        <a id='footer-ios-sdk' class='space-bottom0 col12 quiet strong' href='/ios-sdk/'>iOS SDK</a>
-        
-        <a id='footer-android-sdk' class='space-bottom0 col12 quiet strong' href='/android-sdk/'>Android SDK</a>
-        
-        <a id='footer-mapbox-gl-for-js' class='space-bottom0 col12 quiet strong' href='/mapbox-gl-js/'>Mapbox GL for JS</a>
-        
-        <a href='/developers/' class='small rcon next quiet'>All developers</a>
-        -->
+       <h3 class='space-bottom1'>Vue d'ensemble</h3>
+       {% show_section_list %}
       </div>
-      <div class='hide-in-docs col2 footer-col-in-docs'>
-      <!--
-        <h3 class='space-bottom1'>Industries</h3>
+
+        {% show_service_by_categorie_simple %}
+
+      <div class='col2 footer-col-in-docs'>
+      
+        <h3 class='space-bottom1'>A propos de nous </h3>
         
-        <a id='footer-real-estate' class='space-bottom0 col12 quiet strong' href='/industries/realestate/'>Real estate</a>
+        <a id='footer-our-story' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#top'>A propos</a>
         
-        <a id='footer-transportation' class='space-bottom0 col12 quiet strong' href='/industries/transportation/'>Transportation</a>
+        <a id='footer-team' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#team'>Équipe</a>
         
-        <a id='footer-agriculture' class='space-bottom0 col12 quiet strong' href='/industries/agriculture/'>Agriculture</a>
+        <a id='footer-jobs' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#jobs'>Emplois et stages</a>
         
-        <a id='footer-social' class='space-bottom0 col12 quiet strong' href='/industries/social/'>Social</a>
+        <a id='footer-press' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#presse'>Presse</a>
         
-        <a id='footer-government' class='space-bottom0 col12 quiet strong' href='/industries/government/'>Government</a>
-        
-        <a href='/industries/' class='small rcon next quiet'>All industries</a>
-        -->
       </div>
-    </div>
-
-  </div>
-
-  <div class='limiter newsletter-copyright hide-in-docs clearfix'>
+       <div class='limiter newsletter-copyright hide-in-docs clearfix'>
     <div class='contain col4 footer-social'>
       <div class='animate footer-animation col6'></div>
       <div class='footer-dialog fr small strong  col7 pad2 contain round fill-darken0'>
       Suivez Geodatup sur <a href='https://twitter.com/geodatup'>Twitter</a>, <a href='https://www.facebook.com/geodatup'>Facebook</a>, and <a href='https://github.com/geodatup'>Github</a>.
       </div>
     </div>
-    <!-- 
-    <div class='margin1 col7 pad2 fill-darken0 round contain'>
-      <form id='newsletter' method='post'>
-        <h3 class='space-bottom1'>Sign up for our newsletter</h3>
-        <p class='quiet'>Keep up with Mapbox product announcements, events, and walkthroughs.</p>
-        <fieldset class='clearfix newsletter-in-docs input-pill col12 pill with-icon'>
-          <span class='icon mail quiet'></span>
-          <input type='text' value='' placeholder='Email address' name='email' class='col9 required email'>
-          <input type='submit' value='Subscribe' class='button col3'>
-        </fieldset>
-      </form>
-     
     </div>
-     -->
+
   </div>
+
+ </div>
+</div>
 
 
 </div>

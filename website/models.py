@@ -61,8 +61,12 @@ class Section(models.Model):
 
 class Categorie(models.Model):
     nom_categorie = models.CharField(max_length=30)
+    pitch = models.CharField(max_length=500, null=True, blank=True)
+
     level = models.PositiveSmallIntegerField(blank=False, null=False, unique=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
+    css_color = models.CharField(max_length=15, null=True, blank=True)
+
     actif =  models.BooleanField(default=True)
     
     def __str__(self):
@@ -71,11 +75,15 @@ class Categorie(models.Model):
 class Service(models.Model):
     nom_service = models.CharField(max_length=30)
     categorie_service = models.ForeignKey(Categorie, null=True, blank=True)    
-    pitch = models.CharField(max_length=30, null=True, blank=True)
-    description = models.CharField(max_length=100, null=True, blank=True)
+    pitch = models.CharField(max_length=100, null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    css_color = models.CharField(max_length=15, null=True, blank=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
+    landpage = models.BooleanField(default=False)
+    html_page = models.CharField(max_length=10000, default='<p></p>')
     #secteur =  models.ManyToManyField(Secteur)
     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
 
@@ -90,8 +98,8 @@ class Service(models.Model):
 
 class Software(models.Model): 
     nom_soft = models.CharField(max_length=15)
-    pitch = models.CharField(max_length=30, null=True, blank=True)
-    description = models.CharField(max_length=100, null=True, blank=True)
+    pitch = models.CharField(max_length=100, null=True, blank=True)
+    description = models.CharField(max_length=500, null=True, blank=True)
     image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
@@ -218,7 +226,7 @@ class Reference(models.Model):
 class Personne(models.Model):
      nom_personne = models.CharField(max_length=30)
      personne_choix =  (
-         ('Equipe','equipe'),
+         ('equipe','equipe'),
          ('client','client'),
          ('fournisseur','fournisseur'),
          ('aucun','aucun'),
@@ -243,5 +251,11 @@ class Personne(models.Model):
      photo = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
      css_icon = models.CharField(max_length=15, null=True, blank=True)
      css_class = models.CharField(max_length=100, null=True, blank=True)
+     actif = models.BooleanField(default=True)
      slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
-    
+
+     def get_absolute_url(self):
+        return reverse('website:personneDetail', kwargs={'slug': self.slug, })
+
+     def __str__(self):
+        return self.nom_personne

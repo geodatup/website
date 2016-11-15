@@ -154,6 +154,7 @@ button {
   .grid__item,
   .grid__item--size-a {
     width: 20%;
+    min-height: 350px;
   }
 }
 
@@ -162,6 +163,7 @@ button {
   .grid__item,
   .grid__item--size-a {
     width: 20%;
+    min-height: 350px;
   }
 }
 @media screen and (max-width: 65em) {
@@ -169,6 +171,7 @@ button {
   .grid__item,
   .grid__item--size-a {
     width: 25%;
+    min-height: 350px;
   }
 }
 

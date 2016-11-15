@@ -1,0 +1,14 @@
+
+{% for categorie in categorie_list %} 
+<div class='hide-in-docs col2'>
+	 <h3 class='space-bottom1'>{{ categorie }}</h3>
+
+{% for service in categorie.service_set.all %}
+
+	<a id='footer-products' class='space-bottom0 quiet col12 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+                   
+        
+{% endfor %}
+
+</div>
+{% endfor %}

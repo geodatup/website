@@ -1,3 +1,4 @@
+{% load show_section %} 
 <!--élement présent dans les sub nav -->
 <div class='main-subnav fill-midnight splash pin-top dark clearfix'>
   <div class='prose dark keyline-top pad4y hover-area clearfix'>
@@ -10,24 +11,43 @@
               
               
               <div class='col5'> 
-                <h4>{{ categorie_list.0.nom_categorie }}</h4>
+                <h4><a href="{% url 'website:serviceIndex' %}#{{categorie_list.0.nom_categorie }}"> {{ categorie_list.0.nom_categorie }}</a></h4>
+
                 {% for service in service_cat1 %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+
+                  {% if not service.landpage %}
+
+                  <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+
+                  {% else %}
+
+                  <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
+
+                  {% endif %}
+                
                 {% endfor %}
               </div>
               <div class='col5'>  
-                <h4>{{ categorie_list.1.nom_categorie }}</h4>   
+                <h4><a href="{% url 'website:serviceIndex' %}#{{categorie_list.1.nom_categorie }}"> {{ categorie_list.1.nom_categorie }}</a></h4>  
                 {% for service in service_cat2 %}
+                 {% if not service.landpage %}
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+                 {% else %}
+                <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
+                {% endif %}
                 {% endfor %}           
               
               </div>
 
             </div>
             <div class='col5 margin1r'>
-              <h3>{{ categorie_list.2.nom_categorie }}</h3>
+            <h3><a href="{% url 'website:serviceIndex' %}#{{categorie_list.2.nom_categorie }}"> {{categorie_list.2.nom_categorie }}</a></h3>
               {% for service in service_cat3 %}
+                 {% if not service.landpage %}
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+                 {% else %}
+                 <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
+                 {% endif %}
               {% endfor %}
 
             </div>

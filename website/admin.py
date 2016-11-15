@@ -13,8 +13,6 @@ class PersonneAdmin(admin.ModelAdmin):
 	list_display = ('nom_personne','fonction')
 	prepopulated_fields = {'slug': ('nom_personne',) }
 
-
-
 class ChapitreFormationRessource(resources.ModelResource):
 
     class Meta:
@@ -27,18 +25,42 @@ class ChapitreFormationAdmin(ImportExportModelAdmin):
 	pass
 
 
+
+class ServiceForm( forms.ModelForm ):
+	pitch = forms.CharField(widget=forms.Textarea )
+	description = forms.CharField( widget=forms.Textarea )
+	html_page = forms.CharField( widget=forms.Textarea )
+
+	class Meta:
+		model = Formation
+		exclude = ['']
+
 class ServiceAdmin(admin.ModelAdmin):
-	list_display = ('nom_service','categorie_service', 'css_icon', 'actif')
+	form=ServiceForm
+	list_display = ('nom_service','categorie_service', 'css_icon', 'actif', 'landpage')
 	prepopulated_fields = {'slug': ('nom_service',) }
 
 
+
+
+class CategorieForm( forms.ModelForm ):
+	pitch = forms.CharField( widget=forms.Textarea )
+
+	class Meta:
+		model = Formation
+		exclude = ['']
+
+
 class CategorieAdmin(admin.ModelAdmin):
+	form=CategorieForm
 	list_display = ('id', 'nom_categorie','level','actif')
 
 
 class SecteurAdmin(admin.ModelAdmin):
 	list_display = ('id', 'nom_secteur','actif')
 	prepopulated_fields = {'slug': ('nom_secteur',) }
+
+
 
 class FormationForm( forms.ModelForm ):
 	pitch = forms.CharField( widget=forms.Textarea )

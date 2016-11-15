@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django_tables2   import RequestConfig
-from .models import Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference, ChapitreFormation
+from .models import Personne, Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference, ChapitreFormation
 from django.utils import timezone
 
 # Create your views here.
@@ -83,14 +83,14 @@ class CatFormationListView(generic.ListView):
 
 
 class PersonneDetailView(generic.DetailView):
-    model = CatFormation
-    context_object_name = 'catFormation'
-    template_name = 'formation/catFormationDetail.html'
+    model = Personne
+    context_object_name = 'Personne'
+    template_name = 'about/PersonneDetail.html'
 
 
 class PersonneListView(generic.ListView):
-    model = CatFormation
-    template_name = 'formation/catFormationIndexList.html'
+    model = Personne
+    template_name = 'about/PersonneIndexList.html'
 
 
 def support(request):

@@ -4,8 +4,10 @@
   "pk": 4,
   "fields": {
     "nom_categorie": "Accompagnement",
+    "pitch": "Vous accompagnez vers l'autonomie de la gestion des probl\u00e9matiques spatiales de votre activit\u00e9.",
     "level": 1,
     "css_class": "",
+    "css_color": "red",
     "actif": true
   }
 },
@@ -14,8 +16,10 @@
   "pk": 5,
   "fields": {
     "nom_categorie": "M\u00e9thodes et outils",
+    "pitch": "Ensemble des m\u00e9thodes et outils g\u00e9omatiques utiles \u00e0 votre activit\u00e9",
     "level": 2,
     "css_class": "",
+    "css_color": "green",
     "actif": true
   }
 },
@@ -24,8 +28,10 @@
   "pk": 6,
   "fields": {
     "nom_categorie": "Donn\u00e9es",
+    "pitch": "Besoin de donn\u00e9es, nous avons de quoi vous surprendre",
     "level": 3,
     "css_class": "",
+    "css_color": "blue",
     "actif": true
   }
 }
