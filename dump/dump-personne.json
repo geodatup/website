@@ -11,6 +11,7 @@
     "photo": 2,
     "css_icon": "",
     "css_class": "",
+    "actif": true,
     "slug": "hugo-roussaffa"
   }
 },
@@ -23,9 +24,10 @@
     "position": "Prestataire",
     "fonction": "Ing\u00e9nieur G\u00e9omaticien",
     "description": "",
-    "photo": 3,
+    "photo": 12,
     "css_icon": "",
     "css_class": "",
+    "actif": true,
     "slug": "benjamin-bernard"
   }
 },
@@ -36,11 +38,12 @@
     "nom_personne": "Samuel Bonneau",
     "type_personne": "Equipe",
     "position": "Prestataire",
-    "fonction": "Chef de projet",
+    "fonction": "expert d\u00e9veloppement \u00e9conomique endog\u00e8ne",
     "description": "",
-    "photo": 4,
+    "photo": 8,
     "css_icon": "",
     "css_class": "",
+    "actif": true,
     "slug": "samuel-bonneau"
   }
 },
@@ -56,6 +59,7 @@
     "photo": 5,
     "css_icon": "",
     "css_class": "",
+    "actif": true,
     "slug": "zoe-boularan"
   }
 },
@@ -71,6 +75,7 @@
     "photo": 6,
     "css_icon": "",
     "css_class": "",
+    "actif": true,
     "slug": "claire-cousergue"
   }
 },
@@ -79,13 +84,14 @@
   "pk": 6,
   "fields": {
     "nom_personne": "Flavien Serein",
-    "type_personne": "Equipe",
+    "type_personne": "equipe",
     "position": "Prestataire",
     "fonction": "Web developper",
     "description": "",
     "photo": 7,
     "css_icon": "",
     "css_class": "",
+    "actif": false,
     "slug": "flavien-serein"
   }
 }
