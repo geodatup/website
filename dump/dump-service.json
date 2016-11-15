@@ -7,13 +7,13 @@
     "categorie_service": 4,
     "pitch": "Un ensemble de formations et d'ateliers  g\u00e9omatiques",
     "description": "GeoDatup organisme de formation professionnel, apporte les cl\u00e9s de compr\u00e9hension et des comp\u00e9tences g\u00e9omatiques li\u00e9es aux besoins de votre m\u00e9tiers.",
-    "image": null,
+    "image": 13,
     "css_color": "green",
     "css_icon": "plus-document",
     "css_class": "",
     "actif": true,
     "landpage": true,
-    "html_page": "<p></p>",
+    "html_page": "<p>caca</p>",
     "slug": "formation"
   }
 },
@@ -24,7 +24,7 @@
     "nom_service": "Conseil",
     "categorie_service": 4,
     "pitch": "GeoDatup vous offre ses conseils et solutions personnalis\u00e9s en g\u00e9omatique",
-    "description": "Nos conseils vous apporterons des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et outils de pointes, nous pouvons r\u00e9volutionner certaines de vos m\u00e9thodes anciennes d\u00e9su\u00e8tes.",
+    "description": "Nos conseils vous apporterons des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et outils de pointes, nous pouvons r\u00e9volutionner certaines de vos anciennes m\u00e9thodes devenues d\u00e9su\u00e8tes.",
     "image": null,
     "css_color": "",
     "css_icon": "compass",
@@ -101,7 +101,7 @@
     "css_color": "",
     "css_icon": "grid",
     "css_class": "",
-    "actif": true,
+    "actif": false,
     "landpage": false,
     "html_page": "<p></p>",
     "slug": "teledetection"
@@ -224,12 +224,12 @@
     "pitch": "Obtenez des images \u00e0 jour et de tr\u00e8s haute r\u00e9solution.",
     "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous produisons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source de l'IGN.",
     "image": null,
-    "css_color": "",
+    "css_color": "blue",
     "css_icon": "picture",
     "css_class": "",
     "actif": true,
     "landpage": false,
-    "html_page": "<p></p>",
+    "html_page": "<p>caca</p>",
     "slug": "image-aerienne-georeference"
   }
 }

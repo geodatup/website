@@ -228,6 +228,30 @@
   }
 },
 {
+  "model": "filer.file",
+  "pk": 13,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/9e/9b/9e9be3ec-518e-4509-a052-a2ba73e8221f/formation.jpg",
+    "_file_size": 64196,
+    "sha1": "8120244e6d24f136aef36bb4595f1c79670d4b76",
+    "has_all_mandatory_data": false,
+    "original_filename": "formation.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-15T16:28:26.904Z",
+    "modified_at": "2016-11-15T16:28:26.904Z",
+    "is_public": true
+  }
+},
+{
   "model": "filer.clipboard",
   "pk": 1,
   "fields": {
@@ -352,6 +376,21 @@
     "subject_location": "142,65",
     "date_taken": "2016-11-13T14:25:45.026Z",
     "author": "",
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 13,
+  "fields": {
+    "_height": 1280,
+    "_width": 1920,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-15T16:28:26.621Z",
+    "author": null,
     "must_always_publish_author_credit": false,
     "must_always_publish_copyright": false
   }

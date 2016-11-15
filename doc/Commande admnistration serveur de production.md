@@ -33,6 +33,31 @@ pip3 install -r requierements/base.txt
 ~~~
 puis relancer supervisorctl en dehors de la session geodatup
 
+# déploiement en production 
+
+
+~~~
+cd /var/www/webapps/website
+bin/activate
+sudo git pull
+sudo python manage.py migrate
+sudo python manage.py loaddata dump/auth.json
+sudo python manage.py loaddata dump/filer.json 
+sudo python manage.py loaddata dump/dump-catformation.json
+sudo python manage.py loaddata dump/dump-categorie.json
+sudo python manage.py loaddata dump/dump-moduleformation.json
+sudo python manage.py loaddata dump/dump-chapitreformation.json
+sudo python manage.py loaddata dump/dump-formation.json
+sudo python manage.py loaddata dump/dump-personne.json
+sudo python manage.py loaddata dump/dump-secteur.json
+sudo python manage.py loaddata dump/dump-section.json
+sudo python manage.py loaddata dump/dump-service.json 
+sudo python manage.py loaddata dump/dump-software.json 
+sudo supervisorctl reload
+sudo su - geodatup
+python manage.py collectstatic
+
+~~~
 
 
 
