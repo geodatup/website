@@ -51,7 +51,7 @@
 
                       <div class="col4 link-column space-bottom2">
                         <div class="strong small space-top2 icon icon-left-align book space-bottom1 quiet">Modules</div>
-                        <!-- loop general howto docs -->
+                        <!-- loop Modules -->
 
                         {% for module in formation.get_module_ordered %}
 
@@ -61,8 +61,12 @@
 
                             <div title="{{ module.grouper.objectif }}" >
                               <a class="block small keyline-bottom pad0y cursor" onclick="toggle_visibility('{{formation.id}}_module_{{module.grouper.id}}');">{{module.grouper}}</a>
+
+                              
+                              
+
                                <ul  style="display : none;" id="{{formation.id}}_module_{{module.grouper.id}}">
-                               {% for chapitre in module.list %}
+                              {% for chapitre in module.list %}
                                 <li class= "block small">{{ chapitre }}</li>
                                {% endfor %}
                                </ul>
@@ -73,8 +77,6 @@
                           
                         </div>
                       
-                      <!-- loop through info + troubleshooting -->
- 
                                           
                       <div class="col4 link-column space-bottom2">
                         

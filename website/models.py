@@ -9,7 +9,8 @@ from filer.fields.image import FilerImageField
 # Create your models here.
 
 class Secteur(models.Model):
-    nom_secteur = models.CharField(max_length=15)
+    nom_secteur = models.CharField(max_length=15)    
+    determinant = models.CharField(max_length=10, null=True, blank=True)
     pitch = models.CharField(max_length=500, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     css_icon = models.CharField(max_length=30, null=True, blank=True)
@@ -142,7 +143,7 @@ class ChapitreFormation(models.Model):
         return self.nom_chapitre
 
 class Formation(models.Model):
-    nom_formation = models.CharField(max_length=50)   
+    nom_formation = models.CharField(max_length=50)
     pitch = models.CharField(max_length=300, null=True, blank=True)
     order = models.PositiveSmallIntegerField(blank=True, null=True) 
     niveau_choix =  (
@@ -170,6 +171,7 @@ class Formation(models.Model):
         choices=duree_choix,
         default=''
         )
+    atelier = models.BooleanField(default=False)
     tarif = models.CharField(max_length=15)
     logiciels =  models.ManyToManyField(Software, blank=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
@@ -181,9 +183,11 @@ class Formation(models.Model):
     def get_module_ordered(self):
         return self.programme.order_by('order')
 
- 
     def get_absolute_url(self):
         return reverse('website:formationDetail', kwargs={'slug': self.slug, })
+
+    def get_atelier(self):
+        return self.objects.filter(atelier=True)   
 
     def __str__(self):
         return self.nom_formation
@@ -260,3 +264,53 @@ class Personne(models.Model):
 
      def __str__(self):
         return self.nom_personne
+
+class Plan(models.Model):
+    nom_plan = models.CharField(max_length=30)
+    tarif = models.PositiveSmallIntegerField(blank=False, null=False)
+    pitch = models.CharField(max_length=200, null=True, blank=True)
+    secteur = models.ManyToManyField(Secteur, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    servicesAvailable = models.ManyToManyField(Service, blank=True)
+    assitance_choix =  (
+    ('Base de connaissance évolutive','0'),
+    ('Téléassistant','1'),    
+    ('Support helpdesk, déplacement ','2'),
+    ('Intervention consultant, ingénieur ','3'),
+    ('Urgence ','4')
+    )
+    assitance_level = models.CharField(max_length=50,
+        choices=assitance_choix,
+        default='0'
+        )
+    consultance = models.CharField(max_length=50, null=True, blank=True)
+    niveau_choix =  (
+    ('Débutant','0'),
+    ('Avancé','1'),    
+    ('Expert','2')
+    )
+    formation_Qgis_level = models.CharField(max_length=50,
+        choices=niveau_choix,
+        default='0'
+        )
+    atelier_nombre = models.PositiveSmallIntegerField(null=True, blank=True)
+    datapack_opendata_update_frequency = models.CharField(max_length=50, null=True, blank=True)
+    datapack_IGN_licence_type = models.CharField(max_length=50, null=True, blank=True)
+    projet_qgis_nombre = models.PositiveSmallIntegerField(null=True, blank=True)
+    maintenance_available = models.CharField(max_length=100, null=True, blank=True)
+
+    css_icon = models.CharField(max_length=20, null=True, blank=True)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+    actif = models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+    def get_service_available(self):
+        return self.servicesAvailable.all()
+
+    def get_service_notavailable(self):
+        return Service.objects.exclude(plan=self)   
+
+ 
+
+    def __str__(self):
+        return self.nom_plan

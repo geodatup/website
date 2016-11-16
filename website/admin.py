@@ -4,9 +4,22 @@ from django import forms
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne
- 
+from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan 
 
+
+class PlanForm( forms.ModelForm ):
+	pitch = forms.CharField(widget=forms.Textarea )
+	
+
+	class Meta:
+		model = Plan
+		exclude = ['']
+
+class PlanAdmin(admin.ModelAdmin):
+	form=PlanForm
+	list_display = ('nom_plan','tarif')
+	prepopulated_fields = {'slug': ('nom_plan',) }
+	filter_horizontal = ('servicesAvailable',)
 
 
 class PersonneAdmin(admin.ModelAdmin):
@@ -84,7 +97,7 @@ class FormationRessource(resources.ModelResource):
 class FormationAdmin(ImportExportModelAdmin):
 	form=FormationForm
 	resource_class = FormationRessource
-	list_display = ('id', 'nom_formation','order','css_color','actif')
+	list_display = ('id', 'nom_formation','order','atelier','css_color','actif')
 	prepopulated_fields = {'slug': ('nom_formation',) }
 	filter_horizontal = ('programme',)
 
@@ -163,3 +176,5 @@ admin.site.register(ModuleFormation, ModuleFormationAdmin)
 admin.site.register(ChapitreFormation, ChapitreFormationAdmin)
 
 admin.site.register(Personne, PersonneAdmin)
+
+admin.site.register(Plan, PlanAdmin)
