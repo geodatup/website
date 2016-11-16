@@ -26,6 +26,7 @@ python manage.py dumpdata --natural-foreign --indent=2 website.service > dump/du
 
 python manage.py dumpdata --natural-foreign --indent=2 website.software > dump/dump-software.json
 
+python manage.py dumpdata --natural-foreign --indent=2 website.plan > dump/dump-plan.json
 ~~~
 
 
@@ -36,7 +37,7 @@ python manage.py makemigrations && python manage.py migrate && python manage.py 
 
 # load data
 
-python manage.py loaddata dump/auth.json && python manage.py loaddata dump/filer.json && python manage.py loaddata  dump/dump-catformation.json && python manage.py loaddata dump/dump-categorie.json && python manage.py loaddata dump/dump-chapitreformation.json && python manage.py loaddata dump/dump-formation.json && python manage.py loaddata dump/dump-moduleformation.json && python manage.py loaddata dump/dump-personne.json && python manage.py loaddata dump/dump-secteur.json && python manage.py loaddata dump/dump-section.json && python manage.py loaddata dump/dump-service.json && python manage.py loaddata dump/dump-software.json 
+python manage.py loaddata dump/auth.json && python manage.py loaddata dump/filer.json && python manage.py loaddata  dump/dump-catformation.json && python manage.py loaddata dump/dump-categorie.json && python manage.py loaddata dump/dump-chapitreformation.json && python manage.py loaddata dump/dump-formation.json && python manage.py loaddata dump/dump-moduleformation.json && python manage.py loaddata dump/dump-personne.json && python manage.py loaddata dump/dump-secteur.json && python manage.py loaddata dump/dump-section.json && python manage.py loaddata dump/dump-service.json && python manage.py loaddata dump/dump-software.json && python manage.py loaddata dump/dump-plan.json 
 
 
 sudo python manage.py loaddata dump/auth.json
@@ -53,5 +54,6 @@ sudo python manage.py loaddata dump/dump-section.json
 sudo python manage.py loaddata dump/dump-service.json 
 sudo python manage.py loaddata dump/dump-software.json 
 
+sudo python manage.py loaddata dump/dump-plan.json 
 
 
