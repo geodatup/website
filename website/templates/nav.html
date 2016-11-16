@@ -55,27 +55,27 @@
 
           <div class='subnav-group subnav-use-cases clearfix'>
             <div class='col7 clearfix'>
-              <h3><a href="{% url 'website:secteurIndex' %}" class='rcon next'>{{ section_list.1.nom_section }}</a></h3>
+              <h3><a href="#" class='rcon next'>{{ section_list.1.nom_section }}</a></h3>
               
               <div class='col4'>
               {% for secteur in secteur_list_tab1 %}               
-                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y icon {{ secteur.css_icon }} ' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
 
               <div class='col4'>
                 {% for secteur in secteur_list_tab2 %}               
-                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
               <div class='col4'>
                {% for secteur in secteur_list_tab3 %}               
-                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
               <div class='col4'>
                 {% for secteur in secteur_list_tab4 %}               
-                <a class='block pad0y' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
               {% endfor %}
               </div>
             </div>
@@ -89,20 +89,20 @@
           <div class='subnav-group subnav-help clearfix'>
             <div class='col3'>
 
-              <h3><a href="{% url 'website:support' %}" class='rcon next'>{{ section_list.2.nom_section }}</a></h3>
-              <a class='block pad1y icon compass' href='/amo/'>Gestion de projet</a>
-              <a class='block pad1y icon search' href='/suivi/'>Suivi des taches</a>              
+              <h3><a href="#" class='rcon next'>{{ section_list.2.nom_section }}</a></h3>
+              <a class='block pad1y icon compass' href='#'>Gestion de projet</a>
+              <a class='block pad1y icon search' href='#'>Suivi des taches</a>              
             </div>
             <div class='col8 margin1 clearfix'>
               <h3>à l'aide !</h3>
               <div class='col6'>
-                <a class='block pad1y icon book' href='/help/#doc'>Base de connaissance</a>
-                <a class='block pad1y icon mobile' href='/help/#level1'>Téléassistant</a>                
-                <a class='block pad1y icon studio' href='/help/#level2'>Support Helpdesk</a>                
-                <a class='block pad1y icon mt'  href='/help/#level3'>Intervention consultant, ingénieur</a>
+                <a class='block pad1y icon book' href='#'>Base de connaissance</a>
+                <a class='block pad1y icon mobile' href='#'>Téléassistant</a>                
+                <a class='block pad1y icon studio' href='#'>Support Helpdesk</a>                
+                <a class='block pad1y icon mt'  href='#'>Intervention consultant, ingénieur</a>
               </div>
               <div class='col6'>
-               <a class='block pad1y icon alert'  href='/help/#level4'>Urgences</a>                           
+               <a class='block pad1y icon alert'  href='#'>Urgences</a>                           
               </div>
               
             </div>
@@ -122,7 +122,11 @@
 
               {% for section in section_list %}
               <div class='{{ section.css_div_class }}' data-category='{{ section.css_datacategory }}'>
+                 {% if section.nom_section == "Secteurs" or section.nom_section == "Assistances & Support"  %}
+                <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "#">{{ section.nom_section }}</a>
+                  {% else %}
                 <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "{{ section.slug }}">{{ section.nom_section }}</a>
+                {% endif %}
               </div>
               {% endfor %}   
             </div>   
@@ -135,7 +139,11 @@
               <div class='keyline-bottom clearfix'>
                 <div class='mobile-cols pad4y keyline-bottom clearfix'>
                   {% for section in section_list %} 
-                    <a class='pad1 block strong col6' href='{{ section.slug }}'>{{ section.nom_section }}</a>
+                  {% if section.nom_section == "Secteurs" or section.nom_section == "Assistances & Support" %}
+                  <a class='pad1 block strong col6' href='#'>{{ section.nom_section }}</a>
+                  {% else %}
+                  <a class='pad1 block strong col6' href='{{ section.slug }}'>{{ section.nom_section }}</a>
+                  {% endif %}
                   {% endfor %}
             
                 </div>

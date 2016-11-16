@@ -37,10 +37,8 @@ class ServiceForm( forms.ModelForm ):
 
 class ServiceAdmin(admin.ModelAdmin):
 	form=ServiceForm
-	list_display = ('nom_service','categorie_service', 'css_icon', 'actif', 'landpage')
+	list_display = ('nom_service','categorie_service','css_icon', 'actif', 'landpage')
 	prepopulated_fields = {'slug': ('nom_service',) }
-
-
 
 
 class CategorieForm( forms.ModelForm ):
@@ -56,8 +54,16 @@ class CategorieAdmin(admin.ModelAdmin):
 	list_display = ('id', 'nom_categorie','level','actif')
 
 
+class SecteurForm( forms.ModelForm ):
+	pitch = forms.CharField( widget=forms.Textarea )
+
+	class Meta:
+		model = Formation
+		exclude = ['']
+
 class SecteurAdmin(admin.ModelAdmin):
-	list_display = ('id', 'nom_secteur','actif')
+	form=SecteurForm
+	list_display = ('id', 'nom_secteur','css_color','css_icon','actif')
 	prepopulated_fields = {'slug': ('nom_secteur',) }
 
 
@@ -78,7 +84,7 @@ class FormationRessource(resources.ModelResource):
 class FormationAdmin(ImportExportModelAdmin):
 	form=FormationForm
 	resource_class = FormationRessource
-	list_display = ('id', 'nom_formation','order','actif')
+	list_display = ('id', 'nom_formation','order','css_color','actif')
 	prepopulated_fields = {'slug': ('nom_formation',) }
 	filter_horizontal = ('programme',)
 
@@ -99,7 +105,7 @@ class CatFormationRessource(resources.ModelResource):
 class CatFormationAdmin(ImportExportModelAdmin):
 	form = CatFormationForm
 	resource_class = CatFormationRessource
-	list_display = ('id', 'nom_catformation','actif')
+	list_display = ('id', 'nom_catformation','css_color','actif')
 	prepopulated_fields = {'slug': ('nom_catformation',) }
 
 class ModuleFormationForm( forms.ModelForm ):

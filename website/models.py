@@ -10,6 +10,7 @@ from filer.fields.image import FilerImageField
 
 class Secteur(models.Model):
     nom_secteur = models.CharField(max_length=15)
+    pitch = models.CharField(max_length=500, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     css_icon = models.CharField(max_length=30, null=True, blank=True)
     css_color = models.CharField(max_length=30, null=True, blank=True)
