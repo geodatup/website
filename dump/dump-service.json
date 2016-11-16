@@ -23,8 +23,8 @@
   "fields": {
     "nom_service": "Conseil",
     "categorie_service": 4,
-    "pitch": "GeoDatup vous offre ses conseils et solutions personnalis\u00e9s en g\u00e9omatique",
-    "description": "Nos conseils vous apporterons des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et outils de pointes, nous pouvons r\u00e9volutionner certaines de vos anciennes m\u00e9thodes devenues d\u00e9su\u00e8tes.",
+    "pitch": "GeoDatup vous offre ses conseils et solutions personnalis\u00e9es en g\u00e9omatique",
+    "description": "Nos conseils vous apporte des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et nos outils de pointes, nous pouvons r\u00e9volutionner certaines de vos anciennes m\u00e9thodes devenues d\u00e9su\u00e8tes.",
     "image": null,
     "css_color": "",
     "css_icon": "compass",

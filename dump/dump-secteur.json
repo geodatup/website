@@ -4,9 +4,11 @@
   "pk": 3,
   "fields": {
     "nom_secteur": "Foresterie",
+    "determinant": "la",
+    "pitch": "Nos services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion foresti\u00e8res",
     "css_class": "",
-    "css_icon": "",
-    "css_color": "",
+    "css_icon": "icon landuse",
+    "css_color": "green",
     "actif": true,
     "slug": "foresterie"
   }
@@ -16,9 +18,11 @@
   "pk": 4,
   "fields": {
     "nom_secteur": "Agriculture",
+    "determinant": "l'",
+    "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'agriculture",
     "css_class": "",
-    "css_icon": "",
-    "css_color": "",
+    "css_icon": "tilemill",
+    "css_color": "orange",
     "actif": true,
     "slug": "agriculture"
   }
@@ -28,10 +32,12 @@
   "pk": 5,
   "fields": {
     "nom_secteur": "Environnement",
+    "determinant": "l'",
+    "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion environnementale",
     "css_class": "",
-    "css_icon": "",
-    "css_color": "",
-    "actif": true,
+    "css_icon": "land",
+    "css_color": "blue",
+    "actif": false,
     "slug": "environnement"
   }
 },
@@ -40,11 +46,27 @@
   "pk": 6,
   "fields": {
     "nom_secteur": "Arch\u00e9ologie",
+    "determinant": "l'",
+    "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'arch\u00e9ologie",
     "css_class": "",
-    "css_icon": "",
-    "css_color": "",
-    "actif": true,
+    "css_icon": "hand",
+    "css_color": "yellow",
+    "actif": false,
     "slug": "archeologie"
+  }
+},
+{
+  "model": "website.secteur",
+  "pk": 7,
+  "fields": {
+    "nom_secteur": "Municipalit\u00e9",
+    "determinant": "la",
+    "pitch": "Nos services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion d'une municipalit\u00e9",
+    "css_class": "",
+    "css_icon": "building",
+    "css_color": "dark",
+    "actif": true,
+    "slug": "municipalite"
   }
 }
 ]
