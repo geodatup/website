@@ -55,6 +55,7 @@ sudo python manage.py loaddata dump/dump-section.json
 sudo python manage.py loaddata dump/dump-service.json 
 sudo python manage.py loaddata dump/dump-software.json
 sudo python manage.py loaddata dump/dump-plan.json
+sudo python manage.py loaddata dump/dump-produit.json
 sudo supervisorctl reload
 sudo su - geodatup
 python manage.py collectstatic

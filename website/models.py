@@ -340,7 +340,7 @@ class Produit(models.Model):
     description = models.CharField(max_length=2500, null=True, blank=True)
     service = models.ForeignKey(Service, null=True, blank=True)   
     secteur = models.ForeignKey(Secteur, null=True, blank=True)
-    produit_lié = models.ManyToManyField('self', blank=True, symmetrical=False)
+    produit_link = models.ManyToManyField('self', blank=True, symmetrical=False)
     livrable = models.ManyToManyField(Livrable, blank=True)
     url_documentation_blog = models.URLField(null=True, blank=True)
     image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
