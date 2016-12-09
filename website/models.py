@@ -143,9 +143,14 @@ class ChapitreFormation(models.Model):
     order = models.PositiveSmallIntegerField(blank=True, null=True)
     #logiciels =  models.ForeignKey(Software, null=True, blank=True)
     documentation_url = models.URLField(null=True, blank=True)   
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
+
+    def get_absolute_url(self):
+        return reverse('website:chapitreFormationDetail', kwargs={'slug': self.slug, })
     
     def __str__(self):
         return self.nom_chapitre
+    
 
 class Formation(models.Model):
     nom_formation = models.CharField(max_length=50)

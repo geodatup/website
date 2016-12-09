@@ -20,18 +20,20 @@ from django.conf import settings
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import StaticViewSitemap
+from .sitemaps import StaticViewSitemap, CatFormationSitemap, ServiceSitemap, SecteurSitemap
 from . import views
 
 
 sitemaps = {
     'static': StaticViewSitemap,
+    'catformation': CatFormationSitemap,
+    'service': ServiceSitemap,
+    'secteur': SecteurSitemap,
 }
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('website.urls')),
-    #url(r'^$', views.index, name='index'),
     url(r'^terms/$', views.terms, name='terms'),
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^cdg/$', views.cdg, name='cdg'),
