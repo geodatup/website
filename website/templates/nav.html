@@ -153,7 +153,7 @@
                  <a class='primary-nav-button fl pad1x pad0y round ' href= "#">Assistances & Support</a>
               </div>
               <div class='inline fl' data-category='products'>
-                 <a class='primary-nav-button fl pad1x pad0y round quiet' href= "blog">Blog</a>
+                 <a class='primary-nav-button fl pad1x pad0y round quiet' href= "{{section.get_absolut_url}}/blog">Blog</a>
           
               </div>
             </div>   
@@ -169,7 +169,7 @@
                   {% if section.nom_section == "Secteurs" or section.nom_section == "Assistances & Support" %}
                   <a class='pad1 block strong col6' href='#'>{{ section.nom_section }}</a>
                   {% else %}
-                  <a class='pad1 block strong col6' href='{{ section.get_absolut_url}}'>{{ section.nom_section }}</a>
+                  <a class='pad1 block strong col6' href='{{section.get_absolut_url}}'>{{ section.nom_section }}</a>
                   {% endif %}
                   {% endfor %}
             
