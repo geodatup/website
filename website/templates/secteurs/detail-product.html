@@ -1,0 +1,42 @@
+
+
+<section id="section-detail" class="fill-light block-section">
+<div class="limiter clearfix pad4y space-top4 prose">
+<div class="clearfix">
+<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
+<div class="column-block col6">
+<div class="column-content col10 margin2r">
+{{ secteur.description | safe}} 
+</div>
+</div>
+</div>
+<setcion id=telemetry>
+<div class="col12 pad4 fill-white round">
+
+
+{% regroup secteur.get_product_ordered_by_service by service as product_list %}
+
+
+{% for produit_service in product_list %}
+<h2>{{produit_service.grouper}}</h2>
+
+<p class="prose-big ">{{produit_service.grouper.pitch | safe }}</p>
+
+<ul class="space-left3 space-bottom4">
+
+{% for produit in produit_service.list %}
+
+   <li class="contain space-bottom1" style="list-style-type: none;"><span>{{ produit }}<span>:</span></span> {{ produit.pitch }}</li>
+
+{% endfor %}
+
+</ul>
+{% endfor%} 
+
+</div>
+
+
+</div>
+</div>
+</setcion>
+</section>

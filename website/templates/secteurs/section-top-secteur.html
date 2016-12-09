@@ -1,14 +1,58 @@
+{% load thumbnail %}
+{% if secteur.image %}
+
+{% thumbnail secteur.image 1920x530 crop upscale subject_location=secteur.image.subject_location as photo %}<section "splash dark contain clearfix clip fill-{{secteur.css_color}} scroll-section js-fullheight" id="section-0" style="height: 500px; background-image: url({{ photo.url }});background-repeat:no-repeat;">
+{% else %}
 <section class="splash dark contain clearfix clip fill-{{secteur.css_color}} scroll-section js-fullheight" id="section-0" style="height: 500px;">
- <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
+
+{% endif %}
+<div class="pad4y limiter clearfix contain center-y pin-left pin-right">
 
     <div class="intro contain">
       <div class="pad2y clearfix contain">
 
-        <h2 class="fancy space-bottom2">{{secteur.nom_secteur}}</h2>
+        <h2 class="dark fancy space-bottom2">{{secteur.nom_secteur}}</h2>
         <div class="quiet z1 subnav space-bottom2">
+
         </div>
-        <p class="col6 margin6r  prose prose-big">{{secteur.pitch}}</p>
+
+        <p class="dark col6 margin6r prose prose-big">{{secteur.pitch}}</p>
+        
+        <div  class="" >
+        {% if secteur.image %}
+        <a href="#section-detail" class="button fill-{{secteur.css_color}} pad2x rcon down pin-bottomright center-y space-bottom2">Gagner en efficacité</a>
+        {% else %}
+        <a href="#section-detail" class="button stroke pad2x rcon down pin-bottomright center-y space-bottom2">Gagner en efficacité</a>
+
+        {% endif %}
+        </div>
+        
       </div>
+       
+         
     </div>
+    <div class="limiter col12 contain clearfix center" >
+      <div class="clearfix center dark">
+        <div class="pad0 inline ">
+          <span class="strong">
+            Avec un plan vous profiter d'un ensemble de compétence. 
+          </span>
+          <span class="tooltip">
+            <span class="tooltip-item cursor">
+              *
+            </span>
+            <span class="tooltip-content tooltip-content-left">
+              <span class="tooltip-text">
+                A vous de faire votre choix sur les produits disponibles dans chacun de nos services.
+              </span>
+            </span>
+          </span>
+        </div>
+        
+    </div>
+
+    </div>
+
   </div>
+    
 </section>

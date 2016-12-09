@@ -11,7 +11,7 @@ def index(request):
 	categorie_list = Categorie.objects.all().filter(actif=1).order_by('level')
 	service_list = Service.objects.all().filter(actif=1)
 	section_list = Section.objects.all().filter(actif=1)
-	secteur_list = Secteur.objects.all().filter(actif=1)
+	secteur_list = Secteur.objects.all()
 
 	service_cat1 = service_list.filter(categorie_service__level=1)
 	service_cat2 = service_list.filter(categorie_service__level=2)	 

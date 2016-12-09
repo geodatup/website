@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load staticfiles sekizai_tags show_service %}
+{% load staticfiles sekizai_tags show_service show_nav %}
 {% block body_content %}
 
 <div class='page-content'>
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
 {% include "signup-nav.html" %}
 {% endblock nav %}
 

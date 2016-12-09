@@ -1,6 +1,6 @@
 
 {% extends "base.html" %}
-{% load staticfiles sekizai_tags  %}
+{% load staticfiles sekizai_tags  show_nav%}
 {% block head_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static "css/team.css" %}">
@@ -12,7 +12,7 @@
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
 {% include "signup-nav.html" %}
 {% endblock nav %}
 

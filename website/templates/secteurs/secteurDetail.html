@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% load staticfiles  %}
+{% load staticfiles  show_nav %}
 
 
 {% block head_css %}
 {{ block.super }}
     <link rel="stylesheet" href="{% static "css/plans.css" %}">
+
 {% endblock head_css %}  
 
 {% block body_content %}
@@ -13,7 +14,8 @@
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
+
 {% include "signup-nav.html" %}
 {% endblock nav %}
 
@@ -27,8 +29,13 @@
   <!-- nav vertical après car sinon on les menus ne s'affichent pas sur l'image de fond-->
 
   {% block section-secteur-product %}
-  {% include "secteurs/product-pricing.html" %}
+  {% include "secteurs/plan-pricing.html" %}
   {% endblock section-secteur-product %}
+  
+  {% block section-secteur-detail %}
+  {% include "secteurs/detail-product.html" %}
+  {% endblock section-secteur-detail %}
+
 
   {% block section-contact %}
     {% include "section-contact.html" %}

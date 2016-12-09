@@ -12,9 +12,11 @@ class Secteur(models.Model):
     nom_secteur = models.CharField(max_length=15)    
     determinant = models.CharField(max_length=10, null=True, blank=True)
     pitch = models.CharField(max_length=500, null=True, blank=True)
+    description = models.CharField(max_length=3000, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     css_icon = models.CharField(max_length=30, null=True, blank=True)
     css_color = models.CharField(max_length=30, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
     actif = models.BooleanField(default=True)
     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
 
@@ -22,6 +24,9 @@ class Secteur(models.Model):
     def get_absolute_url(self):
         return reverse('website:secteurDetail', kwargs={'slug': self.slug, })
     
+    def get_product_ordered_by_service(self):
+        return self.produit_set.all().order_by('service')
+
     def __str__(self):
     	return self.nom_secteur
 
@@ -79,6 +84,7 @@ class Service(models.Model):
     categorie_service = models.ForeignKey(Categorie, null=True, blank=True)    
     pitch = models.CharField(max_length=100, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
+    tooltip = models.CharField(max_length=10000, default='<span class="tooltip"></span>')
     image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
     css_color = models.CharField(max_length=15, null=True, blank=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
@@ -92,7 +98,6 @@ class Service(models.Model):
     #@permalink
     def get_absolute_url(self):
         return reverse('website:serviceDetail', kwargs={'slug': self.slug, })
-
 
     def __str__(self):
     	return self.nom_service
@@ -241,6 +246,7 @@ class Personne(models.Model):
         default='equipe'
         )
      position_choix =   (
+     	 ('Fondateur','fondateur'),
          ('Associé','associé'),
          ('Prestataire','prestataire'),
          ('Salarié','salarié'),
@@ -308,9 +314,38 @@ class Plan(models.Model):
         return self.servicesAvailable.all()
 
     def get_service_notavailable(self):
-        return Service.objects.exclude(plan=self)   
-
- 
+        return Service.objects.exclude(plan=self)  
 
     def __str__(self):
-        return self.nom_plan
+        return self.nom_plan 
+
+class Livrable(models.Model):
+    nom_livrable = models.CharField(max_length=100)  
+    description = models.CharField(max_length=2500, null=True, blank=True)
+    css_icon = models.CharField(max_length=20, null=True, blank=True)
+    css_class = models.CharField(max_length=100, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    actif = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nom_livrable
+
+
+
+class Produit(models.Model):
+    nom_produit = models.CharField(max_length=100)
+    tarif = models.PositiveSmallIntegerField(blank=False, null=False)
+    unité = models.CharField(max_length=30, null=True, blank=True)
+    pitch = models.CharField(max_length=200, null=True, blank=True)    
+    description = models.CharField(max_length=2500, null=True, blank=True)
+    service = models.ForeignKey(Service, null=True, blank=True)   
+    secteur = models.ForeignKey(Secteur, null=True, blank=True)
+    produit_lié = models.ManyToManyField('self', blank=True, symmetrical=False)
+    livrable = models.ManyToManyField(Livrable, blank=True)
+    url_documentation_blog = models.URLField(null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    actif = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nom_produit
+

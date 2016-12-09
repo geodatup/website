@@ -64,6 +64,7 @@ python manage.py collectstatic
 # troubleshooting
 
 l'interface d'administration est une page blanche. LEs droits d'écriture sur la base de donnée ne sont pas adaptés.
+
 ~~~
 sudo chown geodatup:webapps -R .
 ~~~
@@ -73,11 +74,14 @@ s'assurer d'etre connecter avec l'utilisateur geodatup
 
 
 Gunicorn ne se lance pas. 
+
 ~~~
 EACESS
 supervisor: child process was not spawned
 ~~~
+
 le fichier gunicorn_start n'est pas executable. Appliquer les droits de l'utilisateur
+
 ~~~
 cd webapps/website/bin/
 sudo chown geodatup:webapps -R .

@@ -1,5 +1,6 @@
 
 {% extends "base.html" %}
+{% load staticfiles sekizai_tags  show_nav%}
 
 {% block body_content %}
 
@@ -7,7 +8,8 @@
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
+
 {% include "signup-nav.html" %}
 {% endblock nav %}
 

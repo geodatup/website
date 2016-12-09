@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load staticfiles show_nav %}
 
 {% block head_css %}
 {{ block.super }}
@@ -12,7 +12,8 @@
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
+
 {% include "signup-nav.html" %}
 {% endblock nav %}
 

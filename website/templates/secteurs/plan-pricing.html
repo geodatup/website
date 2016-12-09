@@ -1,0 +1,117 @@
+<div class="">
+
+<div id="plans" class="contain">
+ 
+  <div id="plan-intro" class="contain clearfix">
+<div class="clearfix contain">
+
+<div class="plan-template pad2x limiter limiter-big current tab-content" id="tab-1">
+  <div class="col12 consumer-plan  clearfix">
+
+  {% for plan in secteur.plan_set.all %}
+  
+  
+<div class="col4">
+      <div class=" plan-header round-left fill-white prose center pad2 keyline-left keyline-top keyline-bottom space-bottom1 {{plan.css_class}}" >
+
+        <div class="plan-name small space-bottom0 uppercase strong quiet">{{plan}}</div>
+
+        <div class="pricing-section">
+          <h2 class="fancy">{{plan.tarif}}</h2><h6> € HT </h6>
+          </div>
+<div class="icon big {{plan.css_icon}}"></div>
+        <div class="main-features small pad0y">
+        <span class="quiet">{{plan.pitch}}</span> 
+        
+          </div>
+        <div class="space-top1">
+        </div>
+         
+      </div>
+      <div class="plan-detail pad2x space-top2">
+        <ul class="plan-lists">
+      {% for service in plan.get_service_available %}
+      <li class="plan-list-item small keyline-bottom pad0y">{{service.nom_service}}
+      {% if service.tooltip %}
+      {{ service.tooltip | safe}}
+      {% endif %}
+
+      </li>
+      {% endfor%}
+
+      {% for service in plan.get_service_notavailable %}
+      <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item false ">{{service.nom_service}}</span></span></li>
+      {% endfor%}
+
+        </ul>
+
+      </div>
+      <div class="fill-darken0" style="height:270px">
+       <ul class=" pad2 round-left space-top2 storage">
+ 
+        {% if plan.assitance_level %}
+        <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+        Assistance et support : <strong> {{plan.assitance_level }} </strong> </span></span></li>
+        {% endif %}
+
+        {% if plan.formation_Qgis_level  %}
+        <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+        Formation QGIS : <strong> {{plan.formation_Qgis_level }} </strong> </span></span></li>
+        {% endif %}
+
+        {% if plan.atelier_nombre %}
+          {% if plan.atelier_nombre > 1 %}
+          <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+          <strong>{{plan.atelier_nombre }}</strong>  ateliers </span></span></li>
+          {% else %}
+          <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+          <strong>{{plan.atelier_nombre }}</strong>  atelier </span></span></li>
+          {% endif %}
+        {% else %}
+          <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+           aucun atelier </span></span></li>
+        {% endif %}
+      
+
+
+        {% if plan.datapack_opendata_update_frequency %}
+        <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+        Mise à disposition de l'Open - DataPack </span></span></li>
+        {% endif %}
+
+        {% if plan.datapack_IGN_licence_type  %}
+        <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+        Licence <strong>{{plan.datapack_IGN_licence_type }}</strong> de l'IGN - DataPack</span></span></li>
+        {% endif %}
+
+        {% if plan.projet_qgis_nombre  %}
+          {% if plan.projet_qgis_nombre > 1 %}   
+          <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+          <strong>{{plan.projet_qgis_nombre }}</strong> projets QGIS adaptés au besoin de {{ secteur.determinant }} {{ secteur.nom_secteur | lower }}</span></span></li>
+          
+
+          {% else %}
+          
+          <li class="plan-list-item small keyline-bottom pad0y"><span class="tooltip"><span class="tooltip-item  ">
+          <strong>{{plan.projet_qgis_nombre }}</strong> projet QGIS adapté au besoin de {{ secteur.determinant }} {{ secteur.nom_secteur | lower }}</span></span></li>
+          
+          {% endif %}
+
+        {% endif %}
+
+        
+        </ul>
+        
+        </div>
+
+    </div>
+  {% endfor%}
+   
+    
+  </div>
+
+</div>
+
+</div></div>
+</div>
+

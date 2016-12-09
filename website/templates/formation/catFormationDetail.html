@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load cat_formation_index %}
+{% load cat_formation_index show_nav %}
 
 {% block body_content %}
 <div class='page-content'>
 
 
 {% block nav %}
-{% include "nav.html" %}
+{% show_nav_everywhere %}
 {% endblock nav %}
 
 

@@ -2,7 +2,7 @@
 <!--élement présent dans les sub nav -->
 <div class='main-subnav fill-midnight splash pin-top dark clearfix'>
   <div class='prose dark keyline-top pad4y hover-area clearfix'>
-    <div class='limiter clearfix'>
+    <div class='limiter clearfix' style="height:300px">
           <div class='subnav-group subnav-products clearfix'>            
             <div class='col6 clearfix'>
 
@@ -14,27 +14,17 @@
                 <h4><a href="{% url 'website:serviceIndex' %}#{{categorie_list.0.nom_categorie }}"> {{ categorie_list.0.nom_categorie }}</a></h4>
 
                 {% for service in service_cat1 %}
+                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
 
-                  {% if not service.landpage %}
-
-                  <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
-
-                  {% else %}
-
-                  <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
-
-                  {% endif %}
                 
                 {% endfor %}
               </div>
               <div class='col5'>  
                 <h4><a href="{% url 'website:serviceIndex' %}#{{categorie_list.1.nom_categorie }}"> {{ categorie_list.1.nom_categorie }}</a></h4>  
                 {% for service in service_cat2 %}
-                 {% if not service.landpage %}
+                
                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
-                 {% else %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
-                {% endif %}
+          
                 {% endfor %}           
               
               </div>
@@ -43,11 +33,9 @@
             <div class='col5 margin1r'>
             <h3><a href="{% url 'website:serviceIndex' %}#{{categorie_list.2.nom_categorie }}"> {{categorie_list.2.nom_categorie }}</a></h3>
               {% for service in service_cat3 %}
-                 {% if not service.landpage %}
-                <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
-                 {% else %}
-                 <a class='block pad1y icon {{ service.css_icon }}' href= "#section-{{ service.slug }}">{{ service.nom_service }}</a>
-                 {% endif %}
+                
+                 <a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+                 
               {% endfor %}
 
             </div>
@@ -58,24 +46,58 @@
               <h3><a href="#" class='rcon next'>{{ section_list.1.nom_section }}</a></h3>
               
               <div class='col4'>
-              {% for secteur in secteur_list_tab1 %}               
-                <a class='block pad0y icon {{ secteur.css_icon }} ' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+              {% for secteur in secteur_list_tab1 %}     
+
+              {% if not secteur.actif %}
+
+                <a class='block pad0y icon {{ secteur.css_icon }} ' href='#'>{{ secteur.nom_secteur }}</a>
+
+                {% else %}
+
+                  <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+
+                {% endif %}
+
               {% endfor %}
               </div>
 
               <div class='col4'>
                 {% for secteur in secteur_list_tab2 %}               
-                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                 {% if not secteur.actif %}
+
+                <a class='block pad0y icon {{ secteur.css_icon }} ' href='#'>{{ secteur.nom_secteur }}</a>
+
+                {% else %}
+
+                  <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+
+                {% endif %}
               {% endfor %}
               </div>
               <div class='col4'>
                {% for secteur in secteur_list_tab3 %}               
-                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                 {% if not secteur.actif %}
+
+                <a class='block pad0y icon {{ secteur.css_icon }} ' href='#'>{{ secteur.nom_secteur }}</a>
+
+                {% else %}
+
+                  <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+
+                {% endif %}
               {% endfor %}
               </div>
               <div class='col4'>
                 {% for secteur in secteur_list_tab4 %}               
-                <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+                 {% if not secteur.actif %}
+
+                <a class='block pad0y icon {{ secteur.css_icon }} ' href='#'>{{ secteur.nom_secteur }}</a>
+
+                {% else %}
+
+                  <a class='block pad0y icon {{ secteur.css_icon }}' href='{{ secteur.get_absolute_url }}'>{{ secteur.nom_secteur }}</a>
+
+                {% endif %}
               {% endfor %}
               </div>
             </div>
@@ -120,16 +142,20 @@
           <!-- Desktop nav -->
           <div class='text-right z10 strong small primary hide-mobile space-top0'>
             <div class='inline align-top'>
-
-              {% for section in section_list %}
-              <div class='{{ section.css_div_class }}' data-category='{{ section.css_datacategory }}'>
-                 {% if section.nom_section == "Secteurs" or section.nom_section == "Assistances & Support"  %}
-                <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "#">{{ section.nom_section }}</a>
-                  {% else %}
-                <a class='primary-nav-button fl pad1x pad0y round {{ section.css_ahref_class }}' href= "{{ section.slug }}">{{ section.nom_section }}</a>
-                {% endif %}
+              <div class='dropdown inline fl contain' data-category='products'>
+                 <a class='primary-nav-button fl pad1x pad0y round ' href= "{% url 'website:serviceIndex' %}">Services</a>
               </div>
-              {% endfor %}   
+              <div class='dropdown inline fl contain' data-category='use-cases'>
+                <a class='primary-nav-button fl pad1x pad0y round ' href= "#">Secteurs</a>
+              </div>
+              <div class='dropdown inline fl contain' data-category='help'>
+
+                 <a class='primary-nav-button fl pad1x pad0y round ' href= "#">Assistances & Support</a>
+              </div>
+              <div class='inline fl' data-category='products'>
+                 <a class='primary-nav-button fl pad1x pad0y round quiet' href= "blog">Blog</a>
+          
+              </div>
             </div>   
           </div>
 
@@ -143,7 +169,7 @@
                   {% if section.nom_section == "Secteurs" or section.nom_section == "Assistances & Support" %}
                   <a class='pad1 block strong col6' href='#'>{{ section.nom_section }}</a>
                   {% else %}
-                  <a class='pad1 block strong col6' href='{{ section.slug }}'>{{ section.nom_section }}</a>
+                  <a class='pad1 block strong col6' href='{{ section.get_absolut_url}}'>{{ section.nom_section }}</a>
                   {% endif %}
                   {% endfor %}
             

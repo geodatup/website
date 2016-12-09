@@ -4,13 +4,12 @@ from django import forms
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan 
+from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan, Livrable, Produit 
 
 
 class PlanForm( forms.ModelForm ):
 	pitch = forms.CharField(widget=forms.Textarea )
 	
-
 	class Meta:
 		model = Plan
 		exclude = ['']
@@ -42,6 +41,7 @@ class ChapitreFormationAdmin(ImportExportModelAdmin):
 class ServiceForm( forms.ModelForm ):
 	pitch = forms.CharField(widget=forms.Textarea )
 	description = forms.CharField( widget=forms.Textarea )
+	tooltip = forms.CharField(widget=forms.Textarea)
 	html_page = forms.CharField( widget=forms.Textarea )
 
 	class Meta:
@@ -69,7 +69,7 @@ class CategorieAdmin(admin.ModelAdmin):
 
 class SecteurForm( forms.ModelForm ):
 	pitch = forms.CharField( widget=forms.Textarea )
-
+	description = forms.CharField( widget=forms.Textarea )
 	class Meta:
 		model = Formation
 		exclude = ['']
@@ -155,12 +155,22 @@ class SoftwareAdmin(ImportExportModelAdmin):
 	prepopulated_fields = {'slug': ('nom_soft',) }
 
 
-
 class SectionAdmin(admin.ModelAdmin):
 	
 	list_display = ('id', 'nom_section','actif')
 	prepopulated_fields = {'slug': ('nom_section',) }
 
+class ProduitForm( forms.ModelForm ):
+	pitch = forms.CharField( widget=forms.Textarea )
+	description = forms.CharField( widget=forms.Textarea )
+
+	class Meta:
+		model = ModuleFormation
+		exclude = ['']
+
+class ProduitAdmin(admin.ModelAdmin):
+	form=ProduitForm
+	list_display = ('id', 'nom_produit', 'service','secteur','actif')
 
 
 # Register your models here.
@@ -174,7 +184,9 @@ admin.site.register(CatFormation, CatFormationAdmin)
 admin.site.register(Reference)
 admin.site.register(ModuleFormation, ModuleFormationAdmin)
 admin.site.register(ChapitreFormation, ChapitreFormationAdmin)
-
 admin.site.register(Personne, PersonneAdmin)
-
 admin.site.register(Plan, PlanAdmin)
+admin.site.register(Produit, ProduitAdmin)
+
+
+admin.site.register(Livrable)

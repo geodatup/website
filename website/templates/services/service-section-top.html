@@ -1,6 +1,12 @@
 {% load thumbnail %}
 {% if service.nom_service %}
+{% if service.image %}
+
+{% thumbnail service.image 1920x530 crop subject_location=service.image.subject_location as photo %}<section id="top" class='slideshow splash js-fullheight contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
+{% else %}
 <section class="splash dark contain clearfix clip fill-{{service.categorie_service.css_color}} scroll-section js-fullheight" id="section-0" style="height: 1067px;">
+
+{% endif %}
  <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
 
     <div class="intro contain">
@@ -19,7 +25,8 @@
         <p class="prose prose-big"></p>
 
 
-      {% else %}
+      {% else %} <!-- c'est la page index des services -->
+
 <section id="top" class='slideshow splash js-fullheight fill-blue contain animate clip active1' >
  
   <div class='carousel-fill col12 pin-left'>
@@ -31,10 +38,6 @@
       <div class='z1 slideshow-text pad4y col4 margin8 prose prose-big dark'>
       	<h2 class='fancy space-bottom1'>Nos services</h2>
         <p class="prose prose-big"></p>
-    
-
-
-
           <div class="design-section contain col8 pin-top row11">
 
             <div class="space-bottom4">
