@@ -1,0 +1,190 @@
+[
+{
+  "model": "website.produit",
+  "pk": 1,
+  "fields": {
+    "nom_produit": "Cartographie d'un plan simple de gestion",
+    "tarif": 250,
+    "unite": "",
+    "pitch": "Vous souhaitez gagner du temps pour la r\u00e9alisation d'un Plan Simple de Gestion d'une for\u00eat priv\u00e9e ?",
+    "description": "Contacter nous en nous fournissant les information des peuplements de la for\u00eat et nous vous transmettons votre carte au format num\u00e9rique sous 48 heures.",
+    "service": 9,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": [
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 2,
+  "fields": {
+    "nom_produit": "Mise en place d'un SIG forestier avec QGIS",
+    "tarif": 1000,
+    "unite": "",
+    "pitch": "G\u00e9rer toutes vos parcelles et for\u00eats priv\u00e9es dans un SIG d\u00e9di\u00e9",
+    "description": "Le SIG sert de socle au d\u00e9veloppement de votre activit\u00e9. Gr\u00e2ce \u00e0 celui-ci vous deviendrez autonome dans la gestion des informations caract\u00e9ristiques des for\u00eats que vous g\u00e9rez.",
+    "service": 10,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": [
+      10
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 3,
+  "fields": {
+    "nom_produit": "Cr\u00e9ation d'un projet \"for\u00eat\" dans QGIS",
+    "tarif": 250,
+    "unite": "",
+    "pitch": "Acc\u00e9dez \u00e0 toutes les informations utiles de vos for\u00eats en un clic",
+    "description": "Un projet QGIS vous sert \u00e0 faire le lien entre les ressources  externes (image a\u00e9rienne, cartographie IGN...) et vos donn\u00e9es priv\u00e9es accessible sur votre r\u00e9seau priv\u00e9e d'entreprise. De plus ce projet contient les jointures attributaires  entre vos tables.",
+    "service": 10,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": [
+      7
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 4,
+  "fields": {
+    "nom_produit": "Orthophotographie tr\u00e8s haute r\u00e9solution",
+    "tarif": 10,
+    "unite": "hectare",
+    "pitch": "Obtenez les images de la for\u00eat que vous g\u00e9r\u00e9 de la meilleure pr\u00e9cision pour un co\u00fbt d\u00e9risoire.",
+    "description": "Nos images sont acquises par drone avec un capteur photographique de grande qualit\u00e9.",
+    "service": 18,
+    "secteur": null,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": [
+      3
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 5,
+  "fields": {
+    "nom_produit": "Cr\u00e9ation de mod\u00e8le num\u00e9rique 3D",
+    "tarif": 10,
+    "unite": "hectare",
+    "pitch": "Etape de cr\u00e9ation du mod\u00e8le num\u00e9rique 3D de tr\u00e8s haute r\u00e9solution.",
+    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Graces \u00e0 ces images nous produisons des mod\u00e8les num\u00e9riques de surface (MNS).  dont nous fournissons l'\u00e9valuons la pr\u00e9cision finale. Nous obtenons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source MicMac de l'IGN.",
+    "service": 18,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": [
+      11
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 6,
+  "fields": {
+    "nom_produit": "Licence d'exploitation IGN",
+    "tarif": 50,
+    "unite": "mois",
+    "pitch": "Acc\u00e9dez \u00e0 de tr\u00e8s nombreuses cartes num\u00e9riques de l'IGN.",
+    "description": "Une Licence forfaitaire IGN est fournie pour une utilisation adapt\u00e9e \u00e0 vos usages m\u00e9tiers.\r\nImages a\u00e9riennes de 2000 \u00e0 nos jours, images satellites, cartes topographiques, parcellaire cadastral, occupation du sol, cartes foresti\u00e8res V1 et V2, RGP registre parcellaire agricole depuis 2007  ...\r\nDonn\u00e9es INPN : reserves, site natura 2000, ZNIEFF 1 et 2 ...\r\nDonn\u00e9es \u00e9quipements : lignes \u00e9lectriques, routes et d'autres encore.",
+    "service": 15,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [],
+    "livrable": []
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 7,
+  "fields": {
+    "nom_produit": "Cartographie des pentes pour op\u00e9ration de d\u00e9bardage",
+    "tarif": 250,
+    "unite": "carte",
+    "pitch": "La carte des pentes de vos parcelles vous permettra de determiner les meilleurs emplacement pour vos op\u00e9rations de d\u00e9bardage",
+    "description": "Repr\u00e9senter avec pr\u00e9cision le seuil de 10 % de pente pour determiner les routes, d\u00e9p\u00f4t et retournement d'une op\u00e9ration de d\u00e9bardage.",
+    "service": 9,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [
+      5
+    ],
+    "livrable": [
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 8,
+  "fields": {
+    "nom_produit": "Carte d'\u00e9tat des lieux sanitaire",
+    "tarif": 10,
+    "unite": "ha",
+    "pitch": "Connaitre avec pr\u00e9cision l'activit\u00e9 chlorophylienne des arbres de vos parcelles.",
+    "description": "Les technique de t\u00e9l\u00e9d\u00e9tection \u00e0 partir du spectre du Proche Infra Rouge nous permette de d\u00e9crire \u00e0 l'\u00e9chelle de l'individu (arbre) son \u00e9tat sanitaire.",
+    "service": 18,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [
+      4,
+      5
+    ],
+    "livrable": [
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "website.produit",
+  "pk": 9,
+  "fields": {
+    "nom_produit": "Carte du d\u00e9p\u00e9rissement v\u00e9g\u00e9tale",
+    "tarif": 0,
+    "unite": "",
+    "pitch": "</>",
+    "description": "</>",
+    "service": 18,
+    "secteur": 3,
+    "url_documentation_blog": "",
+    "image": null,
+    "actif": true,
+    "produit_li\u00e9": [
+      4,
+      8
+    ],
+    "livrable": []
+  }
+}
+]

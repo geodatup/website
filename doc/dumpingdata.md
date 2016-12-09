@@ -17,6 +17,7 @@ python manage.py dumpdata --natural-foreign --indent=2 website.section > dump/du
 python manage.py dumpdata --natural-foreign --indent=2 website.service > dump/dump-service.json
 python manage.py dumpdata --natural-foreign --indent=2 website.software > dump/dump-software.json
 python manage.py dumpdata --natural-foreign --indent=2 website.plan > dump/dump-plan.json
+python manage.py dumpdata --natural-foreign --indent=2 website.produit > dump/dump-produit.json
 ~~~
 
 
