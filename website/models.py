@@ -335,7 +335,7 @@ class Livrable(models.Model):
 class Produit(models.Model):
     nom_produit = models.CharField(max_length=100)
     tarif = models.PositiveSmallIntegerField(blank=False, null=False)
-    unité = models.CharField(max_length=30, null=True, blank=True)
+    unite = models.CharField(max_length=30, null=True, blank=True)
     pitch = models.CharField(max_length=200, null=True, blank=True)    
     description = models.CharField(max_length=2500, null=True, blank=True)
     service = models.ForeignKey(Service, null=True, blank=True)   

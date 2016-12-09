@@ -3,28 +3,24 @@
   "model": "website.plan",
   "pk": 1,
   "fields": {
-    "nom_plan": "D\u00e9marrage",
+    "nom_plan": "D\u00e9marrage SIG Forestier",
     "tarif": 2500,
-    "pitch": "Prendre conscience des apports des SIG dans votre quotidien et en tirer les premiers b\u00e9n\u00e9fices",
+    "pitch": "Prendre conscience des apports des SIG avec QGIS  et en tirer les premiers b\u00e9n\u00e9fices rapidement.",
     "image": null,
     "assitance_level": "Base de connaissance \u00e9volutive",
     "consultance": "",
     "formation_Qgis_level": "D\u00e9butant",
     "atelier_nombre": 1,
-    "datapack_opendata_update_frequency": "semestrielle",
+    "datapack_opendata_update_frequency": "2",
     "datapack_IGN_licence_type": "",
     "projet_qgis_nombre": 1,
-    "maintenance_available": "Maintenance du logiciel QGIS et du projet \"For\u00eat\"",
+    "maintenance_available": "",
     "css_icon": "depart",
     "css_class": "",
     "actif": true,
     "slug": "demarrage",
     "secteur": [
-      3,
-      4,
-      5,
-      6,
-      7
+      3
     ],
     "servicesAvailable": [
       6,
@@ -39,28 +35,24 @@
   "model": "website.plan",
   "pk": 2,
   "fields": {
-    "nom_plan": "Migration",
+    "nom_plan": "Migration vers QGIS",
     "tarif": 2500,
-    "pitch": "Conseil dans la conduite du changement. Passer d'un fonctionnement sous licence SIG traditionnelle \u00e0 une licence SIG libre et gratuite.",
+    "pitch": "Vous allez continuer de payer une licence pour votre SIG alors que QGIS est sous licence libre et gratuite ?",
     "image": null,
     "assitance_level": "T\u00e9l\u00e9assistant",
-    "consultance": "Etude des projets SIG en cours de l'entreprise",
+    "consultance": "",
     "formation_Qgis_level": "D\u00e9butant",
     "atelier_nombre": null,
-    "datapack_opendata_update_frequency": "semestrielle",
+    "datapack_opendata_update_frequency": "2",
     "datapack_IGN_licence_type": "",
-    "projet_qgis_nombre": 20,
-    "maintenance_available": "Maintenance du logiciel QGIS et de tous les projets",
+    "projet_qgis_nombre": 5,
+    "maintenance_available": "",
     "css_icon": "logout",
     "css_class": "",
     "actif": true,
     "slug": "migration",
     "secteur": [
-      3,
-      4,
-      5,
-      6,
-      7
+      3
     ],
     "servicesAvailable": [
       6,
@@ -75,28 +67,24 @@
   "model": "website.plan",
   "pk": 3,
   "fields": {
-    "nom_plan": "Optimisation",
+    "nom_plan": "Optimiser votre SIG forestier",
     "tarif": 3200,
-    "pitch": "Gagner en efficacit\u00e9, en temps et en qualit\u00e9, en tirer le plus de b\u00e9n\u00e9fices.",
+    "pitch": "Tirer tous les b\u00e9n\u00e9fices d'une gestion optimale de vos donn\u00e9es foresti\u00e8res.",
     "image": null,
     "assitance_level": "Support helpdesk, d\u00e9placement ",
-    "consultance": "Audit g\u00e9omatique complet de l'entreprise",
+    "consultance": "",
     "formation_Qgis_level": "Expert",
-    "atelier_nombre": 3,
-    "datapack_opendata_update_frequency": "semestrielle",
+    "atelier_nombre": 2,
+    "datapack_opendata_update_frequency": "2",
     "datapack_IGN_licence_type": "Pro",
     "projet_qgis_nombre": 5,
-    "maintenance_available": "Maintenance du logiciel QGIS et de tous vos projets",
+    "maintenance_available": "",
     "css_icon": "star",
     "css_class": "",
     "actif": true,
     "slug": "optimisation",
     "secteur": [
-      3,
-      4,
-      5,
-      6,
-      7
+      3
     ],
     "servicesAvailable": [
       6,
@@ -105,8 +93,7 @@
       9,
       10,
       12,
-      15,
-      16
+      15
     ]
   }
 }

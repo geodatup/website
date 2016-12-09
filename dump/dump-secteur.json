@@ -6,9 +6,11 @@
     "nom_secteur": "Foresterie",
     "determinant": "la",
     "pitch": "Nos services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion foresti\u00e8res",
+    "description": "<p>La gestion foresti\u00e8re n\u00e9cessite une connaissance pr\u00e9cise des parcelles foresti\u00e8res et cela pour plusieurs propri\u00e9taires.</p>\r\n<p>\r\nGr\u00e2ce \u00e0 nos diff\u00e9rents produits, vous optimisez votre temps pour vous concentrer essentiellement \u00e0 votre m\u00e9tier.\r\n</p>",
     "css_class": "",
     "css_icon": "icon landuse",
     "css_color": "green",
+    "image": 23,
     "actif": true,
     "slug": "foresterie"
   }
@@ -20,9 +22,11 @@
     "nom_secteur": "Agriculture",
     "determinant": "l'",
     "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'agriculture",
+    "description": null,
     "css_class": "",
     "css_icon": "tilemill",
     "css_color": "orange",
+    "image": null,
     "actif": true,
     "slug": "agriculture"
   }
@@ -34,9 +38,11 @@
     "nom_secteur": "Environnement",
     "determinant": "l'",
     "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion environnementale",
+    "description": null,
     "css_class": "",
     "css_icon": "land",
     "css_color": "blue",
+    "image": null,
     "actif": false,
     "slug": "environnement"
   }
@@ -48,9 +54,11 @@
     "nom_secteur": "Arch\u00e9ologie",
     "determinant": "l'",
     "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'arch\u00e9ologie",
+    "description": null,
     "css_class": "",
     "css_icon": "hand",
     "css_color": "yellow",
+    "image": null,
     "actif": false,
     "slug": "archeologie"
   }
@@ -59,14 +67,16 @@
   "model": "website.secteur",
   "pk": 7,
   "fields": {
-    "nom_secteur": "Municipalit\u00e9",
+    "nom_secteur": "Collectivit\u00e9",
     "determinant": "la",
     "pitch": "Nos services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion d'une municipalit\u00e9",
+    "description": null,
     "css_class": "",
     "css_icon": "building",
     "css_color": "dark",
+    "image": null,
     "actif": true,
-    "slug": "municipalite"
+    "slug": "collectivite"
   }
 }
 ]

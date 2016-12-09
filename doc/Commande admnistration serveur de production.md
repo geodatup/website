@@ -1,4 +1,4 @@
-Commande admnistration serveur de production
+#Commande admnistration serveur de production
 
 
 - créer un nouvel utilisateur et un dossier home qui pointe sur son application
@@ -38,7 +38,7 @@ puis relancer supervisorctl en dehors de la session geodatup
 
 ~~~
 cd /var/www/webapps/website
-bin/activate
+source bin/activate
 sudo git pull
 sudo python manage.py migrate
 sudo python manage.py loaddata dump/auth.json
@@ -49,10 +49,12 @@ sudo python manage.py loaddata dump/dump-moduleformation.json
 sudo python manage.py loaddata dump/dump-chapitreformation.json
 sudo python manage.py loaddata dump/dump-formation.json
 sudo python manage.py loaddata dump/dump-personne.json
+sudo python manage.py loaddata dump/dump-reference.json
 sudo python manage.py loaddata dump/dump-secteur.json
 sudo python manage.py loaddata dump/dump-section.json
 sudo python manage.py loaddata dump/dump-service.json 
-sudo python manage.py loaddata dump/dump-software.json 
+sudo python manage.py loaddata dump/dump-software.json
+sudo python manage.py loaddata dump/dump-plan.json
 sudo supervisorctl reload
 sudo su - geodatup
 python manage.py collectstatic

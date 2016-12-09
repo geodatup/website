@@ -36,147 +36,39 @@
   }
 },
 {
-  "model": "filer.file",
-  "pk": 2,
-  "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/b7/9d/b79dcb56-078c-49e8-97b6-98a19ff6e3ed/20161102_150914.jpg",
-    "_file_size": 998530,
-    "sha1": "a3ff5bd5b6d2403b74d2ea4b9b2e3048ca0c2318",
-    "has_all_mandatory_data": true,
-    "original_filename": "20161102_150914.jpg",
-    "name": "baby",
-    "description": "",
-    "owner": [
-      "yogis"
-    ],
-    "uploaded_at": "2016-11-11T12:17:12.926Z",
-    "modified_at": "2016-11-11T12:17:31.022Z",
-    "is_public": true
-  }
-},
-{
-  "model": "filer.file",
+  "model": "filer.folder",
   "pk": 3,
   "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/9b/9c/9b9ca656-8984-430f-811a-d671e1f4c2de/20161101_112247.jpg",
-    "_file_size": 893136,
-    "sha1": "3b077c711b1f874beaa0dda5f98e4e58ae3e863a",
-    "has_all_mandatory_data": false,
-    "original_filename": "20161101_112247.jpg",
-    "name": "",
-    "description": null,
+    "parent": null,
+    "name": "services",
     "owner": [
       "yogis"
     ],
-    "uploaded_at": "2016-11-12T08:34:50.487Z",
-    "modified_at": "2016-11-12T08:34:50.488Z",
-    "is_public": true
+    "uploaded_at": "2016-11-18T14:29:06.204Z",
+    "created_at": "2016-11-18T14:29:06.204Z",
+    "modified_at": "2016-11-18T14:29:06.204Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 3,
+    "level": 0
   }
 },
 {
-  "model": "filer.file",
+  "model": "filer.folder",
   "pk": 4,
   "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/60/95/6095c473-0a88-4c04-8b49-765978d3ff10/20161102_150914.jpg",
-    "_file_size": 998530,
-    "sha1": "a3ff5bd5b6d2403b74d2ea4b9b2e3048ca0c2318",
-    "has_all_mandatory_data": false,
-    "original_filename": "20161102_150914.jpg",
-    "name": "",
-    "description": null,
+    "parent": null,
+    "name": "secteurs",
     "owner": [
       "yogis"
     ],
-    "uploaded_at": "2016-11-12T08:35:35.796Z",
-    "modified_at": "2016-11-12T08:35:35.796Z",
-    "is_public": true
-  }
-},
-{
-  "model": "filer.file",
-  "pk": 5,
-  "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/db/5e/db5eba9c-3fb1-4c42-9133-0e7be5e63a09/20161101_145139.jpg",
-    "_file_size": 1256824,
-    "sha1": "482aac8e51db3d2f8f90e5755662dcdb2d231a6a",
-    "has_all_mandatory_data": false,
-    "original_filename": "20161101_145139.jpg",
-    "name": "",
-    "description": null,
-    "owner": [
-      "yogis"
-    ],
-    "uploaded_at": "2016-11-12T08:36:25.947Z",
-    "modified_at": "2016-11-12T08:36:25.947Z",
-    "is_public": true
-  }
-},
-{
-  "model": "filer.file",
-  "pk": 6,
-  "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/a4/28/a428510b-6783-49c1-8868-edc5fcb85ecd/20161105_232317.jpg",
-    "_file_size": 146061,
-    "sha1": "83d3f41c7ef22f1bdeb2a22cdc199b202ea5dcfa",
-    "has_all_mandatory_data": false,
-    "original_filename": "20161105_232317.jpg",
-    "name": "",
-    "description": null,
-    "owner": [
-      "yogis"
-    ],
-    "uploaded_at": "2016-11-12T08:37:05.580Z",
-    "modified_at": "2016-11-12T08:37:05.580Z",
-    "is_public": true
-  }
-},
-{
-  "model": "filer.file",
-  "pk": 7,
-  "fields": {
-    "polymorphic_ctype": [
-      "filer",
-      "image"
-    ],
-    "folder": 2,
-    "file": "filer_public/94/ee/94ee04ff-ce72-46cc-bb5c-d01a26ed5a70/20161101_112546.jpg",
-    "_file_size": 1102773,
-    "sha1": "792dead5523352789ac6b1e813f79a41a19bd8b3",
-    "has_all_mandatory_data": false,
-    "original_filename": "20161101_112546.jpg",
-    "name": "",
-    "description": null,
-    "owner": [
-      "yogis"
-    ],
-    "uploaded_at": "2016-11-12T08:43:01.452Z",
-    "modified_at": "2016-11-12T08:43:01.452Z",
-    "is_public": true
+    "uploaded_at": "2016-11-22T08:15:00.377Z",
+    "created_at": "2016-11-22T08:15:00.378Z",
+    "modified_at": "2016-11-22T08:15:00.378Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 4,
+    "level": 0
   }
 },
 {
@@ -252,102 +144,156 @@
   }
 },
 {
+  "model": "filer.file",
+  "pk": 14,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/80/4e/804e1b64-bd3c-486b-8ab8-f9eef4eab653/team_claire.png",
+    "_file_size": 1769192,
+    "sha1": "c18a67a064a3c996b1b421807de4dc5363faa6e0",
+    "has_all_mandatory_data": true,
+    "original_filename": "team_claire.png",
+    "name": "claire",
+    "description": "",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-18T12:25:30.805Z",
+    "modified_at": "2016-11-18T12:33:12.729Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 18,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/18/22/18224fbf-fdb3-4d73-be10-a7e9a40301db/team_hugoroussaffa.jpg",
+    "_file_size": 54874,
+    "sha1": "37eb40aae6cbf24c7e8c2cad2a86b09e958f73ab",
+    "has_all_mandatory_data": false,
+    "original_filename": "team_hugoroussaffa.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-18T13:19:19.174Z",
+    "modified_at": "2016-11-18T13:19:19.174Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 19,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 2,
+    "file": "filer_public/74/89/74892ad6-6a60-4c53-b3fb-a27b9c1bb24d/team_hugoroussaffa.jpg",
+    "_file_size": 78527,
+    "sha1": "985ae8fe15021dae14ebfe9c305568beafa6d043",
+    "has_all_mandatory_data": false,
+    "original_filename": "team_hugoroussaffa.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-18T13:20:39.212Z",
+    "modified_at": "2016-11-18T13:20:39.212Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 20,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/64/7d/647da05e-6741-414f-aea6-0d7509fc0e69/20151106_160113.jpg",
+    "_file_size": 535616,
+    "sha1": "85b27ee89dba91e55448d7675a482faf144f7ee5",
+    "has_all_mandatory_data": false,
+    "original_filename": "20151106_160113.jpg",
+    "name": "",
+    "description": "",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-18T13:52:47.962Z",
+    "modified_at": "2016-11-18T14:27:52.629Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 22,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 4,
+    "file": "filer_public/28/77/287790b9-561d-49a3-8bc4-5cae2bd90f0a/bois.jpg",
+    "_file_size": 116300,
+    "sha1": "970bfa99164bd9eaa46f5b5990c66c6383bb8271",
+    "has_all_mandatory_data": false,
+    "original_filename": "bois.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-22T08:15:12.130Z",
+    "modified_at": "2016-11-22T08:15:12.130Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 23,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": 4,
+    "file": "filer_public/f0/3d/f03de804-c801-4b4b-9098-2da3e9034c43/bois-2.jpg",
+    "_file_size": 46864,
+    "sha1": "552e7e3d26d249af45690a1cb323430529bedb5d",
+    "has_all_mandatory_data": false,
+    "original_filename": "bois-2.jpg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-11-22T08:48:41.502Z",
+    "modified_at": "2016-11-22T08:48:41.502Z",
+    "is_public": true
+  }
+},
+{
   "model": "filer.clipboard",
   "pk": 1,
   "fields": {
     "user": [
       "yogis"
     ]
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 2,
-  "fields": {
-    "_height": 1536,
-    "_width": 2560,
-    "default_alt_text": "",
-    "default_caption": "",
-    "subject_location": "1024,427",
-    "date_taken": "2016-11-11T12:17:12.778Z",
-    "author": "",
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 3,
-  "fields": {
-    "_height": 1536,
-    "_width": 2560,
-    "default_alt_text": null,
-    "default_caption": null,
-    "subject_location": "",
-    "date_taken": "2016-11-12T08:34:50.408Z",
-    "author": null,
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 4,
-  "fields": {
-    "_height": 1536,
-    "_width": 2560,
-    "default_alt_text": null,
-    "default_caption": null,
-    "subject_location": "",
-    "date_taken": "2016-11-12T08:35:35.788Z",
-    "author": null,
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 5,
-  "fields": {
-    "_height": 1536,
-    "_width": 2560,
-    "default_alt_text": null,
-    "default_caption": null,
-    "subject_location": "",
-    "date_taken": "2016-11-12T08:36:25.937Z",
-    "author": null,
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 6,
-  "fields": {
-    "_height": 720,
-    "_width": 1280,
-    "default_alt_text": null,
-    "default_caption": null,
-    "subject_location": "",
-    "date_taken": "2016-11-12T08:37:05.576Z",
-    "author": null,
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
-  }
-},
-{
-  "model": "filer.image",
-  "pk": 7,
-  "fields": {
-    "_height": 1536,
-    "_width": 2560,
-    "default_alt_text": null,
-    "default_caption": null,
-    "subject_location": "",
-    "date_taken": "2016-11-12T08:43:01.442Z",
-    "author": null,
-    "must_always_publish_author_credit": false,
-    "must_always_publish_copyright": false
   }
 },
 {
@@ -390,6 +336,96 @@
     "default_caption": null,
     "subject_location": "",
     "date_taken": "2016-11-15T16:28:26.621Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 14,
+  "fields": {
+    "_height": 1187,
+    "_width": 1178,
+    "default_alt_text": "",
+    "default_caption": "",
+    "subject_location": "623,471",
+    "date_taken": "2016-11-18T12:25:30.701Z",
+    "author": "",
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 18,
+  "fields": {
+    "_height": 363,
+    "_width": 309,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-18T13:19:19.169Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 19,
+  "fields": {
+    "_height": 483,
+    "_width": 378,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-18T13:20:39.207Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 20,
+  "fields": {
+    "_height": 1536,
+    "_width": 2560,
+    "default_alt_text": "",
+    "default_caption": "",
+    "subject_location": "268,439",
+    "date_taken": "2016-11-18T13:52:47.949Z",
+    "author": "",
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 22,
+  "fields": {
+    "_height": 453,
+    "_width": 768,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-22T08:15:11.942Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 23,
+  "fields": {
+    "_height": 440,
+    "_width": 680,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-11-22T08:48:41.465Z",
     "author": null,
     "must_always_publish_author_credit": false,
     "must_always_publish_copyright": false

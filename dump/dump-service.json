@@ -6,14 +6,15 @@
     "nom_service": "Formation",
     "categorie_service": 4,
     "pitch": "Un ensemble de formations et d'ateliers  g\u00e9omatiques",
-    "description": "GeoDatup organisme de formation professionnel, apporte les cl\u00e9s de compr\u00e9hension et des comp\u00e9tences g\u00e9omatiques li\u00e9es aux besoins de votre m\u00e9tiers.",
+    "description": "GeoDatup organisme de formation professionnel, apporte les cl\u00e9s de compr\u00e9hension et des comp\u00e9tences g\u00e9omatiques li\u00e9es aux besoins de votre m\u00e9tier.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": 13,
     "css_color": "green",
     "css_icon": "plus-document",
     "css_class": "",
     "actif": true,
     "landpage": true,
-    "html_page": "<p>caca</p>",
+    "html_page": "<p></p>",
     "slug": "formation"
   }
 },
@@ -25,6 +26,7 @@
     "categorie_service": 4,
     "pitch": "GeoDatup vous offre ses conseils et solutions personnalis\u00e9es en g\u00e9omatique",
     "description": "Nos conseils vous apporte des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et nos outils de pointes, nous pouvons r\u00e9volutionner certaines de vos anciennes m\u00e9thodes devenues d\u00e9su\u00e8tes.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "compass",
@@ -43,6 +45,7 @@
     "categorie_service": 4,
     "pitch": "Tous les services mis en place par GeoDatup peuvent b\u00e9n\u00e9ficier d'une maintenance annuelle.",
     "description": "Afin d'assurer un fonctionnement de long terme, les solutions mises en place dans votre structure, sont maintenue r\u00e9guli\u00e8rement \u00e0 jour. L'ensemble des services que vous commandez chez nous peuvent disposer de cette maintenance \u00e0 un co\u00fbt annuel, \u00e9quivalent \u00e0 15% du prix de vente. \r\nPour la maintenance des produits concurrents, nous pouvons r\u00e9aliser une \u00e9tude et vous fournir un devis sur demande.",
+    "tooltip": "<span class=\"tooltip\">\r\n            <span class=\"tooltip-item cursor\">\r\n              *\r\n            </span>\r\n            <span class=\"tooltip-content tooltip-content-left\">\r\n              <span class=\"tooltip-text\">\r\n                L'offre int\u00e8gre une maintenance du logiciel QGIS et de tous les projets mis en place au cours de la prestation.\r\n              </span>\r\n            </span>\r\n          </span>",
     "image": null,
     "css_color": "",
     "css_icon": "bug",
@@ -61,6 +64,7 @@
     "categorie_service": 5,
     "pitch": "R\u00e9aliser des cartes sp\u00e9cialis\u00e9es pour un besoin sp\u00e9cial.",
     "description": "<h3>Savez vous pourquoi faire une carte ? </h3>\r\n<p>Tout peut \u00eatre repr\u00e9sent\u00e9 sur une carte mais encore faut il avoir une information \u00e0 transmettre.\r\nDe ce fait, les cartes peuvent \u00eatre plus ou moins complexes \u00e0 mettre en oeuvre, c'est pourquoi <strong>nous vous proposons de les r\u00e9aliser.</strong>\r\n<p> La cartographie n\u00e9cessite l'usage d'un language graphique (s\u00e9miologie). Les informations sont pr\u00e9sent\u00e9es selon des r\u00e8gles \u00e9prouv\u00e9es afin d'\u00eatre bien comprises. Il existe aujourd'hui beaucoup de cas contraire o\u00f9 la carte comporte des erreurs de conceptions et rend la lecture difficile voir m\u00eame inutile. \r\n<p>Je redemande donc : savez vous pourquoi faire une carte ? </p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "map",
@@ -78,7 +82,8 @@
     "nom_service": "S.I.G.",
     "categorie_service": 5,
     "pitch": "Les syst\u00e8mes d'informations g\u00e9ographiques apportent de pr\u00e9cieux conseils dans vos d\u00e9cisions.",
-    "description": "Les SIG sont devenus incontournables pour les strategies territoriales des grandes entreprises et des collectivit\u00e9s publiques. Ils sont aussi souvent  m\u00e9connues ou inaccessibles pour les petites structures. Gr\u00e2ce \u00e0 la communaut\u00e9 open-source et open-data, les co\u00fbts d'acc\u00e8s \u00e0 ces services chutes consid\u00e9rablement. Nous sommes fier de cela. D\u00e9sormais, nous pouvons proposer des solutions \u00e0 aucun co\u00fbt de licence et des donn\u00e9es gratuites pour am\u00e9liorer les d\u00e9cisions que vous prenez tous les jours.\r\nSi vous n'avez pas encore votre SIG, nous sommes certains qu'ils seront la cl\u00e9s du d\u00e9veloppement de votre activit\u00e9.",
+    "description": "Les SIG sont devenus incontournables pour les strategies territoriales des grandes entreprises et des collectivit\u00e9s publiques. Ils sont aussi souvent  m\u00e9connues ou inaccessibles pour les petites structures. Gr\u00e2ce \u00e0 la communaut\u00e9 open-source et open-data, les co\u00fbts d'acc\u00e8s \u00e0 ces services chutes consid\u00e9rablement. Nous sommes fier de cela. D\u00e9sormais, nous pouvons proposer des solutions \u00e0 aucun co\u00fbt de licence et des donn\u00e9es gratuites pour am\u00e9liorer les d\u00e9cisions que vous prenez tous les jours.\r\nSi vous n'avez pas encore votre SIG, nous sommes certains qu'ils sont l'une des cl\u00e9s du d\u00e9veloppement de votre activit\u00e9.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "layers",
@@ -97,6 +102,7 @@
     "categorie_service": 5,
     "pitch": "Extraire l'information des images satellites et a\u00e9riennes pour am\u00e9liorer vos d\u00e9cisions.",
     "description": "La t\u00e9l\u00e9d\u00e9tection est l'une des m\u00e9thodes permettant d'obtenir de mani\u00e8re automatique, des informations pr\u00e9cieuses sur la zone d'\u00e9tude. L'analyse des fr\u00e9quences spectrales nous permette de cr\u00e9er des donn\u00e9es suppl\u00e9mentaire \u00e0 la photo elle-m\u00eame. Ainsi, une fois ces donn\u00e9es cartographi\u00e9es et int\u00e9gr\u00e9es \u00e0 votre SIG, vous pouvez organiser votre travail de mani\u00e8re optimale.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "grid",
@@ -115,6 +121,7 @@
     "categorie_service": 5,
     "pitch": "Cr\u00e9er vos outils pour \u00eatre au plus pr\u00e8s de vos besoins.",
     "description": "Parfois les logiciels et outils disponibles ne r\u00e9pondent pas \u00e0 vos besoins. Pour y rem\u00e9dier il est pr\u00e9f\u00e9rable de r\u00e9aliser un d\u00e9veloppement \u00e0 fa\u00e7on.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "coding",
@@ -133,6 +140,7 @@
     "categorie_service": 5,
     "pitch": "Analyser vos donn\u00e9es en profondeur gr\u00e2ce aux mod\u00e8les de statistiques spatiales.",
     "description": "Vous disposer de beaucoup de donn\u00e9es mais vous n'arrivez pas \u00e0 en tirer toute l'information dont vous avez besoin ? Pour cela, il est souvent n\u00e9c\u00e9ssaire d'analyser les donn\u00e9es dans leur ensembles avec des analyses multivari\u00e9es et des classifications adapt\u00e9es.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "analytics",
@@ -145,30 +153,13 @@
 },
 {
   "model": "website.service",
-  "pk": 14,
-  "fields": {
-    "nom_service": "Mod\u00e8le num\u00e9rique 3D",
-    "categorie_service": 6,
-    "pitch": "Obtenez un mod\u00e8le num\u00e9rique en 3 dimensions \u00e0 jour et de tr\u00e8s haute r\u00e9solution.",
-    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous produisons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source MicMac de l'IGN.",
-    "image": null,
-    "css_color": "",
-    "css_icon": "tileset",
-    "css_class": "",
-    "actif": true,
-    "landpage": false,
-    "html_page": "<p></p>",
-    "slug": "modele-numerique-3d"
-  }
-},
-{
-  "model": "website.service",
   "pk": 15,
   "fields": {
-    "nom_service": "DataPack Open data",
+    "nom_service": "DataPack",
     "categorie_service": 6,
     "pitch": "Contient un ensemble \u00e9volutif de donn\u00e9es mis \u00e0 jour r\u00e9guli\u00e8rement et sp\u00e9cifiques \u00e0 votre m\u00e9tiers",
-    "description": "Sont disponibles des packs m\u00e9tiers : gestion foresti\u00e8re",
+    "description": "Sont disponibles plusieurs lots de donn\u00e9es sp\u00e9cifiques aux diff\u00e9rents secteurs m\u00e9tiers que nous maitrisons.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "data",
@@ -176,25 +167,7 @@
     "actif": true,
     "landpage": false,
     "html_page": "<p></p>",
-    "slug": "datapack-open-data"
-  }
-},
-{
-  "model": "website.service",
-  "pk": 16,
-  "fields": {
-    "nom_service": "DataPack IGN",
-    "categorie_service": 6,
-    "pitch": "Acc\u00e9dez \u00e0 de tr\u00e8s nombreuses cartes num\u00e9riques de l'IGN.",
-    "description": "Une Licence forfaitaire IGN est fournie pour une utilisation adapt\u00e9e \u00e0 vos usage \u00e0 partir de 10 \u20ac par mois.  \r\nImages a\u00e9riennes de 2000 \u00e0 nos jours, images satellites, cartes topographiques, parcellaire cadastral, occupation du sol, cartes foresti\u00e8res V1 et V2, RGP registre parcellaire agricole depuis 2007  ...\r\nDonn\u00e9es INPN : reserves, site natura 2000, ZNIEFF 1 et 2 ...\r\nDonn\u00e9es \u00e9quipements : lignes \u00e9lectriques, routes et d'autres.",
-    "image": null,
-    "css_color": "",
-    "css_icon": "data",
-    "css_class": "",
-    "actif": true,
-    "landpage": true,
-    "html_page": "<p></p>",
-    "slug": "datapack-ign"
+    "slug": "datapack"
   }
 },
 {
@@ -205,6 +178,7 @@
     "categorie_service": 6,
     "pitch": "Cr\u00e9er vos propres donn\u00e9es depuis des relev\u00e9s terrains.",
     "description": "Nos \u00e9tablissons des lev\u00e9s terrains. Gr\u00e2ce \u00e0 la m\u00e9thodes de correction diff\u00e9rentielle, nous obtenons rapidement des pr\u00e9cisions subm\u00e9triques.",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "blue",
     "css_icon": "marker",
@@ -219,18 +193,19 @@
   "model": "website.service",
   "pk": 18,
   "fields": {
-    "nom_service": "Images a\u00e9riennes",
+    "nom_service": "Photogrammetrie par drone",
     "categorie_service": 6,
-    "pitch": "Obtenez des images \u00e0 jour et de tr\u00e8s haute r\u00e9solution.",
-    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous produisons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source de l'IGN.",
-    "image": null,
+    "pitch": "Obtenez des images et mod\u00e8le num\u00e9rique 3D de tr\u00e8s haute r\u00e9solution.",
+    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous obtenons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source de l'IGN.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": 20,
     "css_color": "blue",
     "css_icon": "picture",
     "css_class": "",
     "actif": true,
     "landpage": false,
-    "html_page": "<p>caca</p>",
-    "slug": "image-aerienne-georeference"
+    "html_page": "<p></p>",
+    "slug": "photogrammetrie-par-drone"
   }
 }
 ]
