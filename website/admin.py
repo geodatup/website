@@ -4,7 +4,7 @@ from django import forms
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan, Livrable, Produit 
+from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan, Livrable, Produit, Realisation 
 
 
 class PlanForm( forms.ModelForm ):
@@ -190,3 +190,5 @@ admin.site.register(Produit, ProduitAdmin)
 
 
 admin.site.register(Livrable)
+
+admin.site.register(Realisation)

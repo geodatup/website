@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django_tables2   import RequestConfig
-from .models import Personne, Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference, ChapitreFormation
+from .models import Personne, Categorie, Service, Section, Secteur, Software, Formation, CatFormation, Reference, ChapitreFormation, Realisation
 from django.utils import timezone
 
 # Create your views here.
@@ -107,8 +107,12 @@ def galerie(request):
     return render(request, 'galerie.html')
 
 def showcase(request):
+    showcase_list = Realisation.objects.all().filter(actif=1)
+    context = {
+    'showcase_list': showcase_list,
+    }
    
-    return render(request, 'showcase.html')
+    return render(request, 'showcase.html', context)
 
 
 def blog(request):

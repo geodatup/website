@@ -224,6 +224,15 @@ class CatFormation(models.Model):
         return reverse('website:catformationDetail', kwargs={'slug': self.slug, })
 
 
+class Realisation(models.Model):
+    nom_realisation = models.CharField(max_length=15)
+    pitch = models.CharField(max_length=30, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    actif = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.nom_realisation
+
 
 class Reference(models.Model):
     nom_reference = models.CharField(max_length=15)
@@ -251,10 +260,13 @@ class Personne(models.Model):
         default='equipe'
         )
      position_choix =   (
-     	 ('Fondateur','fondateur'),
+     	 ('Gérant','gérant'),
          ('Associé','associé'),
-         ('Prestataire','prestataire'),
+         ('Associée','associée'),
+         ('Colaborateur','Colaborateur'),
+         ('Colaboratrice','Colaboratrice'),
          ('Salarié','salarié'),
+         ('Salariée','salariée'),
          ('aucun','aucun'),
          )
      position = models.CharField(max_length=50,
