@@ -34,7 +34,10 @@
         </div>
     <![endif]-->
     {% endblock body_content %}
-    {% block body_js %}
+    {% block body_js %}        
+    <script src="{% static "js/base.js"%}"></script>
+    <script src="{% static "js/site.js"%}"></script>
+    <script src="{% static "js/analytics.js"%}"></script>
     {% endblock body_js %}
 </body>
 </html>
