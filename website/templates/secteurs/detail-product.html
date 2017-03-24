@@ -25,8 +25,10 @@
 <ul class="space-left3 space-bottom4">
 
 {% for produit in produit_service.list %}
+	{% if produit.actif %}
 
    <li class="contain space-bottom1" style="list-style-type: none;"><span>{{ produit }}<span>:</span></span> {{ produit.pitch }}</li>
+   {% endif %}
 
 {% endfor %}
 
