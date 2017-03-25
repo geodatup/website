@@ -2,10 +2,18 @@
 {% load staticfiles sekizai_tags %}
 
 
-{% block title %}GeoDatup
+{% block title %}
+GeoDatup
+{% if section %}
+- {{ section.nom_section }}
+{% endif %}
 {% if service %}
 - {{ service.nom_service }}
 {% endif %}
+{% if secteur %}
+- {{ secteur.nom_secteur }}
+{% endif %}
+
 {% endblock title %}
 
 {% block head_css %}
