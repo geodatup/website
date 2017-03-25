@@ -431,6 +431,7 @@ for performance
 
 .block-section .icon-container img {
   max-width: 100px;
+  min-width: 60px;
   margin: 0 auto;
   display: block;
   margin-bottom: 20px;
