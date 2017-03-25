@@ -268,7 +268,7 @@ a.gallery-item:hover::before {
 }
 
 a.gallery-item:hover::after {
-    content: 'Learn more';
+    content: 'En savoir plus';
     color: white;
     z-index: 100;
     position: absolute;

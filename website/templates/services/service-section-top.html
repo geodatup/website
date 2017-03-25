@@ -1,4 +1,7 @@
-{% load thumbnail %}
+{% load static thumbnail show_realisation %}
+
+
+
 {% if service.nom_service %}
 {% if service.image %}
 
@@ -18,10 +21,17 @@
         <p class="col6 margin6r  prose prose-big">{{ service.pitch }}</p>
       </div>
     </div>
+
+  {% block galerie %}
+
+  {% show_realisation_by_service service service.slug%}
+  {% endblock galerie %}
+
+    
   </div>
-  
-{% include "services/service-section-top-galerie.html" %}
+
 </section>
+
 
 
 <h2 class='fancy space-bottom1'></h2>

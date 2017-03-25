@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% load staticfiles show_nav %}
+{% load static show_nav  %}
 
 {% block head_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static "css/showcase.css" %}">
+<link rel="stylesheet" href="{% static "css/maps.css" %}">
 {% endblock head_css %}  
 
 {% block body_content %}
@@ -18,7 +19,9 @@
 {% endblock nav %}
 
 {% block section-top %}
-  {% include "services/service-section-top.html" %}
+
+	{% include "services/service-section-top.html" %}
+
 {% endblock section-top %}
 
 {% block sections %}

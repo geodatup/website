@@ -224,16 +224,6 @@ class CatFormation(models.Model):
         return reverse('website:catformationDetail', kwargs={'slug': self.slug, })
 
 
-class Realisation(models.Model):
-    nom_realisation = models.CharField(max_length=15)
-    pitch = models.CharField(max_length=30, null=True, blank=True)
-    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
-    actif = models.BooleanField(default=True)
-    
-    def __str__(self):
-        return self.nom_realisation
-
-
 class Reference(models.Model):
     nom_reference = models.CharField(max_length=15)
     pitch = models.CharField(max_length=30, null=True, blank=True)
@@ -245,6 +235,19 @@ class Reference(models.Model):
     
     def __str__(self):
         return self.nom_reference
+
+
+class Realisation(models.Model):
+    nom_realisation = models.CharField(max_length=30)
+    pitch = models.CharField(max_length=30, null=True, blank=True)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    service = models.ManyToManyField(Service, blank=True)
+    reference = models.ManyToManyField(Reference, blank=True)
+    actif = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.nom_realisation
+
 
     
 class Personne(models.Model):

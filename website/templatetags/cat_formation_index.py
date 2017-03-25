@@ -8,7 +8,7 @@ register = template.Library()
 
 
 @register.inclusion_tag('section-formation.html',takes_context=True)
-def show_cat_formation_other(context, catFormation,slug):
+def show_cat_formation_other(context, catFormation, slug):
     request = context['request']
     catFormation_List = CatFormation.objects.exclude(slug=slug)
     titre = 'Les autres formations'

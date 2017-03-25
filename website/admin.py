@@ -173,6 +173,10 @@ class ProduitAdmin(admin.ModelAdmin):
 	list_display = ('id', 'nom_produit', 'service','secteur','actif')
 
 
+class ReferenceAdmin(admin.ModelAdmin):
+	list_display = ('nom_reference',)
+	prepopulated_fields = {'slug': ('nom_reference',) }
+
 # Register your models here.
 admin.site.register(Section, SectionAdmin)
 admin.site.register(Secteur, SecteurAdmin)
@@ -181,7 +185,7 @@ admin.site.register(Service, ServiceAdmin)
 admin.site.register(Software, SoftwareAdmin)
 admin.site.register(Formation, FormationAdmin)
 admin.site.register(CatFormation, CatFormationAdmin)
-admin.site.register(Reference)
+admin.site.register(Reference,ReferenceAdmin)
 admin.site.register(ModuleFormation, ModuleFormationAdmin)
 admin.site.register(ChapitreFormation, ChapitreFormationAdmin)
 admin.site.register(Personne, PersonneAdmin)
