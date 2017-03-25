@@ -1,7 +1,15 @@
-INCLUDE
-{% if service.nom_service == "Cartes et plans" %}
 
-<div class="gallery-container">
+{% if service.nom_service == "Cartes et plans" %}
+<div class="fill-white" id="ready-to-use">
+   <div class=" contain clearfix fill-white clip" id="styles">
+      <div class=" limiter clearfix prose clearfix center space-top8 space-bottom2">
+        <div class="prose prose-big">
+      <h1 class="center denim light"><a href="#styles" class="anchor">Choose a map</a></h1>
+       <p class="col10 margin1 margin1r center quiet pad1y center prose pad8x space-bottom2">Choose from one of our professionally designed maps for your application or project. Use the provided URL with our <a href="/developers">developer tools</a> or customize the map in <a href="/studio">Mapbox Studio</a>.</p>
+
+       </div>
+      </div>
+      <div class="gallery-container">
 
         
         <a href="/maps/light-dark" class="gallery-item gallery-item-1" style="background-image: url(https://api.mapbox.com/styles/v1/mapbox/light-v9/static/-73.9053,40.7363,11/800x500?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA); background-size: cover;"><div class="small strong pin-top pad2x pad1y dark center  round-top fill-darken1">Mapbox Light</div>
@@ -36,6 +44,8 @@ INCLUDE
         
 
       </div>
+    </div>
+</div>
 {% else %}
 
 {% endif %}
