@@ -2,7 +2,7 @@
 	<div class="gallery-container" style="padding-top: 170px" >
 
         {% for realisation in showcase_list|slice:":5" %}
-        {% thumbnail realisation.image 920x530  upscale subject_location=realisation.image.subject_location as photo %}
+        {% thumbnail realisation.image subject_location=realisation.image.subject_location as photo %}
 
         <a href="#" class="gallery-item gallery-item-{{forloop.counter}}" style="background-image: url({{ photo.url }}) ; background-size: cover;"><div class="small strong pin-top pad2x pad1y dark center round-top fill-darken1">{{ realisation.nom_realisation }}</div>
         <!-- <div class="pin-bottom space-bottom1"><p class='small pad2x pad1y fill-white center quiet '>Subtle but full-featured map for data visualizations and dashboards. </p></div> -->

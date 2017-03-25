@@ -20,7 +20,7 @@ Puis
 sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webapps/quorelcms quorelcms
 sudo chown quorelcms /var/www/webapps/quorelcms
 sudo su - quorelcms
-~~
+~~~
 
 dans le dossier créer l'environnement virtuel et l'activer
 
