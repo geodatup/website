@@ -1,6 +1,9 @@
 {% load static thumbnail show_realisation %}
 
-
+{% block title %}
+{{ block.super }}
+{{ service.nom_service }}
+{% endblock title %}
 
 {% if service.nom_service %}
 {% if service.image %}
