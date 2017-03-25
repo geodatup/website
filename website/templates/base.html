@@ -2,7 +2,13 @@
 {% load staticfiles sekizai_tags %}
 
 
-{% block title %}GeoDatup{% endblock title %}
+{% block title %
+
+	GeoDatup
+{% if service %}
+{{ service.nom_service }}
+{% endif %}
+{% endblock title %}
 
 {% block head_css %}
 {{ block.super }}
