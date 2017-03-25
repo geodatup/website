@@ -1,3 +1,7 @@
+{% block head_css %}    
+{{ block.super }}
+    <link rel="stylesheet" href="{% static "css/maps.css" %}">
+{% endblock head_css %}
 
 {% if service.nom_service == "Cartes et plans" %}
 <div class="fill-white" id="ready-to-use">
