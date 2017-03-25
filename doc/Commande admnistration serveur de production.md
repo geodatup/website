@@ -1,20 +1,44 @@
 #Commande admnistration serveur de production
 
-
+Premiere chose ,
+déposer les sources de l'application (clone) dans le dossier webapps
+~~~
+cd /var/www/webapps
+sudo git clone  https://github.com/geodatup/quorelcms.git
+~~~
+Puis 
 - créer un nouvel utilisateur et un dossier home qui pointe sur son application
 - définir les droits de proprieté sur l'ensemble des sources
 - créer environnement python3
 - PIP3 install requirements
 - configurer gunicorn 
 
-voir le blog nginx + gunicon + django + supervisor
+[voir le blog nginx + gunicon + django + supervisor
+](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/)
+
+~~~
+sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webapps/quorelcms quorelcms
+sudo chown quorelcms /var/www/webapps/quorelcms
+sudo su - quorelcms
+~~
+
+dans le dossier créer l'environnement virtuel et l'activer
+
+~~~
+virtualenv --python=python3.4 .
+source bin/activate
+~~~
+
+Installer les dep
+
+~~~
+pip install -r requirements.txt 
+~~~
 
 
 relancer le serveur web django 
 
 ~~~
-cd /var/webapps/website
-bin/activate
 sudo supervisorctl reload
 ~~~
 
