@@ -1,3 +1,5 @@
 geodatup/static*
 *.sqlite3*
 *.pyc
+
+website/migrations*
