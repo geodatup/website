@@ -5,8 +5,8 @@
   "fields": {
     "nom_personne": "Hugo Roussaffa",
     "type_personne": "equipe",
-    "position": "Fondateur",
-    "fonction": "G\u00e9omaticien - Formateur - Pilote de drone",
+    "position": "G\u00e9rant",
+    "fonction": "G\u00e9omaticien - Pilote de drone",
     "description": "",
     "photo": 19,
     "css_icon": "",
@@ -20,14 +20,14 @@
   "pk": 2,
   "fields": {
     "nom_personne": "Benjamin Bernard",
-    "type_personne": "equipe",
-    "position": "Prestataire",
+    "type_personne": "client",
+    "position": "Colaborateur",
     "fonction": "Ing\u00e9nieur G\u00e9omaticien",
     "description": "",
-    "photo": 12,
+    "photo": 24,
     "css_icon": "",
     "css_class": "",
-    "actif": true,
+    "actif": false,
     "slug": "benjamin-bernard"
   }
 },
@@ -37,7 +37,7 @@
   "fields": {
     "nom_personne": "Samuel Bonneau",
     "type_personne": "equipe",
-    "position": "Prestataire",
+    "position": "Colaborateur",
     "fonction": "Expert en d\u00e9veloppement \u00e9conomique",
     "description": "",
     "photo": 8,

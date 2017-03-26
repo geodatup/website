@@ -36,11 +36,7 @@
       21,
       29
     ],
-    "logiciels": [
-      1,
-      8,
-      9
-    ]
+    "logiciels": []
   }
 },
 {
@@ -65,9 +61,7 @@
     "slug": "josm",
     "prerequis": [],
     "programme": [],
-    "logiciels": [
-      2
-    ]
+    "logiciels": []
   }
 },
 {
@@ -92,11 +86,7 @@
     "slug": "carto-stat",
     "prerequis": [],
     "programme": [],
-    "logiciels": [
-      1,
-      3,
-      5
-    ]
+    "logiciels": []
   }
 },
 {
@@ -121,9 +111,7 @@
     "slug": "sig-pour-la-gestion-forestiere",
     "prerequis": [],
     "programme": [],
-    "logiciels": [
-      1
-    ]
+    "logiciels": []
   }
 },
 {
@@ -158,11 +146,7 @@
       28,
       30
     ],
-    "logiciels": [
-      1,
-      7,
-      10
-    ]
+    "logiciels": []
   }
 },
 {
@@ -191,9 +175,7 @@
       13,
       14
     ],
-    "logiciels": [
-      1
-    ]
+    "logiciels": []
   }
 }
 ]

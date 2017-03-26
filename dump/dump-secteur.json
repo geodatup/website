@@ -22,12 +22,12 @@
     "nom_secteur": "Agriculture",
     "determinant": "l'",
     "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'agriculture",
-    "description": null,
+    "description": "</>",
     "css_class": "",
     "css_icon": "tilemill",
     "css_color": "orange",
     "image": null,
-    "actif": true,
+    "actif": false,
     "slug": "agriculture"
   }
 },
@@ -54,7 +54,7 @@
     "nom_secteur": "Arch\u00e9ologie",
     "determinant": "l'",
     "pitch": "Des services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 l'arch\u00e9ologie",
-    "description": null,
+    "description": "</>",
     "css_class": "",
     "css_icon": "hand",
     "css_color": "yellow",

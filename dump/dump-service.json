@@ -13,7 +13,7 @@
     "css_icon": "plus-document",
     "css_class": "",
     "actif": true,
-    "landpage": true,
+    "landpage": false,
     "html_page": "<p></p>",
     "slug": "formation"
   }
@@ -60,19 +60,19 @@
   "model": "website.service",
   "pk": 9,
   "fields": {
-    "nom_service": "Cartographie sp\u00e9cialis\u00e9e",
+    "nom_service": "Cartes et plans",
     "categorie_service": 5,
-    "pitch": "R\u00e9aliser des cartes sp\u00e9cialis\u00e9es pour un besoin sp\u00e9cial.",
-    "description": "<h3>Savez vous pourquoi faire une carte ? </h3>\r\n<p>Tout peut \u00eatre repr\u00e9sent\u00e9 sur une carte mais encore faut il avoir une information \u00e0 transmettre.\r\nDe ce fait, les cartes peuvent \u00eatre plus ou moins complexes \u00e0 mettre en oeuvre, c'est pourquoi <strong>nous vous proposons de les r\u00e9aliser.</strong>\r\n<p> La cartographie n\u00e9cessite l'usage d'un language graphique (s\u00e9miologie). Les informations sont pr\u00e9sent\u00e9es selon des r\u00e8gles \u00e9prouv\u00e9es afin d'\u00eatre bien comprises. Il existe aujourd'hui beaucoup de cas contraire o\u00f9 la carte comporte des erreurs de conceptions et rend la lecture difficile voir m\u00eame inutile. \r\n<p>Je redemande donc : savez vous pourquoi faire une carte ? </p>",
+    "pitch": "Le message, c'est votre territoire.",
+    "description": "<h3>Nos cartes et plans</h3>\r\n<p>Les cartes sont faites pour \u00eatre vues, une carte de mauvaise qualit\u00e9 pourrait avoir un impact n\u00e9gatif sur votre image et trasmettre des informations erron\u00e9es.\r\nC'est pourquoi <strong>nous vous conseillons de les faire r\u00e9aliser.</strong>\r\n<p> Nos cartes r\u00e9pondent aux crit\u00e8res de qualit\u00e9 professionelle.</p>",
     "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
     "css_icon": "map",
     "css_class": "",
     "actif": true,
-    "landpage": false,
-    "html_page": "<p></p>",
-    "slug": "cartographie-specialisee"
+    "landpage": true,
+    "html_page": "<div class=\"limiter clearfix prose\">\r\n<div class=\"clearfix\">\r\n\r\n<h3>Avantages/potentialit\u00e9s </h3>\r\n\t<ul>\r\n\t<li>La pr\u00e9cision g\u00e9om\u00e9trique est adapt\u00e9e \u00e0 l'\u00e9chelle pour une excellente lisibilit\u00e9</li>\r\n\t<li>Les informations sont structur\u00e9es et hierarchis\u00e9es pour que la lecture soit bien organis\u00e9e</li>\r\n\t<li>Nos cartes sont faciles d'utilisation</li>\r\n\t<li>Les informations pr\u00e9sent\u00e9es sont d'actualit\u00e9s pour donner au lecteur les informations les plus fra\u00eeches disponibles</li>\r\n\t<li>L'ensemble de la carte est \u00e9quilibr\u00e9e pour la rendre attrayante et agr\u00e9able \u00e0 consulter</li>\r\n\t</ul>\r\n<h3>Les diff\u00e9rents besoins </h3>\r\n<ul>\r\n<li>Mettre en valeur vos propre donn\u00e9es dans une carte</li>\r\n<li>Des cartes avec une charte graphique qui s'int\u00e8grent parfaitement dans vos supports de communication</li>\r\n<li>Des cartes qui r\u00e9pondent aux exigences de localisation sur le terrain</li>\r\n</ul>\r\n\r\n\r\n<h3>Les diff\u00e9rents supports disponibles</h3>\r\n<ul>\r\n<li>Livr\u00e9e au format num\u00e9rique, avec ou sans habillage</li>\r\n<li>Livr\u00e9e au format papier</li>\r\n</ul>\r\n\r\n </div>\r\n </div>",
+    "slug": "cartes-et-plans"
   }
 },
 {
@@ -117,10 +117,10 @@
   "model": "website.service",
   "pk": 12,
   "fields": {
-    "nom_service": "Programmation",
+    "nom_service": "G\u00e9o-traitement",
     "categorie_service": 5,
     "pitch": "Cr\u00e9er vos outils pour \u00eatre au plus pr\u00e8s de vos besoins.",
-    "description": "Parfois les logiciels et outils disponibles ne r\u00e9pondent pas \u00e0 vos besoins. Pour y rem\u00e9dier il est pr\u00e9f\u00e9rable de r\u00e9aliser un d\u00e9veloppement \u00e0 fa\u00e7on.",
+    "description": "Parfois les logiciels et outils disponibles ne r\u00e9pondent pas \u00e0 vos besoins. Pour y rem\u00e9dier il est souvent pr\u00e9f\u00e9rable de r\u00e9aliser un d\u00e9veloppement \u00e0 fa\u00e7on.",
     "tooltip": "<span class=\"tooltip\"></span>",
     "image": null,
     "css_color": "",
@@ -129,7 +129,7 @@
     "actif": true,
     "landpage": false,
     "html_page": "<p></p>",
-    "slug": "programmation"
+    "slug": "geoprocessing"
   }
 },
 {
@@ -193,19 +193,19 @@
   "model": "website.service",
   "pk": 18,
   "fields": {
-    "nom_service": "Photogrammetrie par drone",
+    "nom_service": "Drone",
     "categorie_service": 6,
     "pitch": "Obtenez des images et mod\u00e8le num\u00e9rique 3D de tr\u00e8s haute r\u00e9solution.",
-    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous obtenons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Open source de l'IGN.",
+    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes sur sites d\u2019int\u00e9r\u00eats. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT), dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous obtenons de bons r\u00e9sultats \u00e0 des tarifs int\u00e9ressants, notamment gr\u00e2ce \u00e0 l'utilisation de logiciel Micmac Open source de l'IGN.",
     "tooltip": "<span class=\"tooltip\"></span>",
     "image": 20,
     "css_color": "blue",
-    "css_icon": "picture",
+    "css_icon": "drone",
     "css_class": "",
     "actif": true,
     "landpage": false,
     "html_page": "<p></p>",
-    "slug": "photogrammetrie-par-drone"
+    "slug": "drone"
   }
 }
 ]

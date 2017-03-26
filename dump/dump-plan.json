@@ -20,7 +20,8 @@
     "actif": true,
     "slug": "demarrage",
     "secteur": [
-      3
+      3,
+      4
     ],
     "servicesAvailable": [
       6,
@@ -45,14 +46,15 @@
     "atelier_nombre": null,
     "datapack_opendata_update_frequency": "2",
     "datapack_IGN_licence_type": "",
-    "projet_qgis_nombre": 5,
+    "projet_qgis_nombre": 15,
     "maintenance_available": "",
     "css_icon": "logout",
     "css_class": "",
     "actif": true,
     "slug": "migration",
     "secteur": [
-      3
+      3,
+      4
     ],
     "servicesAvailable": [
       6,

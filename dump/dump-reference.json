@@ -1,2 +1,15 @@
 [
+{
+  "model": "website.reference",
+  "pk": 1,
+  "fields": {
+    "nom_reference": "Province Sud",
+    "pitch": "Nouvelle Cal\u00e9donie",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "province-sud"
+  }
+}
 ]

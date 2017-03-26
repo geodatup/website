@@ -14,10 +14,7 @@
     "image": null,
     "actif": true,
     "produit_link": [],
-    "livrable": [
-      5,
-      7
-    ]
+    "livrable": []
   }
 },
 {
@@ -35,9 +32,7 @@
     "image": null,
     "actif": true,
     "produit_link": [],
-    "livrable": [
-      10
-    ]
+    "livrable": []
   }
 },
 {
@@ -55,9 +50,7 @@
     "image": null,
     "actif": true,
     "produit_link": [],
-    "livrable": [
-      7
-    ]
+    "livrable": []
   }
 },
 {
@@ -75,9 +68,7 @@
     "image": null,
     "actif": true,
     "produit_link": [],
-    "livrable": [
-      3
-    ]
+    "livrable": []
   }
 },
 {
@@ -95,9 +86,7 @@
     "image": null,
     "actif": true,
     "produit_link": [],
-    "livrable": [
-      11
-    ]
+    "livrable": []
   }
 },
 {
@@ -135,11 +124,7 @@
     "produit_link": [
       5
     ],
-    "livrable": [
-      3,
-      4,
-      5
-    ]
+    "livrable": []
   }
 },
 {
@@ -160,10 +145,7 @@
       4,
       5
     ],
-    "livrable": [
-      3,
-      5
-    ]
+    "livrable": []
   }
 },
 {
@@ -179,10 +161,10 @@
     "secteur": 3,
     "url_documentation_blog": "",
     "image": null,
-    "actif": true,
+    "actif": false,
     "produit_link": [
-      4,
-      8
+      8,
+      4
     ],
     "livrable": []
   }

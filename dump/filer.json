@@ -72,6 +72,24 @@
   }
 },
 {
+  "model": "filer.folder",
+  "pk": 5,
+  "fields": {
+    "parent": null,
+    "name": "references",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:11:43.639Z",
+    "created_at": "2017-03-25T16:11:43.639Z",
+    "modified_at": "2017-03-25T16:11:43.640Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 5,
+    "level": 0
+  }
+},
+{
   "model": "filer.file",
   "pk": 8,
   "fields": {
@@ -288,6 +306,198 @@
   }
 },
 {
+  "model": "filer.file",
+  "pk": 24,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/14/1c/141c5e81-4006-4daa-875a-4c53372bb4c9/silhouette.jpeg",
+    "_file_size": 4178,
+    "sha1": "959b47702de430a4e8bfe9c092ed4090340d2df0",
+    "has_all_mandatory_data": false,
+    "original_filename": "silhouette.jpeg",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2016-12-14T13:20:56.613Z",
+    "modified_at": "2016-12-14T13:20:56.614Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 25,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/c4/a8/c4a8a368-60b2-4578-96d4-ccb7e8a20a21/plandeville.jpg",
+    "_file_size": 32758,
+    "sha1": "ec5b32194bd3ce9623a0393da4081f1dcf2be5a5",
+    "has_all_mandatory_data": false,
+    "original_filename": "plandeville.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:23:54.123Z",
+    "modified_at": "2017-03-25T16:23:54.124Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 26,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/d2/79/d279ab3b-3707-4b1a-9c49-340b05829268/carte_choroplete.jpg",
+    "_file_size": 105725,
+    "sha1": "4ec47a3d106115ee449c18c9a472de25cd21cb9d",
+    "has_all_mandatory_data": false,
+    "original_filename": "carte_choropl\u00e8te.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:27:20.164Z",
+    "modified_at": "2017-03-25T16:27:20.164Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 27,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/cb/2d/cb2d0450-913b-4619-a11c-eef43f5d2eef/carte_choroplete.jpg",
+    "_file_size": 105725,
+    "sha1": "4ec47a3d106115ee449c18c9a472de25cd21cb9d",
+    "has_all_mandatory_data": false,
+    "original_filename": "carte_choropl\u00e8te.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:28:49.824Z",
+    "modified_at": "2017-03-25T16:28:49.824Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 28,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/d7/8d/d78da02a-33dd-4b6a-ab3e-80e081cad49b/carte_stat.jpg",
+    "_file_size": 61019,
+    "sha1": "5ed52abcd8a48a76ef4055a587442d6465888119",
+    "has_all_mandatory_data": false,
+    "original_filename": "carte_stat.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:39:24.949Z",
+    "modified_at": "2017-03-25T16:39:24.950Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 29,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/e4/17/e417026f-d7b1-4d15-b253-879ad6917e93/carte_choroplete.jpg",
+    "_file_size": 32772,
+    "sha1": "729e0748c9b47ef9f36855b0a28f016a9da0ac5e",
+    "has_all_mandatory_data": false,
+    "original_filename": "carte_choropl\u00e8te.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T16:51:22.611Z",
+    "modified_at": "2017-03-25T16:51:22.612Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 30,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/82/12/8212996c-9766-4d7a-8683-106f0d95f68a/poi.jpg",
+    "_file_size": 46088,
+    "sha1": "e3af83464530ecd0705bf9c3c4fdccdd470f9f87",
+    "has_all_mandatory_data": false,
+    "original_filename": "poi.JPG",
+    "name": "",
+    "description": null,
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T19:33:22.834Z",
+    "modified_at": "2017-03-25T19:33:22.835Z",
+    "is_public": true
+  }
+},
+{
+  "model": "filer.file",
+  "pk": 31,
+  "fields": {
+    "polymorphic_ctype": [
+      "filer",
+      "image"
+    ],
+    "folder": null,
+    "file": "filer_public/13/c7/13c7dd43-7447-4ebd-b4c0-82ee8f38e5b3/edition.jpg",
+    "_file_size": 38794,
+    "sha1": "be7d7dc75ff832cfaea8008f2b1d6864d9b025b7",
+    "has_all_mandatory_data": false,
+    "original_filename": "edition.JPG",
+    "name": "",
+    "description": "",
+    "owner": [
+      "yogis"
+    ],
+    "uploaded_at": "2017-03-25T19:34:51.721Z",
+    "modified_at": "2017-03-25T19:36:48.065Z",
+    "is_public": true
+  }
+},
+{
   "model": "filer.clipboard",
   "pk": 1,
   "fields": {
@@ -427,6 +637,126 @@
     "subject_location": "",
     "date_taken": "2016-11-22T08:48:41.465Z",
     "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 24,
+  "fields": {
+    "_height": 300,
+    "_width": 274,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2016-12-14T13:20:56.442Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 25,
+  "fields": {
+    "_height": 340,
+    "_width": 269,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T16:23:53.968Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 26,
+  "fields": {
+    "_height": 639,
+    "_width": 744,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T16:27:20.130Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 27,
+  "fields": {
+    "_height": 639,
+    "_width": 744,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T16:28:49.797Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 28,
+  "fields": {
+    "_height": 648,
+    "_width": 479,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T16:39:24.922Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 29,
+  "fields": {
+    "_height": 398,
+    "_width": 373,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T16:51:22.579Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 30,
+  "fields": {
+    "_height": 560,
+    "_width": 535,
+    "default_alt_text": null,
+    "default_caption": null,
+    "subject_location": "",
+    "date_taken": "2017-03-25T19:33:22.809Z",
+    "author": null,
+    "must_always_publish_author_credit": false,
+    "must_always_publish_copyright": false
+  }
+},
+{
+  "model": "filer.image",
+  "pk": 31,
+  "fields": {
+    "_height": 292,
+    "_width": 449,
+    "default_alt_text": "",
+    "default_caption": "",
+    "subject_location": "269,150",
+    "date_taken": "2017-03-25T19:34:51.693Z",
+    "author": "",
     "must_always_publish_author_credit": false,
     "must_always_publish_copyright": false
   }
