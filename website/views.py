@@ -115,10 +115,6 @@ def showcase(request):
     return render(request, 'showcase.html', context)
 
 
-def blog(request):
-   
-    return redirect("http://blog.geodatup.fr")
-
 def privacy(request):
    
     return render(request, 'privacy.html')
@@ -126,3 +122,22 @@ def privacy(request):
 def about(request):
    
     return render(request, 'about.html')
+
+###########BLOG views connections
+
+def blog(request): #general
+    tag_or_cat = request.GET.get('q', '')
+    search = request.GET.get('s', '')
+    return redirect("http://blog.geodatup.fr/"+tag_or_cat+"/"+search)
+
+    #return redirect("http://blog.geodatup.fr")
+
+
+def blog_tags(request):
+
+    return redirect("http://blog.geodatup.fr/tag/")
+
+def blog_categories(request):
+
+    return redirect("http://blog.geodatup.fr/categories")
+
