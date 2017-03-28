@@ -132,12 +132,3 @@ def blog(request): #general
 
     #return redirect("http://blog.geodatup.fr")
 
-
-def blog_tags(request):
-
-    return redirect("http://blog.geodatup.fr/tag/")
-
-def blog_categories(request):
-
-    return redirect("http://blog.geodatup.fr/categories")
-
