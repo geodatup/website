@@ -6,7 +6,7 @@
 {% for service in categorie.service_set.all %}
 
  {% if service.actif %}
-	<a id='footer-products' class='space-bottom0 quiet col12 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+	<a id='footer-products' class='space-bottom0 quiet col8 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
  {% endif %}  
         
 {% endfor %}

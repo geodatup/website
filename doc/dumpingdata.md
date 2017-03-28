@@ -1,7 +1,6 @@
 # dumping data
 
-
-
+Create dump files
 ~~~
 python manage.py dumpdata --natural-foreign --indent=2 auth.User > dump/auth.json
 python manage.py dumpdata --natural-foreign --indent=2 filer >  dump/filer.json
