@@ -1,2 +1,142 @@
 [
+{
+  "model": "website.software",
+  "pk": 1,
+  "fields": {
+    "nom_soft": "Qgis",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 2,
+  "fields": {
+    "nom_soft": "JOSM",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "JOSM",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 3,
+  "fields": {
+    "nom_soft": "PhilCarto",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "philcarto",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 4,
+  "fields": {
+    "nom_soft": "Inkscape",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "Inkscape",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 5,
+  "fields": {
+    "nom_soft": "R",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "r",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 6,
+  "fields": {
+    "nom_soft": "SIG",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "sig",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 7,
+  "fields": {
+    "nom_soft": "Python",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "python",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 8,
+  "fields": {
+    "nom_soft": "Open Office",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "open-office",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 9,
+  "fields": {
+    "nom_soft": "Gimp",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "gimp",
+    "actif": true
+  }
+},
+{
+  "model": "website.software",
+  "pk": 10,
+  "fields": {
+    "nom_soft": "GRASS",
+    "pitch": "",
+    "description": "",
+    "image": null,
+    "css_icon": "",
+    "css_class": "",
+    "slug": "grass",
+    "actif": true
+  }
+}
 ]
