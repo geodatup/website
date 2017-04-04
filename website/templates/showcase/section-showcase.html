@@ -1,67 +1,30 @@
-<div class="keyline-bottom clip">
-<div class="limiter clearfix contain">
-    <div class="col6 pad4y space-top4 space-bottom4 contain z10 showcase-item-text ">
-          <div class=" space-bottom2 clearfix">
-            <div class="clearfix space-bottom0"><h1 class="light">Metromile Connected car</h1></div>
-            <!-- <div class="clearfix space-bottom0"><h2 class="light">Make every car a smart car with MetroMile</h2></div> -->
-           <div class="space-bottom1 pad0y clearfix faded">
-            <h4 class="uppercase inline space-right1">Available on: </h4>
-            <span class="inline align-top icon apple space-right0">iOS</span>
-            <span class="inline align-top icon android space-right0">Android</span>
-            <span class="inline align-top icon globe space-right0">web</span>
-          </div>
-            <p class="quiet prose-big prose">Metromile is more than just car insurance, it captures everything happening in the car from how much you spend on gas to monitoring the engine health and tracking trips.</p>
+{% load thumbnail %}
 
-            <h3></h3>
-            <p class="quiet prose prose-big"></p>
-            <h3></h3>
-            <p class="quiet prose prose-big"></p>
-          </div>
+<div class="fill-white" id="ready-to-use">
+   <div class=" contain clearfix fill-white clip" id="styles">
+      <div class=" limiter clearfix prose clearfix center space-top8 space-bottom2">
+        <div class="prose prose-big">
+      <h1 class="center denim light"><a href="#styles" class="anchor"></a></h1>
+       <p class="col10 margin1 margin1r center quiet pad1y center prose pad8x space-bottom2"></p>
 
-          <div class="col12  clearfix space-top4 space-bottom2">
-                <div class="icon-1 dot contain col2 ">
-                <img src="/home/icons/directions-traffic.svg">
-                </div>
-                <div class="col10 space-bottom2 ">
-                  <div class="space-left4 ">
-                   <h3 class="space-bottom1 denim">Directions and traffic</h3>
-                  <p class="prose prose-small quiet">Even in between trips, the app tracks where your car is parked, and can give you walking <a href="/directions">directions</a> to find it.</p>
-                </div>
-              </div>
-            </div>
+       </div>
+      </div>
 
-            <div class="col12 clearfix space-bottom4">
-                <div class="icon-1 dot contain col2 ">
-                <img src="/home/icons/data-viz.svg">
-                </div>
-                <div class="col10 space-bottom2 ">
-                  <div class="space-left4 ">
-                   <h3 class="space-bottom1 denim">Live data visualizations</h3>
-                  <p class="prose prose-small quiet">Metromile's analytics dashboard is built on top of <a href="/developers">Mapbox APIs</a> and uses our iOS and Android SDKs to visualize trips, speed variation, and gas mileage.</p>
-                </div>
-              </div>
-            </div>
+      <div class="gallery-container">
 
-        </div>
+        {% for realisation in showcase_list|slice:":5" %}
+        {% thumbnail realisation.image 920x530  upscale subject_location=realisation.image.subject_location as photo %}
+
+        <a href="#" class="gallery-item gallery-item-1" style="background-image: url({{ photo.url }}) ; background-size: cover;"><div class="small strong pin-top pad2x pad1y dark center  round-top fill-darken1">Cartosud</div>
+        <!-- <div class="pin-bottom space-bottom1"><p class='small pad2x pad1y fill-white center quiet '>Subtle but full-featured map for data visualizations and dashboards. </p></div> -->
+        </a>
+
+        {% endfor %}
 
 
 
-<div class="pin-bottomright margin1 z10 space-top4 mm-android">
-    <div class="android-device contain  device-phone-v device-white">
-     <div class="device-details-2"></div>
+        
 
-   <img src="mm_android_overview.png">
-     <div class="device-details"></div>
-   </div>
-
-</div>
-
-  <div class="pin-bottomright mm-ios">
-     <div class="device device-phone-v light">
-            <div class="device-details"></div>
-            <div class="home"></div>
-              <img src="mm_ios_trip.png">
-          </div>
-        </div>
-        </div>
+      </div>
+    </div>
 </div>
