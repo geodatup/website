@@ -1,0 +1,15 @@
+
+<div class="sticky-nav keyline-bottom fill-grey" >
+<div class="limiter clearfix pad1y "style="max-width:500px">
+<ul class="center clearfix pill  ">
+{% for service in service_list %}
+	<li class="pad2x small ">
+	<a href="{{ service.get_absolute_url }}">
+
+		<span class=" ">{{ service.nom_service }}</span></a>
+	</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+

@@ -1,3 +1,4 @@
+
 /* -------------------------------------------------------
 This file is Copyright (C) 2015 Mapbox Inc.  All rights reserved.
 You may not duplicate, copy, or reuse any portion without express written
@@ -3516,6 +3517,7 @@ img.inline, .inline           { display:inline-block; }
 .z10  { z-index:10; }
 .z100 { z-index:100; }
 .round                  { border-radius:3px; }
+.round20                 { border-radius:20px; }
 .round-top              { border-radius:3px 3px 0 0; }
 .round-right            { border-radius:0 3px 3px 0; }
 .round-bottom           { border-radius:0 0 3px 3px; }
@@ -3798,3 +3800,10 @@ img.inline, .inline           { display:inline-block; }
   /* TODO Depreciate */
   .noprint { display:none; }
   }
+
+
+  
+
+
+
+

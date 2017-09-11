@@ -1,0 +1,34 @@
+
+{% for categorie in categorie_list %} 
+
+
+{% if categorie.actif %}
+
+ 	{% if categorie.nom_categorie == "Blog" %}
+
+ 	<div class='inline fl' data-category='{{categorie.css_class}}'>
+    
+    <a class='primary-nav-button fl pad1x pad0y round quiet' href= "{{ categorie.slug }}"> {{ categorie.nom_categorie }}</a>
+    
+    </div>
+
+    {% elif categorie.nom_categorie == "Nous" %}
+
+    <div class='dropdown inline fl contain' data-category='{{categorie.css_class}}'>
+    
+    <a class='primary-nav-button fl pad1x pad0y round ' href= '{% url 'about' %}'> {{ categorie.nom_categorie }}</a>
+    
+    </div>
+
+
+ 	{% else %}
+
+	<div class='dropdown inline fl contain' data-category='{{ categorie.css_class}}'>
+	<a class='primary-nav-button fl pad1x pad0y round ' href= "{% url 'website:categorieIndex' %}{{ categorie.slug }}">{{ categorie }}</a>
+	
+	</div>
+
+{% endif %}
+
+{% endif %}
+{% endfor %}

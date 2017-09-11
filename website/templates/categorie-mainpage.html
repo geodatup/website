@@ -1,0 +1,106 @@
+ {% load static thumbnail  %}
+{% for categorie in categorie_list_mainpage %} 
+
+  {% if categorie.nom_categorie != "Accompagnement" %}
+  
+<a href="{% url 'website:categorieIndex' %}{{categorie.slug}}" class="grid__item grid__item_33 round20 fill-white shadow margin0 " >
+        <h2 class="" >{{categorie.nom_categorie}}</h2>
+        <div class="" style=" height: 400px; position: relative;">
+      
+{% if categorie.nom_categorie == "Cartes"%}
+
+<!-- 1 -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="135px" height="135px" viewBox="87.5 87.5 65 73" xml:space="preserve" preserveAspectRatio="xMidYMid">
+
+<defs>
+<pattern id="ashex1-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="http://nyalldawson.net/wp-content/uploads/2017/02/balance_by_area.png
+"></image>
+</pattern>
+</defs>
+
+<path fill="url(#ashex1-img)" stroke="white" stroke-width="2" d="M146.38,105.483l-23.467-13.498c-0.785-0.452-1.819-0.7-2.912-0.7c-1.094,0-2.128,0.249-2.911,0.7 L93.62,105.483c-1.605,0.922-2.911,3.173-2.911,5.018v26.99c0,1.847,1.306,4.1,2.91,5.024l23.472,13.5 c0.784,0.45,1.817,0.699,2.909,0.699c1.091,0,2.125-0.249,2.913-0.699l23.468-13.5c1.605-0.927,2.912-3.18,2.912-5.024v-26.99 C149.293,108.658,147.985,106.406,146.38,105.483z"></path>
+</svg>
+
+<!-- 2 -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="135px" height="135px" viewBox="87.5 87.5 65 73" xml:space="preserve" preserveAspectRatio="xMidYMid">
+
+<defs>
+<pattern id="ashex2-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/18/fe/21/18fe2142f85a54e7cff606040563210d.jpg"></image>
+</pattern>
+</defs>
+
+<path fill="url(#ashex2-img)" stroke="white" stroke-width="2" d="M146.38,105.483l-23.467-13.498c-0.785-0.452-1.819-0.7-2.912-0.7c-1.094,0-2.128,0.249-2.911,0.7 L93.62,105.483c-1.605,0.922-2.911,3.173-2.911,5.018v26.99c0,1.847,1.306,4.1,2.91,5.024l23.472,13.5 c0.784,0.45,1.817,0.699,2.909,0.699c1.091,0,2.125-0.249,2.913-0.699l23.468-13.5c1.605-0.927,2.912-3.18,2.912-5.024v-26.99 C149.293,108.658,147.985,106.406,146.38,105.483z"></path>
+</svg>
+
+<!-- 3 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="135px" height="135px" viewBox="87.5 87.5 65 73" xml:space="preserve" preserveAspectRatio="xMidYMid">
+
+<defs>
+<pattern id="ashex3-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/7a/d9/48/7ad94851c4150c2892e3d5c3359614ec.jpg"></image>
+</pattern>
+</defs>
+
+<path fill="url(#ashex3-img)" stroke="white" stroke-width="2" d="M146.38,105.483l-23.467-13.498c-0.785-0.452-1.819-0.7-2.912-0.7c-1.094,0-2.128,0.249-2.911,0.7 L93.62,105.483c-1.605,0.922-2.911,3.173-2.911,5.018v26.99c0,1.847,1.306,4.1,2.91,5.024l23.472,13.5 c0.784,0.45,1.817,0.699,2.909,0.699c1.091,0,2.125-0.249,2.913-0.699l23.468-13.5c1.605-0.927,2.912-3.18,2.912-5.024v-26.99 C149.293,108.658,147.985,106.406,146.38,105.483z"></path>
+</svg>
+
+<!-- 4 -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="135px" height="135px" viewBox="87.5 87.5 65 73" xml:space="preserve" preserveAspectRatio="xMidYMid">
+
+<defs>
+<pattern id="ashex4-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/a3/c3/86/a3c38627bf8cad2aa8c76d943c6f284e.jpg"></image>
+</pattern>
+</defs>
+
+<path fill="url(#ashex4-img)" stroke="white" stroke-width="2" d="M146.38,105.483l-23.467-13.498c-0.785-0.452-1.819-0.7-2.912-0.7c-1.094,0-2.128,0.249-2.911,0.7 L93.62,105.483c-1.605,0.922-2.911,3.173-2.911,5.018v26.99c0,1.847,1.306,4.1,2.91,5.024l23.472,13.5 c0.784,0.45,1.817,0.699,2.909,0.699c1.091,0,2.125-0.249,2.913-0.699l23.468-13.5c1.605-0.927,2.912-3.18,2.912-5.024v-26.99 C149.293,108.658,147.985,106.406,146.38,105.483z"></path>
+</svg>
+
+<div class="pin-bottom space-bottom1 ">
+  <p class=" pad2x pad1y fill-white center quiet ">L'art et la manière de faire des cartes</p>
+  <span class="quiet"> </span>
+</div>
+
+{% elif categorie.nom_categorie == "SIG" %}
+<div class="" style="">
+{% thumbnail categorie.mainpage_image 500x400 crop upscale quality=100  subject_location=categorie.mainpage_image.subject_location as photo %}
+<img class="" src="{{ photo.url }}" alt="">
+</div>
+
+
+{% block sig %}
+{% endblock sig %}
+
+<div class="pin-bottom space-bottom1 ">
+  <p class=" pad2x pad1y fill-white center quiet ">La réponse aux problématiques spatiales</p>
+  <span class="quiet small"> </span>
+</div>
+
+
+{% elif categorie.nom_categorie == "Données" %}
+
+<div class="" >
+{% thumbnail categorie.mainpage_image 400x400 crop upscale quality=100  subject_location=categorie.mainpage_image.subject_location as photo %}
+<img class="clip" style="border-radius: 50%;" src="{{ photo.url }}" alt="">
+</div>
+
+<div class="pin-bottom space-bottom1 ">
+  <p class=" pad2x pad1y fill-white center quiet ">Obtenir des données, c'est ici !</p>
+  <span class="quiet small"> </span>
+</div>
+
+{% endif %}
+
+</div>
+</a>
+ 
+{% else %}
+
+{% endif %}
+{% endfor %}
+

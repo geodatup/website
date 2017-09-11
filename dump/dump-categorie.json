@@ -4,23 +4,37 @@
   "pk": 4,
   "fields": {
     "nom_categorie": "Accompagnement",
-    "pitch": "Vous accompagnez dans votre autonomie pour la gestion des probl\u00e9matiques spatiales de votre activit\u00e9.",
-    "level": 1,
-    "css_class": "",
-    "css_color": "red",
-    "actif": true
+    "pitch": "Gestion des probl\u00e9matiques spatiales de votre activit\u00e9.",
+    "description": null,
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "level": 4,
+    "css_icon": null,
+    "css_class": "accompagnement",
+    "css_color": "green",
+    "mainpage": true,
+    "mainpage_image": null,
+    "actif": true,
+    "slug": "accompagnement"
   }
 },
 {
   "model": "website.categorie",
   "pk": 5,
   "fields": {
-    "nom_categorie": "M\u00e9thodes et outils",
-    "pitch": "Ensemble des m\u00e9thodes et outils g\u00e9omatiques utiles \u00e0 votre activit\u00e9",
+    "nom_categorie": "SIG",
+    "pitch": "Faite \u00e9merger le potentiel g\u00e9ographique dans vos projets gr\u00e2ces aux solutions SIG.",
+    "description": "La maitrise des SIG est devenue incontournable dans les grandes entreprises et des collectivit\u00e9s. Ils sont parfois  m\u00e9connues et inaccessibles pour les petites structures. \r\nAvec nous, vous disposez  de toutes les comp\u00e9tences requises pour acqu\u00e9rir, g\u00e9rer, analyser et repr\u00e9senter vos probl\u00e9matiques spatiales. \r\nGr\u00e2ce \u00e0 la communaut\u00e9 open-source, les co\u00fbts d'acc\u00e8s \u00e0 ces services chutes consid\u00e9rablement. D\u00e9sormais, nous proposons des solutions sans frais de licence qui am\u00e9liore les d\u00e9cisions que vous prendrez tous les jours.\r\nSi vous n'avez pas encore votre SIG, laissez nous vous d\u00e9montrer qu'ils sont la cl\u00e9 du d\u00e9veloppement de votre activit\u00e9.",
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "level": 2,
-    "css_class": "",
+    "css_icon": "",
+    "css_class": "sig",
     "css_color": "green",
-    "actif": true
+    "mainpage": true,
+    "mainpage_image": 33,
+    "actif": true,
+    "slug": "sig"
   }
 },
 {
@@ -28,11 +42,94 @@
   "pk": 6,
   "fields": {
     "nom_categorie": "Donn\u00e9es",
-    "pitch": "Besoin de donn\u00e9es, nous avons de quoi vous surprendre",
+    "pitch": "Besoin de donn\u00e9es, nous avons de quoi vous satisfaire",
+    "description": "Des donn\u00e9es de qualit\u00e9, o\u00f9 \u00e7a et combien \u00e7a co\u00fbte ? De part notre expertise dans l'analyse  de vos usages nous pouvons vous faire faire des \u00e9conomies dans votre phase de recherche et d'acquisition de vos donn\u00e9es.",
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
     "level": 3,
-    "css_class": "",
+    "css_icon": "",
+    "css_class": "donnees",
     "css_color": "blue",
-    "actif": true
+    "mainpage": true,
+    "mainpage_image": 34,
+    "actif": true,
+    "slug": "donnees"
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 7,
+  "fields": {
+    "nom_categorie": "Cartes",
+    "pitch": "Transmettre l'information, simple et efficace",
+    "description": "<h3>Nos cartes et plans</h3>\r\n<p>Les cartes sont faites pour \u00eatre vues, une belle carte aura un impact positif sur votre image et trasmettra correctement les informations. \r\n<strong>Nous avons ce savoir faire</strong>\r\n<p> Nos cartes r\u00e9pondent aux crit\u00e8res de qualit\u00e9 professionelle  <a href='http://seig.ensg.ign.fr/fichchap.php?NOCHEM=CHEMS003&NOFICHE=FP36&NOLISTE=2&N=2&RCO=&RCH=&RF=&RPF='>IGN/ENSG</a>.</p>",
+    "html_page": "<div class=\"limiter clearfix prose\">\r\n<div class=\"clearfix\">\r\n\r\n<h3>Avantages/potentialit\u00e9s </h3>\r\n\t<ul>\r\n\t<li>La pr\u00e9cision g\u00e9om\u00e9trique est adapt\u00e9e \u00e0 l'\u00e9chelle pour une excellente lisibilit\u00e9</li>\r\n\t<li>Les informations sont structur\u00e9es et hierarchis\u00e9es pour que la lecture soit bien organis\u00e9e</li>\r\n\t<li>Nos cartes sont faciles d'utilisation</li>\r\n\t<li>Les informations pr\u00e9sent\u00e9es sont d'actualit\u00e9s pour donner au lecteur les informations les plus fra\u00eeches disponibles</li>\r\n\t<li>L'ensemble de la carte est \u00e9quilibr\u00e9e pour la rendre attrayante et agr\u00e9able \u00e0 consulter</li>\r\n\t</ul>\r\n<h3>Nous r\u00e9pondons \u00e0 vos besoins </h3>\r\n<ul>\r\n<li>Mettre en valeur vos donn\u00e9es dans une carte</li>\r\n<li>Des cartes avec une charte graphique qui s'int\u00e8grent parfaitement dans vos supports de communication</li>\r\n<li>Des cartes qui r\u00e9pondent aux exigences de localisation sur le terrain</li>\r\n</ul>\r\n\r\n\r\n<h3>Les diff\u00e9rents supports disponibles</h3>\r\n<ul>\r\n<li>Livr\u00e9e au format num\u00e9rique, avec ou sans habillage</li>\r\n<li>Livr\u00e9e au format papier</li>\r\n</ul>\r\n<p></p>\r\n </div>\r\n </div>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "level": 1,
+    "css_icon": "",
+    "css_class": "cartes",
+    "css_color": "blue",
+    "mainpage": true,
+    "mainpage_image": null,
+    "actif": true,
+    "slug": "cartes"
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 8,
+  "fields": {
+    "nom_categorie": "Nous",
+    "pitch": "A propos de nous",
+    "description": "<p></p>",
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "level": 5,
+    "css_icon": "",
+    "css_class": "nous",
+    "css_color": "",
+    "mainpage": false,
+    "mainpage_image": null,
+    "actif": true,
+    "slug": "nous"
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 9,
+  "fields": {
+    "nom_categorie": "Vous \u00eates ?",
+    "pitch": "Mieux vous connaitre pour mieux vous servir",
+    "description": "La g\u00e9omatique oeuvre dans de nombreux secteurs d'activit\u00e9. Chaque m\u00e9tier \u00e0 ses sp\u00e9cificit\u00e9s, c'est pourquoi nous avons fait le choix de nous sp\u00e9cialiser dans certains d'entre eux. Gr\u00e2ce \u00e0 notre sp\u00e9cialisation, nous pouvons parler avec votre language et vous proposer des solutions au plus pr\u00e8s des besoins de votre m\u00e9tier. \r\n<p>Nos solutions vous permettent d'optimisez votre temps pour vous concentrer essentiellement \u00e0 votre m\u00e9tier.</p>",
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "level": 7,
+    "css_icon": "",
+    "css_class": "vous",
+    "css_color": "orange",
+    "mainpage": false,
+    "mainpage_image": null,
+    "actif": true,
+    "slug": "vous"
+  }
+},
+{
+  "model": "website.categorie",
+  "pk": 10,
+  "fields": {
+    "nom_categorie": "Blog",
+    "pitch": ".",
+    "description": "<p></p>",
+    "html_page": "<p></p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "level": 8,
+    "css_icon": "",
+    "css_class": "blog",
+    "css_color": "",
+    "mainpage": false,
+    "mainpage_image": null,
+    "actif": false,
+    "slug": "blog"
   }
 }
 ]

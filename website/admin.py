@@ -4,7 +4,7 @@ from django import forms
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Categorie, Service, Section, Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan, Livrable, Produit, Realisation 
+from .models import Categorie, Service,  Secteur, Software, Formation, ChapitreFormation, CatFormation, Reference, ModuleFormation, Personne, Plan, Livrable, Produit, Realisation 
 
 
 class PlanForm( forms.ModelForm ):
@@ -50,12 +50,15 @@ class ServiceForm( forms.ModelForm ):
 
 class ServiceAdmin(admin.ModelAdmin):
 	form=ServiceForm
-	list_display = ('nom_service','categorie_service','css_icon', 'actif', 'landpage')
+	list_display = ('nom_service','categorie_service','css_icon', 'actif', 'mainpage')
 	prepopulated_fields = {'slug': ('nom_service',) }
 
 
 class CategorieForm( forms.ModelForm ):
 	pitch = forms.CharField( widget=forms.Textarea )
+	description = forms.CharField( widget=forms.Textarea )
+	tooltip = forms.CharField(widget=forms.Textarea)
+	html_page = forms.CharField( widget=forms.Textarea )
 
 	class Meta:
 		model = Formation
@@ -65,6 +68,7 @@ class CategorieForm( forms.ModelForm ):
 class CategorieAdmin(admin.ModelAdmin):
 	form=CategorieForm
 	list_display = ('id', 'nom_categorie','level','actif')
+	prepopulated_fields = {'slug': ('nom_categorie',) }
 
 
 class SecteurForm( forms.ModelForm ):
@@ -155,11 +159,6 @@ class SoftwareAdmin(ImportExportModelAdmin):
 	prepopulated_fields = {'slug': ('nom_soft',) }
 
 
-class SectionAdmin(admin.ModelAdmin):
-	
-	list_display = ('id', 'nom_section','actif')
-	prepopulated_fields = {'slug': ('nom_section',) }
-
 class ProduitForm( forms.ModelForm ):
 	pitch = forms.CharField( widget=forms.Textarea )
 	description = forms.CharField( widget=forms.Textarea )
@@ -178,7 +177,6 @@ class ReferenceAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug': ('nom_reference',) }
 
 # Register your models here.
-admin.site.register(Section, SectionAdmin)
 admin.site.register(Secteur, SecteurAdmin)
 admin.site.register(Categorie,CategorieAdmin)
 admin.site.register(Service, ServiceAdmin)

@@ -1,0 +1,58 @@
+{% load static thumbnail show_realisation %}
+
+{% if categorie.nom_categorie %}
+{% if categorie.image %}
+
+{% thumbnail categorie.image 1920x530 crop subject_location=categorie.image.subject_location as photo %}
+<section id="top" class='slideshow splash js-fullheight contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
+{% else %}
+<section class="splash dark contain clearfix clip fill-{{categorie.css_color}} scroll-section js-fullheight" id="section-0" style="height: 1067px;">
+
+{% endif %}
+ <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
+
+    <div class="intro contain">
+      <div class="pad2y clearfix contain">
+
+        <h2 class="fancy space-bottom2">{{categorie.nom_categorie}}</h2>
+        <div class="quiet z1 subnav space-bottom2">
+      </div>
+        <p class="col6 margin6r  prose prose-big">{{ categorie.pitch }}</p>
+      </div>
+    </div>
+
+  {% block galerie %}
+  {% show_realisation_by_categorie_gallery categorie categorie.slug %}
+  {% endblock galerie %}
+
+    
+  </div>
+
+</section>
+
+      {% else %} <!-- c'est la page index des services -->
+
+<section id="top" class='slideshow splash js-fullheight fill-blue contain animate clip active1' >
+ 
+  <div class='carousel-fill col12 pin-left'>
+    
+  </div>
+
+    <div class='z1 pin-top pin-bottom slideshow-container limiter clearfix pad8y row11'>
+
+      <div class='z1 slideshow-text pad4y col4 margin8 prose prose-big dark'>
+      	<h2 class='fancy space-bottom1'>Tous nos services</h2>
+        <p class="prose prose-big"></p>
+          <div class="design-section contain col8 pin-top row11">
+
+            <div class="space-bottom4">
+            
+            </div>
+
+          </div>
+      </div> 
+
+    </div>
+     
+</section>
+  {% endif %}

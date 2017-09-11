@@ -1,0 +1,66 @@
+{% load show_service %} 
+<!--élement présent dans les sub nav -->
+<div class='main-subnav fill-midnight splash pin-top dark clearfix'>
+  <div class='prose dark keyline-top pad4y hover-area clearfix'>
+    <div class='limiter clearfix' style="height:300px">
+      
+
+      {% show_service_by_categorie_menu %}
+
+    </div>
+  </div>
+</div>
+
+<div class='masthead col12 clearfix dark home-nav'>
+      <div class='limiter clearfix'>
+        <nav class='col12 text-right navigation-padding-top contain animate clearfix noprint'>
+          <a class='fl geodatup-logo' href='/'>geoDatup</a>
+          <!-- Desktop nav -->
+          <div class='text-right z10 strong small primary hide-mobile space-top0'>
+            <div class='inline align-top'>
+            {% show_service_by_categorie_dropdown_menu %}
+            </div>   
+          </div>
+
+          <!-- Mobile nav -->
+          <div class='show-mobile contain dropdown-container pin-topright'>
+            <a href='#menu' class='dark contain z100 big inline icon menu round quiet dropdown-button js-dropdown-button pin-right'></a>
+            <div id='menu' class='js-dropdown-menu scroll-v dropdown-menu offcanvas-top fill-midnight clip col12 pin-top animate'>
+              <div class='keyline-bottom clearfix'>
+                <div class='mobile-cols pad4y keyline-bottom clearfix'>
+
+
+            {% for categorie in categorie_list %} 
+              {% if categorie.nom_categorie == "Blog" %}
+            
+                
+                <a class='pad1 block strong col6 ' href= "{% url 'website:blog' %}"> {{ categorie.nom_categorie }}</a>
+             
+              {% else %}
+            
+              <a class='pad1 block strong col6 quiet' href= "{% url 'website:categorieIndex' %}{{ categorie.slug }}">{{ categorie }}</a>
+              
+            
+            
+            {% endif %}
+            {% endfor %}
+
+            
+                </div>
+              </div>
+              <div class='clearfix small'>
+                <div class='col12 clearfix pad4y keyline-bottom'>
+                  <h3 class='pad0y pad1x strong space-bottom1'>Tous nos services</h3>
+                  <div class='col12 pad1x clearfix  mobile-cols '>
+                  {% for service in service_list %}
+                   <a class='pad0y block quiet col6' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+                  {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </div>

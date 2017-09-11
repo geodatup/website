@@ -1,0 +1,60 @@
+{% for categorie in categorie_list %} 
+<section id="{{categorie}}" class="fill-light pad8y block-section" >
+
+<div class="fill-light pad4y">
+
+<div class="limiter contain clearfix ">
+    <div class=" title-block">
+     <p class="prose-big strong">{{ categorie }}</p>
+    </div>
+    <div>
+    <p>{{ categorie.pitch }}</p>
+    </div>
+
+    <div class="space-top2">
+
+
+     {% for service in categorie.service_set.all %}
+      {% if not service.actif %}
+       
+      <a href="{{ service.get_absolute_url }}" class="keyline-top center keyline-stroke {{ service.css_class }} mobile-margin-4r margin3r keyline-{{ categorie.css_color }} round dark-link contain service-block-unactive fl fill-white mobile-margin-bottom1 post-it-fixe-small space-top2 ">
+
+      <div class="mobile-margin-bottom1 post-it-fixe-small becontinuetext" onmouseover="toggle_opacity('{{service.id}}');" onmouseout="toggle_opacity('{{service.id}}');">
+        <h2 class="rotate pad8y">Disponible prochainement</h2>
+      </div> 
+      <div id={{service.id}} class="becontinue mobile-margin-bottom1 post-it-fixe-small ">
+
+        <div class="pad1y space-bottom1">
+        <span class="inline space-top2 dark pad1 dot icon {{ service.css_icon }} fill-{{ categorie.css_color }}"></span>
+         
+        </div>
+        <h3>{{ service.nom_service }}</h3>
+        <p class="quiet small margin0 margin0r space-top0">{{ service.pitch }}</p>
+      </div>
+      </a>
+ 
+      {% else %}
+    
+      <a href="{{ service.get_absolute_url }}" class="keyline-top center keyline-stroke {{ service.css_class }} mobile-margin-4r margin3r space-top2 keyline-{{ categorie.css_color }} round dark-link contain service-block fl fill-white mobile-margin-bottom1 post-it-fixe-small" > 
+
+        <div class="pad1y space-bottom1">
+        <span class="inline space-top2 dark pad1 dot icon {{ service.css_icon }} fill-{{ categorie.css_color }}"></span>
+         
+        </div>
+        <h3>{{ service.nom_service }}</h3>
+        <p class="quiet small margin0 margin0r space-top0">{{ service.pitch }}</p>
+      </a>
+
+      {% endif %}
+
+
+    {% endfor %}
+
+
+    </div>
+  </div>
+
+</div>
+
+</section>
+{% endfor %}

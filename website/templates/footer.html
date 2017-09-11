@@ -1,39 +1,21 @@
-{% load show_section show_service %} 
+{% load show_service %} 
 
 <div class='footer footer-in-docs clearfix contain hide-mobile noprint fill-light' data-swiftype-index='false'>
    <div class='limiter clearfix'>
-    <div class='footer-in-docs footer-cols-in-docs clearfix col12 pad8y small'>
+    <div class='footer-in-docs footer-cols-in-docs clearfix col11 pad8y small'>
       
-      <div class='col2 footer-col-in-docs'>
-      <!-- <h3 class='space-bottom1'>Vue d'ensemble</h3>
-       {% show_section_list %}-->
-      </div>
+
         {% show_service_by_categorie_simple %}
 
-      <div class='col2 footer-col-in-docs'>
-      
-        <h3 class='space-bottom1'>A propos de nous </h3>
-        
-        <a id='footer-our-story' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#top'>A propos</a>
-        
-        <a id='footer-team' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#team'>Équipe</a>
-        
-        <a id='footer-jobs' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#jobs'>Emplois et stages</a>
-        
-        <a id='footer-press' class='space-bottom0 col12 quiet strong' href='{% url 'about' %}#presse'>Presse</a>
-        
-      </div>
-       <!-- <div class='limiter newsletter-copyright hide-in-docs clearfix'> -->
-    <div class='contain col4 footer-social'>
-      <div class='animate footer-animation col6'></div>
-      <div class='footer-dialog fr small strong  col7 pad2 contain round fill-darken0'>
+    
+
+  </div>
+<div class='contain col2 footer-social'>
+      <div class='animate footer-animation col6' style ="position: absolute;"></div>
+      <div class='margin3 footer-dialog  small strong  col7 pad2 contain round fill-darken0' style="min-width: 350px;min-height: 75px;">
       Suivez Geodatup sur <a href='https://twitter.com/geodatup'>Twitter</a>, <a href='https://www.facebook.com/geodatup'>Facebook</a>, and <a href='https://github.com/geodatup'>Github</a>.
       </div>
     </div>
-    <!-- </div> -->
-
-  </div>
-
  </div>
 </div>
 
@@ -41,9 +23,7 @@
 </div>
   
 <div class='footer-in-docs terms-in-docs col12 center footer-copyright small pad4 noprint fill-light contain' data-swiftype-index='false'>
-  <a href='{% url 'terms' %}'>Mentions légales</a> +
-  <a href='{% url 'privacy' %}'>Politique ce confidentialité</a> + 
-  <a href='{% url 'cdg' %}'>Conditions générales de vente</a>
+  <a href='{% url 'terms' %}'>Mentions légales</a> 
 
   Geodatup 
 </div>

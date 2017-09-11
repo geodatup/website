@@ -1,3 +1,14 @@
+.arrow {
+    color: #55514F;
+    font-size: 20px;
+    height: 32px;
+    left: 50%;
+    margin-left: -16px;
+    position: absolute;
+    text-align: center;
+    width: 32px;
+    z-index: 3;
+}
 
 @font-face {
   font-family:'fontastic';
@@ -54,6 +65,11 @@
 
 .landing-header-image {
   background-image:url(/media/image/Pano-reduce-1920-530.jpg);
+  background-repeat:no-repeat;
+  }
+
+.landing-maps-image {
+  background-image:url(/media/image/maps/1.jpg);
   background-repeat:no-repeat;
   }
 
@@ -294,6 +310,7 @@
 .tooltip-text a {
   font-weight: bold;
 }
+
 
 
 

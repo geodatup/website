@@ -30,51 +30,22 @@ class Secteur(models.Model):
     def __str__(self):
     	return self.nom_secteur
 
-class Section(models.Model):
-    nom_section = models.CharField(max_length=30)
-    level_choix =  (
-    ('navbar-top','navbar-top'),
-    ('navbar-top-sub1','navbar-top-sub1'),    
-    ('navbar-top-sub2','navbar-top-sub2'),
-    ('navbar-verticale','navbar-verticale')
-    )
-    level = models.CharField(max_length=50,
-        choices=level_choix,
-        default='indéfini'
-        )
-    css_icon = models.CharField(max_length=100, null=True, blank=True)
-    css_div_class = models.CharField(max_length=100, null=True, blank=True)
-    css_ahref_class = models.CharField(max_length=100, null=True, blank=True)
-    datacategory_choix =  (
-    ('products','products'),
-    ('help','help'),    
-    ('documentation','documentation'), 
-    ('use-cases','use-cases'),
-    ('','aucun')
-    )
-    css_datacategory = models.CharField(max_length=50,
-        choices=datacategory_choix,
-        default=''
-        )
-    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
-    actif = models.BooleanField(default=True)
-     #@permalink
-    def get_absolute_url(self):
-        return reverse('website:sectionDetail', kwargs={'slug': self.slug, })
-    
-    def __str__(self):
-    	return self.nom_section
 
 
 class Categorie(models.Model):
     nom_categorie = models.CharField(max_length=30)
     pitch = models.CharField(max_length=500, null=True, blank=True)
-
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    html_page = models.CharField(max_length=10000, default='<p></p>')
+    tooltip = models.CharField(max_length=10000, default='<span class="tooltip"></span>')
     level = models.PositiveSmallIntegerField(blank=False, null=False, unique=True)
+    css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     css_color = models.CharField(max_length=15, null=True, blank=True)
-
+    mainpage = models.BooleanField(default=True)
+    mainpage_image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL, related_name="mainpage_image")
     actif =  models.BooleanField(default=True)
+    slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
     
     def __str__(self):
     	return self.nom_categorie
@@ -85,12 +56,12 @@ class Service(models.Model):
     pitch = models.CharField(max_length=100, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
     tooltip = models.CharField(max_length=10000, default='<span class="tooltip"></span>')
-    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL, related_name="top_page_image")
     css_color = models.CharField(max_length=15, null=True, blank=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
-    landpage = models.BooleanField(default=False)
+    mainpage = models.BooleanField(default=False)
     html_page = models.CharField(max_length=10000, default='<p></p>')
     #secteur =  models.ManyToManyField(Secteur)
     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
@@ -242,7 +213,7 @@ class Realisation(models.Model):
     pitch = models.CharField(max_length=30, null=True, blank=True)
     image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
     service = models.ManyToManyField(Service, blank=True)
-    reference = models.ManyToManyField(Reference, blank=True)
+    reference = models.ManyToManyField(Reference, related_name='realisations', blank=True)
     actif = models.BooleanField(default=True)
     
     def __str__(self):

@@ -1,0 +1,22 @@
+{% for categorie in categorie_list %} 
+	<div class='subnav-group subnav-{{categorie.css_class}} clearfix'>
+		<div class='col6 clearfix'>
+		{% for service in categorie.service_set.all %}
+		{% if service.actif %}
+		 	{% if service.categorie_service == categorie %}
+		 		{% if categorie.nom_categorie == "Nous" %}
+
+    			<a class='block pad1y icon {{ service.css_icon }}' href= '{% url 'about' %}#{{service.slug}}'>{{ service.nom_service }}</a>
+
+
+ 				{% else %}
+		 		<a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>	
+		 		{% endif %} 	 	
+		 	{% else %}  
+		  	{% endif %}  
+		 {% endif %}  		        
+		{% endfor %}
+		</div>
+	</div>
+{% endfor %}
+

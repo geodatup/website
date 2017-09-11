@@ -1,0 +1,29 @@
+{% load sekizai_tags cat_index  %}
+
+{% if categorie.description %}
+<div id="go" class="limiter clearfix pad4y space-top4 prose">
+	<a href="#go" class="arrow">
+	<i class="fa fa-chevron-down infinite animated fadeInDown"></i>
+	</a>
+
+	<div class="clearfix">
+		<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
+			<div class="column-block col6">
+				<div class="column-content col10 margin2r">
+				{{ categorie.description | safe}} 
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endif %}
+{% if categorie.nom_categorie == "Accompagnement" %}
+
+	{% show_cat_formation_index %}
+
+{% endif %}
+
+{% if categorie.html_page %}
+{{ categorie.html_page |safe }}
+{% endif %}

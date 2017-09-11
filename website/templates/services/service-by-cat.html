@@ -1,15 +1,30 @@
 
-{% for categorie in categorie_list %} 
+
+{% for categorie in categorie_list %}
+{% if categorie.nom_categorie == "Blog"%} 
+ 	
+{% else %}
 <div class='hide-in-docs col2'>
 	 <h3 class='space-bottom1'>{{ categorie }}</h3>
 
 {% for service in categorie.service_set.all %}
 
- {% if service.actif %}
-	<a id='footer-products' class='space-bottom0 quiet col8 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
- {% endif %}  
-        
+	{% if service.actif = True %}
+
+	 	{% if categorie.slug == "nous" %}
+
+	 	<a id='footer' class='space-bottom0 quiet col10 strong' href= '{% url 'about' %}#{{service.slug}}'>{{ service.nom_service }}</a>
+
+
+	 	{% else %}
+
+		<a id='footer' class='space-bottom0 quiet col10 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+	  	{% endif %}  
+	{% else %}
+	{% endif %}  
+	        
 {% endfor %}
 
 </div>
+{% endif %}  
 {% endfor %}

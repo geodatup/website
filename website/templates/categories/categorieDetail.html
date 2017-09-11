@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static show_nav  cat_index %}
+
+{% block head_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static "css/showcase.css" %}">
+<link rel="stylesheet" href="{% static "css/maps.css" %}">
+{% endblock head_css %}  
+
+{% block body_content %}
+
+<div class='page-content'>
+
+
+{% block nav %}
+{% show_nav_everywhere %}
+
+{% include "signup-nav.html" %}
+{% endblock nav %}
+
+{% block section-top %}
+
+	{% include "categories/categorie-section-top.html" %}
+
+{% endblock section-top %}
+
+{% block sections %}
+
+	{% show_cat_service_index categorie categorie.slug %}
+
+  {% block section-categorie %}
+  {% include "categories/categorie-description.html" %}
+  {% endblock section-categorie %}
+
+  {% block section-contact %}
+    {% include "section-contact.html" %}
+  {% endblock section-contact %}
+
+{% endblock sections %}
+
+</div>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %}
+
+{% endblock body_content %}

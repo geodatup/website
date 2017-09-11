@@ -1,10 +1,14 @@
 #Commande admnistration serveur de production
 
-Premiere chose ,
+
+
+##Preparation de l'environnement de production
+
 déposer les sources de l'application (clone) dans le dossier webapps
+
 ~~~
 cd /var/www/webapps
-sudo git clone  https://github.com/geodatup/quorelcms.git
+sudo git clone  https://github.com/geodatup/[appname].git
 ~~~
 Puis 
 - créer un nouvel utilisateur et un dossier home qui pointe sur son application
@@ -13,13 +17,12 @@ Puis
 - PIP3 install requirements
 - configurer gunicorn 
 
-[voir le blog nginx + gunicon + django + supervisor
-](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/)
+[voir le blog nginx + gunicon + django + supervisor](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/)
 
 ~~~
-sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webapps/quorelcms quorelcms
-sudo chown quorelcms /var/www/webapps/quorelcms
-sudo su - quorelcms
+sudo useradd --system --gid webapps --shell /bin/bash --home /var/www/webapps/[appname] [appname]
+sudo chown [appname] /var/www/webapps/[appname]
+sudo su - [appname]
 ~~~
 
 dans le dossier créer l'environnement virtuel et l'activer
@@ -113,3 +116,12 @@ le fichier gunicorn_start n'est pas executable. Appliquer les droits de l'utilis
 cd webapps/website/bin/
 sudo chown geodatup:webapps -R .
 ~~~
+
+
+
+# Maintenir le site de production sur le serveur
+
+```sudo su  geodatup && source bin/activate```
+
+backup des données
+

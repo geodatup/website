@@ -1,9 +1,10 @@
-{% load static thumbnail show_realisation %}
+ {% load static thumbnail show_realisation %}
 
 {% if service.nom_service %}
 {% if service.image %}
 
-{% thumbnail service.image 1920x530 crop subject_location=service.image.subject_location as photo %}<section id="top" class='slideshow splash js-fullheight contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
+{% thumbnail service.image 1920x530 crop upscale quality=100 subject_location=service.image.subject_location as photo %}
+<section id="top" class='slideshow splash js-fullheight contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
 {% else %}
 <section class="splash dark contain clearfix clip fill-{{service.categorie_service.css_color}} scroll-section js-fullheight" id="section-0" style="height: 1067px;">
 
@@ -11,29 +12,23 @@
  <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
 
     <div class="intro contain">
-      <div class="pad2y clearfix contain">
+      <div class="pad2y clearfix contain text-shadow"  style="color:white; ">
 
-        <h2 class="fancy space-bottom2">{{service.nom_service}}</h2>
+        <h2 class="fancy space-bottom2 ">{{service.nom_service}}</h2>
         <div class="quiet z1 subnav space-bottom2">
       </div>
-        <p class="col6 margin6r  prose prose-big">{{ service.pitch }}</p>
+        <p class="col6 margin6r prose prose-big " >{{ service.pitch }}</p>
       </div>
     </div>
 
   {% block galerie %}
-  {% show_realisation_by_service service service.slug%}
+  {% show_realisation_by_service_gallery service service.slug%}
   {% endblock galerie %}
 
     
   </div>
 
 </section>
-
-
-
-<h2 class='fancy space-bottom1'></h2>
-        <p class="prose prose-big"></p>
-
 
       {% else %} <!-- c'est la page index des services -->
 
@@ -46,7 +41,7 @@
     <div class='z1 pin-top pin-bottom slideshow-container limiter clearfix pad8y row11'>
 
       <div class='z1 slideshow-text pad4y col4 margin8 prose prose-big dark'>
-      	<h2 class='fancy space-bottom1'>Nos services</h2>
+      	<h2 class='fancy space-bottom1'>Tous nos services</h2>
         <p class="prose prose-big"></p>
           <div class="design-section contain col8 pin-top row11">
 

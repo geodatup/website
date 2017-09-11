@@ -1,50 +1,18 @@
 
+{% load show_categorie show_service %} 
 
-<section id="building-blocks" class="fill-white" >
-<div class="limiter center clearfix">
-  <div class="clearfix">
-    <div class="col10 margin1 margin1r prose pad4y space-top4 space-top-hnav space-bottom2  ">
-      <h2 class="denim">GeoDatup donne de la hauteur à vos projets</h2>
-      <p class="prose-big quiet pad2x">Comment améliorer votre connaissance et la gestion de vos territoires ?</p>
-      <a href="#building-blocks" class="button pad4x rcon down "></a>
-    </div>
-  </div>
-</div>
+<section class="grid ">
+
+  <div class=" pad2">
+
+        <!-- Grid items --> 
+
+        {% show_categorie_mainpage %}
+
+       
+     </div>
+   
 </section>
 
-
-     <div class='section clearfix col12 keyline-top fill-light building-blocks clip pading40vertical-nav'>
-
-      <a  href='service/cartes-et-plans' class='block center pad2 pad4y keyline-right keyline-bottom contain'>
-          <div class=' noevents margin2 margin2r  space-bottom2'><i class="fa fa-map fa-5x"></i></div>
-          <div class='content'>
-            <h3 class='col12 space-bottom1'>Carte et plan</h3>
-            <span class='col12  quiet space-bottom1 pad2x prose'>Le message de la carte, c'est votre territoire.</span>
-          </div>
-      </a>
-
-      <a  href='service/sig'  class='block center pad2 pad4y keyline-right keyline-bottom'>
-          <div class=' noevents margin2 margin2r  space-bottom2'><i class="fa fa-globe fa-5x"></i></div>
-        <h3 class='col12 space-bottom1'>SIG et WebSIG</h3>
-        <span class='col12  quiet space-bottom1 pad2x prose'>Cartographier sans limite avec des outils opensources.</span>
-      </a>
-
-      <a href='service/geoprocessing' class='block  center pad2 pad4y keyline-bottom keyline-right'>
-       <div class=' noevents margin2 margin2r  space-bottom2'><i class="fa fa-clock-o fa-5x"></i></div>
-        <h3 class='col12 space-bottom1'>Géo-traitement</h3>
-        <span class='col12  quiet space-bottom1 pad1x prose'>Automatiser les tâches et gagner en efficacité.</span>
-      </a>
-
-      <a href='service/analyse-spatiale'  class='block center  pad2 pad4y keyline-right keyline-bottom'>
-         <div class=' noevents margin2 margin2r  space-bottom2'><i class="fa fa-line-chart fa-5x"></i></div>
-          <h3 class='col12 space-bottom1'>Analyse spatiale</h3>
-          <span class='col12  quiet space-bottom1 pad2x prose'>Modéliser les dynamiques pour mieux comprendre son territoire.</span>
-      </a>
-
-      <a href='service/#Données'  class='block  center pad2 pad4y keyline-right keyline-bottom' style="border-right:none";>
-         <div class=' noevents margin2 margin2r  space-bottom2'><i class="fa fa-map-marker fa-5x"></i></div>
-        <h3 class='col12 space-bottom1'>Base de données, imagerie & GPS </h3>
-        <span class='col12  quiet space-bottom1 pad2x prose'>Collecter les données qui sont au cœur des projets.</span>
-      </a>
-  </div>
+ {% show_service_by_categorie_mainpage %}
 

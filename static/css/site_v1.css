@@ -277,12 +277,12 @@ a.primary-nav-button.light:hover {
   line-height: 20px;
 }
 
-.subnav-products, .subnav-use-cases, .subnav-documentation, .subnav-help   {
+.subnav-cartes, .subnav-sig, .subnav-donnees, .subnav-accompagnement , .subnav-nous , .subnav-vous, .subnav-blog{
   display: none;
 }
 
 
-.subnav-products.show, .subnav-use-cases.show, .subnav-documentation.show,  .subnav-help.show {
+.subnav-cartes.show, .subnav-sig.show, .subnav-donnees.show, .subnav-accompagnement.show , .subnav-nous.show , .subnav-vous.show, .subnav-blog.show{
   display: block;
 }
 
