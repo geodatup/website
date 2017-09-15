@@ -16,6 +16,14 @@ def show_service_by_categorie(context):
 
     return {'service_list': service_list, 'categorie_list':categorie_list, 'request':request}
 
+@register.inclusion_tag('services/service-description.html',takes_context=True)
+def show_serviceDescription_in_categorie(context, categorie):
+    request = context['request']
+    service_desc = Service.objects.filter(actif=1, categorie_service__nom_categorie=categorie) 
+
+    return {'service_desc': service_desc, 'request':request}
+
+
 @register.inclusion_tag('services/service-by-cat.html',takes_context=True)
 def show_service_by_categorie_simple(context):
     request = context['request']
@@ -28,7 +36,7 @@ def show_service_by_categorie_simple(context):
 @register.inclusion_tag('services/service-by-cat-menu.html',takes_context=True)
 def show_service_by_categorie_menu(context):
     request = context['request']
-    service_list = Service.objects.all().filter(actif=1)
+    service_list = Service.objects.filter(actif=1)
     categorie_list = Categorie.objects.all().filter(actif=1).order_by('level')
 
 
@@ -37,8 +45,8 @@ def show_service_by_categorie_menu(context):
 @register.inclusion_tag('services/service-by-cat-dropdown-menu.html',takes_context=True)
 def show_service_by_categorie_dropdown_menu(context):
     request = context['request']
-    service_list = Service.objects.all().filter(actif=1)
-    categorie_list = Categorie.objects.all().filter(actif=1).order_by('level')
+    service_list = Service.objects.filter(actif=1)
+    categorie_list = Categorie.objects.filter(actif=1).order_by('level')
 
 
     return {'service_list': service_list, 'categorie_list':categorie_list, 'request':request}
@@ -46,8 +54,8 @@ def show_service_by_categorie_dropdown_menu(context):
 @register.inclusion_tag('services/service-mainpage.html',takes_context=True)
 def show_service_by_categorie_mainpage(context):
     request = context['request']
-    service_list = Service.objects.all().filter(actif=1)
-    categorie_list = Categorie.objects.all().filter(nom_categorie="Accompagnement").order_by('level')
+    service_list = Service.objects.filter(actif=1)
+    categorie_list = Categorie.objects.filter(nom_categorie="Accompagnement").order_by('level')
 
 
     return {'service_list': service_list, 'categorie_list':categorie_list, 'request':request}

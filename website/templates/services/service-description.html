@@ -1,23 +1,73 @@
-{% load sekizai_tags cat_index %}
-
-<div class="limiter clearfix pad4y space-top4 prose">
-<div class="clearfix">
-<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
-<div class="column-block col6">
-<div class="column-content col10 margin2r">
-{{ service.description | safe}} 
-</div>
-</div>
-</div>
-</div>
-</div>
-
-{% if service.nom_service == "Formation" %}
-
-{% show_cat_formation_index %}
+{% load thumbnail sekizai_tags cat_index %}
 
 
+
+{% if service_desc %}
+	{% for service in service_desc %}
+		{% if service.description %}
+			<div id={{service.slug}} class="limiter clearfix pad4y space-top4 prose">
+			
+				<div class="clearfix">
+				<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
+				<div class="{% cycle 'column-block col6 fr' 'column-block col6 ' %} ">
+				
+				<div class="column-content col10 margin2">
+				<h2>{{ service.nom_service}} </h2>
+				{{ service.description | safe}} 
+				</div>
+				
+				</div>
+				{% if service.image %}
+				{% thumbnail service.image 400x300 crop upscale quality=75 subject_location=service.image.subject_location as photo %}
+				<div class="" style="width:50%;height:50%">
+				<img src="{{ photo.url }}">
+				{% else %}
+
+				{% endif %}
+				</div>
+
+				
+				</div>
+				</div>
+				</div>
+			</div>
+		{% else %}
+		{% endif %}
+
+		{% if service.nom_service == "Formation" %}
+		
+			{% show_cat_formation_index %}		
+			
+			{% else %}
+			{% if service.html_page %}
+			{{ service.html_page |safe }}
+			{% else %}
+			{% endif %}
+		{% endif %}
+	
+	{% endfor %}
 {% else %}
-
-{{ service.html_page |safe }}
+	<div class="limiter clearfix pad4y space-top4 prose">
+	<div class="clearfix">
+	<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
+	<div class="column-block col6">
+	<div class="column-content col10 margin2r">
+	{{ service.description | safe}} 
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	{% if service.nom_service == "Formation" %}
+	
+		{% show_cat_formation_index %}
+		
+		
+		{% else %}
+		{% if service.html_page %}
+			{{ service.html_page |safe }}
+			{% else %}
+			{% endif %}
+	{% endif %}
 {% endif %}

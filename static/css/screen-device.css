@@ -1,0 +1,138 @@
+@media screen and (max-device-width: 1400px) {
+  .grid__sizer,
+  .grid__item,
+  .grid__item--size-a {
+    width: 20%;
+    min-height: 350px;
+  }
+  .grid__item_33{
+    width: 29%; 
+    min-width: 350px;
+    margin-left: 15em;   
+  }
+}
+
+
+@media screen and (max-device-width: 1180px) {
+  .grid__sizer,
+  .grid__item,
+  .grid__item--size-a {
+    width: 20%;
+    min-height: 350px;
+
+  }
+  .grid__item_33{
+    width: 29%;
+    min-width: 400px;
+    }
+
+  .topsection { 
+    height: 1020px; 
+  }
+}
+@media screen and (max-device-width: 65em) {
+  .grid__sizer,
+  .grid__item,
+  .grid__item--size-a {
+    width: 25%;
+    min-height: 350px;
+
+  }
+  .grid__item_33{
+    width: 29%;
+    min-width: 400px;
+    }
+}
+
+
+@media only screen and (max-device-width: 1080px) {
+
+.margin3r { margin-right: 1.33%; }
+.service-block .service-block-unactive {
+  width: 24%;
+  min-height: 165px;
+ }
+}
+
+
+@media only screen and (max-device-width: 1040px) {
+  .imagecouverture {
+      margin-bottom: -200px;
+      left: -30px;
+  }
+
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .customer-logos div {
+    width: 20%;
+  }
+  .customer-logos div:last-of-type {
+    margin-top: 10px;
+  }
+  .imagecouverture {
+    height:  100%;
+    position: relative;
+    margin-bottom: -200px;
+    left: 0;
+    right: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+}
+
+
+
+@media only screen and (max-device-width: 940px) {
+  .main-subnav  {
+    font-size: 12px !important;
+  }
+}
+/* Small Screen Layout
+------------------------------------------------------- */
+@media only screen and (max-device-width: 900px) {
+  .limiter {
+    width: 100%;
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+
+/* Tablet Layout
+------------------------------------------------------- */
+@media only screen and (max-device-width: 770px) {
+  .hide-tablet { display:none; }
+  .show-tablet { display:block; }
+}
+
+
+@media only screen and (max-device-width: 750px) {
+ .service-block .service-block-unactive {
+  width: 48%;
+  min-height: 135px;
+  margin-right: 0%;
+ }
+ .mobile-margin-4r { margin-right:4%; }
+ .mobile-margin-bottom1 { margin-bottom:20px; }
+ .col12.space-top2 {
+  margin-top:0px;
+ }
+  .title-block {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+
+
+@media screen and (max-device-width: 50em) {
+  .grid__sizer,
+  .grid__item,
+  .grid__item--size-a {
+    width: 33%;
+  }
+}
+
+
+

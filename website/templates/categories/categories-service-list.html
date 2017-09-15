@@ -3,11 +3,14 @@
 <div class="limiter clearfix pad1y "style="max-width:500px">
 <ul class="center clearfix pill  ">
 {% for service in service_list %}
+{% if service.actif %}
 	<li class="pad2x small ">
-	<a href="{{ service.get_absolute_url }}">
+	<a href="#{{ service.slug }}">
 
 		<span class=" ">{{ service.nom_service }}</span></a>
 	</li>
+	{% else %}
+{% endif %}
 {% endfor %}
 </ul>
 </div>

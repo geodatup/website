@@ -31,15 +31,18 @@
 
 
             {% for categorie in categorie_list %} 
-              {% if categorie.nom_categorie == "Blog" %}
-            
-                
-                <a class='pad1 block strong col6 ' href= "{% url 'website:blog' %}"> {{ categorie.nom_categorie }}</a>
+
              
+              {% if categorie.nom_categorie == "Blog" %}
+
+               <a class='pad1 block strong col6 ' href= "{% url 'website:blog' %}"> {{ categorie.nom_categorie }}</a>
+              {% elif categorie.nom_categorie == "Nous"%}
+
+              <a class='pad1 block strong col6 quiet' href= '{% url 'about' %}'>{{ categorie }}</a>
+
               {% else %}
-            
-              <a class='pad1 block strong col6 quiet' href= "{% url 'website:categorieIndex' %}{{ categorie.slug }}">{{ categorie }}</a>
-              
+
+               <a class='pad1 block strong col6 quiet' href= "{% url 'website:categorieIndex' %}{{ categorie.slug }}">{{ categorie }}</a>
             
             
             {% endif %}

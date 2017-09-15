@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'mptt',
     'website',
     'import_export',
+    'django_webp',
 
 )
 
@@ -82,6 +83,7 @@ TEMPLATES = [
                 'sekizai.context_processors.sekizai',
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
+                'django_webp.context_processors.webp',
             ],
         },
     },

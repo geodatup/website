@@ -1,0 +1,15 @@
+@media all and (orientation:landscape)  {
+  /* Styles for Landscape screen */
+  .topsection, .landing-header-image {
+  	height: 530px;
+  }
+}
+
+@media screen and (orientation:landscape) and (min-width: 1180px)  {
+  /* Styles for Landscape screen */
+
+  .topsection {
+  	height: 1020px;
+  }
+
+} 

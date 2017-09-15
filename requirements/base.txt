@@ -7,3 +7,4 @@ django-tables2
 django-filer
 easy_thumbnails
 django-import-export
+django-webp

@@ -11,6 +11,6 @@ register = template.Library()
 @register.inclusion_tag('categorie-mainpage.html',takes_context=True)
 def show_categorie_mainpage(context):
     request = context['request']
-    categorie_list = Categorie.objects.filter(mainpage=1).order_by('level')
+    categorie_list = Categorie.objects.filter(mainpage=1, actif=1).order_by('level')
 
     return {'categorie_list_mainpage':categorie_list, 'request':request}

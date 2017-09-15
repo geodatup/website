@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% load static show_nav  cat_index %}
+{% load static show_nav  cat_index show_service %}
 
 {% block head_css %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static "css/showcase.css" %}">
-<link rel="stylesheet" href="{% static "css/maps.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "lightbox/css/lightbox.css"%}">
+<link rel="stylesheet" type="text/css" href="{% static "css/jquery.jscrollpane.css"%}">
+
 {% endblock head_css %}  
 
 {% block body_content %}
@@ -31,6 +32,10 @@
   {% block section-categorie %}
   {% include "categories/categorie-description.html" %}
   {% endblock section-categorie %}
+
+
+
+   {% show_serviceDescription_in_categorie categorie.nom_categorie %}
 
   {% block section-contact %}
     {% include "section-contact.html" %}

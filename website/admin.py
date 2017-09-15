@@ -40,7 +40,7 @@ class ChapitreFormationAdmin(ImportExportModelAdmin):
 
 class ServiceForm( forms.ModelForm ):
 	pitch = forms.CharField(widget=forms.Textarea )
-	description = forms.CharField( widget=forms.Textarea )
+	
 	tooltip = forms.CharField(widget=forms.Textarea)
 	html_page = forms.CharField( widget=forms.Textarea )
 

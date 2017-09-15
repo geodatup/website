@@ -4,9 +4,9 @@
 {% if categorie.image %}
 
 {% thumbnail categorie.image 1920x530 crop subject_location=categorie.image.subject_location as photo %}
-<section id="top" class='slideshow splash js-fullheight contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
+<section id="top" class='slideshow splash contain animate clip active1' style="background-image: url({{ photo.url }});background-repeat:no-repeat;">
 {% else %}
-<section class="splash dark contain clearfix clip fill-{{categorie.css_color}} scroll-section js-fullheight" id="section-0" style="height: 1067px;">
+<section class="topsection splash dark contain clearfix clip fill-{{categorie.css_color}} " id="section-0" >
 
 {% endif %}
  <div class="pad4y limiter clearfix contain center-y pin-left pin-right">
@@ -19,20 +19,27 @@
       </div>
         <p class="col6 margin6r  prose prose-big">{{ categorie.pitch }}</p>
       </div>
+    
     </div>
 
   {% block galerie %}
   {% show_realisation_by_categorie_gallery categorie categorie.slug %}
   {% endblock galerie %}
 
-    
+
   </div>
+<div>
+  <a href="#go" class="arrow pin-bottom">
+    <i class="fa fa-chevron-down infinite animated fadeInDown"></i>
+    </a>
+</div>
+
 
 </section>
 
       {% else %} <!-- c'est la page index des services -->
 
-<section id="top" class='slideshow splash js-fullheight fill-blue contain animate clip active1' >
+<section id="top" class='slideshow splash fill-blue contain animate clip active1' >
  
   <div class='carousel-fill col12 pin-left'>
     

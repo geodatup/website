@@ -1,0 +1,131 @@
+.icon.mail:before {
+  content: "\e653";
+}
+.rcon.mail:after {
+  content: "\e653";
+}
+
+.icon.mobile:before {
+  content: "\e659";
+}
+
+.rcon.mobile:after {
+  content: "\e659";
+}
+.icon.building:before {
+  content: "\e618";
+}
+
+.rcon.building:after {
+  content: "\e618";
+}
+
+.icon.drone:before {
+  content: "\e906";
+}
+
+.rcon.drone:after {
+  content: "\e906";
+}
+
+.rcon.marker:after {
+  content: "\e655";
+}
+.rcon.marker:before {
+  content: "\e655";
+}
+
+.rcon.data:after {
+  content: "\e628";
+}
+
+.icon.data:before {
+  content: "\e628";
+}
+
+.rcon.analytics:after {
+  content: "\e902";
+}
+
+.icon.analytics:before {
+  content: "\e902";
+}
+.rcon.coding:after {
+  content: "\e903";
+}
+.icon.coding:before {
+  content: "\e903";
+}
+
+.icon.marker:before {
+  content: "\e655";
+}
+.rcon.marker:after {
+  content: "\e655";
+}
+
+.rcon.layers:after {
+  content: "\e649";
+}
+.icon.layers:before {
+  content: "\e649";
+}
+
+
+.rcon.map:after {
+  content: "\e900";
+}
+.icon.map:before {
+  content: "\e900";
+}
+.icon.bug:before {
+  content: "\e69e";
+}
+.icon.compass:before {
+  content: "\e621";
+}
+.icon.plus-document:before {
+  content: "\e602";
+}
+.rcon.bug:after {
+  content: "\e69e";
+}
+.rcon.compass:after {
+  content: "\e621";
+}
+.rcon.plus-document:after {
+  content: "\e602";
+}
+
+
+.rcon.landuse:after {
+  content: "\e648";
+}
+
+.icon.landuse:before {
+  content: "\e648";
+}
+
+
+
+
+.icon.inspect:before {
+  content: "\e642";
+}
+.rcon.inspect:after {
+  content: "\e642";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

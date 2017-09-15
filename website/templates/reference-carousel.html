@@ -1,0 +1,35 @@
+{% load static thumbnail  %}
+
+<style type="text/css">
+
+
+</style>
+
+<section class='clearfix tagline contain animate'>
+	
+<div class='clearfix contain fill-light pad4y hide-mobile '>
+      <!-- Desktop -->
+  <div class='prose clearfix prose-big'>
+      <div class="limiter contain clearfix space-bottom4">
+        <h2 class="align-center ">Ils nous font confiance</h2>
+      </div>
+
+
+    <div class='clearfix customer-logos '>
+    {% for ref in reference_list %} 
+    
+      <div class='' style="height: 120px; width:200px; margin: auto;";>
+  
+        <p class='block customer-logo logo-centered' >
+           
+        {% if ref.logo_svg %}
+        {% include ref.logo_svg %}
+        {% endif %}
+        </p>
+      </div>
+      {% endfor %}
+  
+    </div>
+  </div>
+</div>
+</section>

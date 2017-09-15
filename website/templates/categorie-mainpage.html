@@ -1,12 +1,16 @@
- {% load static thumbnail  %}
+{% load static thumbnail webp %}
 {% for categorie in categorie_list_mainpage %} 
 
   {% if categorie.nom_categorie != "Accompagnement" %}
-  
-<a href="{% url 'website:categorieIndex' %}{{categorie.slug}}" class="grid__item grid__item_33 round20 fill-white shadow margin0 " >
-        <h2 class="" >{{categorie.nom_categorie}}</h2>
-        <div class="" style=" height: 400px; position: relative;">
-      
+<div class=" col4 margin_em pad1y" >   
+<!-- <a href="{% url 'website:categorieIndex' %}{{categorie.slug}}" class="grid__item grid__item_33 round20 fill-white shadow margin0 " > -->
+<a href="{% url 'website:categorieIndex' %}{{categorie.slug}}" class=" col11 round20 fill-white shadow" >
+
+<h2 class="" >{{categorie.nom_categorie}}</h2>
+<!--         <div class="mobile" style=" height: 400px; position: relative;">
+ -->      
+         <div class="" style=" height: 400px; position: relative;">
+
 {% if categorie.nom_categorie == "Cartes"%}
 
 <!-- 1 -->
@@ -15,8 +19,7 @@
 
 <defs>
 <pattern id="ashex1-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
-    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="http://nyalldawson.net/wp-content/uploads/2017/02/balance_by_area.png
-"></image>
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{% webp '/media/image/maps/balance_by_area.webp' %}"></image>
 </pattern>
 </defs>
 
@@ -29,7 +32,7 @@
 
 <defs>
 <pattern id="ashex2-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
-    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/18/fe/21/18fe2142f85a54e7cff606040563210d.jpg"></image>
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="/media/image/maps/18fe2142f85a54e7cff606040563210d.webp"></image>
 </pattern>
 </defs>
 
@@ -40,8 +43,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="135px" height="135px" viewBox="87.5 87.5 65 73" xml:space="preserve" preserveAspectRatio="xMidYMid">
 
 <defs>
-<pattern id="ashex3-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
-    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/7a/d9/48/7ad94851c4150c2892e3d5c3359614ec.jpg"></image>
+<pattern id="ashex3-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice"> <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="/media/image/maps/7ad94851c4150c2892e3d5c3359614ec.webp"></image>
 </pattern>
 </defs>
 
@@ -54,7 +56,7 @@
 
 <defs>
 <pattern id="ashex4-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
-    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="https://i.pinimg.com/564x/a3/c3/86/a3c38627bf8cad2aa8c76d943c6f284e.jpg"></image>
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="/media/image/maps/a3c38627bf8cad2aa8c76d943c6f284e.webp"></image>
 </pattern>
 </defs>
 
@@ -68,7 +70,7 @@
 
 {% elif categorie.nom_categorie == "SIG" %}
 <div class="" style="">
-{% thumbnail categorie.mainpage_image 500x400 crop upscale quality=100  subject_location=categorie.mainpage_image.subject_location as photo %}
+{% thumbnail categorie.mainpage_image 400x400 crop upscale quality=70  subject_location=categorie.mainpage_image.subject_location as photo %}
 <img class="" src="{{ photo.url }}" alt="">
 </div>
 
@@ -85,7 +87,7 @@
 {% elif categorie.nom_categorie == "Données" %}
 
 <div class="" >
-{% thumbnail categorie.mainpage_image 400x400 crop upscale quality=100  subject_location=categorie.mainpage_image.subject_location as photo %}
+{% thumbnail categorie.mainpage_image 400x400 crop upscale quality=70  subject_location=categorie.mainpage_image.subject_location as photo %}
 <img class="clip" style="border-radius: 50%;" src="{{ photo.url }}" alt="">
 </div>
 
@@ -98,7 +100,7 @@
 
 </div>
 </a>
- 
+</div>
 {% else %}
 
 {% endif %}

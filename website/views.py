@@ -8,18 +8,20 @@ from django.utils import timezone
 
 # Create your views here.
 def index(request):
-	categorie_list = Categorie.objects.all().filter(actif=1).order_by('level')
-	service_list = Service.objects.all().filter(actif=1)	
+    categorie_list = Categorie.objects.all().filter(actif=1).order_by('level')
+    service_list = Service.objects.all().filter(actif=1)
+    reference_list = Reference.objects.all().filter(actif=1)	
 
-	catFormation_List_actif = CatFormation.objects.all().filter(actif=1)
-	catFormation_List = CatFormation.objects.all()
+    catFormation_List_actif = CatFormation.objects.all().filter(actif=1)
+    catFormation_List = CatFormation.objects.all()
 
-	context = {
-	'categorie_list': categorie_list,
-	'service_list': service_list,
-	'catFormation_List':catFormation_List,
-	}
-	return render(request, 'base.html', context)
+    context = {
+    'categorie_list': categorie_list,
+    'service_list': service_list,
+    'catFormation_List':catFormation_List,
+    'reference_list':reference_list,
+    }
+    return render(request, 'base.html', context)
 
 
 class ServiceDetailView(generic.DetailView):

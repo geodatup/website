@@ -65,6 +65,12 @@ $(document).scroll(function() {
       } else {
         $('div#signup-nav').addClass('hide-nav');
       }
+    if (y > 1000) {
+        $('a#gotop').removeClass('hide-gotop');
+      } else {
+        $('a#gotop').addClass('hide-gotop');
+
+      }
 });
 
 

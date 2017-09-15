@@ -4,7 +4,7 @@
 {% endblock html %}
 <head>
     {% block meta %}
-    <meta charset="utf-8">
+    <meta charset="utf-8" >
     <!--bing referencement-->
     <meta name="msvalidate.01" content="833803441EC8AC258CCC085C3D848CB7" />
     <!--YANDEX for DDG referencement-->
@@ -14,32 +14,32 @@
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
     {% endblock meta %}
     {% block head_css %}    
-    <link rel="stylesheet" href="{% static "css/base.css" %}">
-    <link rel="stylesheet" href="{% static "css/site.css" %}">
-    <link rel="stylesheet" href="{% static "css/home.css" %}">
-    <link rel="stylesheet" href="{% static "css/developers.css" %}">
-    <link rel="stylesheet" href="{% static "css/products.css" %}">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/team.css" %}">
-    <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/my_icon/style.css" %}">
-    <link rel="stylesheet" href="{% static "font-awesome-4.5.0/css/font-awesome.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/my_icon/style.css" %}">
+     <link rel="stylesheet" type="text/css" href="{% static "css/my_icon/icons.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/footer.css" %}">
+
+    <!-- Media CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/screen.css" %}">
+
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 640px)" href="{% static "css/screen-max-640-device.css" %}">
+    <link rel="stylesheet" media="all and (orientation:landscape)" href="{% static "css/landscape.css" %}">
+
     {% endblock head_css %}
     {% block head_js %}
     {% endblock head_js %}
 </head>
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
     {% block body_content %}
-    <!--[if lte IE 8]>
-        <div class="alert alert-warning ie-warning">
-            <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        </div>
-    <![endif]-->
+
     {% endblock body_content %}
     {% block body_js %}        
-    <script src="{% static "js/base.js"%}"></script>
-    <script src="{% static "js/site.js"%}"></script>
-    <script src="{% static "js/analytics.js"%}"></script>
+    <script src="{% static "js/base.js"%}" ></script>
+    <script src="{% static "js/site.js"%}" ></script>
+    <script src="{% static "js/analytics.js"%}" async></script> 
+    <script src="{% static "lightbox/js/lightbox-plus-jquery.min.js"%}" async></script>
     {% endblock body_js %}
 </body>
 </html>

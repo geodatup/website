@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.db import models
 from filer.fields.image import FilerImageField
+from filer.fields.file import FilerFileField
 #from filer.fields.image import FilerImageField
 
 # Create your models here.
@@ -36,7 +37,7 @@ class Categorie(models.Model):
     nom_categorie = models.CharField(max_length=30)
     pitch = models.CharField(max_length=500, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
-    html_page = models.CharField(max_length=10000, default='<p></p>')
+    html_page = models.CharField(max_length=10000, null=True, blank=True)
     tooltip = models.CharField(max_length=10000, default='<span class="tooltip"></span>')
     level = models.PositiveSmallIntegerField(blank=False, null=False, unique=True)
     css_icon = models.CharField(max_length=15, null=True, blank=True)
@@ -45,6 +46,7 @@ class Categorie(models.Model):
     mainpage = models.BooleanField(default=True)
     mainpage_image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL, related_name="mainpage_image")
     actif =  models.BooleanField(default=True)
+    menu_link =  models.BooleanField(default=True)
     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
     
     def __str__(self):
@@ -62,7 +64,7 @@ class Service(models.Model):
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
     mainpage = models.BooleanField(default=False)
-    html_page = models.CharField(max_length=10000, default='<p></p>')
+    html_page = models.CharField(max_length=10000, null=True, blank=True)
     #secteur =  models.ManyToManyField(Secteur)
     slug = models.SlugField(u'slug',blank=False, default='',help_text='indiquer un nom unique pour url', max_length=64)
 
@@ -196,9 +198,10 @@ class CatFormation(models.Model):
 
 
 class Reference(models.Model):
-    nom_reference = models.CharField(max_length=15)
+    nom_reference = models.CharField(max_length=30)
     pitch = models.CharField(max_length=30, null=True, blank=True)
-    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL, related_name="image_reference")
+    logo_svg = FilerFileField(blank=True, null=True,on_delete=models.SET_NULL,related_name="logo_svg")
     css_icon = models.CharField(max_length=15, null=True, blank=True)
     css_class = models.CharField(max_length=100, null=True, blank=True)
     actif = models.BooleanField(default=True)
@@ -211,7 +214,7 @@ class Reference(models.Model):
 class Realisation(models.Model):
     nom_realisation = models.CharField(max_length=30)
     pitch = models.CharField(max_length=30, null=True, blank=True)
-    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL,)
+    image = FilerImageField(blank=True, null=True,on_delete=models.SET_NULL, related_name="image_realisation")
     service = models.ManyToManyField(Service, blank=True)
     reference = models.ManyToManyField(Reference, related_name='realisations', blank=True)
     actif = models.BooleanField(default=True)
