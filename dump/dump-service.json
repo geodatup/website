@@ -1,0 +1,477 @@
+[
+{
+  "model": "website.service",
+  "pk": 6,
+  "fields": {
+    "nom_service": "Formation",
+    "categorie_service": 4,
+    "pitch": "Un ensemble de formations et d'ateliers  g\u00e9omatiques",
+    "description": "GeoDatup organisme de formation professionnel, apporte les cl\u00e9s de compr\u00e9hension et des comp\u00e9tences g\u00e9omatiques li\u00e9es aux besoins de votre m\u00e9tier.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": 13,
+    "css_color": "green",
+    "css_icon": "plus-document",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "formation"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 7,
+  "fields": {
+    "nom_service": "Conseil",
+    "categorie_service": 4,
+    "pitch": "GeoDatup vous offre ses conseils et solutions personnalis\u00e9es en g\u00e9omatique",
+    "description": "Nos conseils vous apporte des r\u00e9ponses et des solutions \u00e0 vos probl\u00e9matiques quotidiennes. De part notre maitrise de l'ensemble des techniques et nos outils de pointes, nous pouvons r\u00e9volutionner certaines de vos anciennes m\u00e9thodes devenues d\u00e9su\u00e8tes.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "compass",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "conseil"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 8,
+  "fields": {
+    "nom_service": "Support technique",
+    "categorie_service": 4,
+    "pitch": "Besoin d'aide ? Nous vous portons assistance",
+    "description": "Vous ne disposez pas du temps n\u00e9cessaire pour diagnostiquer votre probl\u00e8me, et le r\u00e9soudre ? Appelez nous pour nous en faire part afin de reprendre votre activit\u00e9 rapidement.\r\n\u2264p>\r\nDisponible par t\u00e9l\u00e9phone, par mai, en prise en mains \u00e0 distance ou \u00e0 domicile, n'attendez plus pour reprendre votre activit\u00e9.\r\n</p>",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "bug",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "support"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 9,
+  "fields": {
+    "nom_service": "Carte de points d'int\u00e9r\u00eat",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "map",
+    "css_class": "",
+    "actif": true,
+    "mainpage": true,
+    "html_page": "<p></p>",
+    "slug": "point-dinteret-poi"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 10,
+  "fields": {
+    "nom_service": "Logiciels QGIS",
+    "categorie_service": 5,
+    "pitch": "Cartographier sans limites avec le logiciel SIG open-sources le plus puissant du monde",
+    "description": "Vous \u00eates pr\u00eat \u00e0 payer un logiciel SIG (parfois tr\u00e8s chers) alors que QGIS dispose de fonctions \u00e9quivalentes et m\u00eame plus ? QGIS est gratuit, simple et rapide \u00e0 prendre en main. Alors, pourquoi vous en priver ?",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": 33,
+    "css_color": "",
+    "css_icon": "layers",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "sig"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 11,
+  "fields": {
+    "nom_service": "T\u00e9l\u00e9d\u00e9tection",
+    "categorie_service": 5,
+    "pitch": "Extraire l'information des images satellites et a\u00e9riennes pour am\u00e9liorer vos d\u00e9cisions.",
+    "description": "La t\u00e9l\u00e9d\u00e9tection est l'une des m\u00e9thodes permettant d'obtenir de mani\u00e8re automatique, des informations pr\u00e9cieuses sur la zone d'\u00e9tude. L'analyse des fr\u00e9quences spectrales nous permette de cr\u00e9er des donn\u00e9es suppl\u00e9mentaire \u00e0 la photo elle-m\u00eame. Ainsi, une fois ces donn\u00e9es cartographi\u00e9es et int\u00e9gr\u00e9es \u00e0 votre SIG, vous pouvez organiser votre travail de mani\u00e8re optimale.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": false,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "teledetection"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 12,
+  "fields": {
+    "nom_service": "G\u00e9o-traitement",
+    "categorie_service": 5,
+    "pitch": "Cr\u00e9er vos propres outils pour \u00eatre au plus pr\u00e8s de vos besoins.",
+    "description": "Les logiciels et outils existants sont am\u00e9lior\u00e9s par le d\u00e9veloppement de plugins ou de script de g\u00e9o-traitement.\r\nCes nouvelles fonctionnalit\u00e9s vous permettent d'\u00eatre encore plus efficaces dans l'utilisation de vos donn\u00e9es et sur les t\u00e2ches redondantes.\r\nCe qui pouvait vous prendre des heures auparavant, peut se r\u00e9duire \u00e0 quelques clics.",
+    "tooltip": "<span class=\"tooltip\">Productivit\u00e9</span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "coding",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "geoprocessing"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 13,
+  "fields": {
+    "nom_service": "Analyse spatiale",
+    "categorie_service": 5,
+    "pitch": "Analyser vos donn\u00e9es en profondeur gr\u00e2ce aux statistiques et repr\u00e9sentations spatiales.",
+    "description": "D\u00e9tenir l'information c'est une chose, l'exploiter en est une autre. L'analyse g\u00e9ographique des donn\u00e9es montres beaucoup de chose que des statistiques simples ne montre pas. Les r\u00e9sultats sous forme de carte parles souvent plus aux d\u00e9cideurs que des textes, tableaux et graphiques.\r\nLes cartes de chaleur, l'accessibilit\u00e9 sur un r\u00e9seau, analyses th\u00e9matiques, cartes choropl\u00e8tes et classifications, repr\u00e9sentation de flux etc. \r\n<p>Un \u00e9ventail de possibilit\u00e9 d'analyse pour comprendre un maximum de chose sur les dynamiques d'un territoire.</p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "analytics",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "analyse-spatiale"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 15,
+  "fields": {
+    "nom_service": "DataPack",
+    "categorie_service": 6,
+    "pitch": "Contient un ensemble \u00e9volutif de donn\u00e9es mis \u00e0 jour r\u00e9guli\u00e8rement et sp\u00e9cifiques \u00e0 votre m\u00e9tiers",
+    "description": "S'il existe plusieurs offres de donn\u00e9es en France et dans le Monde, celles-ci ne sont pas toujours exhaustives et compatibles les unes avec les autres.\r\n<p>C'est pourquoi nous fournissons des lots de donn\u00e9es appel\u00e9s <span class=\"strong\">Data Packs</span> r\u00e9pondant aux besoins de votre m\u00e9tier. Gr\u00e2ce \u00e0 ces datapacks, vous disposez des mises \u00e0 jour r\u00e9guli\u00e8res et un support d'int\u00e9gration et d'utilisation dans votre SIG.</p>",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "data",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "datapack"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 17,
+  "fields": {
+    "nom_service": "Lev\u00e9 terrain",
+    "categorie_service": 6,
+    "pitch": "Cr\u00e9er vos propres donn\u00e9es depuis des relev\u00e9s terrains.",
+    "description": "Nos \u00e9tablissons des lev\u00e9s terrains. Gr\u00e2ce \u00e0 la m\u00e9thodes de correction diff\u00e9rentielle, nous obtenons rapidement des pr\u00e9cisions subm\u00e9triques.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": null,
+    "css_color": "blue",
+    "css_icon": "marker",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "leve-terrain"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 18,
+  "fields": {
+    "nom_service": "Imagerie drone",
+    "categorie_service": 6,
+    "pitch": "Obtenez des images et mod\u00e8le num\u00e9rique 3D de tr\u00e8s haute r\u00e9solution.",
+    "description": "Nous r\u00e9alisons des campagnes de photographies a\u00e9riennes. Nous produisons des orthophotographies et des mod\u00e8les num\u00e9riques de terrain (MNT) dont nous \u00e9valuons la pr\u00e9cision finale. Nous effectuons aussi la mod\u00e9lisation d\u2019ouvrage architecturaux, des coupes topographiques et des mesures de volumes. Nous obtenons de bons r\u00e9sultats \u00e0 tarifs attractifs, notamment gr\u00e2ce \u00e0 notre proximit\u00e9 et \u00e0 l'utilisation de logiciel Micmac Open source de l'IGN.",
+    "tooltip": "<span class=\"tooltip\"></span>",
+    "image": 20,
+    "css_color": "blue",
+    "css_icon": "drone",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "drone"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 19,
+  "fields": {
+    "nom_service": "A propos",
+    "categorie_service": 8,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "top"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 20,
+  "fields": {
+    "nom_service": "Equipe",
+    "categorie_service": 8,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "team"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 21,
+  "fields": {
+    "nom_service": "Emplois et stages",
+    "categorie_service": 8,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "jobs"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 22,
+  "fields": {
+    "nom_service": "Presse",
+    "categorie_service": 8,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": false,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "presse"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 23,
+  "fields": {
+    "nom_service": "Collectivit\u00e9",
+    "categorie_service": 9,
+    "pitch": "Nos services, datapacks, outils et m\u00e9thodes sp\u00e9cifiques \u00e0 la gestion d'une municipalit\u00e9",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "building",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "collectivite"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 24,
+  "fields": {
+    "nom_service": "Bureau d'\u00e9tude",
+    "categorie_service": 9,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "inspect",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "bureau-etude"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 25,
+  "fields": {
+    "nom_service": "Forestier",
+    "categorie_service": 9,
+    "pitch": "Une gestion efficace des parcelles foresti\u00e8res \u00e0 court et long terme",
+    "description": "D'un point de vue \u00e9conomique, la for\u00eat est un secteur peu lucratif et sa gestion co\u00fbte de l'argent. Pour autant, il est essentiel d'en avoir une bonne connaissance \u00e0 court terme et \u00e0 long terme. Etablir un plan de gestion, d\u00e9finir les limites, faire une\r\ncarte des peuplements, pr\u00e9voir les travaux d'entretiens, d'am\u00e9nagements, de coupe et de plantation etc. </p>\r\nDes outils SIG , GPS et applications mobiles existent pour vous aider \u00e0 vous focaliser sur l'essentiel et donc \u00e0 optimisez votre gestion. Finalement, concentrez pleinement votre attention aux arbres.\r\n</p>",
+    "tooltip": ".",
+    "image": 32,
+    "css_color": "",
+    "css_icon": "landuse",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "foresterie"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 26,
+  "fields": {
+    "nom_service": "Carte d'\u00e9dition",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "carte-dedition"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 27,
+  "fields": {
+    "nom_service": "Carte th\u00e9matique",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "carte-thematique"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 28,
+  "fields": {
+    "nom_service": "Carte d'analyse",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "carte-danalyse"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 29,
+  "fields": {
+    "nom_service": "Carte de pr\u00e9sentation",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": ".",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": false,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "carte-de-presentation"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 30,
+  "fields": {
+    "nom_service": "Plan de ville",
+    "categorie_service": 7,
+    "pitch": ".",
+    "description": "",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": false,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "plan-de-ville"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 31,
+  "fields": {
+    "nom_service": "WebSIG",
+    "categorie_service": 5,
+    "pitch": "Des solutions web des cartes interactives multi-utilisateurs",
+    "description": "M\u00eame si vous partez de rien, la mise en place d'un webSIG peut \u00eatre rapide et \u00e0 des prix abordable. Les comp\u00e9tences d'administration s'acquiers  rapidement et nous seront toujours disponible pour r\u00e9aliser vos demandes.",
+    "tooltip": ".",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": ".",
+    "slug": "websig"
+  }
+},
+{
+  "model": "website.service",
+  "pk": 32,
+  "fields": {
+    "nom_service": "CartOdroid",
+    "categorie_service": 5,
+    "pitch": "La solution pour disposer des projets QGIS au bureau et sur le terrain sans connection internet.",
+    "description": "CartOdroid est la solution. Cet outil bas\u00e9 sur Lizmap et Geopoppy vous rend la vie plus facile. Sur le terrain, vous disposez des m\u00eames donn\u00e9es qu'au bureau. Sans connexion internet vous avez aussi acc\u00e8s aux fonds de cartes IGN !",
+    "tooltip": "<p></p>",
+    "image": null,
+    "css_color": "",
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "mainpage": false,
+    "html_page": "<p></p>",
+    "slug": "cartodroid"
+  }
+}
+]
