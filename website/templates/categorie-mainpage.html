@@ -1,4 +1,4 @@
-{% load static thumbnail webp %}
+{% load static thumbnail  %}
 {% for categorie in categorie_list_mainpage %} 
 
   {% if categorie.nom_categorie != "Accompagnement" %}
@@ -19,7 +19,7 @@
 
 <defs>
 <pattern id="ashex1-img" height="100%" width="150px" patternContentUnits="objectBoundingBox" preserveAspectRatio="xMidYMid slice">
-    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{% webp '/media/image/maps/balance_by_area.webp' %}"></image>
+    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="/media/image/maps/balance_by_area.png"></image>
 </pattern>
 </defs>
 

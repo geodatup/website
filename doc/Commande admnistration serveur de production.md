@@ -66,6 +66,7 @@ puis relancer supervisorctl en dehors de la session geodatup
 ~~~
 cd /var/www/webapps/website
 source bin/activate
+sudo git fetch
 sudo git pull
 sudo python manage.py migrate
 sudo python manage.py loaddata dump/auth.json
@@ -89,7 +90,15 @@ python manage.py collectstatic
 
 ~~~
 
+# mise à jour d'une nouvelle version en production 
 
+cd /var/www/webapps/website/
+sudo git fetch
+sudo git pull
+source bin/activate
+sudo python manage.py makemigrations
+sudo python manage.py migrate
+sudo python manage.py collectstatic
 
 # troubleshooting
 
