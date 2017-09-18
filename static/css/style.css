@@ -834,6 +834,13 @@ position:fixed; top:0; left:0;z-index: 10;width: 100%;background-color: rgba(255
   background-repeat:no-repeat;
 }
 
+@-moz-document url-prefix() {
+  .landing-header-image {
+  background-image:url(/media/image/Pano-reduce-1920-530.jpg);
+  background-repeat:no-repeat;
+  }
+}
+
 .landing-maps-image {
   background-image:url(/media/image/maps/1.jpg);
   background-repeat:no-repeat;
