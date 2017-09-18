@@ -6,10 +6,109 @@
     "nom_reference": "Province Sud",
     "pitch": "Nouvelle Cal\u00e9donie",
     "image": null,
+    "logo_svg": 38,
     "css_icon": "",
     "css_class": "",
     "actif": true,
     "slug": "province-sud"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 2,
+  "fields": {
+    "nom_reference": "cogit",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 37,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "cogit"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 3,
+  "fields": {
+    "nom_reference": "Reserve du Pinail",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 39,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "reserve-du-pinail"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 4,
+  "fields": {
+    "nom_reference": "CartONG",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 41,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "cartong"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 5,
+  "fields": {
+    "nom_reference": "Fauna Flora International",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 40,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "fauna-flora-international"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 6,
+  "fields": {
+    "nom_reference": "Arbre et bois conseil",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 43,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "arbre-et-bois-conseil"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 7,
+  "fields": {
+    "nom_reference": "Amenis",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 44,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "amenis"
+  }
+},
+{
+  "model": "website.reference",
+  "pk": 8,
+  "fields": {
+    "nom_reference": "Vertego",
+    "pitch": "",
+    "image": null,
+    "logo_svg": 45,
+    "css_icon": "",
+    "css_class": "",
+    "actif": true,
+    "slug": "vertego"
   }
 }
 ]
