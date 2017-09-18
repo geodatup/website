@@ -11,7 +11,7 @@
 			
 				<div class="clearfix">
 				<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
-					<div class="{% cycle 'column-block col6 fr' 'column-block col6 ' %} ">
+					<div class="{% cycle 'column-block col6 fr' 'column-block col6 fl' %} ">
 					
 						<div class="column-content col10 margin2">
 						<h2>{{ service.nom_service}} </h2>
@@ -27,7 +27,7 @@
 					</div>
 					{% if service.image %}
 					{% thumbnail service.image 400x300 crop upscale quality=75 subject_location=service.image.subject_location as photo %}
-					<div class="{% cycle 'fl' '' %} " style="width:50%;height:50%">
+					<div class="{% cycle 'fl' 'fr' %}" style="width:50%;height:50%">
 					<img src="{{ photo.url }}">
 					</div>
 					
