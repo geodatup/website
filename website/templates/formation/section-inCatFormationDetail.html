@@ -9,7 +9,7 @@
               {% for formation in catFormation.get_formation_ordered %}
               <div class="space-bottom2 pad2y keyline-bottom">
 
-                <h2 id="{{ formation.nom_formation }}" class="pad2y dark category-block" title="">
+                <h2 id="{{ formation.nom_formation }}" class="pad2y category-block" title="">
               {% if formation.css_color and formation.css_icon %}
                 <div class="inline  dot 
                 {{formation.css_icon }} dark 
@@ -123,7 +123,7 @@
                   
                 </div>
 
-                <a href="#top" class="block small back-to-top">haut de page</a>
+                
               </div>          
               {% endfor %}               
             </div>

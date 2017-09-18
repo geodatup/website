@@ -97,7 +97,6 @@
   content: "\e602";
 }
 
-
 .rcon.landuse:after {
   content: "\e648";
 }
@@ -106,9 +105,6 @@
   content: "\e648";
 }
 
-
-
-
 .icon.inspect:before {
   content: "\e642";
 }
@@ -116,14 +112,48 @@
   content: "\e642";
 }
 
+.rcon.studio:after {
+  content: "\e901";
+}
 
+.icon.studio:before {
+  content: "\e901";
+}
 
+.rcon.creditcard:after {
+  content: "\e623";
+}
+.icon.creditcard:before {
+  content: "\e623";
+}
+.rcon.account:after {
+  content: "\e60a";
+}
+.icon.account:before {
+  content: "\e60a";
+}
+.icon.eye:before {
+  content: "\e62f";
+}
+.rcon.eye:after {
+  content: "\e62f";
+}
+.rcon.hand:after {
+  content: "\e63c";
+}
+.icon.hand:before {
+  content: "\e63c";
+}
+.icon.crosshair:before {
+  content: "\e625";
+}
 
-
-
-
-
-
+.rcon.book:after {
+  content: "\e615";
+}
+.icon.book:before {
+  content: "\e615";
+}
 
 
 
