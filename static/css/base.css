@@ -516,6 +516,7 @@ otherwise these are considered empty
 .margin12 { margin-left:100.0000%; }
 
 /* reverse margins on right-floated elements */
+.margin00r { margin-right:0px; }
 .margin0r  { margin-right:04.1666%; }
 .margin1r  { margin-right:08.3333%; }
 .margin2r  { margin-right:16.6666%; }

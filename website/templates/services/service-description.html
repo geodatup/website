@@ -27,8 +27,8 @@
 					</div>
 					{% if service.image %}
 					{% thumbnail service.image 400x300 crop upscale quality=75 subject_location=service.image.subject_location as photo %}
-					<div class="{% cycle 'fl' 'fr' %}" style="width:50%;height:50%">
-					<img src="{{ photo.url }}">
+					<div class="{% cycle 'fr  ' 'fl ' %}" style="width:50%;height:50%">
+					<img class = "{% cycle 'fr' '' %} "src="{{ photo.url }}">
 					</div>
 					
 						{% else %}	
