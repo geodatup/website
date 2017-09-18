@@ -18,7 +18,7 @@
 
 	 	{% else %}
 
-		<a id='footer' class='space-bottom0 quiet col10 strong' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>
+		<a id='footer' class='space-bottom0 quiet col10 strong' href= "{% url 'website:categorieIndex' %}{{service.categorie_service.slug}}#{{ service.slug }}">{{ service.nom_service }}</a>
 	  	{% endif %}  
 	{% else %}
 	{% endif %}  

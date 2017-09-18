@@ -13,25 +13,26 @@
 				<div class="col12 space-top1 clearfix contain pad4y space-bottom2 keyline-bottom">
 					<div class="{% cycle 'column-block col6 fr' 'column-block col6 ' %} ">
 					
-					<div class="column-content col10 margin2">
-					<h2>{{ service.nom_service}} </h2>
-					{{ service.description | safe}}
-					{% if service.nom_service = "Formation" %}
-					<div class="prose"><a href="{{ service.get_absolute_url }}">Voir les formations</a></div>
-					{% else %}
+						<div class="column-content col10 margin2">
+						<h2>{{ service.nom_service}} </h2>
+						{{ service.description | safe}}
+						{% if service.nom_service = "Formation" %}
+						<div class="prose"><a href="{{ service.get_absolute_url }}">Voir les formations</a></div>
+						{% else %}
 
-					{% endif %} 
-					</div>
-
+						{% endif %} 
+						</div>
+						
 					
 					</div>
 					{% if service.image %}
 					{% thumbnail service.image 400x300 crop upscale quality=75 subject_location=service.image.subject_location as photo %}
-					<div class="" style="width:50%;height:50%">
+					<div class="{% cycle 'fl' '' %} " style="width:50%;height:50%">
 					<img src="{{ photo.url }}">
 					</div>
-					{% else %}	
-					{% endif %}
+					
+						{% else %}	
+						{% endif %} 
 
 
 				</div>

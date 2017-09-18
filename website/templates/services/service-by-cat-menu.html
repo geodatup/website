@@ -5,12 +5,9 @@
 		{% if service.actif %}
 		 	{% if service.categorie_service == categorie %}
 		 		{% if categorie.nom_categorie == "Nous" %}
-
     			<a class='block pad1y icon {{ service.css_icon }}' href= '{% url 'about' %}#{{service.slug}}'>{{ service.nom_service }}</a>
-
-
  				{% else %}
-		 		<a class='block pad1y icon {{ service.css_icon }}' href= "{{ service.get_absolute_url }}">{{ service.nom_service }}</a>	
+		 		<a class='block pad1y icon {{ service.css_icon }}' href= "{% url 'website:categorieIndex' %}{{service.categorie_service.slug}}#{{ service.slug }}">{{ service.nom_service }}</a>	
 		 		{% endif %} 	 	
 		 	{% else %}  
 		  	{% endif %}  
